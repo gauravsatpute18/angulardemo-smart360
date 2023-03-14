@@ -4,13 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build --force",
-    "clean": "rimraf dist",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-dev": "ng serve --port 4060 -o"
-},
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.1",
