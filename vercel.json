@@ -1,7 +1,10 @@
 {
     "build": {
-    "env": {
+      "env": {
         "NPM_CONFIG_FORCE": "true"
-    }
+      },
+      "memory": 2048,
+      "maxLambdaSize": "10mb"
     }
 }
+
