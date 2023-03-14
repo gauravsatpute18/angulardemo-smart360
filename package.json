@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run clean && ng build --force",
+    "build": "npm run build --force",
     "clean": "rimraf dist",
     "test": "ng test",
     "lint": "ng lint",
