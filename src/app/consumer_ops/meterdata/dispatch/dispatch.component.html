@@ -1,0 +1,1593 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Dispatch</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <a class="dropdown-item active" href="/registration">Registration</a>
+            <a class="dropdown-item" href="#">Survey</a>
+            <a class="dropdown-item" href="#">Campgain</a>
+        </div>
+    </div>
+</div> -->
+
+<section class="pr-section list-view-section">
+
+    <div class="row">
+        <div class="col">
+            <div class="nav-block">
+                <nav class="inner-form-tabs main-page">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link st active" id="reading-tab" data-toggle="tab" href="#reading"
+                            role="tab" aria-controls="reading" aria-selected="true">Reading</a>
+                        <a class="nav-item nav-link st" id="bill-distribution-tab" data-toggle="tab"
+                            href="#bill-distribution" role="tab" aria-controls="bill-distribution"
+                            aria-selected="false">Bill Distribution</a>
+                        <a class="nav-item nav-link st" id="notice-tab" data-toggle="tab" href="#notice" role="tab"
+                            aria-controls="notice" aria-selected="true">Notice</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="reading" role="tabpanel" aria-labelledby="reading-tab">
+                    <div class="row dash-wrap">
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions"
+                                        [datasets]="doughnutChartData" [labels]="doughnutChartLabels"
+                                        [chartType]="doughnutChartType"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions2"
+                                        [datasets]="doughnutChartData2" [labels]="doughnutChartLabels2"
+                                        [chartType]="doughnutChartType2"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr1">
+                                            <p class="p">Consumers</p>
+                                            <h4 class="ttl">500</h4>
+                                        </li>
+                                        <li class="list-group-item colr2">
+                                            <p class="p">Validation</p>
+                                            <h4 class="ttl">100</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                                        [chartType]="doughnutChartType3"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                                        [chartType]="doughnutChartType4"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr3">
+                                            <p class="p">Validation 1</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr4">
+                                            <p class="p">Validation 2</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions5"
+                                        [datasets]="doughnutChartData5" [labels]="doughnutChartLabels5"
+                                        [chartType]="doughnutChartType5"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions6"
+                                        [datasets]="doughnutChartData6" [labels]="doughnutChartLabels6"
+                                        [chartType]="doughnutChartType6"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr5">
+                                            <p class="p">Completed</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr6">
+                                            <p class="p">Duplicate</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                                        [chartType]="doughnutChartType3"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                                        [chartType]="doughnutChartType4"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr3">
+                                            <p class="p">Pending</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr4">
+                                            <p class="p">Revisit</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <form class="pr-search-form d-inline-block">
+                                <span class="s-icon"></span>
+                                <input class="form-control pr-table-search" type="search"
+                                    placeholder="Search by Cycle Name, Type" aria-label="Search">
+                            </form>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <label class="p p-13 mr-3">Records</label>
+                            <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                appendTo="body" [items]="pagination" bindLabel="name"
+                                placeholder="30" [(ngModel)]="selectedPagination" name="name">
+                            </ng-select>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                data-target="#filterCollapse" aria-expanded="false"
+                                aria-controls="filterCollapse"><span>2</span>Filter</button>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <div class="dropdown tool-dropdown">
+                                <button class="btn btn-outline-light3 st dropdown-toggle" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Tools
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item active" >
+                                        <i class="icons8 icons8-print-2"></i>Print
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-pdf"></i>PDF
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-brief"></i>Excel
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-document"></i>CSV
+                                      </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="btn btn-secondary st" role="button" data-toggle="modal"
+                                data-target="#validationAddModal">
+                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="filters-wrap">
+                                <div class="collapse" id="filterCollapse">
+                                    <div class="filter-wrap-inner">
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <ul class="list-group list-group-horizontal">
+                                            <li class="list-group-item">
+                                                <label>Utility</label>
+                                                <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility" [(ngModel)]="selectedUtility"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Month</label>
+                                              <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          <li class="list-group-item">
+                                            <label>Cycle</label>
+                                            <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle" [(ngModel)]="selectedCycle"
+                                                name="name">
+                                            </ng-select>
+                                        </li>
+                                        <li class="list-group-item">
+                                          <label>Area</label>
+                                          <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Area</label>
+                                        <ng-select class="filter-select" [items]="subarea" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedAreasub"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                            <li class="list-group-item">
+                                                <label>Status</label>
+                                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Schedule Type</label>
+                                              <ng-select class="filter-select" [items]="stype" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedstype"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          
+                                        <li class="list-group-item">
+                                          <label>Category</label>
+                                          <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedcategory"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Category</label>
+                                        <ng-select class="filter-select" [items]="subcategory1" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedsubcategory"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                      <li class="list-group-item">
+                                        <label>Date Range</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bttn-transparent bttn-icon" type="button">
+                                                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                </button>
+                                            </div>
+                                            <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                                        </div>
+                                    </li>
+                                        
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                            <div class="row filter-cta-row">
+                                                <div class="col-auto pr-2">
+                                                  <button class="btn btn-outline-secondary st">Apply</button>
+                                                </div>
+                                                <div class="col-auto pl-2">
+                                                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                data-target="#filterCollapse" aria-expanded="false"
+                                                aria-controls="filterCollapse">Cancel</button>
+                                            </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                        
+                  
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="listview-table-wrap">
+                                <label class="p p-12">Showing Last 6 month records</label>
+
+                                <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span>Month</span></th>
+                                            <th scope="col"><span>Cycle Name</span></th>
+                                            <th scope="col"><span>Status</span></th>
+                                            <th scope="col"><span>Type</span></th>
+                                            <th scope="col"><span>Route</span></th>
+                                            <th scope="col"><span>Consumers</span></th>
+                                            <th scope="col"><span>Reading</span></th>
+                                            <th scope="col"><span>Dispatch</span></th>
+                                            <th scope="col"><span>Complete</span></th>
+                                            <th scope="col"><span>Start Date</span></th>
+                                            <th scope="col"><span>End Date</span></th>
+                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of collection.data">
+
+
+                                            <td>{{item.month}}</td>
+                                            <td>{{item.mrportion}}</td>
+                                            <td>
+                                                <div [ngSwitch]="item.status">
+                                                    <div *ngSwitchCase="'partial'">
+                                                        <div class="badge badge-label-danger">Partial</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'dispatched'">
+                                                        <div class="badge badge-label-pending">Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'notdispatched'">
+                                                        <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchDefault>
+                                                        <div class="badge badge-label-finished">Complete</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>{{item.type}}</td>
+                                            <td>{{item.mru}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.dispatch}}</td>
+                                            <td>{{item.complete}}</td>
+                                            <td>{{item.startdt | date : 'dd MMM yy'}}</td>
+                                            <td>{{item.enddt | date : 'dd MMM yy'}}</td>
+
+                                            <td class="action-col">
+                                                <span class="show">
+                                                    <ul class="list-group list-group-horizontal action-list">
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal"
+                                                        data-target="#validationViewModal">
+                                                            <i class="icons8 icons8-eye"></i>
+                                                        </li>
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip"  placement="top" ngbTooltip="Revisit" [openDelay]="300" data-toggle="modal" data-target="#validationViewModal"
+                                                            [closeDelay]="500">
+                                                            <fa-icon [icon]="faRedoAlt"></fa-icon>
+                                                        </li>
+                                                    </ul>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="bill-distribution" role="tabpanel"
+                    aria-labelledby="bill-distribution-tab">
+                    <div class="row dash-wrap">
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions"
+                                        [datasets]="doughnutChartData" [labels]="doughnutChartLabels"
+                                        [chartType]="doughnutChartType"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions2"
+                                        [datasets]="doughnutChartData2" [labels]="doughnutChartLabels2"
+                                        [chartType]="doughnutChartType2"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr1">
+                                            <p class="p">Total Count</p>
+                                            <h4 class="ttl">500</h4>
+                                        </li>
+                                        <li class="list-group-item colr2">
+                                            <p class="p">Total Distribution</p>
+                                            <h4 class="ttl">100</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                                        [chartType]="doughnutChartType3"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                                        [chartType]="doughnutChartType4"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr3">
+                                            <p class="p">Spot Bill</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr4">
+                                            <p class="p">Normal Bill</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions5"
+                                        [datasets]="doughnutChartData5" [labels]="doughnutChartLabels5"
+                                        [chartType]="doughnutChartType5"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions6"
+                                        [datasets]="doughnutChartData6" [labels]="doughnutChartLabels6"
+                                        [chartType]="doughnutChartType6"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr5">
+                                            <p class="p">Spot Deliver</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr6">
+                                            <p class="p">Normal Deliver</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                            <div class="sm-dash sm-chart media">
+                                <div class="chart-wrap align-self-center">
+                                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                                        [chartType]="doughnutChartType3"></canvas>
+                                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                                        [chartType]="doughnutChartType4"></canvas>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item colr3">
+                                            <p class="p">Pending</p>
+                                            <h4 class="ttl">57</h4>
+                                        </li>
+                                        <li class="list-group-item colr4">
+                                            <p class="p">Undeliver</p>
+                                            <h4 class="ttl">10</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <form class="pr-search-form d-inline-block">
+                                <span class="s-icon"></span>
+                                <input class="form-control pr-table-search" type="search"
+                                    placeholder="Search by Cycle Name, Type" aria-label="Search">
+                            </form>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <label class="p p-13 mr-3">Records</label>
+                            <ng-select class="filter-select record-select" [searchable]="false" [clearable]=false
+                                appendTo="body" [items]="pagination" bindLabel="name" placeholder="30" [(ngModel)]="selectedPagination" name="name">
+                            </ng-select>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                data-target="#filterCollapse" aria-expanded="false"
+                                aria-controls="filterCollapse"><span>2</span>Filter</button>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <div class="dropdown tool-dropdown">
+                                <button class="btn btn-outline-light3 st dropdown-toggle" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Tools
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item active" >
+                                        <i class="icons8 icons8-print-2"></i>Print
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-pdf"></i>PDF
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-brief"></i>Excel
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-document"></i>CSV
+                                      </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="btn btn-secondary st" role="button" data-toggle="modal"
+                                data-target="#validationAddModal">
+                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="filters-wrap">
+                                <div class="collapse" id="filterCollapse">
+                                    <div class="filter-wrap-inner">
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <ul class="list-group list-group-horizontal">
+                                            <li class="list-group-item">
+                                                <label>Utility</label>
+                                                <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility" [(ngModel)]="selectedUtility"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Month</label>
+                                              <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          <li class="list-group-item">
+                                            <label>Cycle</label>
+                                            <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle" [(ngModel)]="selectedCycle"
+                                                name="name">
+                                            </ng-select>
+                                        </li>
+                                        <li class="list-group-item">
+                                          <label>Area</label>
+                                          <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Area</label>
+                                        <ng-select class="filter-select" [items]="subarea" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedAreasub"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                            <li class="list-group-item">
+                                                <label>Status</label>
+                                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Schedule Type</label>
+                                              <ng-select class="filter-select" [items]="stype" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedstype"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          
+                                        <li class="list-group-item">
+                                          <label>Category</label>
+                                          <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedcategory"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Category</label>
+                                        <ng-select class="filter-select" [items]="subcategory1" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedsubcategory"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                      <li class="list-group-item">
+                                        <label>Date Range</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bttn-transparent bttn-icon" type="button">
+                                                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                </button>
+                                            </div>
+                                            <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected2" />
+                                        </div>
+                                    </li>
+                                        
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                            <div class="row filter-cta-row">
+                                                <div class="col-auto pr-2">
+                                                  <button class="btn btn-outline-secondary st">Apply</button>
+                                                </div>
+                                                <div class="col-auto pl-2">
+                                                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                data-target="#filterCollapse" aria-expanded="false"
+                                                aria-controls="filterCollapse">Cancel</button>
+                                            </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                        
+                  
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="listview-table-wrap">
+                                <label class="p p-12">Showing Last 6 month records</label>
+
+                                <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span>Month</span></th>
+                                            <th scope="col"><span>Cycle Name</span></th>
+                                            <th scope="col"><span>Status</span></th>
+                                            <th scope="col"><span>Type</span></th>
+                                            <th scope="col"><span>Route</span></th>
+                                            <th scope="col"><span>Consumers</span></th>
+                                            <th scope="col"><span>Reading</span></th>
+                                            <th scope="col"><span>Dispatch</span></th>
+                                            <th scope="col"><span>Complete</span></th>
+                                            <th scope="col"><span>Start Date</span></th>
+                                            <th scope="col"><span>End Date</span></th>
+                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of collection.data">
+
+
+                                            <td>{{item.month}}</td>
+                                            <td>{{item.mrportion}}</td>
+                                            <td>
+                                                <div [ngSwitch]="item.status">
+                                                    <div *ngSwitchCase="'partial'">
+                                                        <div class="badge badge-label-danger">Partial</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'dispatched'">
+                                                        <div class="badge badge-label-pending">Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'notdispatched'">
+                                                        <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchDefault>
+                                                        <div class="badge badge-label-finished">Complete</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>{{item.type}}</td>
+                                            <td>{{item.mru}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.dispatch}}</td>
+                                            <td>{{item.complete}}</td>
+                                            <td>{{item.startdt | date : 'dd MMM yy'}}</td>
+                                            <td>{{item.enddt | date : 'dd MMM yy'}}</td>
+
+                                            <td class="action-col">
+                                                <span class="show">
+                                                    <ul class="list-group list-group-horizontal action-list">
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal"
+                                                        data-target="#validationViewModal">
+                                                            <i class="icons8 icons8-eye"></i>
+                                                        </li>
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip"
+                                                            placement="top" ngbTooltip="Revisit" [openDelay]="300"
+                                                            [closeDelay]="500">
+                                                            <fa-icon [icon]="faRedoAlt"></fa-icon>
+                                                        </li>
+                                                    </ul>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="notice" role="tabpanel" aria-labelledby="notice-tab">
+                    <div class="row dash-wrap">
+                        <div class="col-xl-3 col-4 dash-col">
+                          <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img1.png');">
+                            <p><span class="badge badge-pill badge-label-finished">Total</span></p>
+                            <span class="num h1">57</span>
+                            <span class="p dtl">Notice</span>
+                          </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                          <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+                            <p><span class="badge badge-pill badge-label-finished">Total Distribution</span></p>
+                            <span class="num h1">36</span>
+                            <span class="p dtl">Notice</span>
+                          </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                          <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img3.png');">
+                            <p><span class="badge badge-pill badge-label-pending">Pending</span></p>
+                            <span class="num h1">30</span>
+                            <span class="p dtl">Notice</span>
+                          </div>
+                        </div>
+                        <div class="col-xl-3 col-4 dash-col">
+                          <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img3.png');">
+                            <p><span class="badge badge-pill badge-label-rejected">Not Deliver</span></p>
+                            <span class="num h1">30</span>
+                            <span class="p dtl">Notice</span>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <form class="pr-search-form d-inline-block">
+                                <span class="s-icon"></span>
+                                <input class="form-control pr-table-search" type="search"
+                                    placeholder="Search by Cycle,Name, Type" aria-label="Search">
+                            </form>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <label class="p p-13 mr-3">Records</label>
+                            <ng-select style="display: inline-block;min-width: 80px;" [searchable]="false"
+                                appendTo="body" class="filter-select" [items]="pagination" bindLabel="name"
+                                placeholder="30" [(ngModel)]="selectedPagination" name="name">
+                            </ng-select>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                data-target="#filterCollapse" aria-expanded="false"
+                                aria-controls="filterCollapse"><span>2</span>Filter</button>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <div class="dropdown tool-dropdown">
+                                <button class="btn btn-outline-light3 st dropdown-toggle" type="button"
+                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Tools
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item active" >
+                                        <i class="icons8 icons8-print-2"></i>Print
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-pdf"></i>PDF
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-brief"></i>Excel
+                                      </a>
+                                      <a class="dropdown-item" >
+                                        <i class="icons8 icons8-document"></i>CSV
+                                      </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="btn btn-secondary st" role="button" data-toggle="modal"
+                                data-target="#validationAddModal">
+                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="filters-wrap">
+                                <div class="collapse" id="filterCollapse">
+                                    <div class="filter-wrap-inner">
+                                      <div class="row">
+                                        <div class="col-12">
+                                          <ul class="list-group list-group-horizontal">
+                                            <li class="list-group-item">
+                                                <label>Utility</label>
+                                                <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility" [(ngModel)]="selectedUtility"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Month</label>
+                                              <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          <li class="list-group-item">
+                                            <label>Cycle</label>
+                                            <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle" [(ngModel)]="selectedCycle"
+                                                name="name">
+                                            </ng-select>
+                                        </li>
+                                        <li class="list-group-item">
+                                          <label>Area</label>
+                                          <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Area</label>
+                                        <ng-select class="filter-select" [items]="subarea" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedAreasub"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                            <li class="list-group-item">
+                                                <label>Status</label>
+                                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                                    name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                              <label>Schedule Type</label>
+                                              <ng-select class="filter-select" [items]="stype" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedstype"
+                                                  name="name">
+                                              </ng-select>
+                                          </li>
+                                          
+                                        <li class="list-group-item">
+                                          <label>Category</label>
+                                          <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedcategory"
+                                              name="name">
+                                          </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Sub Category</label>
+                                        <ng-select class="filter-select" [items]="subcategory1" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedsubcategory"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                      <li class="list-group-item">
+                                        <label>Date Range</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bttn-transparent bttn-icon" type="button">
+                                                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                </button>
+                                            </div>
+                                            <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected1" />
+                                        </div>
+                                    </li>
+                                        
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-12">
+                                            <div class="row filter-cta-row">
+                                                <div class="col-auto pr-2">
+                                                  <button class="btn btn-outline-secondary st">Apply</button>
+                                                </div>
+                                                <div class="col-auto pl-2">
+                                                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                data-target="#filterCollapse" aria-expanded="false"
+                                                aria-controls="filterCollapse">Cancel</button>
+                                            </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                        
+                  
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="listview-table-wrap">
+                                <label class="p p-12">Showing Last 6 month records</label>
+
+                                <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><span>Month</span></th>
+                                            <th scope="col"><span>Cycle Name</span></th>
+                                            <th scope="col"><span>Status</span></th>
+                                            <th scope="col"><span>Type</span></th>
+                                            <th scope="col"><span>Route</span></th>
+                                            <th scope="col"><span>Consumers</span></th>
+                                            <th scope="col"><span>Reading</span></th>
+                                            <th scope="col"><span>Dispatch</span></th>
+                                            <th scope="col"><span>Complete</span></th>
+                                            <th scope="col"><span>Start Date</span></th>
+                                            <th scope="col"><span>End Date</span></th>
+                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of collection.data">
+
+
+                                            <td>{{item.month}}</td>
+                                            <td>{{item.mrportion}}</td>
+                                            <td>
+                                                <div [ngSwitch]="item.status">
+                                                    <div *ngSwitchCase="'partial'">
+                                                        <div class="badge badge-label-danger">Partial</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'dispatched'">
+                                                        <div class="badge badge-label-pending">Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchCase="'notdispatched'">
+                                                        <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                                    </div>
+                                                    <div *ngSwitchDefault>
+                                                        <div class="badge badge-label-finished">Complete</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>{{item.type}}</td>
+                                            <td>{{item.mru}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.consumer}}</td>
+                                            <td>{{item.dispatch}}</td>
+                                            <td>{{item.complete}}</td>
+                                            <td>{{item.startdt | date : 'dd MMM yy'}}</td>
+                                            <td>{{item.enddt | date : 'dd MMM yy'}}</td>
+
+                                            <td class="action-col">
+                                                <span class="show">
+                                                    <ul class="list-group list-group-horizontal action-list">
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal"
+                                                        data-target="#validationViewModal">
+                                                            <i class="icons8 icons8-eye"></i>
+                                                        </li>
+                                                        <li class="list-group-item st" tooltipClass="pr-tooltip"
+                                                            placement="top" ngbTooltip="Revisit" [openDelay]="300"
+                                                            [closeDelay]="500">
+                                                            <fa-icon [icon]="faRedoAlt"></fa-icon>
+                                                        </li>
+                                                    </ul>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div>Added Successfully!!</div>
+            </ngb-toast>
+        </div>
+    </div>
+
+</section>
+
+<!-- Validation Add Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="validationAddModal" data-backdrop="false" tabindex="-1" role="dialog"
+        aria-labelledby="validationAddModalLabel">
+        <div class="modal-dialog" role="document" style="min-width:570px;">
+            <div class="modal-content">
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="validationAddModalLabel">Add</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">                                
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="dtls-block">
+                                            <div class="block-body" style="min-height: unset;">
+                                                <div class="custom-control custom-radio pr-custom-radio custom-control-inline mb-0">
+                                                    <input type="radio" id="uploadmru" name="validationradio"
+                                                        class="custom-control-input" checked (change)="uploadmru" #uploadmru>
+                                                    <label class="custom-control-label" for="uploadmru">Upload Route</label>
+                                                </div>
+                                                <div class="custom-control custom-radio pr-custom-radio custom-control-inline mb-0">
+                                                    <input type="radio" id="srchconsumr" name="validationradio"
+                                                        class="custom-control-input" (change)="srchconsumr" #srchconsumr>
+                                                    <label class="custom-control-label" for="srchconsumr">Search
+                                                        Consumer</label>
+                                                </div>
+                                            </div>                                            
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                
+                                
+
+                                <ng-container *ngIf="uploadmru.checked">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Month</label>
+                                            <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                            name="name">
+                                        </ng-select>
+                                        </div>
+                                        <div class="col">
+                                            <label>Cycle</label>
+                                            <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle" [(ngModel)]="selectedCycle"
+                                          name="name">
+                                      </ng-select>
+                                        </div>
+    
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Area</label>
+                                            <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                                        name="name">
+                                    </ng-select>
+                                        </div>
+                                        <div class="col">
+                                            <label>Select Route</label>
+                                            <ng-select [searchable]="false" [clearable]="false" appendTo="body"
+                                                [items]="mru" bindLabel="slmru" placeholder="Select State"
+                                                [(ngModel)]="selectedMru" name="slmru">
+                                            </ng-select>
+                                        </div>
+    
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <label>Upload Route</label>
+                                            <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                                [accept]="'image/*'" (change)="onSelect($event)">
+                                                <div class="upload-inner">
+                                                    <div class="media">
+                                                        <div class="media-body single">
+                                                            <ngx-dropzone-label>
+                                                                <div class="drag-drop">
+                                                                    <img class="st img-fluid"
+                                                                        src="../../assets/images/icons/upload-icon.png"
+                                                                        alt="upload">
+                                                                    <p class="p p-13">Drag & Drop files here</p>
+                                                                    <p class="p p-13 font-weight-normal">Or</p>
+                                                                    <button class="btn bttn-uplaod bttn-txt st">Browse
+                                                                        Files</button>
+                                                                </div>
+                                                            </ngx-dropzone-label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-items">
+                                                <ul class="list-group list-group-horizontal-sm">
+                                                    <ngx-dropzone-image-preview class="list-group-item"
+                                                        ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files"
+                                                        [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                        <ngx-dropzone-label class="p p-12 file-name">{{f.name}}
+                                                        </ngx-dropzone-label>
+                                                    </ngx-dropzone-image-preview>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+
+                                <ng-container *ngIf="srchconsumr.checked">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Month</label>
+                                            <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                            name="name">
+                                        </ng-select>
+                                        </div>    
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-3 mb-1">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" style="border-color: #E1E2E5;" type="search"
+                                                    placeholder="Search Consumer" aria-label="Search">
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="profile-card bg-light-grey st">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-abs st" src="../../assets/images/john-doe.png"
+                                                            alt="img">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5>Rivka Frank </h5>
+                                                        <p class="p">+91 984-637-7849</p>
+                                                        <p class="p eml">rivkafrank@gmail.com</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Normal Reading </label>
+                                            <input type="text" class="form-control" placeholder="Enter Normal Reading" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Status</label>
+                                            <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                                    name="name">
+                                                </ng-select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>Reading Date</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="dd-mm-yyyy"
+                                                    name="dp" [(ngModel)]="model" ngbDatepicker #d1="ngbDatepicker"
+                                                    (click)="d1.toggle()" container="body" value="4-2-2020">
+                                                <div class="input-group-append">
+                                                    <button class="btn bttn-transparent bttn-icon" type="button"
+                                                        (click)="d1.toggle()">
+                                                        <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <label>Upload Photo</label>
+                                            <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                                [accept]="'image/*'" (change)="onSelect($event)">
+                                                <div class="upload-inner">
+                                                    <div class="media">
+                                                        <div class="media-body single">
+                                                            <ngx-dropzone-label>
+                                                                <div class="drag-drop">
+                                                                    <img class="st img-fluid"
+                                                                        src="../../assets/images/icons/upload-icon.png"
+                                                                        alt="upload">
+                                                                    <p class="p p-13">Drag & Drop files here</p>
+                                                                    <p class="p p-13 font-weight-normal">Or</p>
+                                                                    <button class="btn bttn-uplaod bttn-txt st">Browse
+                                                                        Files</button>
+                                                                </div>
+                                                            </ngx-dropzone-label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-items">
+                                                <ul class="list-group list-group-horizontal-sm">
+                                                    <ngx-dropzone-image-preview class="list-group-item"
+                                                        ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files"
+                                                        [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                        <ngx-dropzone-label class="p p-12 file-name">{{f.name}}
+                                                        </ngx-dropzone-label>
+                                                    </ngx-dropzone-image-preview>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+
+                            </div>
+                        </div>
+                    </div>
+                </ngx-simplebar>
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal"
+                                aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st" (click)="showtoast = true">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Validation View Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="validationViewModal" data-backdrop="false" tabindex="-1" role="dialog"
+        aria-labelledby="validationViewModalLabel">
+        <div class="modal-dialog" role="document" style="width: 800px;max-width: unset;">
+            <div class="modal-content">
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="validationViewModalLabel">&nbsp;</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">                                
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="dtls-block">
+                                            <div class="block-body">
+                                                <div class="row">
+                                                <div class="col-6">
+                                                    <h4 >Area : <span class="h4 text-primary">XYZ</span></h4>
+                                                  <div class="badge badge-label-success">Complete</div>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4 text-primary">Sub Area: <span class="h4 text-primary">Old Alwal-30</span></h4>
+                                                    <p class="p p-13 mb-1"><span class="mr-3">Bill Month:</span><span class="text-right text-secondary">202003</span></p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end mt-3">
+                                    <div class="col">
+                                        <form class="pr-search-form d-inline-block">
+                                            <span class="s-icon"></span>
+                                            <input class="form-control pr-table-search" type="search"
+                                                placeholder="Search by Route, Status" aria-label="Search">
+                                        </form>
+                                    </div>
+                                    <div class="col-auto mr-3">
+                                        <div class="dropdown tool-dropdown">
+                                            <button class="btn btn-outline-light3 st dropdown-toggle" type="button"
+                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Tools
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item active" href="#">
+                                                    <fa-icon [icon]="faPrint"></fa-icon>Print
+                                                  </a>
+                                                  <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                                  </a>
+                                                  <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                                  </a>
+                                                  <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                                  </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="listview-table-wrap">
+                                            <label class="p p-12">Showing Last 6 month records</label>
+                                            <table datatable [dtOptions]="dtOptions2" class="pr-datatable pr-datatable-sm table table-hover no-boxshadow no-page-details no-navigation">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="sm-col"><span>Route</span></th>
+                                                        <th scope="col"><span>Consumers</span></th>
+                                                        <th scope="col"><span>Reading</span></th>
+                                                        <th scope="col"><span>Dispatch date</span></th>
+                                                        <th scope="col"><span>Due date</span></th>
+                                                        <th scope="col"><span>Status</span></th>
+                                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let item of collection2.data">
+                                                        <td class="sm-col">0{{item.mru}}</td>
+                                                        <td>{{item.consumer}}</td>
+                                                        <td>{{item.reading}}</td>
+                                                        <td>{{item.disptchdt | date : 'dd MMM yy'}}</td>
+                                                        <td>{{item.duedt | date : 'dd MMM yy'}}</td>
+                                                        <td>
+                                                            <div [ngSwitch]="item.status">
+                                                                <div *ngSwitchCase="'partial'">
+                                                                    <div class="badge badge-label-danger">Partial</div>
+                                                                </div>
+                                                                <div *ngSwitchCase="'dispatched'">
+                                                                    <div class="badge badge-label-pending">Dispatched</div>
+                                                                </div>
+                                                                <div *ngSwitchCase="'notdispatched'">
+                                                                    <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                                                </div>
+                                                                <div *ngSwitchDefault>
+                                                                    <div class="badge badge-label-finished">Complete</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="action-col">
+                                                            <span class="show shown">
+                                                                <ul class="list-group list-group-horizontal action-list">
+                                                                    <li class="list-group-item dashed-br st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Assign" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#dispatchAssignModal">
+                                                                        <div class="assign-dropdown dropleft">
+                                                                            <button type="button" class="btn bttn-transparent bttn-icon bttn-assign" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <i class="icons8 icons8-user"></i>
+                                                                            </button>
+                                                                            <div class="dropdown-menu assign-dropdown-menu">
+                                                                                <div class="assign-dropdown-wrap">
+                                                                                    <div class="row">
+                                                                                        <div class="col-12">
+                                                                                            <form class="pr-search-form">
+                                                                                                <span class="s-icon"></span>
+                                                                                                <input class="form-control pr-table-search w-100" type="search" placeholder="Search"
+                                                                                                    aria-label="Search">
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-12">
+                                                                                            <hr class="hr mt-2">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-12">
+                                                                                            <ul class="list-unstyled assign-col-list">
+                                                                                                <li class="media" role="button" data-toggle="modal" data-target="#validationAssignedModal">
+                                                                                                    <div class="prof-img-blk colr1">
+                                                                                                        Rf<span>3</span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <h6 class="ttl">Rivka Frank </h6>
+                                                                                                        <p class="p p-13">Old Alwal</p>
+                                                                                                    </div>
+                                                                                                    <div class="contc-blk">
+                                                                                                        <p class="p p-13 text-dark">+91 5623568902</p>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="media" role="button" data-toggle="modal" data-target="#validationAssignedModal">
+                                                                                                    <div class="prof-img-blk colr2">
+                                                                                                        Rf<span>4</span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <h6 class="ttl">Rivka Frank </h6>
+                                                                                                        <p class="p p-13">Old Alwal</p>
+                                                                                                    </div>
+                                                                                                    <div class="contc-blk">
+                                                                                                        <p class="p p-13 text-dark">+91 5623568902</p>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="media" role="button" data-toggle="modal" data-target="#validationAssignedModal">
+                                                                                                    <div class="prof-img-blk colr3">
+                                                                                                        Rf<span>5</span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <h6 class="ttl">Rivka Frank </h6>
+                                                                                                        <p class="p p-13">Old Alwal</p>
+                                                                                                    </div>
+                                                                                                    <div class="contc-blk">
+                                                                                                        <p class="p p-13 text-dark">+91 5623568902</p>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="media" role="button" data-toggle="modal" data-target="#validationAssignedModal">
+                                                                                                    <div class="prof-img-blk colr1">
+                                                                                                        Rf<span>2</span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <h6 class="ttl">Rivka Frank </h6>
+                                                                                                        <p class="p p-13">Old Alwal</p>
+                                                                                                    </div>
+                                                                                                    <div class="contc-blk">
+                                                                                                        <p class="p p-13 text-dark">+91 5623568902</p>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="media" role="button" data-toggle="modal" data-target="#validationAssignedModal">
+                                                                                                    <div class="prof-img-blk colr2">
+                                                                                                        Rf<span>3</span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <h6 class="ttl">Rivka Frank </h6>
+                                                                                                        <p class="p p-13">Old Alwal</p>
+                                                                                                    </div>
+                                                                                                    <div class="contc-blk">
+                                                                                                        <p class="p p-13 text-dark">+91 5623568902</p>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>                                                                        
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </ngx-simplebar>
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <label class="p p-12">Showing <b class="fw-500 text-dark">1 to 5 of 40</b> entries (As per filtered)</label>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <div class="dataTables_wrapper">
+                                <div class="dataTables_paginate mt-0">
+                                    <a class="paginate_button previous disabled" tabindex="-1" >Previous</a>
+                                    <span>
+                                        <a class="paginate_button current" tabindex="0">1</a>
+                                        <a class="paginate_button" tabindex="0">2</a>
+                                        <a class="paginate_button" tabindex="0">3</a>
+                                        <a class="paginate_button" tabindex="0">4</a>
+                                        <a class="paginate_button" tabindex="0">5</a>
+                                        <a class="paginate_button" tabindex="0">6</a>
+                                    </span>
+                                    <a class="paginate_button next" tabindex="0" >Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Validation View Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="validationAssignedModal" data-backdrop="false" tabindex="-1" role="dialog"
+        aria-labelledby="validationAssignedModalLabel">
+        <div class="modal-dialog" role="document" style="width: 800px;max-width: unset;">
+            <div class="modal-content">
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="validationAssignedModalLabel">&nbsp;</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">                                
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="dtls-block">
+                                            <div class="block-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h4 class="h4 text-dark d-inline-block mr-3">POR2-GANDHI NAGAR</h4>
+                                                        <span class="badge badge-label-finished">Complete</span>
+                                                        <h6 class="mb-0">Old Alwal-30</h6>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <h6 class="mb-0">Bill Month: <span class="text-primary">SEP</span></h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-end mt-3">
+                                    <div class="col">
+                                        <form class="pr-search-form d-inline-block">
+                                            <span class="s-icon"></span>
+                                            <input class="form-control pr-table-search" type="search"
+                                                placeholder="Search by Cycle Name, Type" aria-label="Search">
+                                        </form>
+                                    </div>
+                                    <div class="col-auto mr-3">
+                                        <div class="dropdown tool-dropdown">
+                                            <button class="btn btn-outline-light3 st dropdown-toggle" type="button"
+                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Tools
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item active" href="#">
+                                                    <fa-icon [icon]="faPrint"></fa-icon>Print
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                    <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="listview-table-wrap">
+                                            <label class="p p-12">Showing Last 6 month records</label>
+                                            <table datatable [dtOptions]="dtOptions2" class="pr-datatable pr-datatable-sm table table-hover no-boxshadow">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="sm-col"><span>Route</span></th>
+                                                        <th scope="col"><span>Consumers</span></th>
+                                                        <th scope="col"><span>Reading</span></th>
+                                                        <th scope="col"><span>Dispatch date</span></th>
+                                                        <th scope="col"><span>Due date</span></th>
+                                                        <th scope="col"><span>Status</span></th>
+                                                        <th scope="col"><span>Assigned To</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let item of collection2.data">
+                                                        <td class="sm-col">0{{item.mru}}</td>
+                                                        <td>{{item.consumer}}</td>
+                                                        <td>{{item.reading}}</td>
+                                                        <td>{{item.disptchdt | date : 'dd MMM yy'}}</td>
+                                                        <td>{{item.duedt | date : 'dd MMM yy'}}</td>
+                                                        <td>
+                                                            <div [ngSwitch]="item.status">
+                                                                <div *ngSwitchCase="'partial'">
+                                                                    <div class="badge badge-label-danger">Partial</div>
+                                                                </div>
+                                                                <div *ngSwitchCase="'dispatched'">
+                                                                    <div class="badge badge-label-pending">Dispatched</div>
+                                                                </div>
+                                                                <div *ngSwitchCase="'notdispatched'">
+                                                                    <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                                                </div>
+                                                                <div *ngSwitchDefault>
+                                                                    <div class="badge badge-label-finished">Complete</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <ul class="list-unstyled assign-col-list p-0 m-auto">
+                                                                <li class="media mb-0 pb-0 border-0" role="button" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Rivka Frank" [openDelay]="300"
+                                                                [closeDelay]="500">
+                                                                    <div class="prof-img-blk colr1">
+                                                                        Rf<span>3</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </ngx-simplebar>
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <label class="p p-12">Showing <b class="fw-500 text-dark">1 to 5 of 40</b> entries (As per filtered)</label>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <div class="dataTables_wrapper">
+                                <div class="dataTables_paginate mt-0">
+                                    <a class="paginate_button previous disabled" tabindex="-1" >Previous</a>
+                                    <span>
+                                        <a class="paginate_button current" tabindex="0">1</a>
+                                        <a class="paginate_button" tabindex="0">2</a>
+                                        <a class="paginate_button" tabindex="0">3</a>
+                                        <a class="paginate_button" tabindex="0">4</a>
+                                        <a class="paginate_button" tabindex="0">5</a>
+                                        <a class="paginate_button" tabindex="0">6</a>
+                                    </span>
+                                    <a class="paginate_button next" tabindex="0" >Next</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

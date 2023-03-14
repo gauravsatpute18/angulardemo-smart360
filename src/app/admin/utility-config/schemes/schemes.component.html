@@ -1,0 +1,213 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/sales-marketing']">Admin</a></li>
+        <li class="breadcrumb-item"><a>Utility</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Schemes</li>
+    </ol>
+    </div>
+    
+    <section class="pr-section registration-sec">
+        <div class="row">
+            <div class="col-8 align-self-start">
+                <div class="col-lt">            
+                    <div class="row">
+                        <!-- <div class="col-12">
+                            <div class="custom-hr-list-wrap">
+                                <ul class="nav list-group list-group-horizontal" id="myTab" role="tablist">
+                                    <li class="nav-item list-group-item active">
+                                        <a class="nav-link active" id="applicnt-dtls-tab" data-toggle="tab" href="#applicnt-dtls" role="tab" aria-controls="applicnt-dtls" aria-selected="true">Applicant Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="applicnt-pay-tab" data-toggle="tab" href="#applicnt-pay" role="tab" aria-controls="applicnt-pay" aria-selected="false">Payments</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="applicnt-addr-tab" data-toggle="tab" href="#applicnt-addr" role="tab" aria-controls="applicnt-addr" aria-selected="false">Address Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="kyc-doc-tab" data-toggle="tab" href="#kyc-doc" role="tab" aria-controls="kyc-doc" aria-selected="false">KYC Documents</a>
+                                    </li>
+                                </ul>
+                            </div>            
+                        </div> -->
+                        <div class="col-12">
+                            <div class="registration-inner inner-wrap tab-content" id="registerTabContent">
+    
+                                    <div class="tab-pane fade show active" id="applicnt-dtls" role="tabpanel" aria-labelledby="applicnt-dtls-tab">
+    
+                                        <div class="row br-btm">
+                                            <div class="col-auto align-self-center">
+                                                <h4 class="h4 ttl">Scheme Details</h4>                                    
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="registration-form inner-form">
+    
+                                                    <div class="row inner-form-wrap">
+                                                        <div class="col-12">
+                                                            <form name="form">
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <label>Scheme Name</label>
+                                                                        <input type="text" #textbox class="form-control" placeholder="Scheme Name" [(ngModel)]="firstName" value="Thomas Shelby" name="textValue" />
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label>Discription</label>
+                                                                        <input type="text" #textbox class="form-control" placeholder="Discription" [(ngModel)]="middleName" value="Thomas Shelby" name="textValue" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <label>Total Amount</label>
+                                                                        <input type="text" class="form-control" placeholder="Total Amount" [(ngModel)]="lastName"/>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label>Charge</label>
+                                                                        <ng-select [items]="charge" bindLabel="name" placeholder="Select Charge"
+                                                                            [(ngModel)]="selectedCharege" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <label>Scheme Type</label>
+                                                                        <ng-select [items]="type" bindLabel="name" placeholder="Select Type"
+                                                                            [(ngModel)]="selectedType" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label>Frequency</label>
+                                                                        <ng-select [items]="Frequency" bindLabel="name" placeholder="Select Frequency"
+                                                                            [(ngModel)]="selectedFrequency" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                   
+                                                                    <div class="col">
+                                                                        <label>Monthly Charge</label>
+                                                                        <input type="text" class="form-control" placeholder="Monthly Charge" />
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label>Validity</label>
+                                                                        <ng-select [items]="validity" bindLabel="name" placeholder="Select Validity"
+                                                                        [(ngModel)]="selectedValidity" name="name">
+                                                                    </ng-select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <label>Validity Month</label>
+                                                                        <input type="text" class="form-control" placeholder="Ownership" value="02" />
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label>Tax</label>
+                                                                        <ng-select [items]="tax" bindLabel="name" placeholder="Select Tax"
+                                                                            [(ngModel)]="selectedTax" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row justify-content-end form-bttn-row br-top">
+                                                        <div class="col-auto">
+                                                            <button class="btn btn-outline-light3 st">Cancel</button>
+                                                        </div>
+                                                        <div class="col-auto pl-1 pr-4">
+                                                            <button class="btn btn-secondary st" id="scheme_submit">Submit</button>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 align-self-start pl-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-rt">
+                            <h4 class="m-ttl">Application Summary</h4>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="right-side-wrap">
+    
+                            <div class="right-side-collapse-wrap">
+                            
+                                <div class="right-side-collapse">
+                            
+                                    <button class="btn bttn-collapse btn-block text-left done" type="button" (click)="applicantDetailsCollapse = !applicantDetailsCollapse"
+                                    [attr.aria-expanded]="!applicantDetailsCollapse" aria-controls="bttn-collapse1">
+                                        Scheme Details
+                                    </button>
+                                    <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse1" [ngbCollapse]="applicantDetailsCollapse">
+                                        <div class="applicant-data">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="p p-13">Scheme Name</p>
+                                                    <h6 class="h6">Scheme 1</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Discription</p>
+                                                    <h6 class="h6">Branch</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Total Amount</p>
+                                                    <h6 class="h6">5000</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Charges</p>
+                                                    <h6 class="h6">xyz</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Scheme Type</p>
+                                                    <h6 class="h6">Type 1</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Frequency</p>
+                                                    <h6 class="h6">Frequency 1</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Monthly Charge</p>
+                                                    <h6 class="h6">200</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Validity</p>
+                                                    <h6 class="h6">2 Month</h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="p p-13">Tax</p>
+                                                    <h6 class="h6">10%</h6>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </ngx-simplebar>
+                            
+                                </div>                          
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ngb-toast *ngIf="showtoast" header="dwd" [delay]="5000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                    <div *ngIf="autohide">New Registration <span class="text-primary">Successfully</span> Created!!</div>
+                </ngb-toast>
+            </div>
+        </div>
+    </section>

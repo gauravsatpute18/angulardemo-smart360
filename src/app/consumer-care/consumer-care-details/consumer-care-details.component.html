@@ -1,0 +1,1114 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/consumer']">Consumer Ops</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Consumer</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" href="/registration">Registration</a>
+        <a class="dropdown-item" href="#">Survey</a>
+        <a class="dropdown-item" href="#">Campgain</a>
+        </div>
+    </div>
+</div>
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/list-view']"></button>
+            <div class="inner-page-title d-inline-block"><h4 class="h4">Consumer details </h4></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="dtls-block">
+                    <div class="block-header">
+                        <div class="row">
+                            <div class="col-6 align-self-center">
+                                <h6 class="h6 text-grey"><span class="flag-green"></span>VIP</h6>
+                            </div>
+                            <div class="col-6 text-right align-self-center">
+                                <p class="p text-primary fw-500">User ID: 00199234</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk">
+                                            <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                          <h5>John Doe</h5>
+                                          <p class="p">+91 9846377849</p>
+                                          <p class="p"><span class="text-grey fw-400">Addhar No:</span> 1234 3425 78</p>
+                                          <div class="badge badge-label-success">Connected</div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="info-block">
+                    <div class="applicant-data">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13">Consumer Category</p>
+                                <h6 class="h6">Industrial</h6>
+                              </div>
+                            <div class="col-6">
+                                <p class="p p-13">Sub Category</p>
+                                <h6 class="h6">Industrial</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Pipeline</p>
+                                <h6 class="h6">xyz</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Monthly Demand</p>
+                                <h6 class="h6">560 Units</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Scheme</p>
+                                <h6 class="h6">90 days free</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Utility</p>
+                                <h6 class="h6">Gas</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Deposit</p>
+                                <h6 class="h6">5000</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Collected</p>
+                                <h6 class="h6">45000</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">MRU</p>
+                                <h6 class="h6">POR3-RAMANAYYA PETA-03</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Cycle</p>
+                                <h6 class="h6">3</h6>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12" >
+                                <div class="title-divider">Meter Details</div>
+                            </div>
+                        </div> 
+
+                        <div class="row ">
+                            <div class="col-6">
+                                <p class="p p-13">Meter No.</p>
+                                <h6 class="h6">17711848</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Meter Digit</p>
+                                <h6 class="h6">8</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Meter Type</p>
+                                <h6 class="h6">Mechanical</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Meter Make</p>
+                                <h6 class="h6">None</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Conversion Date</p>
+                                <h6 class="h6">09Jan2020</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Meter Make</p>
+                                <h6 class="h6">None</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                     
+                </ngx-simplebar>
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-rt inner-wrap py-0">
+                <div class="applicant-block-rt-header">
+                    <div class="row">
+                        <div class="col pr-0 align-self-center">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item">
+                                    Lorem ipsum dolor
+                                </li>
+                                <li class="list-group-item">
+                                    <span>676.0</span>
+                                    <p>Consumption</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>70.00</span>
+                                    <p>Invoice Amount</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>2000</span>
+                                    <p>Current Charges</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>260.00</span>
+                                    <p>Outstanding</p>
+                                </li>
+                                <li><button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#reciptMsg"><fa-icon [icon]="faPlus"></fa-icon>Show</button></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-auto pl-0 align-self-center">
+                            <div class="blk-rt">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <span class="sb-ttl">676.0</span>
+                                        <p>Amount Due before</p>
+                                        <span>08 Mar 2020</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="applicant-block-gen">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="ttl">Quick Menu</h4>
+                        <p class="p sb-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-start applicant-block-gen-wrap">
+
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/view-bill']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Bill</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" role="button" data-toggle="modal" data-target="#payBillModal">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Pay Bill</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/adjust-bill']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Adjust Bill</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/payments']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Payments</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/refund-credit']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Refund/Credit</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" role="button" data-toggle="modal" data-target="#meterChangeModal">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Meter Change</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Change Scheme</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/services']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Services</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/complaint']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Complaints</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" role="button" data-toggle="modal" data-target="#profileChangeModal">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Update Profile</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" role="button" data-toggle="modal" data-target="#uploadKYCModal">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Upload KYC</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="applicant-block-gen-card st" [routerLink]="['/consumerops/consumer/outage']">
+                            <div class="img-blk">
+                                <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                            </div>
+                            <p class="p text-dark fw-500">Outage/Emergency</p>
+                        </div>
+                    </div>
+                    
+                </div>                    
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Upload KYC Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="uploadKYCModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="uploadKYCModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="uploadKYCModalLabel">KYC</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Document Type</label>
+                                    <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="docType" bindLabel="doctp" placeholder="" [(ngModel)]="selectedDocType" name="doctp">
+                                    </ng-select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Select Document</label>
+                                    <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="document" bindLabel="doc" placeholder="" [(ngModel)]="selectedDocument" name="doc">
+                                    </ng-select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <label>DD/Cheque Image</label>
+                                    <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                        [accept]="'image/*'" (change)="onSelect($event)">
+                                        <div class="upload-inner">
+                                            <div class="media">
+                                                <div class="media-body single">
+                                                    <ngx-dropzone-label>
+                                                        <div class="drag-drop">
+                                                            <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                            <p class="p p-13">Drag & Drop files here</p>
+                                                            <p class="p p-13 font-weight-normal">Or</p>
+                                                            <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                        </div>
+                                                    </ngx-dropzone-label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uploaded-items">
+                                        <ul class="list-group list-group-horizontal-sm">
+                                            <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                <ngx-dropzone-label
+                                                    class="p p-12 file-name">{{f.name}}
+                                                </ngx-dropzone-label>
+                                            </ngx-dropzone-image-preview>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>             
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Submit</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Meter Change Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="meterChangeModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="meterChangeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="meterChangeModalLabel">Meter Change</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4 class="h4 text-primary">No: M-112</h4>
+                                                    <p class="p p-13 mr-3"><span class="mr-1">Existing Meter Make</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Existing Meter Digit</p>
+                                                        <h6 class="h6">5678999</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Existing Meter Type</p>
+                                                        <h6 class="h6">Manual</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <form class="pr-search-form d-inline-block">
+                                        <span class="s-icon"></span>
+                                        <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h4 class="h4 text-primary">M-112</h4>
+                                                    <p class="p p-13"><span class="mr-1">Meter Make</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <h4 class="h4 text-primary">M-113</h4>
+                                                    <p class="p p-13"><span class="mr-1">Meter Make</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <h4 class="h4 text-primary">M-1145</h4>
+                                                    <p class="p p-13"><span class="mr-1">Meter Make</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Conversion Date</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Reading</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Remark</label>
+                                    <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                </div>
+                            </div>
+
+                        </div>             
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Change</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Pay Bill Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="payBillModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="payBillModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="payBillModalLabel">Pay Bill</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Bill Id: 56378849</h4>
+                                                    <h6>John Doe</h6>
+                                                    <p class="p p-12 mr-1"><span class="mr-1">CRN:</span><span class="text-right text-dark">0019924356</span></p>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4">$ 36458</h4>
+                                                    <p class="p p-12 mr-1"><span class="mr-3">Due Date</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <p class="p p-13">Bill Month</p>
+                                                        <h6 class="h6">March</h6>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <p class="p p-13">Bill Period</p>
+                                                        <h6 class="h6">27 Nov 2019 to 03 Mar 2020</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Payment Mode</label>
+                                    <form [formGroup]="paymode" novalidate >
+                                        <ng-select [searchable]="false" [clearable]="false" formControlName="paymodetype" appendTo="body" placeholder="Select Type" name="name">
+                                            <ng-option [value]="'cash'">Cash</ng-option>
+                                            <ng-option [value]="'dgtl'">Digital</ng-option>
+                                            <ng-option [value]="'ddchq'">DD/Cheque</ng-option>
+                                        </ng-select>
+                                    </form>
+                                </div>
+                            </div>                 
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'cash'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'dgtl'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Transaction ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'ddchq'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>DD/Cheque ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Bank</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label>DD/Cheque Image</label>
+                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                            <div class="upload-inner">
+                                                <div class="media">
+                                                    <div class="media-body single">
+                                                        <ngx-dropzone-label>
+                                                            <div class="drag-drop">
+                                                                <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                <p class="p p-13">Drag & Drop files here</p>
+                                                                <p class="p p-13 font-weight-normal">Or</p>
+                                                                <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                            </div>
+                                                        </ngx-dropzone-label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uploaded-items">
+                                            <ul class="list-group list-group-horizontal-sm">
+                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label
+                                                        class="p p-12 file-name">{{ f.name }}
+                                                    </ngx-dropzone-label>
+                                                </ngx-dropzone-image-preview>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col" *ngIf="paymode.value.paymodetype === 'ddchq'">
+                        <button class="btn btn-outline-light3 bttn-print st"><i class="icons8 icons8-print-2"></i>Print</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#recieptModal">Submit</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Bill Paid (Reciept Modal) -->
+<div class="pr-modal">
+    <div class="modal right fade" id="recieptModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="recieptModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="recieptModalLabel">Pay Bill</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Bill Id: 56378849</h4>
+                                                    <h6>John Doe</h6>
+                                                    <p class="p p-12 mr-1"><span class="mr-1">CRN:</span><span class="text-right text-dark">0019924356</span></p>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4">$ 36458</h4>
+                                                    <p class="p p-12 mr-1"><span class="mr-3">Due Date</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <p class="p p-13">Bill Month</p>
+                                                        <h6 class="h6">March</h6>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <p class="p p-13">Bill Period</p>
+                                                        <h6 class="h6">27 Nov 2019 to 03 Mar 2020</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="bill-reciept-wrap">
+                                        <div class="img-blk">
+                                            <img src="../../../assets/images/settings-survey.png" alt="img" class="img-fluid st">
+                                        </div>
+                                        <h3 class="ttl">Bill Id: 56378849</h3>
+                                        <p class="p">Your Payment is Accepted </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col text-center">
+                                    <button class="btn btn-secondary bttn-print st"><i class="icons8 icons8-print-2"></i>Print Reciept</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>    
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Profile Change Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="profileChangeModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="profileChangeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="profileChangeModalLabel">Update Profile</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Change Type</label>
+                                    <form [formGroup]="profchangetype" novalidate >
+                                        <ng-select [searchable]="false" [clearable]="false" formControlName="changetype" appendTo="body" placeholder="Select Type" name="name">
+                                            <ng-option [value]="'name'">Name</ng-option>
+                                            <ng-option [value]="'addr'">Address</ng-option>
+                                            <ng-option [value]="'mobno'">Mobile Number</ng-option>
+                                            <ng-option [value]="'emid'">Email ID</ng-option>
+                                            <ng-option [value]="'metno'">Meter Number</ng-option>
+                                            <ng-option [value]="'schm'">Scheme</ng-option>
+                                        </ng-select>
+                                    </form>
+                                </div>
+                            </div>
+                            
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'name'">
+
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p p-13 mt-3 mb-2">Existing Name</p> 
+                                            <p class="p p-13 fw-500 text-dark my-2">John</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Name" value="Rivek" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label>Documents</label>
+                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                            <div class="upload-inner">
+                                                <div class="media">
+                                                    <div class="media-body single">
+                                                        <ngx-dropzone-label>
+                                                            <div class="drag-drop">
+                                                                <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                <p class="p p-13">Drag & Drop files here</p>
+                                                                <p class="p p-13 font-weight-normal">Or</p>
+                                                                <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                            </div>
+                                                        </ngx-dropzone-label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uploaded-items">
+                                            <ul class="list-group list-group-horizontal-sm">
+                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label
+                                                        class="p p-12 file-name">{{ f.name }}
+                                                    </ngx-dropzone-label>
+                                                </ngx-dropzone-image-preview>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+
+                            </ng-container>
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'addr'">
+                                
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p fw-500 text-dark mt-3 mb-1">3964 Small Street</p> 
+                                            <p class="p fw-500 text-dark my-1">New york, 1235 New street AL - 35573</p> 
+                                            <p class="p fw-500 text-dark mt-1 mb-3">USA</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Address Line 1</label>
+                                        <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>State</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="state" bindLabel="state1" placeholder="Select State" [(ngModel)]="selectedState" name="state1">
+                                        </ng-select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>City</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Postal/Zip Code</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Area</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Sub Area</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+
+                            </ng-container>
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'mobno'">
+
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p p-13 mt-3 mb-2">Existing Mobile Number</p> 
+                                            <p class="p p-13 fw-500 text-dark my-2">+91 235681256</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Mobile Number</label>
+                                        <input type="text" class="form-control" placeholder="Mobile No." />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </ng-container>
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'emid'">
+
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p p-13 mt-3 mb-2">Existing Email ID</p> 
+                                            <p class="p p-13 fw-500 text-dark my-2">jhon@12456gmail.com</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Email ID</label>
+                                        <input type="text" class="form-control" placeholder="Mobile No." />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </ng-container>
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'metno'">
+
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p p-13 mt-3 mb-2">Existing Meter Number</p> 
+                                            <p class="p p-13 fw-500 text-dark my-2">M-122</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Meter Number</label>
+                                        <input type="text" class="form-control" placeholder="Mobile No." />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </ng-container>
+
+                            <ng-container *ngIf="profchangetype.value.changetype === 'schm'">
+
+                                <div class="row">
+                                    <div class="col" >
+                                        <div class="title-divider">
+                                            <p class="p p-13 mt-3 mb-2">Existing Scheme</p> 
+                                            <p class="p p-13 fw-500 text-dark my-2">90 Days Free</p> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>New Scheme</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="scheme" bindLabel="schm" placeholder="Select State" [(ngModel)]="selectedScheme" name="schm">
+                                        </ng-select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Mobile No." />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </ng-container>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Change</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- reciptMsg Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="reciptMsg" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="reciptMsgLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="paymentModalLabel">Payment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Bill Id: 56378849</h4>
+                                                    <h6>John Doe</h6>
+                                                    <p class="p p-12 mr-1"><span class="mr-1">CRN:</span><span class="text-right text-dark">0019924356</span></p>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4">$ 36458</h4>
+                                                    <p class="p p-12 mr-1"><span class="mr-3">Due Date</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <p class="p p-13">Bill Month</p>
+                                                        <h6 class="h6">March</h6>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <p class="p p-13">Bill Period</p>
+                                                        <h6 class="h6">27 Nov 2019 to 03 Mar 2020</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>                                        
+
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>  
+        </div>
+      </div>
+    </div>
+</div>

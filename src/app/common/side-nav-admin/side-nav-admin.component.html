@@ -1,0 +1,242 @@
+<div class="pr-side-navbar z-99 pos-rel open-slide">
+    <div class="" data-toggle="buttons">
+        <button class="btn btn-primary bttn-transparent menubttn" (click)="bClickEvent()" [ngClass]="status ? 'open-subm' : 'close-subm'"><span></span></button>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item" placement="right" ngbPopover="Utility Master" triggers="mouseenter:mouseleave" container="body">
+          <a class="nav-link active" type="button" data-toggle="modal" data-target="#masterUtilityModal"><span><i class="icons8 icons8-brief"></i></span> Utility Master</a>
+        </li>
+        <li class="nav-item" placement="right" ngbPopover="System Configuration" triggers="mouseenter:mouseleave" container="body">
+          <a class="nav-link" type="button" data-toggle="modal" data-target="#systemConfigModal"><span><i class="icons8 icons8-todo-list"></i></span> System Configuration</a>
+        </li>
+        <li class="nav-item" placement="right" ngbPopover="Utility Configuration" triggers="mouseenter:mouseleave" container="body">
+          <a class="nav-link" type="button" data-toggle="modal" data-target="#utilityConfigModal"><span><i class="icons8 icons8-user"></i></span>Utility Configuration</a>
+        </li>
+        <li class="nav-item" placement="right" ngbPopover="Integrations" triggers="mouseenter:mouseleave" container="body">
+          <a class="nav-link" type="button" data-toggle="modal" data-target="#utilityIntegrations"><span><i class="icons8 icons8-paycheque"></i></span>Integrations</a>
+        </li>
+        <!-- <li class="nav-item" placement="right" ngbPopover="Integrations" triggers="mouseenter:mouseleave" container="body">
+          <a class="nav-link" [routerLink]="['/']"><span><i class="icons8 icons8-settings"></i></span>Integrations</a>
+        </li> -->
+    </ul>
+</div>
+
+<!-- Utility Modal -->
+<div class="pr-sidebar-modal">
+  <div class="modal left fade" id="masterUtilityModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="masterUtilityModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="masterUtilityModalLabel"> Utility Master</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-image: url('../../../assets/images/sidenav-illustration.png');">
+          <div class="pr-side-inner-navbar">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['admin/master-utility/utilities']" data-dismiss="modal" aria-label="Close">Utility</a>
+                <a class="nav-link" href=""[routerLink]="['/admin/master-utility/plans-old']" data-dismiss="modal" aria-label="Close">Plans</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+</div>
+
+<!-- System Config Modal -->
+<div class="pr-sidebar-modal">
+  <div class="modal left fade" id="systemConfigModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="systemConfigModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="systemConfigModalLabel">System Configuration</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-image: url('../../../assets/images/sidenav-illustration.png');">
+          <div class="pr-side-inner-navbar">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/admin/system-config/labels']" data-dismiss="modal" aria-label="Close">Labels</a>
+                <!-- <a class="nav-link" [routerLink]="['/admin/system-config/state-config']">State Configuration</a> -->
+                <a class="nav-link " [routerLink]="['/admin/system-config/departments']" data-dismiss="modal" aria-label="Close">Departments</a>
+                <a class="nav-link" data-dismiss="modal" aria-label="Close">Documents</a>
+                <a class="nav-link" [routerLink]="['/admin/system-config/time-zone']" data-dismiss="modal" aria-label="Close">Time Zone</a>
+                <a class="nav-link" [routerLink]="['/admin/system-config/notifications']" data-dismiss="modal" aria-label="Close">Notifications</a>
+                <a class="nav-link" [routerLink]="['/admin/system-config/state-config']" data-dismiss="modal" aria-label="Close">State machine</a>
+                <a class="nav-link" [routerLink]="['/admin/system-config/email-config']" data-dismiss="modal" [routerLink]="['/admin/system-config/template-config']" aria-label="Close">Email/SMS Templates</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+</div>
+
+
+<!-- Utility Config Modal -->
+<div class="pr-sidebar-modal">
+  <div class="modal left fade" id="utilityConfigModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="utilityConfigModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="utilityConfigModalLabel">Utility Configuration</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>  
+        <div class="modal-body" style="background-image: url('../../../assets/images/sidenav-illustration.png');">
+          <div class="pr-side-inner-navbar">
+            <ngb-accordion [closeOthers]="true" activeIds="consrvy">
+              <ngb-panel id="consrvy">
+              <ng-template ngbPanelHeader let-opened="opened">
+                <h6  class="modal-title" role="button" [routerLink]="['admin/master-utility/plans']" data-dismiss="modal" aria-label="Close">Configuration</h6>
+              </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+           
+            <!-- <ngb-accordion [closeOthers]="true" activeIds="consrvy">
+              <ngb-panel id="consrvy">
+                  <ng-template ngbPanelHeader let-opened="opened">
+                      <button ngbPanelToggle class="btn btn-link stretched-link st">Basic</button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['admin/utility-config/territory']" data-dismiss="modal" aria-label="Close">Territory</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/num-format']" data-dismiss="modal" aria-label="Close">Num format</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/role']" data-dismiss="modal" aria-label="Close">Role</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/user']" data-dismiss="modal" aria-label="Close">User</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/campaign']" data-dismiss="modal" aria-label="Close">Campaign</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/survey']" data-dismiss="modal" aria-label="Close">Survey</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/registration']" data-dismiss="modal" aria-label="Close">Registration</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/consumer']" data-dismiss="modal" aria-label="Close">Consumers</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/meter-data']" data-dismiss="modal" aria-label="Close">Meter data</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/billing']" data-dismiss="modal" aria-label="Close">Billing</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/payment']" data-dismiss="modal" aria-label="Close">Payments</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/service-request']" data-dismiss="modal" aria-label="Close">Service requests</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/complaint']" data-dismiss="modal" aria-label="Close">Complaints</a>
+                      </li>
+                    </ul>
+                  </ng-template>
+              </ngb-panel>          
+              <ngb-panel id="locnsrvy">
+                  <ng-template ngbPanelHeader>
+                      <button ngbPanelToggle class="btn btn-link stretched-link st">Advanced</button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['admin/utility-config/work-order']" data-dismiss="modal" aria-label="Close">Work orders</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/contract']" data-dismiss="modal" aria-label="Close">Contracts</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/supplier']" data-dismiss="modal" aria-label="Close">Suppliers</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/store']" data-dismiss="modal" aria-label="Close">Store</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/asset']" data-dismiss="modal" aria-label="Close">Asset</a>
+                      </li>
+                    </ul>
+                  </ng-template>
+              </ngb-panel>          
+              <ngb-panel id="conscare">
+                  <ng-template ngbPanelHeader>
+                      <button ngbPanelToggle class="btn btn-link stretched-link st">Enterprise</button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['admin/utility-config/product']" data-dismiss="modal" aria-label="Close">Products</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/service']" data-dismiss="modal" aria-label="Close">Services</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/tender']" data-dismiss="modal" aria-label="Close">Tenders</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/order']" data-dismiss="modal" aria-label="Close">Orders</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/hcm']" data-dismiss="modal" aria-label="Close">HCM</a>
+                        <a class="nav-link" [routerLink]="['admin/utility-config/finance']" data-dismiss="modal" aria-label="Close">Finance</a>
+                      </li>
+                    </ul>
+                  </ng-template>
+              </ngb-panel>
+            </ngb-accordion>        -->
+          </div>
+        </div>
+        <!-- <div class="modal-body">
+          <div class="pr-side-inner-navbar">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/admin/utility-config/terretory']" data-dismiss="modal" aria-label="Close">Territory</a>
+                <a class="nav-link" data-dismiss="modal" aria-label="Close">Num format</a>
+                <a class="nav-link" [routerLink]="['/admin/utility-config/roles']" data-dismiss="modal" aria-label="Close">Roles</a>
+                <a class="nav-link" [routerLink]="['/user']" data-dismiss="modal" aria-label="Close">User</a>
+                <a class="nav-link" [routerLink]="['/campaign']" data-dismiss="modal" aria-label="Close">Campaign</a>
+                <a class="nav-link" [routerLink]="['/survey']" data-dismiss="modal" aria-label="Close">Survey</a>
+                <a class="nav-link" [routerLink]="['/admin/utility-config/registration']" data-dismiss="modal" aria-label="Close">Registration</a>
+                <a class="nav-link" [routerLink]="['/consumerops/consumer']" data-dismiss="modal" aria-label="Close">Consumers</a>
+                <a class="nav-link" [routerLink]="['/consumerops']" data-dismiss="modal" aria-label="Close">Meter Data</a>
+                <a class="nav-link" [routerLink]="['/consumerops']" data-dismiss="modal" aria-label="Close">Billing</a>
+                <a class="nav-link" [routerLink]="['/consumerops']" data-dismiss="modal" aria-label="Close">Payments</a>
+                <a class="nav-link" [routerLink]="['/consumerops']" data-dismiss="modal" aria-label="Close">Services</a>
+                <a class="nav-link" [routerLink]="['/consumerops']" data-dismiss="modal" aria-label="Close">Complaints</a>
+                <a class="nav-link" [routerLink]="['/work-order']" data-dismiss="modal" aria-label="Close">Work Orders</a>
+                <a class="nav-link" [routerLink]="['/contracts']" data-dismiss="modal" aria-label="Close">Contracts</a>
+                <a class="nav-link" [routerLink]="['/supplier']" data-dismiss="modal" aria-label="Close">Suppliers</a>
+                <a class="nav-link" [routerLink]="['/store']" data-dismiss="modal" aria-label="Close">Store</a>
+                <a class="nav-link" [routerLink]="['/network']" data-dismiss="modal" aria-label="Close">Assets</a>
+                <a class="nav-link" [routerLink]="['/product']" data-dismiss="modal" aria-label="Close">Products</a>
+                <a class="nav-link" [routerLink]="['/service']" data-dismiss="modal" aria-label="Close">Services</a>
+                <a class="nav-link" data-dismiss="modal" aria-label="Close">Tenders</a>
+                <a class="nav-link" [routerLink]="['/order']" data-dismiss="modal" aria-label="Close">Orders</a>
+                <a class="nav-link" [routerLink]="['/hcm']" data-dismiss="modal" aria-label="Close">HCM</a>
+                <a class="nav-link" [routerLink]="['/finance']" data-dismiss="modal" aria-label="Close">Finance</a> -->
+
+                <!-- <a class="nav-link" [routerLink]="['admin/utility-config/meter-data']">Meter Data</a>
+                <a class="nav-link" href="/admin/utility-config/service-request">Service Requests</a>
+                <a class="nav-link" href="/admin/utility-config/complaints">Complaints</a>
+                <a class="nav-link" [routerLink]="['/admin/utility-config/schemes']">Schemes</a>
+                <a class="nav-link" href="/admin/utility-config/roles">Roles</a>
+                <a class="nav-link" href="/admin/system-config/assets">Assets</a>
+                <a class="nav-link" href="/admin/system-config/payments">Payments</a>
+                <a class="nav-link" href="/admin/system-config/contracts">Contracts</a>
+                <a class="nav-link" href="/admin/system-config/product-catalogs">Product </a>
+                <a class="nav-link" href="/admin/system-config/service-catalogs">Service</a> -->
+              <!-- </li>
+            </ul>
+          </div>
+        </div> -->
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+  </div>
+
+
+  <!-- Utility Integration-->
+  <div class="pr-sidebar-modal">
+    <div class="modal left fade" id="utilityIntegrations" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="utilityIntegrationsLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="utilityIntegrationsLabel">Integrations</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="background-image: url('../../../assets/images/sidenav-illustration.png');">
+            <div class="pr-side-inner-navbar">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" >Smart Meter/AMR </a>
+                  <a class="nav-link ">BI-Analytics </a>
+                  <a class="nav-link" >SMS </a>
+                  <a class="nav-link" >Email  </a>
+                  <a class="nav-link" >Payment </a>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div><!-- modal -->
+  </div>

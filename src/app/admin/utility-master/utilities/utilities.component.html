@@ -1,0 +1,358 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Admin Onboarding</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <a class="dropdown-item active" href="/admin">Option 1</a>
+            <a class="dropdown-item" href="/admin">Option 2</a>
+            <a class="dropdown-item" href="/admin">Option 3</a>
+        </div>
+    </div>
+</div>
+<section class="pr-section registration-sec">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h4 class="h4">Master Utility</h4>
+            <div class="alerts-wrapper">
+                <div class="alert alert-light alert-dismissible fade show" role="alert">
+                    <div class="media">
+                        <div class="img-blk">
+                            <img class="st img-fluid" src="../../../assets/images/settings-survey.png" alt="img">
+                        </div>
+                        <div class="media-body align-self-center">
+                            <h2 class="h2 ttl">Utilities</h2>
+                            <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem Itaque hic ipse iam pridem est reiectus; Si sapiens, ne tum quidem miser, </p>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col">
+             <form class="pr-search-form d-inline-block">
+                   <span class="s-icon"></span>
+                   <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+             </form>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item active" href="#"><fa-icon [icon]="faPrint"></fa-icon>Print</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFilePdf"></fa-icon>PDF</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileExcel"></fa-icon>Excel</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileCsv"></fa-icon>Csv</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto pl-0">
+            <button class="btn btn-secondary st" (click)="addUtility()"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                  <div class="filter-wrap-inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item">
+                                  <label>Status</label>
+                                  <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status"
+                                    [(ngModel)]="selectedStatus" name="name">
+                                  </ng-select>
+                                </li>
+                                <li class="list-group-item">
+                                  <label>Department</label>
+                                   <ng-select class="filter-select" [items]="department" bindLabel="name" placeholder="Select Department" [(ngModel)]="selectedDepartment"
+                                    name="name">
+                                   </ng-select>
+                                </li>
+                                <li class="list-group-item">
+                                  <label>Role</label>
+                                   <ng-select class="filter-select" [items]="role" bindLabel="name" placeholder="Select Role" [(ngModel)]="selectedRole"
+                                    name="name">
+                                   </ng-select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row filter-cta-row">
+                        <div class="col-auto pr-2">
+                          <button class="btn btn-outline-secondary st">Apply</button>
+                        </div>
+                        <div class="col-auto pl-2">
+                          <button class="btn btn-light2 st">Cancel</button>
+                        </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <div class="admin-utility-card">
+                <div class="utility-card-header">
+                    <div class="logo-blk">
+                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                        <span class="edt"  tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [openDelay]="300" [closeDelay]="500"><i class="icons8 icons8-edit"></i></span>
+                    </div>
+                    <h4 class="ttl">Infra Water Ltd</h4>
+                    <p class="p">BEECHNUT MUD</p>
+                    <p class="p fw-500 text-dark">Water, Gas, Power, lorem</p>                    
+                </div>
+                <div class="utility-card-body">
+                    <hr class="hr dashed-br">
+                    <div class="row">
+                        <div class="col-3">
+                            <p class="p p-13 mb-1">Short Name</p>
+                            <h6 class="h6">BCNM</h6>
+                        </div>
+                        <div class="col-3">
+                            <p class="p p-13 mb-1">City</p>
+                            <h6 class="h6">Houston</h6>
+                        </div>
+                        <div class="col-3">
+                            <p class="p p-13 mb-1">State</p>
+                            <h6 class="h6">Texas</h6>
+                        </div>
+                        <div class="col-3">
+                            <p class="p p-13 mb-1">Country</p>
+                            <h6 class="h6">USA</h6>
+                        </div>
+                    </div>
+                    <hr class="hr dashed-br">
+                    <div class="row justify-content-start">
+                        <div class="col-3">
+                            <p class="p p-13 mb-1">Module</p>
+                            <h6 class="h6">BCNM</h6>
+                        </div>
+                        <div class="col-9">
+                            <p class="p p-13 mb-1">Sub Module</p>
+                            <h6 class="h6 text-truncate">Registration, Consumers...</h6>
+                        </div>
+                    </div>
+                    <hr class="hr dashed-br">
+                    <div class="short-info">
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13">Product</p>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="h6">Gas</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13">Consumer Category</p>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="h6">PNG</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13">Sub Category</p>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="h6">Domestic</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="admin-add-utility-card">
+                <div class="add-utility-card-body">
+                    <button class="btn add-plus-bttn-lg st" role="button" (click)="addUtility()">&times;</button>
+                    <p class="p">Add Master Utility</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Add Utility Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addUtilityModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addUtilityModalLabel">
+      <div class="modal-dialog" role="document" style="min-width:570px;">
+        <div class="modal-content">
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title mb-2" id="addUtilityModalLabel">Add Utility</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="ttl">Utility</h4>
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>Master Utility</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                                <div class="col">
+                                    <label>Utility Name</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>Short Name</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                                <div class="col">
+                                    <label>Utilty Type</label>
+                                    <ng-select [multiple]="true" [items]="utilityType" bindLabel="utype" appendTo="body" placeholder="Utility Type" [(ngModel)]="selectedUtilityType" name="utype">
+                                        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="item-{{index}}" class="custom-control-input" [ngModel]="item$.selected"/>
+                                                <label class="custom-control-label" for="item-{{index}}"></label>
+                                                {{item.utype}}
+                                            </div>
+                                        </ng-template>
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>City </label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                                <div class="col">
+                                    <label>State</label>
+                                    <ng-select class="filter-select" [items]="state" bindLabel="stat" placeholder="Select Status"
+                                        [(ngModel)]="selectedState" name="stat">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>Country</label>
+                                    <ng-select class="filter-select" [items]="country" bindLabel="cntry" placeholder="Select Status"
+                                        [(ngModel)]="selectedCountry" name="cntry">
+                                    </ng-select>
+                                </div>
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="ttl">Module</h4>
+                                </div>
+                            </div>
+                            <div class="form-row mb-2">                                
+                                <div class="col">
+                                    <label>Select Module</label>
+                                    <ng-select class="filter-select" [items]="module" bindLabel="modul" placeholder="Select Module"
+                                        [(ngModel)]="selectedModule" name="modul">
+                                    </ng-select>
+                                </div>
+                                <div class="col">
+                                    <label>Sub Module</label>
+                                    <ng-select [multiple]="true" [items]="subModule" bindLabel="submodul" appendTo="body" placeholder="Sub Module" [(ngModel)]="selectedSubModule" name="submodul">
+                                        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="item-{{index}}" class="custom-control-input" [ngModel]="item$.selected"/>
+                                                <label class="custom-control-label" for="item-{{index}}"></label>
+                                                {{item.submodul}}
+                                            </div>
+                                        </ng-template>
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6 align-self-end">
+                                    <button class="btn bttn-text st mb-1" style="min-width: unset;"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="ttl">Product</h4>
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>Select Product</label>
+                                    <ng-select class="filter-select" [items]="product" bindLabel="prod" placeholder="Select Product"
+                                        [(ngModel)]="selectedProduct" name="prod">
+                                    </ng-select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="ttl">Consumer</h4>
+                                </div>
+                            </div>
+                            <div class="form-row">                                
+                                <div class="col">
+                                    <label>Consumer Category</label>
+                                    <ng-select class="filter-select" [items]="consumerCat" bindLabel="conscat" placeholder="Consumer Category"
+                                        [(ngModel)]="selectedConsumerCat" name="conscat">
+                                    </ng-select>
+                                </div>
+                                <div class="col">
+                                    <label>Sub Category</label>
+                                    <ng-select class="filter-select" [items]="subConsumerCat" bindLabel="subconscat" placeholder="Sub Category"
+                                        [(ngModel)]="selectedSubConsumerCat" name="subconscat">
+                                    </ng-select>
+                                </div>
+                            </div>                            
+                        
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Submit</button>
+                    </div>
+                </div>
+            </div> 
+    
+        </div>
+      </div>
+    </div>
+</div>

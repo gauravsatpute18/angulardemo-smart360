@@ -1,0 +1,749 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+<ol class="breadcrumb">            
+    <li class="breadcrumb-item"><a [routerLink]="['/sales-marketing']">S&amp;M</a></li>
+    <li class="breadcrumb-item"><a [routerLink]="['/registration']">Registration</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Registration Details</li>
+</ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration/add-applicant">Registration</a>
+    <a class="dropdown-item" href="/survey">Survey</a>
+    <a class="dropdown-item" href="/campaign/add-campaign">Campgain</a>
+    </div>
+</div>
+</div>
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/registration']"></button>
+            <div class="inner-page-title d-inline-block"><h4 class="h4">Registration details </h4></div>
+        </div>
+        <div class="col-6">
+            <div class="inner-page-pagination">
+                <nav class="">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="/applicant-details">Previous<button class="btn bttn-prev"><fa-icon [icon]="faChevronLeft"></fa-icon></button></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="/applicant-details"><button class="btn bttn-next"><fa-icon [icon]="faChevronRight"></fa-icon></button>Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-success">Approved</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">ID: 0019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk">
+                                            RF
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                            <span class="edt" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [routerLink]="['/registration/add-applicant']"
+                                            [openDelay]="300" [closeDelay]="500" container="body"><i class="icons8 icons8-edit"></i></span>
+                                            <h5>Rivka Frank</h5>
+                                            <p class="p">Pipeline</p>
+                                            <p class="p">Category 1</p>
+                                            <h6 class="h6 text-grey"><span class="flag-green"></span>VIP</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <div class="applicant-data">
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13 text-truncate">Raised On</p>
+                                <h6 class="h6">09 Jan 2020</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Source</p>
+                                <h6 class="h6">Branch</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Document</p>
+                                <h6 class="h6">Electricity Bill</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">ID Number</p>
+                                <h6 class="h6">1234 6538 6456</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Email</p>
+                                <h6 class="h6">rivkafrank12@gmail.com</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Mobile Number</p>
+                                <h6 class="h6">+91 9849163057</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Plan</p>
+                                <h6 class="h6">February Delight</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Vendor</p>
+                                <h6 class="h6">Venkatesh</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Consumer category</p>
+                                <h6 class="h6">CNG</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Sub-category</p>
+                                <h6 class="h6">Commercial</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Area</p>
+                                <h6 class="h6">Area 1</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Sub Area</p>
+                                <h6 class="h6">Sub Area 1</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Ownership</p>
+                                <h6 class="h6">Self-owned</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Gas Demand</p>
+                                <h6 class="h6">Yes</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-rt inner-wrap">
+
+                <div class="nav-block">
+                    <nav class="inner-form-tabs">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link st active" id="nav-addr-dtls-tab" data-toggle="tab" href="#nav-addr-dtls"
+                                role="tab" aria-controls="nav-addr-dtls" aria-selected="true">Address Detail</a>
+                            <a class="nav-item nav-link st" id="nav-kyc-tab" data-toggle="tab" href="#nav-kyc" role="tab"
+                                aria-controls="nav-kyc" aria-selected="false">KYC</a>
+                            <a class="nav-item nav-link st" id="nav-paymnt-tab" data-toggle="tab" href="#nav-paymnt"
+                                role="tab" aria-controls="nav-paymnt" aria-selected="true">Payment</a>
+                            <a class="nav-item nav-link st" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab"
+                                aria-controls="nav-notes" aria-selected="false">Note</a>
+                            <a class="nav-item nav-link st" id="nav-timeline-tab" data-toggle="tab" href="#nav-timeline" role="tab"
+                                aria-controls="nav-timeline" aria-selected="false">Timeline</a>                            
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="applicant-block-rt-body">
+
+                    <div class="tab-content" >
+                        <div class="tab-pane fade show active" id="nav-addr-dtls" role="tabpanel" aria-labelledby="nav-addr-dtls-tab">
+                            <div class="block-body">
+                                <div class="row">
+                                    <div class="col-4 pr-1">
+                                        <div class="applicant-data">
+                                            <div class="address-blk">
+                                                <button class="btn bttn-sm bttn-white rounded bttn-billing st">Supply Address</button>
+                                                <ul class="list-unstyled address-list">
+                                                    <li>3964 Small Street</li>
+                                                    <li>New york, 1235 New street AL - 35573</li>
+                                                    <li>USA</li>
+                                                </ul>
+                                                <a class="btn bttn-txt text-primary" href="#"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>View on Map</a>                                           
+                                            </div>
+                                            <div class="address-blk">
+                                                <button class="btn bttn-sm bttn-white rounded bttn-billing st">Billing Address</button>
+                                                <ul class="list-unstyled address-list">
+                                                    <li>3964 Small Street</li>
+                                                    <li>New york, 1235 New street AL - 35573</li>
+                                                    <li>USA</li>
+                                                </ul>
+                                                <a class="btn bttn-txt text-primary" href="#"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>View on Map</a>                                           
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="applicant-data">
+                                            <div class="map-wrap">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.3651682590316!2d73.73074071491483!3d19.951139486591934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddecb29e50c0df%3A0x2a54768d77a5bfd3!2sPrismic%20Reflections%C2%AE!5e0!3m2!1sen!2sin!4v1590572082050!5m2!1sen!2sin" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-kyc" role="tabpanel" aria-labelledby="nav-kyc-tab">
+
+                            <div class="applicant-data">
+                                <div class="upload-wrapper">
+                                    <div class="uploaded-items">
+                                        <ul class="list-group list-group-horizontal-sm">
+                                            <li class="list-group-item">
+                                                <div class="thumbnail">
+                                                    <img class="st img-abs" src="../../assets/images/upload1.jpg" alt="img">
+                                                </div>
+                                                <!-- <span class="btn bttn-remove">x</span> -->
+                                                <p class="p p-12 file-name">Personal Details</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="thumbnail">
+                                                    <img class="st img-abs" src="../../assets/images/upload2.jpg" alt="img">
+                                                </div>
+                                                <!-- <span class="btn bttn-remove">x</span> -->
+                                                <p class="p p-12 file-name">Personal Details</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="tab-pane fade" id="nav-paymnt" role="tabpanel" aria-labelledby="nav-paymnt-tab">
+
+                            <div class="block-body">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="applicant-data">
+                                            <div class="paymnt-blk">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="paymnt-list type-1">
+                                                            <ul class="list-group list-group-horizontal justify-content-start">
+                                                                <li class="list-group-item">
+                                                                    <p class="p text-primary">February Delight</p>
+                                                                    <span>09 Jan 2020</span>                                                                    
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="paymnt-list type-2">
+                                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                                <li class="list-group-item">
+                                                                    <p class="p text-primary"><span class="icon"><img src="../../assets/images/icons/paid-icon.png" alt="img"></span>$ 3000.00</p>
+                                                                    <span>Amount Paid</span>                                                                    
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="paymnt-list type-3">
+                                                            <ul class="list-group list-group-horizontal justify-content-start">
+                                                                <li class="list-group-item">
+                                                                    <p class="p">Online</p>
+                                                                    <span>Payment Mode</span>                                                                    
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <p class="p">UPI</p>
+                                                                    <span>Cannel</span>                                                                    
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <p class="p">PUNB0035600</p>
+                                                                    <span>Transaction Number</span>                                                                    
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="paymnt-list type-4">
+                                                            <h4 class="h4 ttl">Payment Type</h4>
+                                                            <ul class="list-group list-group-horizontal justify-content-start">
+                                                                <li class="list-group-item">
+                                                                    <p class="p">Deposite</p>                                                                
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <p class="p">$ 1500.00</p>                                                                 
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="list-group list-group-horizontal justify-content-start">
+                                                                <li class="list-group-item">
+                                                                    <p class="p">Rental</p>                                                                
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <p class="p">$ 1500.00</p>                                                                 
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="list-group list-group-horizontal justify-content-start">
+                                                                <li class="list-group-item">
+                                                                    <p class="p">Processing fee</p>                                                                
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <p class="p">$ 1500.00</p>                                                                 
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+                            <div class="block-body inner-form">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="applicant-data">
+
+                                            <div class="row justify-content-end">
+                                                <div class="col-auto pl-0">
+                                                    <button class="btn btn-secondary st" (click)="toggle()"><fa-icon [icon]="faPlus"></fa-icon>Add Note</button>
+                                                </div>
+                                            </div>                                            
+                                            
+                                            <div class="row">
+                                                <div class="col-12">
+
+                                                    <ng-container *ngIf="show">
+                                                        <div class="add-notes-wrap">
+                                                            <p class="p p-13">Notes</p>
+                                                            <div class="add-notes-card">
+                                                                <div class="txt-area">
+                                                                    <textarea class="form-control add-notes-textarea" name="" rows="10" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ait enim se, si uratur, Quam hoc suave! dicturum. Vitiosum est enim in dividendo partem in genere numerare. Summus">
+                                                                    </textarea>
+                                                                </div>
+                                                                <div class="body">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <div class="color-radio-wrap">
+                                                                                <div class="btn-group" data-toggle="buttons">
+                                                                                    <label class="btn colr1 color-radio-btn radio-btn-round active">
+                                                                                        <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                        <span class="tick st"></span>
+                                                                                    </label>                                                                        
+                                                                                    <label class="btn colr2 color-radio-btn radio-btn-round">
+                                                                                        <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                            <span class="tick st"></span>
+                                                                                    </label>                                                                        
+                                                                                    <label class="btn colr3 color-radio-btn radio-btn-round">
+                                                                                        <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                        <span class="tick st"></span>
+                                                                                    </label>                                                                        
+                                                                                    <label class="btn colr4 color-radio-btn radio-btn-round">
+                                                                                        <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                        <span class="tick st"></span>
+                                                                                    </label>                                                                                
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-auto pl-1">
+                                                                            <button class="btn btn-outline-light3 st" (click)="toggle()">Cancel</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-1">
+                                                                            <button class="btn btn-secondary st" (click)="toggle()">Add Note</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-container>
+        
+                                                    <ng-container *ngIf="!show">
+                                                        <div class="notes-card-wrap">
+                                                            <ul class="list-group list-group-horizontal notes-card-list">
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr1">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item st">
+                                                                                        <div class="color-radio-wrap">
+                                                                                            <div class="btn-group" data-toggle="buttons">
+                                                                                                <label class="btn colr1 color-radio-btn radio-btn-square active">
+                                                                                                    <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr2 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr3 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr4 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                      
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                    <a class="dropdown-item st"><span class="cta" (click)="toggle()">Edit Note</span></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr2">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#">
+                                                                                        <div class="color-radio-wrap">
+                                                                                            <div class="btn-group" data-toggle="buttons">
+                                                                                                <label class="btn colr1 color-radio-btn radio-btn-square active">
+                                                                                                    <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr2 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr3 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                        
+                                                                                                <label class="btn colr4 color-radio-btn radio-btn-square">
+                                                                                                    <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                                    <span class="tick st"></span>
+                                                                                                </label>                                                                      
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr3">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr4">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr3">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr4">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="list-group-item">
+                                                                    <div class="notes-card colr3">
+                                                                        <div class="header">
+                                                                            <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                            <div class="dropdown dot-option-dropdown">
+                                                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <a class="dropdown-item" href="#"></a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button class="close">&times;</button>
+                                                                        </div>
+                                                                        <div class="body">
+                                                                            <h5 class="ttl">Payment Cash</h5>
+                                                                            <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                            <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                            </ul>
+                                                                            <div class="user-blk media">
+                                                                                <div class="img-blk">
+                                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <span class="p nm">John Doe</span>
+                                                                                    <span class="p dt">09 Jan 2020</span>
+                                                                                </div>                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                
+                                                            </ul>
+                                                        </div>  
+                                                    </ng-container>                                                                                                      
+
+                                                </div> 
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="tab-pane fade" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+
+                            <div class="block-body">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="applicant-data">
+                                            <div class="timeline-wrap">
+
+                                                <div class="media timeline-blk">
+                                                    <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 18</button>
+                                                    <div class="media-body">
+                                                        <h4 class="ttl">Registration Approve</h4>
+                                                        <p class="p p-12 time">3:34pm</p>
+                                                        <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="media timeline-blk">
+                                                    <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 20</button>
+                                                    <div class="media-body">
+                                                        <h4 class="ttl">Registration Hold</h4>
+                                                        <p class="p p-12 time">3:34pm</p>
+                                                        <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="media timeline-blk">
+                                                    <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 21</button>
+                                                    <div class="media-body">
+                                                        <h4 class="ttl">Registration Rejected</h4>
+                                                        <p class="p p-12 time">3:34pm</p>
+                                                        <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="media timeline-blk">
+                                                    <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 22</button>
+                                                    <div class="media-body">
+                                                        <h4 class="ttl">Registration Rejected</h4>
+                                                        <p class="p p-12 time">3:34pm</p>
+                                                        <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="media timeline-blk">
+                                                    <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 22</button>
+                                                    <div class="media-body">
+                                                        <h4 class="ttl">Registration Approve</h4>
+                                                        <p class="p p-12 time">3:34pm</p>
+                                                        <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col">
+            <button class="btn btn-outline-light3 bttn-print st"><fa-icon [icon]="faPrint"></fa-icon>Print</button>
+        </div>
+        <div class="col-auto pl-1">
+            <button class="btn btn-outline-light3 st">Reject</button>
+        </div>
+        <div class="col-auto pl-1">
+            <button class="btn btn-outline-light3 st">Hold</button>
+        </div>
+        <div class="col-auto pl-1">
+            <button class="btn btn-outline-light3 st">Revisit</button>
+        </div>
+        <div class="col-auto pl-1">
+            <button class="btn btn-secondary st">Approve</button>
+        </div>
+    </div>
+</section>
+
+

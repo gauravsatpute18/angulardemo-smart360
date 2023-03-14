@@ -1,0 +1,1514 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/sales-marketing">S&M</a></li>
+        <li class="breadcrumb-item"><a routerLink="/user">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add User</li>
+    </ol>
+</div>
+
+<section class="pr-section add-user-sec">
+    <div class="row">
+        <div class="col-auto pr-0 h100">
+            <div class="cust-form-col-lt" style="width: 360px;">
+
+                <div class="row h-100">
+                    <div class="col-12">
+                        <div class="custom-hr-list-wrap">
+                            <ul class="nav list-group" id="myTab" role="tablist">
+                                <li class="nav-item list-group-item active">
+                                    <a class="nav-link active" id="user-dtls-tab" data-toggle="tab" href="#user-dtls"
+                                        role="tab" aria-controls="user-dtls" aria-selected="true">User Details</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="user-bank-tab" data-toggle="tab" href="#user-bank"
+                                        role="tab" aria-controls="user-bank" aria-selected="false">Bank Details</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="user-docs-tab" data-toggle="tab" href="#user-docs"
+                                        role="tab" aria-controls="user-docs" aria-selected="false">Document</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="user-privillages-tab" data-toggle="tab"
+                                        href="#user-privillages" role="tab" aria-controls="user-privillages"
+                                        aria-selected="false">Privilages</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="user-rvw-sbmt-tab" data-toggle="tab" href="#user-rvw-sbmt" role="tab" aria-controls="user-rvw-sbmt" aria-selected="false">Review &amp; Submit</a>
+                                </li>
+                            </ul>
+                        </div>            
+                    </div>
+                </div>
+
+            </div>
+        </div>   
+        <div class="col pl-0">
+            <div class="cust-form-col-rt">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="registration-inner inner-wrap tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="user-dtls" role="tabpanel"
+                            aria-labelledby="user-dtls-tab">
+                            <div class="row br-btm">
+                                <div class="col-auto align-self-center">
+                                    <h4 class="h4 ttl">User Details</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="registration-form inner-form">
+    
+                                        <div class="row inner-form-wrap">
+                                            <div class="col-12">
+                                                <form name="form">
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>First Name</label>
+                                                            <input type="text" class="form-control"
+                                                             value=""
+                                                                name="ufirstName" placeholder="First Name" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Middle Name</label>
+                                                            <input type="text" class="form-control"
+                                                                value=""
+                                                                name="uMiddleName" placeholder="Middle Name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>Last Name</label>
+                                                            <input type="text" class="form-control"
+                                                             value=""
+                                                                name="uLastName" placeholder="Last Name" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Contact</label>
+                                                            <input type="text" class="form-control"
+                                                             value=""
+                                                                name="uContact" placeholder="Contact No" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>Email ID</label>
+                                                            <input type="text" class="form-control"
+                                                                 placeholder="Email ID"
+                                                                value="" name="uemail" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Address</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Address" value=""
+                                                                name="textValue" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>City</label>
+                                                            <ng-select [items]="city" bindLabel="name"
+                                                                placeholder="Select City" bindValue="name"
+                                                                [(ngModel)]="selectedCity" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Select Skills</label>
+                                                            <ng-select [items]="skills" bindLabel="name"
+                                                                placeholder="Select Skills" bindValue="name"
+                                                                [(ngModel)]="selectedSkills" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+    
+                                                        <div class="col-6">
+                                                            <label>Select Area</label>
+                                                            <ng-select [items]="area" bindLabel="name"
+                                                                placeholder="Select Area" bindValue="name"
+                                                                [(ngModel)]="selectedArea" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center form-bttn-row br-top">
+                                            <div class="col-auto">
+                                                <button class="btn btn-outline-light st">Cancel</button>
+                                            </div>
+                                            <div class="col-auto pl-1 pr-4">
+                                                <button class="btn btn-secondary st"
+                                                    id="proceed_user_bank">Proceed</button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="user-bank" role="tabpanel" aria-labelledby="user-bank-tab">
+                            <div class="row br-btm">
+                                <div class="col-auto align-self-center">
+                                    <h4 class="h4 ttl">Bank Details</h4>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="registration-form inner-form">
+    
+                                        <div class="row inner-form-wrap">
+                                            <div class="col-12">
+                                                <form name="form">
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>Bank Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Bank Name" [(ngModel)]="bankName"
+                                                                value="Thomas Shelby" name="textValue" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Account No</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Account No" [(ngModel)]="accountNo"
+                                                                value="Thomas Shelby" name="textValue" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <label>IFSC Code</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="IFSC Code" [(ngModel)]="ifscCode"
+                                                                value="Thomas Shelby" name="textValue" />
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>PAN No</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="PAN No" [(ngModel)]="panNo"
+                                                                value="Thomas Shelby" name="textValue" />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center form-bttn-row br-top">
+                                            <div class="col-auto">
+                                                <button class="btn btn-outline-light st">Cancel</button>
+                                            </div>
+                                            <div class="col-auto pl-1 pr-4">
+                                                <button class="btn btn-secondary st"
+                                                    id="proceed_user_docs">Proceed</button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+
+                        <div class="tab-pane fade" id="user-docs" role="tabpanel" aria-labelledby="user-docs-tab">
+                            <div class="row br-btm">
+                                <div class="col-auto align-self-center">
+                                    <h4 class="h4 ttl">Documents</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="registration-form inner-form">
+    
+                                        <div class="row inner-form-wrap">
+                                            <div class="col-12">
+                                                <form name="form">
+                                                    <div class="form-row">
+                                                        <div class="col-4">
+                                                            <label>Document Type</label>
+                                                            <ng-select [items]="documentType" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Document"
+                                                                [(ngModel)]="selectedDocumentType" name="name"
+                                                                bindValue="name">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Document Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Document Name"
+                                                                [(ngModel)]="documentName" value="Thomas Shelby"
+                                                                name="textValue" />
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Document Number</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Document Number"
+                                                                [(ngModel)]="documentNumber" value="Thomas Shelby"
+                                                                name="textValue" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col-12">
+                                                            <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                                                [accept]="'image/*'" (change)="onSelect($event)">
+                                                                <div class="upload-inner inline">
+                                                                    <div class="media">
+                                                                        <div class="media-body">
+                                                                            <ngx-dropzone-label>
+                                                                                <div class="drag-drop">
+                                                                                    <img class="st img-fluid"
+                                                                                        src="../../assets/images/icons/upload-icon.png"
+                                                                                        alt="upload">
+                                                                                    <p class="p p-13">Drag & Drop
+                                                                                        files here</p>
+                                                                                    <p
+                                                                                        class="p p-13 font-weight-normal">
+                                                                                        Or</p>
+                                                                                    <button
+                                                                                        class="btn bttn-uplaod bttn-txt st">Browse
+                                                                                        Files</button>
+                                                                                </div>
+                                                                            </ngx-dropzone-label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="uploaded-items">
+                                                                <ul class="list-group list-group-horizontal-sm">
+                                                                    <ngx-dropzone-image-preview
+                                                                        class="list-group-item"
+                                                                        ngProjectAs="ngx-dropzone-preview"
+                                                                        *ngFor="let f of files" [file]="f"
+                                                                        [removable]="true" (removed)="onRemove(f)">
+                                                                        <ngx-dropzone-label
+                                                                            class="p p-12 file-name">{{ f.name }}
+                                                                        </ngx-dropzone-label>
+                                                                    </ngx-dropzone-image-preview>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row justify-content-center form-bttn-row br-top">
+                                            <div class="col-auto">
+                                                <button class="btn btn-outline-light st">Cancel</button>
+                                            </div>
+                                            <div class="col-auto pl-1 pr-4">
+                                                <button class="btn btn-secondary st"
+                                                    id="proceed_user_privillages">Proceed</button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="tab-pane fade" id="user-privillages" role="tabpanel"
+                            aria-labelledby="user-privillages-tab">
+                            <div class="row br-btm">
+                                <div class="col-auto align-self-center">
+                                    <h4 class="h4 ttl">Privillages</h4>
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="details-list">
+                                        <ul class="list-group list-group-horizontal justify-content-end">
+                                            <li class="list-group-item"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="registration-form inner-form">
+    
+                                        <div class="row inner-form-wrap">
+                                            <div class="col-12">
+                                                <form name="form">
+    
+                                                    <div class="form-row">
+                                                        <div class="col-4">
+                                                            <label>Select Type</label>
+                                                            <ng-select [items]="type" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Type"
+                                                                [(ngModel)]="selectedType" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Select Sub Type</label>
+                                                            <ng-select [items]="subType" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Sub Type"
+                                                                [(ngModel)]="selectedSubType" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label>Form Factor</label>
+                                                            <ng-select [items]="formFactor" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Form Factor"
+                                                                [(ngModel)]="selectedFormFactor" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <label>Select Role</label>
+                                                            <ng-select [items]="role" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Role"
+                                                                [(ngModel)]="selectedRole" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="form-row">
+                                                        <div class="col-4">
+                                                            <div class="privillages-card st">
+                                                                <div class="media">
+                                                                    <div class="img-blk">
+                                                                        <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                    </div>                                                                        
+                                                                    <div class="media-body">
+                                                                      <h5>CEO</h5>
+                                                                      <p class="p p-13">Sales &amp; Marketing</p>
+                                                                      <button class="btn txt-link txt-link-view">Can View</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="privillages-card st">
+                                                                <div class="media">
+                                                                    <div class="img-blk">
+                                                                        <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                    </div>                                                                        
+                                                                    <div class="media-body">
+                                                                      <h5>CEO</h5>
+                                                                      <p class="p p-13">Sales &amp; Marketing</p>
+                                                                      <button class="btn txt-link txt-link-view">Can View</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="privillages-card st">
+                                                                <div class="media">
+                                                                    <div class="img-blk">
+                                                                        <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                    </div>                                                                        
+                                                                    <div class="media-body">
+                                                                      <h5>CEO</h5>
+                                                                      <p class="p p-13">Sales &amp; Marketing</p>
+                                                                      <button class="btn txt-link txt-link-view">Can View</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="title-divider">Privilages</div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <label>Select Utility</label>
+                                                            <ng-select [items]="utility" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Utility"
+                                                                [(ngModel)]="selectedutility" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label>Select Module</label>
+                                                            <ng-select [items]="module" bindLabel="name"
+                                                                appendTo="body" placeholder="Select Module"
+                                                                [(ngModel)]="selectedmodule" name="name">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="row">
+                                                        <div class="col-6">
+    
+                                                            <div class="utility-card st active fixed-width">
+                                                                <h5 class="ttl">MNGL</h5>
+                                                                <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                                <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.6">
+                                                                    <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+    
+                                                            <div class="utility-card st fixed-width">
+                                                                <h5 class="ttl">MNGL</h5>
+                                                                <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                                <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.6">
+                                                                    <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+    
+                                                            <div class="utility-card st fixed-width">
+                                                                <h5 class="ttl">MNGL</h5>
+                                                                <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                                <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.6">
+                                                                    <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+    
+                                                            <div class="utility-card st fixed-width">
+                                                                <h5 class="ttl">MNGL</h5>
+                                                                <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                                <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g opacity="0.6">
+                                                                    <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+    
+                                                        </div>
+    
+                                                        <div class="col-6">
+    
+                                                            <ngb-accordion [closeOthers]="true" activeIds="sandm">
+                                                                <ngb-panel id="sandm">
+                                                                    <ng-template ngbPanelHeader let-opened="opened">
+                                                                        <button ngbPanelToggle class="btn btn-link stretched-link st">S&amp;M</button>
+                                                                    </ng-template>
+                                                                    <ng-template ngbPanelContent>
+                                                                        <div class="data-block">
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Registration</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Consumer</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select" [searchable]="false" [clearable]="false" [items]="status1" bindLabel="status1" placeholder="Select" [(ngModel)]="selectedStatus1" name="status1" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Campaign</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status2" bindLabel="status2" placeholder="Select" [(ngModel)]="selectedStatus2" name="status2" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Survey</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status3" bindLabel="status3" placeholder="Select" [(ngModel)]="selectedStatus3" name="status3" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">User</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status4" bindLabel="status4" placeholder="Select" [(ngModel)]="selectedStatus4" name="status4" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </ng-template>
+                                                                </ngb-panel>
+                                                            
+                                                                <ngb-panel id="consops">
+                                                                    <ng-template ngbPanelHeader>
+                                                                        <button ngbPanelToggle class="btn btn-link stretched-link st">Consumer Ops</button>
+                                                                    </ng-template>
+                                                                    <ng-template ngbPanelContent>
+                                                                        <div class="data-block">
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Registration</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </ng-template>
+                                                                </ngb-panel>
+                                                            
+                                                                <ngb-panel id="conscare">
+                                                                    <ng-template ngbPanelHeader>
+                                                                        <button ngbPanelToggle class="btn btn-link stretched-link st">Consumer Care</button>
+                                                                    </ng-template>
+                                                                    <ng-template ngbPanelContent>
+                                                                        <div class="data-block">
+                                                                            <div class="row data-row">
+                                                                                <div class="col-6 align-self-center">
+                                                                                    <p class="p p-13">Registration</p>
+                                                                                </div>
+                                                                                <div class="col-6 align-self-center text-right">
+                                                                                    <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                    </ng-select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </ng-template>
+                                                                </ngb-panel>
+                                                            </ngb-accordion>
+    
+                                                        </div>
+                                                    </div>
+                                                    
+    
+                                                </form>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center form-bttn-row br-top">
+                                            <div class="col-auto">
+                                                <button class="btn btn-outline-light st">Cancel</button>
+                                            </div>
+                                            <div class="col-auto pl-1 pr-4">
+                                                <button class="btn btn-secondary st" id="proceed_user_done">Proceed</button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+
+                        <div class="tab-pane fade" id="user-rvw-sbmt" role="tabpanel" aria-labelledby="user-rvw-sbmt-tab">
+
+                            <div class="row br-btm">
+                                <div class="col-auto align-self-center">
+                                    <h4 class="h4 ttl">Review &amp; Submit</h4>                                    
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="details-list">
+                                        <ul class="list-group list-group-horizontal justify-content-end">
+                                            <li class="list-group-item"></li>
+                                        </ul>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="review-submit-wrap">
+
+                                        <div class="review-submit-card">
+                                            <div class="review-submit-card-header">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="ttl">User Details</h6>
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                            <div class="review-submit-card-body">
+                                                <div class="applicant-data">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <p class="p p-13">First Name</p>
+                                                            <h6 class="h6">John</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Last Name</p>
+                                                            <h6 class="h6">Doe</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Contact</p>
+                                                            <h6 class="h6">201-285-6456</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Email ID</p>
+                                                            <h6 class="h6">jhon@125gmail.com</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Address</p>
+                                                            <h6 class="h6">3964  Small Street New york, 1235 New street</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">City</p>
+                                                            <h6 class="h6">Boston</h6>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                        </div>
+
+                                        <div class="review-submit-card">
+                                            <div class="review-submit-card-header">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="ttl">Bank Details</h6>
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                            <div class="review-submit-card-body">
+                                                <div class="applicant-data">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Bank Name</p>
+                                                            <h6 class="h6">Axis Bank</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Account No</p>
+                                                            <h6 class="h6">4544654544556</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">IFSC Code</p>
+                                                            <h6 class="h6">IFDG4552214</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">PAN No</p>
+                                                            <h6 class="h6">PD45515544GG</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="review-submit-card">
+                                            <div class="review-submit-card-header">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="ttl">Documents</h6>
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                            <div class="review-submit-card-body">
+                                                <div class="applicant-data">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Document Type</p>
+                                                            <h6 class="h6">Address Details</h6>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <p class="p p-13">Document Name</p>
+                                                            <h6 class="h6">Electricity Bill</h6>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <p class="p p-13">Document</p>
+                                                            <h6 class="h6"><span class="pdf-red"></span>Electricity.Pdf</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="review-submit-card">
+                                            <div class="review-submit-card-header">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="ttl">Privilages</h6>
+                                                    </div>
+                                                </div>                                                    
+                                            </div>
+                                        <div class="review-submit-card-body">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <p class="p p-13"> Type</p>
+                                                        <h6 class="h6">Type 1</h6>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <p class="p p-13">Sub Type</p>
+                                                        <h6 class="h6">Sub Type 1</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Role</p>
+                                                        <h6 class="h6">Vendor</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center form-bttn-row">
+                                <div class="col-auto">
+                                    <button class="btn btn-outline-light3 st">Cancel</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-secondary st" id="user-priview" (click)="showtoast = true">Submit</button>
+                                </div>
+                            </div>                              
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div>New User Successfully Created!!</div>
+            </ngb-toast>
+        </div>
+    </div>
+</section>
+
+
+<!-- <div class="col-8 align-self-start">
+    <div class="col-lt">
+        <div class="row">
+            <div class="col-12">
+                <div class="custom-hr-list-wrap">
+                    <ul class="nav list-group list-group-horizontal" id="myTab" role="tablist">
+                        <li class="nav-item list-group-item active">
+                            <a class="nav-link active" id="user-dtls-tab" data-toggle="tab" href="#user-dtls"
+                                role="tab" aria-controls="user-dtls" aria-selected="true">User Details</a>
+                        </li>
+                        <li class="nav-item list-group-item">
+                            <a class="nav-link" id="user-bank-tab" data-toggle="tab" href="#user-bank"
+                                role="tab" aria-controls="user-bank" aria-selected="false">Bank Details</a>
+                        </li>
+                        <li class="nav-item list-group-item">
+                            <a class="nav-link" id="user-docs-tab" data-toggle="tab" href="#user-docs"
+                                role="tab" aria-controls="user-docs" aria-selected="false">Document</a>
+                        </li>
+                        <li class="nav-item list-group-item">
+                            <a class="nav-link" id="user-privillages-tab" data-toggle="tab"
+                                href="#user-privillages" role="tab" aria-controls="user-privillages"
+                                aria-selected="false">Privilages</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="registration-inner inner-wrap tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="user-dtls" role="tabpanel"
+                        aria-labelledby="user-dtls-tab">
+                        <div class="row br-btm">
+                            <div class="col-auto align-self-center">
+                                <h4 class="h4 ttl">User Details</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="registration-form inner-form">
+
+                                    <div class="row inner-form-wrap">
+                                        <div class="col-12">
+                                            <form name="form">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>First Name</label>
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="ufirstName" value="Thomas Shelby"
+                                                            name="ufirstName" placeholder="User First Name" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Middle Name</label>
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="uMiddleName" value="Thomas Shelby"
+                                                            name="uMiddleName" placeholder="User Middle Name" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>Last Name</label>
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="uLastName" value="Thomas Shelby"
+                                                            name="uLastName" placeholder="User Last Name" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Contact</label>
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="uContact" value="Thomas Shelby"
+                                                            name="uContact" placeholder="Contact No" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>Email ID</label>
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="uemail" placeholder="Email ID"
+                                                            value="Thomas@gmail.com" name="uemail" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Address</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name" value="Thomas Shelby"
+                                                            name="textValue" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>City</label>
+                                                        <ng-select [items]="city" bindLabel="name"
+                                                            placeholder="Select City" bindValue="name"
+                                                            [(ngModel)]="selectedCity" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Select Skills</label>
+                                                        <ng-select [items]="skills" bindLabel="name"
+                                                            placeholder="Select Skills" bindValue="name"
+                                                            [(ngModel)]="selectedSkills" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+
+                                                    <div class="col-6">
+                                                        <label>Select Area</label>
+                                                        <ng-select [items]="area" bindLabel="name"
+                                                            placeholder="Select Area" bindValue="name"
+                                                            [(ngModel)]="selectedArea" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-end form-bttn-row br-top">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto pl-1 pr-4">
+                                            <button class="btn btn-secondary st"
+                                                id="proceed_user_bank">Proceed</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="user-bank" role="tabpanel" aria-labelledby="user-bank-tab">
+                        <div class="row br-btm">
+                            <div class="col-auto align-self-center">
+                                <h4 class="h4 ttl">Bank Details</h4>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="registration-form inner-form">
+
+                                    <div class="row inner-form-wrap">
+                                        <div class="col-12">
+                                            <form name="form">
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>Bank Name</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name" [(ngModel)]="bankName"
+                                                            value="Thomas Shelby" name="textValue" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Account No</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name" [(ngModel)]="accountNo"
+                                                            value="Thomas Shelby" name="textValue" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label>IFSC Code</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name" [(ngModel)]="ifscCode"
+                                                            value="Thomas Shelby" name="textValue" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>PAN No</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name" [(ngModel)]="panNo"
+                                                            value="Thomas Shelby" name="textValue" />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-end form-bttn-row br-top">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto pl-1 pr-4">
+                                            <button class="btn btn-secondary st"
+                                                id="proceed_user_docs">Proceed</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="user-docs" role="tabpanel" aria-labelledby="user-docs-tab">
+                        <div class="row br-btm">
+                            <div class="col-auto align-self-center">
+                                <h4 class="h4 ttl">Documents</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="registration-form inner-form">
+
+                                    <div class="row inner-form-wrap">
+                                        <div class="col-12">
+                                            <form name="form">
+                                                <div class="form-row">
+                                                    <div class="col-4">
+                                                        <label>Document Type</label>
+                                                        <ng-select [items]="documentType" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Document"
+                                                            [(ngModel)]="selectedDocumentType" name="name"
+                                                            bindValue="name">
+                                                        </ng-select>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label>Document Name</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name"
+                                                            [(ngModel)]="documentName" value="Thomas Shelby"
+                                                            name="textValue" />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label>Document Number</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Customer Name"
+                                                            [(ngModel)]="documentNumber" value="Thomas Shelby"
+                                                            name="textValue" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-12">
+                                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                                            <div class="upload-inner inline">
+                                                                <div class="media">
+                                                                    <div class="media-body">
+                                                                        <ngx-dropzone-label>
+                                                                            <div class="drag-drop">
+                                                                                <img class="st img-fluid"
+                                                                                    src="../../assets/images/icons/upload-icon.png"
+                                                                                    alt="upload">
+                                                                                <p class="p p-13">Drag & Drop
+                                                                                    files here</p>
+                                                                                <p
+                                                                                    class="p p-13 font-weight-normal">
+                                                                                    Or</p>
+                                                                                <button
+                                                                                    class="btn bttn-uplaod bttn-txt st">Browse
+                                                                                    Files</button>
+                                                                            </div>
+                                                                        </ngx-dropzone-label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="uploaded-items">
+                                                            <ul class="list-group list-group-horizontal-sm">
+                                                                <ngx-dropzone-image-preview
+                                                                    class="list-group-item"
+                                                                    ngProjectAs="ngx-dropzone-preview"
+                                                                    *ngFor="let f of files" [file]="f"
+                                                                    [removable]="true" (removed)="onRemove(f)">
+                                                                    <ngx-dropzone-label
+                                                                        class="p p-12 file-name">{{ f.name }}
+                                                                    </ngx-dropzone-label>
+                                                                </ngx-dropzone-image-preview>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row justify-content-end form-bttn-row br-top">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto pl-1 pr-4">
+                                            <button class="btn btn-secondary st"
+                                                id="proceed_user_privillages">Proceed</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="user-privillages" role="tabpanel"
+                        aria-labelledby="user-privillages-tab">
+                        <div class="row br-btm">
+                            <div class="col-auto align-self-center">
+                                <h4 class="h4 ttl">Privillages</h4>
+                            </div>
+                            <div class="col align-self-center">
+                                <div class="details-list">
+                                    <ul class="list-group list-group-horizontal justify-content-end">
+                                        <li class="list-group-item"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="registration-form inner-form">
+
+                                    <div class="row inner-form-wrap">
+                                        <div class="col-12">
+                                            <form name="form">
+
+                                                <div class="form-row">
+                                                    <div class="col-4">
+                                                        <label>Select Type</label>
+                                                        <ng-select [items]="type" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Type"
+                                                            [(ngModel)]="selectedType" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label>Select Sub Type</label>
+                                                        <ng-select [items]="subType" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Sub Type"
+                                                            [(ngModel)]="selectedSubType" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label>Form Factor</label>
+                                                        <ng-select [items]="formFactor" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Form Factor"
+                                                            [(ngModel)]="selectedFormFactor" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="col-6">
+                                                        <label>Select Role</label>
+                                                        <ng-select [items]="role" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Role"
+                                                            [(ngModel)]="selectedRole" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="col-4">
+                                                        <div class="privillages-card st">
+                                                            <div class="media">
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                </div>                                                                        
+                                                                <div class="media-body">
+                                                                  <h5>CEO</h5>
+                                                                  <p class="p p-13">Sales &amp; Marketing</p>
+                                                                  <button class="btn txt-link txt-link-view">Can View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="privillages-card st">
+                                                            <div class="media">
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                </div>                                                                        
+                                                                <div class="media-body">
+                                                                  <h5>CEO</h5>
+                                                                  <p class="p p-13">Sales &amp; Marketing</p>
+                                                                  <button class="btn txt-link txt-link-view">Can View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="privillages-card st">
+                                                            <div class="media">
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../../assets/images/avatar.png" alt="img">
+                                                                </div>                                                                        
+                                                                <div class="media-body">
+                                                                  <h5>CEO</h5>
+                                                                  <p class="p p-13">Sales &amp; Marketing</p>
+                                                                  <button class="btn txt-link txt-link-view">Can View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="title-divider">Privilages</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="col-6">
+                                                        <label>Select Utility</label>
+                                                        <ng-select [items]="role" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Role"
+                                                            [(ngModel)]="selectedRole" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label>Select Module</label>
+                                                        <ng-select [items]="role" bindLabel="name"
+                                                            appendTo="body" placeholder="Select Role"
+                                                            [(ngModel)]="selectedRole" name="name">
+                                                        </ng-select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-6">
+
+                                                        <div class="utility-card st active fixed-width">
+                                                            <h5 class="ttl">MNGL</h5>
+                                                            <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                            <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.6">
+                                                                <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+
+                                                        <div class="utility-card st fixed-width">
+                                                            <h5 class="ttl">MNGL</h5>
+                                                            <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                            <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.6">
+                                                                <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+
+                                                        <div class="utility-card st fixed-width">
+                                                            <h5 class="ttl">MNGL</h5>
+                                                            <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                            <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.6">
+                                                                <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+
+                                                        <div class="utility-card st fixed-width">
+                                                            <h5 class="ttl">MNGL</h5>
+                                                            <p class="p p-13">Created On<span class="dt">09 Jan 2020</span></p>
+                                                            <svg class="icon st" width="25" height="32" viewBox="0 0 25 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g opacity="0.6">
+                                                                <path d="M13.8879 0.00191313C13.6838 0.012901 13.4871 0.082318 13.3213 0.2019C3.54327 7.4449 0 12.819 0 20.0897C0 22.5264 1.77224 26.6337 3.44416 28.6001C5.11608 30.5665 7.55079 31.9999 10.3993 31.9999C10.6158 32.003 10.8281 31.9401 11.008 31.8196C11.188 31.6991 11.327 31.5267 11.4066 31.3254C11.4861 31.124 11.5026 30.9031 11.4536 30.6922C11.4047 30.4813 11.2927 30.2902 11.1326 30.1445C10.2134 29.2847 9.33267 27.5836 9.33267 25.6003C9.33267 24.176 9.93517 22.5038 11.4437 20.7228C11.5749 21.4206 11.8016 22.0521 12.1103 22.6005C12.7897 23.8076 13.7317 24.6552 14.4879 25.4114C15.2441 26.1676 15.7808 26.8091 15.9545 27.4557C16.1281 28.1023 16.063 28.9275 15.1768 30.3778C15.0781 30.5395 15.0243 30.7246 15.0209 30.914C15.0175 31.1035 15.0646 31.2904 15.1574 31.4555C15.2502 31.6207 15.3853 31.7582 15.5488 31.8539C15.7123 31.9496 15.8984 32 16.0878 31.9999C21.0169 31.9999 24.9761 27.1865 24.9761 21.6894C24.9761 17.82 22.9674 15.3008 20.8431 12.5011C18.7187 9.70149 16.3651 6.49409 14.9879 0.812973C14.9285 0.57041 14.7858 0.356377 14.5848 0.208167C14.3839 0.0599575 14.1372 -0.0130331 13.8879 0.00191313ZM13.4102 2.8684C14.923 7.94044 17.2149 11.234 19.1543 13.7899C21.2964 16.613 22.8429 18.5404 22.8429 21.6894C22.8429 25.3653 20.6163 28.4844 17.8877 29.4889C18.167 28.5482 18.2183 27.6761 18.0099 26.9002C17.6614 25.6026 16.7982 24.7108 15.9989 23.9115C15.1996 23.1122 14.4307 22.3822 13.9657 21.5561C13.5007 20.73 13.2671 19.8166 13.5769 18.3452C13.6223 18.1266 13.5981 17.8992 13.5074 17.6951C13.4168 17.491 13.2645 17.3205 13.0718 17.2076C12.8791 17.0947 12.6559 17.0451 12.4336 17.0658C12.2112 17.0866 12.001 17.1765 11.8325 17.323C8.68076 20.035 7.19948 22.9187 7.19948 25.6003C7.19948 26.9983 7.52523 28.2595 8.03276 29.3556C6.90252 28.9007 5.89093 28.1793 5.07739 27.2224C3.73053 25.6383 2.1332 21.9387 2.1332 20.0897C2.1332 13.634 5.04177 9.44563 13.4102 2.8684Z" fill="#B0B4CD"/>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-6">
+
+                                                        <ngb-accordion [closeOthers]="true" activeIds="sandm">
+                                                            <ngb-panel id="sandm">
+                                                                <ng-template ngbPanelHeader let-opened="opened">
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">S&amp;M</button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    <div class="data-block">
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Registration</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Campaign</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Survey</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">User</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select edit" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="consops">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">Consumer Ops</button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    <div class="data-block">
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Registration</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="conscare">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">Consumer Care</button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    <div class="data-block">
+                                                                        <div class="row data-row">
+                                                                            <div class="col-6 align-self-center">
+                                                                                <p class="p p-13">Registration</p>
+                                                                            </div>
+                                                                            <div class="col-6 align-self-center text-right">
+                                                                                <ng-select class="small-select view" [searchable]="false" [clearable]="false" [items]="status" bindLabel="status" placeholder="Select" [(ngModel)]="selectedStatus" name="status" appendTo="body">
+                                                                                </ng-select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        </ngb-accordion>
+
+                                                    </div>
+                                                </div>
+                                                
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-end form-bttn-row br-top">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto pl-1 pr-4">
+                                            <button class="btn btn-secondary st" id="proceed_user_done" (click)="showtoast = true">Submit</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  -->
+<!-- <div class="col-4 align-self-start pl-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="col-rt">
+                <h4 class="m-ttl">Summary</h4>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="right-side-wrap">
+
+                <div class="right-side-collapse-wrap">
+
+                    <div class="right-side-collapse">
+                        <button class="btn bttn-collapse btn-block text-left" type="button"
+                            (click)="userDetailCollapse = !userDetailCollapse" [attr.aria-expanded]="!userDetailCollapse"
+                            aria-controls="bttn-collapse1">
+                            User Details
+                        </button>
+                        <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse1"
+                            [ngbCollapse]="userDetailCollapse">
+                            <div class="applicant-data">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="p p-13">User Name</p>
+                                        <h6 class="h6">{{ufirstName}} {{uMiddleName}} {{uLastName}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">User ID</p>
+                                        <h6 class="h6">0099243</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Type</p>
+                                        <h6 class="h6">Type A</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Sub Type</p>
+                                        <h6 class="h6">Old Alwal</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Contact No</p>
+                                        <h6 class="h6">{{uContact}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Email</p>
+                                        <h6 class="h6">{{uemail}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">City</p>
+                                        <h6 class="h6">{{selectedCity}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Skill</p>
+                                        <h6 class="h6">{{selectedSkills}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Area</p>
+                                        <h6 class="h6">{{selectedArea}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-simplebar>
+                    </div>
+
+                    <div class="right-side-collapse">
+                        <button class="btn bttn-collapse btn-block text-left" type="button"
+                            (click)="userBankDetailCollapse = !userBankDetailCollapse" [attr.aria-expanded]="!userBankDetailCollapse"
+                            aria-controls="bttn-collapse2">Bank Details
+                        </button>
+                        <div class="collapse" id="bttn-collapse2" [ngbCollapse]="userBankDetailCollapse">
+                            <ngx-simplebar [options]="scrollOptions" class="applicant-data">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="p p-13">Bank Name</p>
+                                        <h6 class="h6">{{bankName}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Account No</p>
+                                        <h6 class="h6">{{accountNo}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">IFSC Code</p>
+                                        <h6 class="h6">{{ifscCode}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">PAN Number</p>
+                                        <h6 class="h6">{{panNo}}</h6>
+                                    </div>
+                                </div>
+                            </ngx-simplebar>
+                        </div>
+                    </div>
+
+                    <div class="right-side-collapse">
+                        <button class="btn bttn-collapse btn-block text-left" type="button"
+                            (click)="userDocsCollapse = !userDocsCollapse" [attr.aria-expanded]="!userDocsCollapse"
+                            aria-controls="bttn-collapse3">Documents
+                        </button>
+                        <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse3" [ngbCollapse]="userDocsCollapse">
+                            <div class="applicant-data">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="p p-13">Document Type</p>
+                                        <h6 class="h6">Address Proof</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document Name</p>
+                                        <h6 class="h6">Electricity Bill</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document No</p>
+                                        <h6 class="h6">2</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document</p>
+                                        <h6 class="h6"><span class="pdf-red"></span>Electricity Bill</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-simplebar>
+                    </div>
+
+                    <div class="right-side-collapse">
+                        <button class="btn bttn-collapse btn-block text-left" type="button"
+                            (click)="userPrivillagesCollapse = !userPrivillagesCollapse" [attr.aria-expanded]="!userPrivillagesCollapse"
+                            aria-controls="bttn-collapse2">Privillages
+                        </button>
+                        <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse4" [ngbCollapse]="userPrivillagesCollapse">
+                            <div class="applicant-data">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="p p-13">Document Type</p>
+                                        <h6 class="h6">{{selectedDocumentType}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document Name</p>
+                                        <h6 class="h6">{{documentName}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document No</p>
+                                        <h6 class="h6">{{documentNumber}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Document</p>
+                                        <h6 class="h6">Electricity Bill</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-simplebar>
+                    </div>
+
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div> -->

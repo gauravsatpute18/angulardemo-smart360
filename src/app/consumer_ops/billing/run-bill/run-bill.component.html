@@ -1,0 +1,1733 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/billing']">Billing</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Run Bill</li>
+    </ol>
+</div>
+    <!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" href="/registration">Registration</a>
+        <a class="dropdown-item" href="#">Survey</a>
+        <a class="dropdown-item" href="#">Campgain</a>
+        </div>
+    </div>
+</div> -->
+<section class="pr-section registration-sec">
+    <div class="row">
+        <div class="col-auto pr-0 h100">
+            <div class="cust-form-col-lt" style="width: 360px;">
+                <div class="row h-100">
+                    <div class="col-12">
+                        <div class="custom-hr-list-wrap">
+                            <ul class="nav list-group" id="myTab" role="tablist">
+                                <li class="nav-item list-group-item active">
+                                    <a class="nav-link active" id="billing-consumer-tab" data-toggle="tab" href="#billing-consumer" role="tab" aria-controls="billing-consumer" aria-selected="true">Select Consumer</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="billing-data-tab" data-toggle="tab" href="#billing-data" role="tab" aria-controls="billing-data" aria-selected="false">Billing Data</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="billing-view-tab" data-toggle="tab" href="#billing-view" role="tab" aria-controls="billing-view" aria-selected="false">View Bills</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="billing-rvw-sbmt-tab" data-toggle="tab" href="#billing-rvw-sbmt" role="tab" aria-controls="billing-rvw-sbmt" aria-selected="false">Review &amp; Submit</a>
+                                </li>
+                            </ul>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col pl-0">
+            <div class="cust-form-col-rt">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="registration-inner inner-wrap tab-content" id="registerTabContent">
+
+                            <div class="tab-pane fade show active" id="billing-consumer" role="tabpanel" aria-labelledby="billing-consumer-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Select Consumer</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <div class="pr-checkbox">
+                                                        <input type="checkbox" class="checkbox_check" id="checkbox_check">
+                                                        <label for="checkbox_check"></label>
+                                                    </div>
+                                                    <label class="checkbox-label pt-2" for="checkbox_check">Auto generate for next cycle</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn d-none" id="open_slide" role="button" data-toggle="modal" data-target="#scheduleCycleModal"></button>                                   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Billing Type</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" placeholder="Select Billing Type" appendTo="body"  [items]="frequency" bindLabel="name"  [(ngModel)]="selectedFrequency" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Consumer Type</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" placeholder="Select Consumer Type" appendTo="body"  [items]="consumer" bindLabel="name"  [(ngModel)]="selectedConsumer" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Utility</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" placeholder="Select Utility" appendTo="body"  [items]="utility" bindLabel="name"  [(ngModel)]="selectedUtility" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Billing Cycle</label>
+                                                                <input type="text" class="form-control" placeholder="Billing Cycle" value="15" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Portion</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="portion" bindLabel="name" placeholder="Select Portion" [(ngModel)]="selectedPortion" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>MRU</label>
+                                                                <input type="text" class="form-control" placeholder="MRU" value="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Month</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Start Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model11" ngbDatepicker #d11="ngbDatepicker" (click)="d11.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d11.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>End Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model22" ngbDatepicker #d22="ngbDatepicker" (click)="d22.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d22.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Due Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model33" ngbDatepicker #d33="ngbDatepicker" (click)="d33.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d33.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>                                                
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_1">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+
+                            <div class="tab-pane fade" id="billing-data" role="tabpanel" aria-labelledby="billing-data-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Billing Data</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">57</h3>
+                                                    <span>Total Reading</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">578</h3>
+                                                    <span>Total Consumption</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">575</h3>
+                                                    <span>Total Consumers</span>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <ngb-accordion class="pr-custom-accordion" [closeOthers]="true" activeIds="sandm">
+                                                            <ngb-panel id="mtrrdn">
+                                                                <ng-template ngbPanelHeader let-opened="closed">
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Meter reading
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>                                                                        
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+                                                                    
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-between">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Lock</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Faulty</p>
+                                                                                <h6 class="h6">05</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">RNT</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumption</p>
+                                                                                <h6 class="h6">5213</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Avg Days</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Days</p>
+                                                                                <h6 class="h6">30</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="outstnd">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Outstanding
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="paymnt">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Payment
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="curchrgs">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Current Charges
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Rate <span class="update">Update</span></p>
+                                                                                <h6 class="h6">7853.00</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Tax</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Total Rate</p>
+                                                                                <h6 class="h6">15%</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumption</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Current Charges</p>
+                                                                                <h6 class="h6">7853.00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="schm">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Scheme
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="adjref">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Adjust/refund/Credit
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="billamt">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Bill Amount
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                        </ngb-accordion>
+                                                        
+                                                    </form>
+                                                </div>
+                                            </div>                                                
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_2">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                            
+                            <div class="tab-pane fade" id="billing-view" role="tabpanel" aria-labelledby="billing-view-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">View Bills</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">57</h3>
+                                                    <span>Total Reading</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">578</h3>
+                                                    <span>Total Consumption</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">575</h3>
+                                                    <span>Total Consumers</span>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <div class="row justify-content-end">
+                                                            <div class="col">
+                                                                <form class="pr-search-form d-inline-block">
+                                                                    <span class="s-icon"></span>
+                                                                    <input class="form-control pr-table-search" type="search" placeholder="Search by MRU, Portion" aria-label="Search">
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-auto pr-0">
+                                                                <label class="p p-13 mr-3">Records</label>
+                                                                <ng-select style="display: inline-block;min-width: 80px;" [searchable]="false" appendTo="body" class="filter-select" [items]="pagination" bindLabel="name" placeholder="10"
+                                                                    [(ngModel)]="selectedPagination" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col-auto pr-0">
+                                                                <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                                    data-target="#run-bill-filter" aria-expanded="false"
+                                                                    aria-controls="run-bill-filter"><span>2</span>Filter</button>
+                                                            </div>
+                                                            <div class="col-auto pl-0">
+                                                                <div class="dropdown tool-dropdown">
+                                                                    <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        Tools
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                        <a class="dropdown-item active" href="#">
+                                                                            <fa-icon [icon]="faPrint"></fa-icon>Print
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="filters-wrap">
+                                                                    <div class="collapse" id="run-bill-filter">
+                                                                        <div class="filter-wrap-inner with-bg">    
+                                                                            <ul class="list-group list-group-horizontal">
+                                                                                <li class="list-group-item">
+                                                                                    <label>Utility</label>
+                                                                                    <ng-select class="filter-select" [items]="utility" bindLabel="name"
+                                                                                        placeholder="Select Utility" [(ngModel)]="selectedUtility" name="name">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Category</label>
+                                                                                    <ng-select class="filter-select" [items]="category" bindLabel="name"
+                                                                                        placeholder="Select Category" [(ngModel)]="selectedCategory" name="name">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col">
+                                                              <div class="listview-table-wrap">
+                                                        
+                                                                <table datatable class="pr-datatable table table-hover no-boxshadow table-border">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col"><span>Utility</span></th>
+                                                                            <th scope="col"><span>Cycle</span></th>
+                                                                            <th scope="col"><span>MRU</span></th>
+                                                                            <th scope="col"><span>Portion</span></th>
+                                                                            <th scope="col"><span>Due Date</span></th>
+                                                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr *ngFor="let item of collection.data">
+                                                                            <td class="showOnHover">{{item.utility}}
+                                                                                <span class="show">
+                                                                                    <span class="enqry-no-blk">{{item.mru}}</span>
+                                                                                    <p class="p p-13">Created by: <span class="text-dark">Ammy</span></p>
+                                                                                    <div class="list-blk">
+                                                                                        <p><span>9 Jan 2020</span><span>Start Date</span></p>
+                                                                                        <p><span>15 Jan 2020</span><span>End Date</span></p>
+                                                                                        <p><span>15 Jan 2020</span><span>Due Date</span></p>
+                                                                                    </div>
+                                                                                    <div class="list-blk">
+                                                                                        <p><span>560</span><span>Consumption</span></p>
+                                                                                        <p><span>360</span><span>Consumer</span></p>
+                                                                                    </div>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td>{{item.cycle}}</td>
+                                                                            <td>{{item.mru}}</td>
+                                                                            <td>{{item.portion}}</td>
+                                                                            <td>{{item.duedt | date : 'dd MMM yyyy'}}</td>
+                                                                            <td class="action-col">
+                                                                                <span class="show">
+                                                                                    <ul class="list-group list-group-horizontal action-list">
+                                                                                        <li class="list-group-item st" [routerLink]="['/consumerops/billing/print-bill']"
+                                                                                            tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300"
+                                                                                            [closeDelay]="500">
+                                                                                            <i class="icons8 icons8-eye"></i>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                        
+                                                              </div>
+                                                            </div>
+                                                          </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Reject</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_3">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                            <div class="tab-pane fade" id="billing-rvw-sbmt" role="tabpanel" aria-labelledby="billing-rvw-sbmt-tab">
+
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Review &amp; Submit</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item"></li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="review-submit-wrap">
+
+                                            <div class="review-submit-card">
+                                                <div class="review-submit-card-header">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h6 class="ttl">Select Consumer</h6>
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                                <div class="review-submit-card-body">
+                                                    <div class="campaign-data">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Billing Type</p>
+                                                                <h6 class="h6">Smart Meter</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Consumer Type</p>
+                                                                <h6 class="h6">Individual</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Utility</p>
+                                                                <h6 class="h6">Gas</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Billing Cycle</p>
+                                                                <h6 class="h6">02</h6>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Portion</p>
+                                                                <h6 class="h6">Houston</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">MRU</p>
+                                                                <h6 class="h6">POR2-MEDCHAL</h6>
+                                                            </div>
+                                                           
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Month</p>
+                                                                <h6 class="h6">May</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Start Date</p>
+                                                                <h6 class="h6">1 April 2020</h6>
+                                                            </div>
+                                                                                                                       
+                                                        </div>
+                                                        <div class="row">
+                                                            
+                                                            <div class="col-3">
+                                                                <p class="p p-13">End Date</p>
+                                                                <h6 class="h6">27 April 2020</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Due Date</p>
+                                                                <h6 class="h6">1 May 2020</h6>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="review-submit-card">
+                                                <div class="review-submit-card-header">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h6 class="ttl">Billing Data</h6>
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                                <div class="review-submit-card-body">
+                                                    <div class="ads-documents-data">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Reading</p>
+                                                                <h6 class="h6">57</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Consumption</p>
+                                                                <h6 class="h6">578</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Consumers                                                                </p>
+                                                                <h6 class="h6">548</h6>
+                                                            </div>
+                                                        </div>                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="review-submit-card">
+                                                <div class="review-submit-card-header">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h6 class="ttl">View Bills</h6>
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                                <div class="review-submit-card-body">
+                                                    <div class="ads-documents-data">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Reading</p>
+                                                                <h6 class="h6">57</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Consumption</p>
+                                                                <h6 class="h6">578</h6>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <p class="p p-13">Total Consumers                                                                </p>
+                                                                <h6 class="h6">548</h6>
+                                                            </div>
+                                                        </div>                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center form-bttn-row">
+                                    <div class="col-auto">
+                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-secondary st" id="billing_preview" (click)="showtoast = true">Approve</button>
+                                    </div>
+                                </div>                              
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-toast *ngIf="showtoast" header="dwd" [delay]="5000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div *ngIf="autohide">Approve <span class="text-primary">Successfully</span></div>
+            </ngb-toast>
+        </div>
+    </div>
+</section>
+
+        <!-- <div class="col-8 align-self-start">
+            <div class="col-lt">            
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <div class="registration-inner inner-wrap tab-content" id="registerTabContent">
+
+                            <div class="tab-pane fade show active" id="billing-consumer" role="tabpanel" aria-labelledby="billing-consumer-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Select Consumer</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <div class="pr-checkbox">
+                                                        <input type="checkbox" class="checkbox_check" id="checkbox_check">
+                                                        <label for="checkbox_check"></label>
+                                                    </div>
+                                                    <label class="checkbox-label pt-2" for="checkbox_check">Auto generate for next cycle</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn d-none" id="open_slide" role="button" data-toggle="modal" data-target="#scheduleCycleModal"></button>                                   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Billing Type</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Consumer Type</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Utility</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Billing Cycle</label>
+                                                                <input type="text" class="form-control" placeholder="" value="15" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Portion</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>MRU</label>
+                                                                <input type="text" class="form-control" placeholder="" value="" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Month</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Start Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model11" ngbDatepicker #d11="ngbDatepicker" (click)="d11.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d11.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>End Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model22" ngbDatepicker #d22="ngbDatepicker" (click)="d22.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d22.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Due Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model33" ngbDatepicker #d33="ngbDatepicker" (click)="d33.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d33.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>                                                
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_1">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+
+                            <div class="tab-pane fade" id="billing-data" role="tabpanel" aria-labelledby="billing-data-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Billing Data</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">57</h3>
+                                                    <span>Total Reading</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">578</h3>
+                                                    <span>Total Consumption</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">575</h3>
+                                                    <span>Total Consumers</span>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <ngb-accordion class="pr-custom-accordion" [closeOthers]="true" activeIds="sandm">
+                                                            <ngb-panel id="mtrrdn">
+                                                                <ng-template ngbPanelHeader let-opened="closed">
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Meter reading
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>                                                                        
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+                                                                    
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-between">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Lock</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Faulty</p>
+                                                                                <h6 class="h6">05</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">RNT</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumption</p>
+                                                                                <h6 class="h6">5213</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Avg Days</p>
+                                                                                <h6 class="h6">14</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Days</p>
+                                                                                <h6 class="h6">30</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="outstnd">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Outstanding
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </ng-template>
+                                                            </ngb-panel>
+                                                        
+                                                            <ngb-panel id="paymnt">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Payment
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="curchrgs">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Current Charges
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Rate <span class="update">Update</span></p>
+                                                                                <h6 class="h6">7853.00</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Tax</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Total Rate</p>
+                                                                                <h6 class="h6">15%</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumption</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Current Charges</p>
+                                                                                <h6 class="h6">7853.00</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="schm">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Scheme
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="adjref">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Adjust/refund/Credit
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                            <ngb-panel id="billamt">
+                                                                <ng-template ngbPanelHeader>
+                                                                    <button ngbPanelToggle class="btn btn-link stretched-link st">
+                                                                        Bill Amount
+                                                                        <p class="dtls">View details</p>
+                                                                        <p class="counter-wrap">
+                                                                            <span class="counter p p-13" data-count="100">0</span><span class="p p-13">% Complete</span>
+                                                                            <span class="finished"><img class="img-fluid st" src="../../../../assets/images/green-tick-circle.png" alt="icon"></span>
+                                                                        </p>  
+                                                                    </button>
+                                                                </ng-template>
+                                                                <ng-template ngbPanelContent>
+                                                                    
+                                                                    <ngx-content-loading class="pr-content-loader" [speed]="'1500ms'" [width]="800" [height]="60" [primaryColor]="'#F6F6FA'" [secondaryColor]="'#E4E5E9'">
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="0" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="126" height="8" y="10" x="200" rx="5" ry="5"></svg:g>
+                                                                        <svg:g ngx-rect width="59" height="8" y="25" x="200" rx="5" ry="5"></svg:g>
+                                                                    </ngx-content-loading>
+
+                                                                    <div class="applicant-data">
+                                                                        <div class="row justify-content-start">
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Consumers</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <p class="p p-13">Normal</p>
+                                                                                <h6 class="h6">290</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </ng-template>
+                                                            </ngb-panel>
+
+                                                        </ngb-accordion>
+                                                        
+                                                    </form>
+                                                </div>
+                                            </div>                                                
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_2">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                            
+                            <div class="tab-pane fade" id="billing-view" role="tabpanel" aria-labelledby="billing-view-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">View Bills</h4>                                    
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">57</h3>
+                                                    <span>Total Reading</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">578</h3>
+                                                    <span>Total Consumption</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <h3 class="h3 mb-0">575</h3>
+                                                    <span>Total Consumers</span>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+
+                                                        <div class="row justify-content-end">
+                                                            <div class="col">
+                                                                <form class="pr-search-form d-inline-block">
+                                                                    <span class="s-icon"></span>
+                                                                    <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-auto pr-0">
+                                                                <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                                    data-target="#run-bill-filter" aria-expanded="false"
+                                                                    aria-controls="run-bill-filter"><span>2</span>Filter</button>
+                                                            </div>
+                                                            <div class="col-auto pl-0">
+                                                                <div class="dropdown tool-dropdown">
+                                                                    <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        Tools
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                                        <a class="dropdown-item active" href="#">
+                                                                            <fa-icon [icon]="faPrint"></fa-icon>Print
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="filters-wrap">
+                                                                    <div class="collapse" id="run-bill-filter">
+                                                                        <div class="filter-wrap-inner with-bg">    
+                                                                            <ul class="list-group list-group-horizontal">
+                                                                                <li class="list-group-item">
+                                                                                    <label>Utility</label>
+                                                                                    <ng-select class="filter-select" [items]="utility" bindLabel="name"
+                                                                                        placeholder="Select Utility" [(ngModel)]="selectedUtility" name="name">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Category</label>
+                                                                                    <ng-select class="filter-select" [items]="category" bindLabel="name"
+                                                                                        placeholder="Select Category" [(ngModel)]="selectedCategory" name="name">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col">
+                                                              <div class="listview-table-wrap">
+                                                        
+                                                                <table datatable class="pr-datatable table table-hover no-boxshadow table-border">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col"><span>Utility</span></th>
+                                                                            <th scope="col"><span>Cycle</span></th>
+                                                                            <th scope="col"><span>MRU</span></th>
+                                                                            <th scope="col"><span>Portion</span></th>
+                                                                            <th scope="col"><span>Due Date</span></th>
+                                                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr *ngFor="let item of collection.data">
+                                                                            <td class="showOnHover">{{item.utility}}
+                                                                                <span class="show">
+                                                                                    <span class="enqry-no-blk">{{item.mru}}</span>
+                                                                                    <p class="p p-13">Created by: <span class="text-dark">Ammy</span></p>
+                                                                                    <div class="list-blk">
+                                                                                        <p><span>9 Jan 2020</span><span>Start Date</span></p>
+                                                                                        <p><span>15 Jan 2020</span><span>End Date</span></p>
+                                                                                        <p><span>15 Jan 2020</span><span>Due Date</span></p>
+                                                                                    </div>
+                                                                                    <div class="list-blk">
+                                                                                        <p><span>560</span><span>Consumption</span></p>
+                                                                                        <p><span>360</span><span>Consumer</span></p>
+                                                                                    </div>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td>{{item.cycle}}</td>
+                                                                            <td>{{item.mru}}</td>
+                                                                            <td>{{item.portion}}</td>
+                                                                            <td>{{item.duedt | date : 'dd MMM yyyy'}}</td>
+                                                                            <td class="action-col">
+                                                                                <span class="show">
+                                                                                    <ul class="list-group list-group-horizontal action-list">
+                                                                                        <li class="list-group-item st" [routerLink]="['/consumerops/billing/print-bill']"
+                                                                                            tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300"
+                                                                                            [closeDelay]="500">
+                                                                                            <fa-icon [icon]="faEye"></fa-icon>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                        
+                                                              </div>
+                                                            </div>
+                                                          </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>                                            
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light3 st">Reject</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_3">Approve</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="col-4 align-self-start pl-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-rt">
+                        <h4 class="m-ttl">Summary</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="right-side-wrap">
+
+                        <div class="right-side-collapse-wrap">                        
+                            <div class="right-side-collapse">                        
+                                <button class="btn bttn-collapse btn-block text-left done" type="button" (click)="billingConsumerCollapse = !billingConsumerCollapse"
+                                [attr.aria-expanded]="!billingConsumerCollapse" aria-controls="bttn-collapse1">Select Consumer<span class="dtls">Billing Type: Type 1</span>
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse1" [ngbCollapse]="billingConsumerCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Reg. Number</p>
+                                                <h6 class="h6">00199243592</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Source</p>
+                                                <h6 class="h6">Branch</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Reading</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumers</p>
+                                                <h6 class="h6">360</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Normal</p>
+                                                <h6 class="h6">Branch</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Lock</p>
+                                                <h6 class="h6">14</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Faulty</p>
+                                                <h6 class="h6">05</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">RNT</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumption</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>                        
+                            </div>
+                            <div class="right-side-collapse">                        
+                                <button class="btn bttn-collapse btn-block text-left done" type="button" (click)="billingDataCollapse = !billingDataCollapse"
+                                [attr.aria-expanded]="!billingDataCollapse" aria-controls="bttn-collapse2">Billing Data<span class="dtls">Meter Reading</span>
+                                </button>
+                                <div class="collapse" id="bttn-collapse2" [ngbCollapse]="billingDataCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Reading</div>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumers</p>
+                                                <h6 class="h6">360</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Normal</p>
+                                                <h6 class="h6">Branch</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Lock</p>
+                                                <h6 class="h6">14</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Faulty</p>
+                                                <h6 class="h6">05</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">RNT</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumption</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Avg Days</p>
+                                                <h6 class="h6">14</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Days</p>
+                                                <h6 class="h6">30</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                        
+                            </div>
+                            <div class="right-side-collapse">                        
+                                <button class="btn bttn-collapse btn-block text-left" type="button" (click)="billingViewBillCollapse = !billingViewBillCollapse"
+                                [attr.aria-expanded]="!billingViewBillCollapse" aria-controls="bttn-collapse3">View Bills
+                                </button>
+                                <div class="collapse" id="bttn-collapse3" [ngbCollapse]="billingViewBillCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Reading</div>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumers</p>
+                                                <h6 class="h6">360</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Normal</p>
+                                                <h6 class="h6">Branch</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Lock</p>
+                                                <h6 class="h6">14</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Faulty</p>
+                                                <h6 class="h6">05</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">RNT</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Consumption</p>
+                                                <h6 class="h6">50</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <p class="p p-13">Avg Days</p>
+                                                <h6 class="h6">14</h6>
+                                            </div>
+                                            <div class="col-4">
+                                                <p class="p p-13">Days</p>
+                                                <h6 class="h6">30</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                        
+                            </div>                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>            
+        </div> -->
+
+
+<!-- Schedule Cycle Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="scheduleCycleModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="scheduleCycleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="scheduleCycleModalLabel">Schedule Next Cycle</h4>
+                <span class="edt-btn"><i class="icons8 icons8-edit"></i></span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Frequency</label>
+                                    <ng-select [searchable]="false" [clearable]="false" appendTo="body"  [items]="frequency" bindLabel="frqcy" placeholder="Select State" [(ngModel)]="selectedFrequency" name="frqcy">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Start Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker" (click)="d1.toggle()" container="body">
+                                        <div class="input-group-append">
+                                          <button class="btn bttn-transparent bttn-icon" type="button" (click)="d1.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>End Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" container="body">
+                                        <div class="input-group-append">
+                                          <button class="btn bttn-transparent bttn-icon" type="button" (click)="d2.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Due Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model3" ngbDatepicker #d3="ngbDatepicker" (click)="d3.toggle()" container="body">
+                                        <div class="input-group-append">
+                                          <button class="btn bttn-transparent bttn-icon" type="button" (click)="d3.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Schedule</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>

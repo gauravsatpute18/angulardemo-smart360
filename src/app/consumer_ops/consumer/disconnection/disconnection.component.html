@@ -1,0 +1,296 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/consumer']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumer/view']">Consumer</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Disconnection</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration">Registration</a>
+    <a class="dropdown-item" href="#">Survey</a>
+    <a class="dropdown-item" href="#">Campgain</a>
+    </div>
+</div>
+</div> -->
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/consumer/view']">Back</button>
+            <!-- <div class="inner-page-title d-inline-block" [routerLink]="['/consumer/view']"><a [routerLink]="['/consumer/view']">Back</a></div> -->
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-success">Connected</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">CRN: 0019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk" style="background-image: url('../../assets/images/john-doe.png');">
+                                            <!-- JD -->
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                            <span class="edt" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [routerLink]="['/user/add-user-details']"
+                                            [openDelay]="300" [closeDelay]="500" container="body"><i class="icons8 icons8-edit"></i></span>
+                                            <h5>John Doe</h5>
+                                            <p class="p">+1 517-672-0289</p>
+                                            <p class="p adhr">Aadhaar No: **** **** **** <span class="showno"><i class="icons8 icons8-eye-2"></i></span></p>                                                                                 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="applicant-data">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bttn-toggle">
+                                    <div class="toggle-button-wrap mt-0">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="summry-tab" data-toggle="tab" href="#summry" role="tab" aria-controls="summry" aria-selected="true">Summary</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profl-tab" data-toggle="tab" href="#profl" role="tab" aria-controls="profl" aria-selected="false">Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="custom-tab-pane tab-pane fade show active" id="summry" role="tabpanel" aria-labelledby="summry-tab">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="reciept-wrap">
+                                                    <div class="reciept-data">
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Outstanding</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Payment Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Amount</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Refund</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Credit</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br full-width">
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 fs-16">Bill Amount</h6>
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 text-primary text-right fs-16">$ 6525.00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="p p-13">Showing last <span class="text-dark fw-500">5 months</span> Bill</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-tab-pane tab-pane fade" id="profl" role="tabpanel" aria-labelledby="profl-tab">
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Consumer Category</p>
+                                                <h6 class="h6">Domestic</h6>
+                                              </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Category</p>
+                                                <h6 class="h6">Individual</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Pipeline</p>
+                                                <h6 class="h6">Yes</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Monthly Demand</p>
+                                                <h6 class="h6">560 Units</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Plane</p>
+                                                <h6 class="h6">90 days free</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Utility</p>
+                                                <h6 class="h6">Gas</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Deposit</p>
+                                                <h6 class="h6">5000</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Collected</p>
+                                                <h6 class="h6">4500</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Route</p>
+                                                <h6 class="h6">POR3-RAMANAYYA PETA-03</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Cycle</p>
+                                                <h6 class="h6">3</h6>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Details</div>
+                                            </div>
+                                        </div> 
+                
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter No.</p>
+                                                <h6 class="h6">17711848</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Digit</p>
+                                                <h6 class="h6">8</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Type</p>
+                                                <h6 class="h6">Mechanical</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Make</p>
+                                                <h6 class="h6">123456</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Conversion Date</p>
+                                                <h6 class="h6">09Jan2020</h6>
+                                            </div>                                            
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>                     
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-gen">                
+                <div class="row justify-content-end mb-3">
+                    <div class="col">
+                        <form class="pr-search-form d-inline-block">
+                            <span class="s-icon"></span>
+                            <input class="form-control pr-table-search" type="search" placeholder="Search by ID, Type, Period" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <label class="p p-13 mr-3">Records</label>
+                        <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                            appendTo="body" [items]="pagination" bindLabel="name"
+                            placeholder="20" [(ngModel)]="selectedPagination" name="name">
+                        </ng-select>
+                    </div>
+                    <div class="col-auto pr-0"></div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="listview-table-wrap">  
+                            <label class="p p-12">Showing Last 6 month records</label>                                          
+                            <table datatable class="pr-datatable table table-hover" [dtOptions]="dtOptions2">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="sm-col"><span>ID</span></th>
+                                        <th scope="col"><span>Requested Date</span></th>
+                                        <th scope="col"><span>Type</span></th>                                        
+                                        <th scope="col"><span>Period</span></th>
+                                        <th scope="col"><span>Status</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of collection.data">
+                                        <th scope="row" class="sb-col">{{item.billId}}</th>                                        
+                                        <td>{{item.billDue | date : 'dd MM yyyy'}}</td>                                        
+                                        <td>{{item.type}}</td>
+                                        <td>{{item.billPeriod}} </td>
+                                        <td>
+                                            <div [ngSwitch]="item.status">
+                                                <div *ngSwitchCase="'pending'">
+                                                    <div class="badge badge-label-unpaid">Pending</div>
+                                                </div>
+                                                <div *ngSwitchDefault>
+                                                    <div class="badge badge-label-paid">Completed</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                                            
+                        </div>
+                    </div>
+                </div>
+                                   
+            </div>
+        </div>
+    </div>
+</section>
+
+

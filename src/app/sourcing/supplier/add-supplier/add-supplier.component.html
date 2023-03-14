@@ -1,0 +1,619 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/sourcing">Sourcing</a></li>
+        <li class="breadcrumb-item"><a routerLink="/supplier">Supplier</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Supplier</li>
+    </ol>
+    </div>
+
+    <section class="pr-section registration-sec">
+        <div class="row">
+            <div class="col-auto pr-0 h100">
+                <div class="cust-form-col-lt" style="width: 360px;">        
+                    <div class="row h-100">
+                        <div class="col-12">
+                            <div class="custom-hr-list-wrap">
+                                <ul class="nav list-group" id="myTab" role="tablist">
+                                    <li class="nav-item list-group-item active">
+                                        <a class="nav-link st active" id="general-details-tab" data-toggle="tab" href="#general-details" role="tab" aria-controls="campaign-details" aria-selected="false">General Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link st" id="financial-details-tab" data-toggle="tab" href="#financial-details" role="tab" aria-controls="financial-details" aria-selected="true">Financial Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="supplier-rvw-sbmt-tab" data-toggle="tab" href="#supplier-rvw-sbmt" role="tab" aria-controls="supplier-rvw-sbmt" aria-selected="false">Review &amp; Submit</a>
+                                    </li>
+                                </ul>
+                            </div>            
+                        </div>
+                    </div>    
+                </div>
+            </div> 
+            <div class="col pl-0">
+                <div class="cust-form-col-rt">        
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="registration-inner inner-wrap tab-content" id="generalTabContent">
+                                <div class="tab-pane fade show active" id="general-details" role="tabpanel" aria-labelledby="general-details-tab">
+                            
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">General Details</h4>
+                                        </div>
+                                        
+                                    </div>                                
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                        <form name="form">
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Supplier Name</label>
+                                                                    <input type="text" class="form-control" placeholder="Supplier Name"/>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Supplier Type</label>
+                                                                    <ng-select [items]="sourceType" bindLabel="source" placeholder="Select Source Type"
+                                                                        [(ngModel)]="selectedsourceType" name="source">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Sub Type</label>
+                                                                    <ng-select [items]="subType" bindLabel="sub" placeholder="Select Sub Type"
+                                                                        [(ngModel)]="selectedsubType" name="sub">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Rate</label>
+                                                                    <input type="text" class="form-control" placeholder="Rate"
+                                                                    value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Utility</label>
+                                                                    <ng-select [items]="utility" bindLabel="name" placeholder="Gas"
+                                                                        [(ngModel)]="selectedUtility" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Start Date</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy"
+                                                                            name="dp" [(ngModel)]="model" ngbDatepicker #D="ngbDatepicker"
+                                                                            (click)="D.toggle()" container="body">
+                                                                        <div class="input-group-append" id="button-addon4">
+                                                                            <button class="btn bttn-transparent bttn-icon" type="button"
+                                                                                (click)="D.toggle()">
+                                                                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                                
+                                                            </div>
+        
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Email</label>
+                                                                    <input type="text" class="form-control" placeholder="Email"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Mobile No.</label>
+                                                                    <input type="text" class="form-control" placeholder="Mobile No"
+                                                                        value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>street</label>
+                                                                    <input type="text" class="form-control" placeholder="Street"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>State/Region</label>
+                                                                    <ng-select [items]="state" bindLabel="state" placeholder="Select State/Region"
+                                                                        [(ngModel)]="selectedState" name="state">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>City</label>
+                                                                    <input type="text" class="form-control" placeholder="City"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Postal/Zip Code</label>
+                                                                    <input type="text" class="form-control" placeholder="Postal"
+                                                                        value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Area</label>
+                                                                    <input type="text" class="form-control" placeholder="Area"
+                                                                        value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Sub Area</label>
+                                                                    <input type="text" class="form-control" placeholder="Sub Area"
+                                                                        value="" />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center form-bttn-row br-top">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto pl-1 pr-4">
+                                                        <button class="btn btn-secondary st" id="proceed_campaign_docs">Proceed</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="financial-details" role="tabpanel" aria-labelledby="financial-details-tab">
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Financial Details</h4>
+                                        </div>                                        
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                        <form name="form">
+        
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Account Number</label>
+                                                                    <input type="text" class="form-control" placeholder="Account Number" value="" />
+                                                                </div>                    
+                                                                <div class="col">
+                                                                    <label>Bank Name</label>
+                                                                    <ng-select [items]="bank" bindLabel="name" value="3 Days/week" [(ngModel)]="selectedbank" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>A/C Holder's Name</label>
+                                                                    <input type="text" class="form-control" placeholder="A/C Holder Name" value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Branch</label>
+                                                                    <input type="text" class="form-control" placeholder="Branch" value="" />
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="form-row">
+                                                                <div class="col-6">
+                                                                    <label>IFSC Code</label>
+                                                                    <input type="text" class="form-control" placeholder="IFSC Code" value="XYZ" />
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="row mt-5">
+                                                                <div class="col-12">
+                                                                    <h4 class="title-divider">Document Details</h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Document Type</label>
+                                                                    <input type="text" class="form-control" placeholder="Select Document Type" value="" />
+                                                                </div>                    
+                                                                <div class="col">
+                                                                    <label>Document Name</label>
+                                                                    <ng-select [items]="docName" bindLabel="name" value="" [(ngModel)]="selecteddocName" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+        
+                                                            <div class="form-row">
+                                                                
+                                                                <div class="col-12">
+                                                                    <label >Documents</label>
+                                                                    <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                                                        [accept]="'image/*'" (change)="onSelect($event)">
+                                                                        <div class="upload-inner inline">
+                                                                            <div class="media">
+                                                                                <div class="media-body">
+                                                                                    <ngx-dropzone-label>
+                                                                                        <div class="drag-drop">
+                                                                                            <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                                            <p class="p p-13">Drag & Drop files here</p>
+                                                                                            <p class="p p-13 font-weight-normal">Or</p>
+                                                                                            <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                                                        </div>
+                                                                                    </ngx-dropzone-label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uploaded-items">
+                                                                        <ul class="list-group list-group-horizontal-sm">
+                                                                            <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                                                <ngx-dropzone-label
+                                                                                    class="p p-12 file-name">{{ f.name }}
+                                                                                </ngx-dropzone-label>
+                                                                            </ngx-dropzone-image-preview>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+        
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center form-bttn-row br-top">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto pl-1 pr-4">
+                                                        <button class="btn btn-secondary st" id="supplier_finance">Proceed</button>
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="supplier-rvw-sbmt" role="tabpanel" aria-labelledby="supplier-rvw-sbmt-tab">
+
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Review &amp; Submit</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item"></li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="review-submit-wrap">
+    
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Supplier Details</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="campaign-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Supplier Name</p>
+                                                                    <h6 class="h6">Thomas Shelby</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Supplier Type</p>
+                                                                    <h6 class="h6">XYZ</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Sub Type</p>
+                                                                    <h6 class="h6">XYZ A</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Rate</p>
+                                                                    <h6 class="h6">500</h6>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Utility</p>
+                                                                    <h6 class="h6">Gas</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Start Date</p>
+                                                                    <h6 class="h6">17 April 2020</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Email</p>
+                                                                    <h6 class="h6">27 April 2020</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Mobile No.</p>
+                                                                    <h6 class="h6">+1 256-589-2548</h6>
+                                                                </div>
+                                                                                                                           
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">street</p>
+                                                                    <h6 class="h6">Street 1</h6>
+                                                                </div> 
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">State/Region</p>
+                                                                    <h6 class="h6">State 1</h6>
+                                                                </div> 
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">City</p>
+                                                                    <h6 class="h6">City 1</h6>
+                                                                </div> 
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Zip Code</p>
+                                                                    <h6 class="h6">254881</h6>
+                                                                </div> 
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Area</p>
+                                                                    <h6 class="h6">Area 1</h6>
+                                                                </div> 
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Sub Area</p>
+                                                                    <h6 class="h6">Sub Area 1</h6>
+                                                                </div> 
+                                                                
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                </div>
+    
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Financial Details</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="ads-documents-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Account Number</p>
+                                                                    <h6 class="h6">457976413215</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Bank Name</p>
+                                                                    <h6 class="h6">Bank Name 1</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">A/C Holder's Name</p>
+                                                                    <h6 class="h6">Name 1</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Branch</p>
+                                                                    <h6 class="h6">Branch 1</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">IFSC Code</p>
+                                                                    <h6 class="h6">IFSC </h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Document Type</p>
+                                                                    <h6 class="h6">Official </h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Document Name</p>
+                                                                    <h6 class="h6">Aadhaar Card </h6>
+                                                                </div>
+                                                                
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Document</p>
+                                                                    <h6 class="h6"><span class="pdf-red"></span>Doc.pdf</h6>
+                                                                </div>                                                           
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center form-bttn-row">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light3 st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-secondary st" id="supplier_submit" (click)="showtoast = true">Submit</button>
+                                        </div>
+                                    </div>                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        <div class="row">
+            <div class="col">
+                <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                    <div>Supplier Add Successfully !!</div>
+                </ngb-toast>
+            </div>
+        </div>
+      </section>  
+    
+    <!-- Assign Vendor Modal -->
+    <div class="pr-modal">
+        <div class="modal right fade" id="assignVendorModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="assignVendorModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="assignVendorModalLabel">Assign Vendor</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+                                
+                                <div class="row justify-content-end">
+                                    <div class="col">
+                                      <form class="pr-search-form d-inline-block">
+                                        <span class="s-icon"></span>
+                                        <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+                                      </form>
+                                    </div>
+                                    <div class="col-auto pr-0">
+                                        <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#assignVendorFilterCollapse" aria-expanded="false" aria-controls="assignVendorFilterCollapse"><span>2</span>Filter</button>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="filters-wrap">
+                                            <div class="collapse" id="assignVendorFilterCollapse">
+                                                <div class="filter-wrap-inner">                        
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <label>Utility</label>
+                                                            <ng-select [items]="category" appendTo="body" bindLabel="name" placeholder="select" [(ngModel)]="selectedCategory" name="name">
+                                                            </ng-select>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <label>Category</label>
+                                                            <ng-select [items]="category" appendTo="body" bindLabel="name" placeholder="select" [(ngModel)]="selectedCategory" name="name">
+                                                            </ng-select>
+                                                        </li>                                                
+                                                    </ul>                        
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll1"/>
+                                                    <label class="custom-control-label" for="checkAll1"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll2"/>
+                                                    <label class="custom-control-label" for="checkAll2"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll3"/>
+                                                    <label class="custom-control-label" for="checkAll3"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll4"/>
+                                                    <label class="custom-control-label" for="checkAll4"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll5"/>
+                                                    <label class="custom-control-label" for="checkAll5"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll6"/>
+                                                    <label class="custom-control-label" for="checkAll6"></label>
+                                                </div>
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>                                                                        
+                                                <div class="media-body">
+                                                  <h5>John Doe</h5>
+                                                  <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                  <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Assign</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>

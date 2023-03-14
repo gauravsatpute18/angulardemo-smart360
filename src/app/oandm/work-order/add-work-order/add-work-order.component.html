@@ -1,0 +1,553 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/oandm">O&amp;M</a></li>
+        <li class="breadcrumb-item"><a routerLink="/oandm/work-order">Work Order</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New</li>
+    </ol>
+</div>
+
+<section class="pr-section add-user-sec">
+    <div class="row">
+        <div class="col-8 align-self-start">
+            <div class="col-lt">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="custom-hr-list-wrap">
+                            <ul class="nav list-group list-group-horizontal" id="myTab" role="tablist">
+                                <li class="nav-item list-group-item active">
+                                    <a class="nav-link active" id="add-work-order-tab" data-toggle="tab" href="#add-work-order"
+                                        role="tab" aria-controls="add-work-order" aria-selected="true">Work order</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="work-tasks-tab" data-toggle="tab" href="#work-tasks"
+                                        role="tab" aria-controls="work-tasks" aria-selected="false">Task</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="work-products-tab" data-toggle="tab" href="#work-products"
+                                        role="tab" aria-controls="work-products" aria-selected="false">Products</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="work-reading-tab" data-toggle="tab"
+                                        href="#work-reading" role="tab" aria-controls="work-reading"
+                                        aria-selected="false">Reading</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="registration-inner inner-wrap tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="add-work-order" role="tabpanel"
+                                aria-labelledby="add-work-order-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Add work order</h4>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <span>Sort Name</span>
+                                                    <p>Loreumipsum</p>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Name</label>
+                                                                <ng-select class="ng-select-search" [searchable]="true" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-12">
+                                                                <label>Description</label>
+                                                                <textarea class="form-control big-textarea" placeholder="" rows="5"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Type</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Priority</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Consumer/Account</label>
+                                                                <ng-select class="ng-select-search" [searchable]="true" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name" [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Assets</label>
+                                                                <ng-select class="ng-select-search custom-ng-select" appendTo="body" [searchable]="true" [clearable]="false" [items]="assets" bindLabel="asts" placeholder="Select Name" [(ngModel)]="selectedAssets" bindValue="asts" name="asts">
+                                                                    <ng-template ng-label-tmp let-item="item">
+                                                                        <h4 class="ttl">ID {{item.id}}</h4>
+                                                                    </ng-template>
+                                                                    <ng-template ng-option-tmp let-item="item" let-index="index">
+                                                                        <div class="row">
+                                                                            <div class="col-6">
+                                                                                <h4 class="ttl">ID {{item.id}}</h4>
+                                                                                <p class="p">ID {{item.locn}}</p>
+                                                                                <span class="badge" ngClass='{{item.statusBadge}}'> {{item.status}}</span>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="img-blk">
+                                                                                    <img class="st" [src]="item.meterimg" alt="img">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </ng-template>
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Area</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Area</label>
+                                                                <ng-select [searchable]="false" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>City</label>
+                                                                <input type="text" class="form-control" placeholder=""  />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Duration</label>
+                                                                <ng-select class="ng-select-time" [searchable]="true" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name" [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Appointment Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                                                                    <div class="input-group-append">
+                                                                      <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Time</label>
+                                                                <ng-select class="ng-select-time" [searchable]="true" [clearable]="false" [items]="city" bindLabel="name" placeholder="Select Name" bindValue="name" [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6">
+                                                                <label>knowledge Discription</label>
+                                                                <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                                            </div>
+                                                            <div class="col-6 align-self-end">
+                                                                <button class="btn bttn-text st mb-1"><fa-icon [icon]="faPlus"></fa-icon>Add Link</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col">
+                                                    <button class="btn btn-outline-light3 bttn-print st"><i class="icons8 icons8-print-2"></i>Print</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_user_bank">Proceed</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="work-tasks" role="tabpanel" aria-labelledby="work-tasks-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Add Tasks</h4>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <span>Sort Name</span>
+                                                    <p>Loreumipsum</p>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">                                                        
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Task</label>
+                                                                <input type="text" class="form-control" placeholder="Add Subtask" value="Add Subtask" />
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label>Discription</label>
+                                                                <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6 align-self-end">
+                                                                <button class="btn bttn-text st mb-1" style="min-width: unset;"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col">
+                                                    <button class="btn btn-outline-light3 bttn-print st"><i class="icons8 icons8-print-2"></i>Print</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_user_docs">Proceed</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="work-products" role="tabpanel" aria-labelledby="work-products-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Add Product</h4>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <span>Sort Name</span>
+                                                    <p>Loreumipsum</p>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Product Name</label>
+                                                                <ng-select class="ng-select-search" [searchable]="true" [clearable]="false" [items]="city" bindLabel="name" placeholder="Product Name" bindValue="name" [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col-6 align-self-end">
+                                                                <button class="btn bttn-text st mb-1" style="min-width: unset;">Add</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Product</label>
+                                                                <input type="text" class="form-control" placeholder="Product Name" value="Product Name" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Qty</label>
+                                                                <input type="text" class="form-control" placeholder="Quantity" value="5" />
+                                                            </div>
+                                                            <div class="col-auto align-self-center action-col">
+                                                                <button class="btn bttn-transparent bttn-icon" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Remove" [openDelay]="300" [closeDelay]="500"><fa-icon [icon]="faTrash"></fa-icon></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col">
+                                                    <button class="btn btn-outline-light3 bttn-print st"><i class="icons8 icons8-print-2"></i>Print</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_user_privillages">Proceed</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="work-reading" role="tabpanel"
+                                aria-labelledby="work-reading-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Reading</h4>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="details-list">
+                                            <ul class="list-group list-group-horizontal justify-content-end">
+                                                <li class="list-group-item">
+                                                    <span>Sort Name</span>
+                                                    <p>Loreumipsum</p>
+                                                </li>
+                                            </ul>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Reading Name</label>
+                                                                <input type="text" class="form-control" placeholder="Reading Name" value="GI Pipe" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Reading</label>
+                                                                <input type="text" class="form-control" placeholder="Reading" value="19800.5" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Units</label>
+                                                                <input type="text" class="form-control" placeholder="Units" value="05" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6 align-self-end">
+                                                                <button class="btn bttn-text st mb-1" style="min-width: unset;"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6 align-self-end">
+                                                                <div class="custom-control custom-checkbox d-inline">
+                                                                    <input type="checkbox" class="custom-control-input" id="saveTemplt">
+                                                                    <label class="custom-control-label p p-13 text-dark pt-1" for="saveTemplt">Save As template</label>                                
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col">
+                                                    <button class="btn btn-outline-light3 bttn-print st"><i class="icons8 icons8-print-2"></i>Print</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st" id="proceed_user_done" (click)="showtoast = true">Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 align-self-start pl-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-rt">
+                        <h4 class="m-ttl">Summary</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="right-side-wrap">
+
+                        <div class="right-side-collapse-wrap">
+
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="workOrderCollapse = !workOrderCollapse" [attr.aria-expanded]="!workOrderCollapse"
+                                    aria-controls="bttn-collapse1">
+                                    Work Order
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse1"
+                                    [ngbCollapse]="workOrderCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Name</p>
+                                                <h6 class="h6">Lorem Ipsum</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Description</p>
+                                                <h6 class="h6">Lorem Ipsum</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Type</p>
+                                                <h6 class="h6">Repair</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Priority</p>
+                                                <h6 class="h6">Emergency</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Consumer/Account</p>
+                                                <h6 class="h6">60 mins</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Assets</p>
+                                                <h6 class="h6"><span class="img-blk"><img class="img-abs st" src="../../../../assets/images/meter-read.png" alt="img"></span>Lorem Ipsum.......</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>
+                            </div>
+
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="workTaskCollapse = !workTaskCollapse" [attr.aria-expanded]="!workTaskCollapse"
+                                    aria-controls="bttn-collapse2">Task
+                                </button>
+                                <div class="collapse" id="bttn-collapse2" [ngbCollapse]="workTaskCollapse">
+                                    <ngx-simplebar [options]="scrollOptions" class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Type</p>
+                                                <h6 class="h6">Address Proof</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Name</p>
+                                                <h6 class="h6">Electricity Bill</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document No</p>
+                                                <h6 class="h6">2</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document</p>
+                                                <h6 class="h6"><span class="pdf-red"></span>Electricity Bill</h6>
+                                            </div>
+                                        </div>
+                                    </ngx-simplebar>
+                                </div>
+                            </div>
+    
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="workProductCollapse = !workProductCollapse" [attr.aria-expanded]="!workProductCollapse"
+                                    aria-controls="bttn-collapse3">Product
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse3" [ngbCollapse]="workProductCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Type</p>
+                                                <h6 class="h6">Address Proof</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Name</p>
+                                                <h6 class="h6">Electricity Bill</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document No</p>
+                                                <h6 class="h6">2</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document</p>
+                                                <h6 class="h6"><span class="pdf-red"></span>Electricity Bill</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>
+                            </div>
+    
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="workReadingCollapse = !workReadingCollapse" [attr.aria-expanded]="!workReadingCollapse"
+                                    aria-controls="bttn-collapse2">Reading
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse4" [ngbCollapse]="workReadingCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Type</p>
+                                                <h6 class="h6">Address Proof</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document Name</p>
+                                                <h6 class="h6">Electricity Bill</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document No</p>
+                                                <h6 class="h6">2</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document</p>
+                                                <h6 class="h6"><span class="pdf-red"></span>Electricity Bill</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-toast *ngIf="showtoast" header="dwd" [delay]="5000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div>New Work Order <span class="text-primary">Successfully</span> Created!!</div>
+            </ngb-toast>
+        </div>
+    </div>
+</section>

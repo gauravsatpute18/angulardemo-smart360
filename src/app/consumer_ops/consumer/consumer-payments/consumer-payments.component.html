@@ -1,0 +1,1180 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/consumer']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumer/view']">Consumer</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Payments</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration">Registration</a>
+    <a class="dropdown-item" href="#">Survey</a>
+    <a class="dropdown-item" href="#">Campgain</a>
+    </div>
+</div>
+</div> -->
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/consumer/view']">Back</button>
+            <!-- <div class="inner-page-title d-inline-block"><h4 class="h4"></h4></div> -->
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-success">Connected</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">CRN: 0019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk" style="background-image: url('../../assets/images/john-doe.png');">
+                                            <!-- JD -->
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                            <span class="edt" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [routerLink]="['/user/add-user-details']"
+                                            [openDelay]="300" [closeDelay]="500" container="body"><i class="icons8 icons8-edit"></i></span>
+                                            <h5>John Doe</h5>
+                                            <p class="p">+1 517-672-0289</p>
+                                            <p class="p adhr">Aadhaar No: **** **** **** <span class="showno"><i class="icons8 icons8-eye-2"></i></span></p>                                                                                 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="applicant-data">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bttn-toggle">
+                                    <div class="toggle-button-wrap mt-0">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="summry-tab" data-toggle="tab" href="#summry" role="tab" aria-controls="summry" aria-selected="true">Summary</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profl-tab" data-toggle="tab" href="#profl" role="tab" aria-controls="profl" aria-selected="false">Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="custom-tab-pane tab-pane fade show active" id="summry" role="tabpanel" aria-labelledby="summry-tab">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="reciept-wrap">
+                                                    <div class="reciept-data">
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Outstanding</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Payment Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Amount</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Refund</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Credit</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br full-width">
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 fs-16">Bill Amount</h6>
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 text-primary text-right fs-16">$ 6525.00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="p p-13">Showing last <span class="text-dark fw-500">5 months</span> Bill</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-tab-pane tab-pane fade" id="profl" role="tabpanel" aria-labelledby="profl-tab">
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Consumer Category</p>
+                                                <h6 class="h6">Industrial</h6>
+                                              </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Category</p>
+                                                <h6 class="h6">Industrial</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Pipeline</p>
+                                                <h6 class="h6">xyz</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Monthly Demand</p>
+                                                <h6 class="h6">560 Units</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Plane</p>
+                                                <h6 class="h6">90 days free</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Utility</p>
+                                                <h6 class="h6">Gas</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Deposit</p>
+                                                <h6 class="h6">5000</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Collected</p>
+                                                <h6 class="h6">4500</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Route</p>
+                                                <h6 class="h6">POR3-RAMANAYYA PETA-03</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Cycle</p>
+                                                <h6 class="h6">3</h6>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Details</div>
+                                            </div>
+                                        </div> 
+                
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter No.</p>
+                                                <h6 class="h6">17711848</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Digit</p>
+                                                <h6 class="h6">8</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Type</p>
+                                                <h6 class="h6">Mechanical</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Make</p>
+                                                <h6 class="h6">123456</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Conversion Date</p>
+                                                <h6 class="h6">09Jan2020</h6>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>                     
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="applicant-block-gen">   
+
+                <div class="row justify-content-end">
+                    <div class="col">
+                        <form class="pr-search-form d-inline-block">
+                            <span class="s-icon"></span>
+                            <input class="form-control pr-table-search" type="search"
+                                placeholder="Search by  Transaction ID, Channel, Status" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <label class="p p-13 mr-3">Records</label>
+                        <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                            appendTo="body" [items]="pagination" bindLabel="name"
+                            placeholder="100" [(ngModel)]="selectedPagination" name="name">
+                        </ng-select>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                            data-target="#payfilterCollapse" aria-expanded="false"
+                            aria-controls="payfilterCollapse"><span>2</span>Filter</button>
+                    </div>
+                    <div class="col-auto pl-0">
+                        <div class="dropdown tool-dropdown">
+                            <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item active" href="#">
+                                    <fa-icon [icon]="faPrint"></fa-icon>Print
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto pl-0">
+                        <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#paymentModal">
+                            <fa-icon [icon]="faPlus"></fa-icon>Add
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="filters-wrap">
+                            <div class="collapse" id="payfilterCollapse">
+                                <div class="filter-wrap-inner">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="list-group list-group-horizontal">
+                                                <li class="list-group-item">
+                                                    <label>Utility</label>
+                                                    <ng-select class="filter-select" [items]="utility" bindLabel="name"
+                                                        placeholder="Select Utility" [(ngModel)]="selectedUtility" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Month</label>
+                                                    <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month"
+                                                        [(ngModel)]="selectedMonth" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Cycle</label>
+                                                    <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle"
+                                                        [(ngModel)]="selectedCycle" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Area</label>
+                                                    <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area"
+                                                        [(ngModel)]="selectedArea" name="name">
+                                                    </ng-select>
+                                                </li>
+                        
+                                                <li class="list-group-item">
+                                                    <label>Status</label>
+                                                    <ng-select class="filter-select" [items]="status" bindLabel="name"
+                                                        placeholder="Select Status" [(ngModel)]="selectedStatus" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Type</label>
+                                                    <ng-select class="filter-select" [items]="type" bindLabel="name" placeholder="Select Type"
+                                                        [(ngModel)]="selectedType" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Category</label>
+                                                    <ng-select class="filter-select" [items]="category" bindLabel="name"
+                                                        placeholder="Select Category" [(ngModel)]="selectedCategory" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <label>Sub Category</label>
+                                                    <ng-select class="filter-select" [items]="category" bindLabel="name"
+                                                        placeholder="Select Sub Category" [(ngModel)]="selectedCategory" name="name">
+                                                    </ng-select>
+                                                </li>
+                                                <li class="list-group-item ">
+                                                    <label>Date Range</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                            </button>
+                                                        </div>
+                                                        <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row filter-cta-row">
+                                                <div class="col-auto pr-2">
+                                                  <button class="btn btn-outline-secondary st">Apply</button>
+                                                </div>
+                                                <div class="col-auto pl-2">
+                                                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                data-target="#payfilterCollapse" aria-expanded="false"
+                                                aria-controls="payfilterCollapse">Cancel</button>
+                                            </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label class="p p-12">Showing Last 6 month records</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="listview-table-wrap">                                            
+                            <table datatable class="pr-datatable table table-hover no-boxshadow table-border">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><span>Transaction ID</span></th>
+                                        <th scope="col"><span>Payment Mode</span></th>
+                                        <th scope="col"><span>Channel</span></th>
+                                        <th scope="col"><span>Amount</span></th>
+                                        <th scope="col"><span>Date</span></th>
+                                        <th scope="col"><span>Status</span></th>
+                                        <th scope="col" class="action-col option-dropdown"><span>Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of collection.data">
+                                        <td>{{item.txnId}}</td>
+                                        <td>
+                                            <div [ngSwitch]="item.type">
+                                                <div *ngSwitchCase="'Offline'">
+                                                    Offline
+                                                </div>
+                                                <div *ngSwitchDefault>
+                                                    Online
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div [ngSwitch]="item.channel">
+                                                <div *ngSwitchCase="'Phone Pay'">
+                                                    Phone Pay
+                                                </div>
+                                                <div *ngSwitchDefault>
+                                                    Paytm
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>$ {{item.billAmount}}</td>
+                                        <td>{{item.dte | date : 'dd MMM yy'}}</td>                                                        
+                                        <td>
+                                            <div [ngSwitch]="item.status">
+                                                <div *ngSwitchCase="'unpaid'">
+                                                    <div class="badge badge-label-unpaid">Unpaid</div>
+                                                </div>
+                                                <div *ngSwitchDefault>
+                                                    <div class="badge badge-label-paid">Paid</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="action-col option-dropdown">
+                                            <div ngbDropdown container="body" class="dot-option-dropdown">
+                                                <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                                                  <button ngbDropdownItem class="active st"><span>Reject</span></button>
+                                                  <button ngbDropdownItem class="st" data-toggle="modal" data-target="#refundModal"><span>Refund</span></button>
+                                                  <button ngbDropdownItem class="st" ><span>Adjust</span></button>
+                                                  <button ngbDropdownItem class="st" data-toggle="modal" data-target="#CreditModal"><span>Credit</span></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                                            
+                        </div>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+          <ngb-toast *ngIf="showtoast" header="dwd" [delay]="5000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div *ngIf="autohide">Add Payment<span class="text-primary">Successfully</span></div>
+            </ngb-toast>
+        </div>
+    </div>
+</section>
+
+<!-- Refund/Credit Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="refundModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="refundModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="refundModalLabel">Refund</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <!-- <div class="row">
+                                                <div class="col-12">
+                                                    <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                                                        <input type="radio" id="refund" name="refundcredit" class="custom-control-input" checked (change)="refund" #refund>
+                                                        <label class="custom-control-label" for="refund">Refund</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                                                        <input type="radio" id="credit" name="refundcredit" class="custom-control-input" (change)="credit" #credit>
+                                                        <label class="custom-control-label" for="credit">Credit</label>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            
+                                            <ng-container >
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Bill Month</p>
+                                                        <h6 class="mb-2">March</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Transaction ID</p>
+                                                        <h6 class="mb-2">IP00006578</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Status</p>
+                                                        <h6 class="mb-2">Refund</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Amount</p>
+                                                        <h6 class="mb-2">500</h6>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ng-container *ngIf="!showrcpt">                                
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Month</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="refMonth" bindLabel="refmnth" placeholder="" [(ngModel)]="selectedRefMonth" name="refmnth">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Refund Amount</label>
+                                        <input type="text" class="form-control" placeholder="" value="500" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remarks</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="showrcpt">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bill-reciept-wrap" style="margin-top: 60px;">
+                                            <div class="img-blk">
+                                                <img src="../../../assets/images/amount-refund.png" alt="img" class="img-fluid st">
+                                            </div>
+                                            <h3 class="ttl">Amount Refund</h3>
+                                            <p class="p">Your Bill Amount is Refund</p>
+                                            <button class="btn btn-secondary bttn-print st"><i class="icons8 icons8-print-2"></i>Print Bill</button>
+                                            <button class="btn btn-outline-light3 st">Email</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer" *ngIf="!showrcpt">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="submitBill()">Submit</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+<div class="pr-modal">
+    <div class="modal right fade" id="CreditModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="CreditModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="CreditModalLabel">Credit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <!-- <div class="row">
+                                                <div class="col-12">
+                                                    <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                                                        <input type="radio" id="refund" name="refundcredit" class="custom-control-input" checked (change)="refund" #refund>
+                                                        <label class="custom-control-label" for="refund">Refund</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                                                        <input type="radio" id="credit" name="refundcredit" class="custom-control-input" (change)="credit" #credit>
+                                                        <label class="custom-control-label" for="credit">Credit</label>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            
+                                            <ng-container >
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Bill Month</p>
+                                                        <h6 class="mb-2">March</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Transaction ID</p>
+                                                        <h6 class="mb-2">IP00006578</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Status</p>
+                                                        <h6 class="mb-2">Credit</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13 mb-1">Amount</p>
+                                                        <h6 class="mb-2">500</h6>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                            
+
+                            <ng-container *ngIf="!showrcptcreadit">                                
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Month</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="refMonth" bindLabel="refmnth" placeholder="" [(ngModel)]="selectedRefMonth" name="refmnth">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Credit Amount</label>
+                                        <input type="text" class="form-control" placeholder="" value="500" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remarks</label>
+                                        <textarea class="form-control big-textarea" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="showrcptcreadit">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bill-reciept-wrap" style="margin-top: 60px;">
+                                            <div class="img-blk">
+                                                <img src="../../../assets/images/amount-refund.png" alt="img" class="img-fluid st">
+                                            </div>
+                                            <h3 class="ttl">Amount Credit</h3>
+                                            <p class="p">Your Bill Amount is Credited</p>
+                                            <button class="btn btn-secondary bttn-print st"><i class="icons8 icons8-print-2"></i>Print Bill</button>
+                                            <button class="btn btn-outline-light3 st">Email</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer" *ngIf="!showrcptcreadit">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="submitBillCreadit()">Submit</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Payment Modal -->
+<!-- <div class="pr-modal">
+    <div class="modal right fade" id="paymentModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="paymentModalLabel">Payment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Bill Id: 56378849</h4>
+                                                    <h6>John Doe</h6>
+                                                    <p class="p p-12 mr-1"><span class="mr-1">CRN:</span><span class="text-right text-dark">0019924356</span></p>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4">$ 36458</h4>
+                                                    <p class="p p-12 mr-1"><span class="mr-3">Due Date</span><span class="text-right text-dark">03 Feb 2020</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <p class="p p-13">Bill Month</p>
+                                                        <h6 class="h6">March</h6>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <p class="p p-13">Bill Period</p>
+                                                        <h6 class="h6">27 Nov 2019 to 03 Mar 2020</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Payment Mode</label>
+                                    <form [formGroup]="paymode" novalidate >
+                                        <ng-select [searchable]="false" [clearable]="false" formControlName="paymodetype" appendTo="body" placeholder="Select Type" name="name">
+                                            <ng-option [value]="'cash'">Cash</ng-option>
+                                            <ng-option [value]="'dgtl'">Digital</ng-option>
+                                            <ng-option [value]="'ddchq'">DD/Cheque</ng-option>
+                                        </ng-select>
+                                    </form>
+                                </div>
+                            </div>                 
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'cash'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'dgtl'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Transaction ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'ddchq'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>DD/Cheque ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Bank</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label>DD/Cheque Image</label>
+                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                            <div class="upload-inner">
+                                                <div class="media">
+                                                    <div class="media-body single">
+                                                        <ngx-dropzone-label>
+                                                            <div class="drag-drop">
+                                                                <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                <p class="p p-13">Drag & Drop files here</p>
+                                                                <p class="p p-13 font-weight-normal">Or</p>
+                                                                <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                            </div>
+                                                        </ngx-dropzone-label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uploaded-items">
+                                            <ul class="list-group list-group-horizontal-sm">
+                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label
+                                                        class="p p-12 file-name">{{f.name}}
+                                                    </ngx-dropzone-label>
+                                                </ngx-dropzone-image-preview>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col" *ngIf="paymode.value.paymodetype === 'ddchq'">
+                        <button class="btn btn-outline-light3 bttn-print st"><fa-icon [icon]="faPrint"></fa-icon>Print</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="showtoast = true">Add</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<!-- Payment Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="paymentModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel">
+      <div class="modal-dialog" role="document" style="min-width:570px;">
+        <div class="modal-content">
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="paymentModalLabel">Payment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                <!-- <span class="prt" tooltipClass="pr-tooltip" placement="left" ngbTooltip="Print" [openDelay]="200" [closeDelay]="300" [routerLink]="['/consumerops/billing/print-bill']"><i class="icons8 icons8-print-2"></i></span> -->
+            </div>
+
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body" style="min-height: unset;">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Invoice No. : 56378849</h4>
+                                                    
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="h4 text-primary">Meter No. : 567894556</h4>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Current Reading Date</p>
+                                                        <h6 class="h6">03 Feb 20</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Previous Reading Date</p>
+                                                        <h6 class="h6">03 Feb 20</h6>
+                                                    </div>                                                    
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Consumer Status</p>
+                                                        <h6 class="h6">Active</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Current Reading </p>
+                                                        <h6 class="h6">120</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Previous Reading </p>
+                                                        <h6 class="h6">100</h6>
+                                                    </div>                                                    
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Gas Units Consumed</p>
+                                                        <h6 class="h6">20</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Rate</p>
+                                                        <h6 class="h6">10000</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Tax</p>
+                                                        <h6 class="h6">500</h6>
+                                                    </div>                                                    
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Consumption Charges</p>
+                                                        <h6 class="h6">5000</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="title-divider text-dark my-0">Details</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Previous Due</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 568.0</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Payments</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 568.0</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Current Charges</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 568.0</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">EMI Security Deposit</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 568.0</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Amount Due before <span class="text-secondary">03 Feb 2020</span></p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 2149.0</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Amount Due after <span class="text-secondary">03 Feb 2020</span></p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h6 class="h6 text-right pr-5">$ 4149.0</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Payment Mode</label>
+                                    <form [formGroup]="paymode" novalidate >
+                                        <ng-select [searchable]="false" [clearable]="false" formControlName="paymodetype" appendTo="body" placeholder="Select Type" name="name">
+                                            <ng-option [value]="'cash'">Cash</ng-option>
+                                            <ng-option [value]="'dgtl'">Digital</ng-option>
+                                            <ng-option [value]="'ddchq'">DD/Cheque</ng-option>
+                                        </ng-select>
+                                    </form>
+                                </div>
+                            </div>                 
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'cash'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <textarea class="form-control" placeholder="" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'dgtl'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Transaction ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="paymode.value.paymodetype === 'ddchq'">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Select Type</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payType" bindLabel="paytp" placeholder="" [(ngModel)]="selectedPayType" name="paytp">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Channel</label>
+                                        <ng-select [searchable]="false" [clearable]="false" appendTo="body" [items]="payChannel" bindLabel="paychnl" placeholder="" [(ngModel)]="selectedPayChannel" name="paychnl">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control" placeholder="Enter Amount" value="500" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>DD/Cheque ID</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Bank</label>
+                                        <input type="text" class="form-control" placeholder="" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label>DD/Cheque Image</label>
+                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                            <div class="upload-inner">
+                                                <div class="media">
+                                                    <div class="media-body single">
+                                                        <ngx-dropzone-label>
+                                                            <div class="drag-drop">
+                                                                <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                <p class="p p-13">Drag & Drop files here</p>
+                                                                <p class="p p-13 font-weight-normal">Or</p>
+                                                                <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                            </div>
+                                                        </ngx-dropzone-label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uploaded-items">
+                                            <ul class="list-group list-group-horizontal-sm">
+                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label
+                                                        class="p p-12 file-name">{{f.name}}
+                                                    </ngx-dropzone-label>
+                                                </ngx-dropzone-image-preview>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="showtoast = true">Add</button>
+                    </div>
+                </div>
+            </div>   
+    
+        </div>
+      </div>
+    </div>
+</div>

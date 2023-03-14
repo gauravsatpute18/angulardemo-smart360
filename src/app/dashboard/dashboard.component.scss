@@ -1,0 +1,31 @@
+.tools {
+    width: 120px;
+}
+
+.showOnHover {
+    position: relative;
+    cursor: pointer;
+}
+
+.showOnHover span {
+    position: absolute;
+    top: 0;
+    transform: translateY(40%);
+    display: none;
+    background: white;
+    z-index: 20;
+    min-width: 100%;
+    padding: 1rem;
+    border: 1px black;
+}
+
+.showOnHover:hover span {
+    display: inline;
+}
+
+b {
+    color: darkslateblue
+}
+.hoverStyle{
+    display: inline-block;
+}

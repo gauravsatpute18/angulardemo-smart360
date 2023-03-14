@@ -1,0 +1,68 @@
+.boxouter{
+width: 339px;
+height: 116px;
+background: #FFFFFF;
+border: 1px solid #D7D8DD;
+box-sizing: border-box;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+border-radius: 2px;
+}
+.innercontent
+{
+    margin-top: 17px;
+    margin-left: 21px;
+}
+.innerhead
+{
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color: #353FDF;
+}
+.innervalof
+{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #8B8D9B;
+}
+.add
+{
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #353FDF;
+
+}
+.innerval{
+    margin-left: 78px;
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+color: #24264C;
+}

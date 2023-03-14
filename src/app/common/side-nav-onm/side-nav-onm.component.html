@@ -1,0 +1,58 @@
+<div class="pr-side-navbar z-99 pos-rel open-slide">
+    <div class="" data-toggle="buttons">
+      <button class="btn btn-primary bttn-transparent menubttn" (click)="bClickEvent()"
+        [ngClass]="status ? 'open-subm' : 'close-subm'"><span></span></button>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item" placement="right" ngbPopover="Dashboard" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link active" [routerLink]="['/work-order']"><span><i class="icons8 icons8-speed"></i></span>Dashboard</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Dispatcher" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link " [routerLink]="['oandm/work-order']"><span><i class="icons8 icons8-submit-document"></i></span>Dispatcher</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Assets" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['/asset']"><span><i class="icons8 icons8-brief"></i></span>Assets</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Reports" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['consumerops/reports']"><span><i class="icons8 icons8-todo-list"></i></span>Reports</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="User" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link " [routerLink]="['user']"><span><i class="icons8 icons8-user"></i></span>User</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Settings" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" type="button" data-toggle="modal" data-target="#concareSettingsModal"><span><i class="icons8 icons8-settings"></i></span>Settings</a>
+      </li>
+    </ul>
+</div>
+
+
+ <!-- Settings Modal -->
+ <div class="pr-sidebar-modal">
+  <div class="modal left fade" id="concareSettingsModal" data-backdrop="true" tabindex="-1" role="dialog" aria-labelledby="concareSettingsModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title" id="concareSettingsModalLabel">Settings</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+  
+        <div class="modal-body" style="background-image: url('../../../assets/images/sidenav-illustration.png');">
+          <div class="pr-side-inner-navbar">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Work Order</a>
+                <a class="nav-link" href="#">Appointments</a>
+                <a class="nav-link" href="#">Vendor</a>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+</div>

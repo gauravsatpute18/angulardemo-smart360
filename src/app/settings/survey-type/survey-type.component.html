@@ -1,0 +1,335 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+<ol class="breadcrumb">            
+    <li class="breadcrumb-item"><a routerLink="sales-marketing">S&M</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Survey Type</li>
+</ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration">Registration</a>
+    <a class="dropdown-item" href="/survey/location/add">Survey</a>
+    <a class="dropdown-item" href="/campaign/add-campaign">Campgain</a>
+    </div>
+</div>
+</div>
+<section class="pr-section settings-sec">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="inner-page-title"><h4 class="h4">Survey Type</h4></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <div class="alerts-wrapper">
+                <div class="alert alert-light alert-dismissible fade show" role="alert">
+                    <div class="media">
+                        <div class="img-blk">
+                            <img class="st img-fluid" src="../../../assets/images/settings-survey-type.png" alt="img">
+                        </div>                        
+                        <div class="media-body align-self-center">
+                            <h2 class="h2 ttl">Lorem ipsum dolor sit</h2>
+                            <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem Itaque hic ipse iam pridem est reiectus; Si sapiens, ne tum quidem miser, </p>
+                        </div>
+                    </div>                 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col">
+          <form class="pr-search-form d-inline-block">
+            <span class="s-icon"></span>
+            <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+          </form>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item active" href="#"><fa-icon [icon]="faPrint"></fa-icon>Print</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFilePdf"></fa-icon>PDF</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileExcel"></fa-icon>Excel</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileCsv"></fa-icon>CSV</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto pl-0">
+            <button class="btn btn-secondary st" (click)="surveyTypeModal(content)"><fa-icon [icon]="faPlus"></fa-icon>Survey Type</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <label>Filters</label>
+                                        <ng-select class="filter-select" [items]="type" bindLabel="name" placeholder="Type" [(ngModel)]="selectedType"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Status</label>
+                                        <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Status" [(ngModel)]="selectedStatus"
+                                            name="name">
+                                        </ng-select>
+                                    </li>                        
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row filter-cta-row">
+                            <div class="col-auto pr-2">
+                              <button class="btn btn-outline-secondary st">Apply</button>
+                            </div>
+                            <div class="col-auto pl-2">
+                              <button class="btn btn-light2 st">Cancel</button>
+                            </div>
+                        </div>                       
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="settings-cards-wrap inner-wrap">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="settings-card active">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select active" [items]="activeStatus" bindLabel="status1" placeholder="Active" [(ngModel)]="selectedActiveStatus" name="status1" bindValue="status1">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="settings-card pending">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select pending" [items]="pendingStatus" bindLabel="status2" placeholder="Pending" [(ngModel)]="selectedPendingStatus" name="status2" bindValue="status2">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="settings-card finished">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select finished" [items]="finishedStatus" bindLabel="status3" placeholder="Finished" [(ngModel)]="selectedFinishedStatus" name="status3" bindValue="status3">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="settings-card pending">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select pending" [items]="pendingStatus2" bindLabel="status4" placeholder="Pending" [(ngModel)]="selectedPendingStatus2" name="status4" bindValue="status4">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="settings-card finished">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select finished" [items]="finishedStatus2" bindLabel="status5" placeholder="Finished" [(ngModel)]="selectedFinishedStatus2" name="status5" bindValue="status5">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="settings-card active">
+                            <div class="settings-card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="id text-primary">ID 00199243</p>
+                                        <p class="p text-dark">Location Lorem</p>
+                                        <p class="p sm">Domestic</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <ng-select class="status-select active" [items]="activeStatus2" bindLabel="status6" placeholder="Active" [(ngModel)]="selectedActiveStatus2" name="status6" bindValue="status6">
+                                        </ng-select>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <div class="settings-card-footer">
+                                <div class="media">
+                                    <div class="img-blk">
+                                        <img class="st img-abs" src="../../../assets/images/profile-pic.png" alt="profile img">
+                                    </div>                                    
+                                    <div class="media-body">
+                                      <p class="p p-13"><span class="text-dark fw-500">Jhon</span> Created On <span class="text-dark">09 Jan 2020</span></p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Add New Survey Type</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="modal-form-wrap inner-form">
+            <div class="form-row">
+                <div class="col px-1">
+                    <label>Survey Name</label>
+                    <input type="text" class="form-control" placeholder="" value="Survey XYZWS" />
+                </div>
+            </div>            
+            <div class="form-row">
+                <div class="col px-1">
+                    <label>Survey Type</label>
+                    <ng-select [items]="surveyType" bindLabel="name2" appendTo="body" placeholder="" [(ngModel)]="selectedSurveyType" name="name2" bindValue="name2">
+                    </ng-select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col px-1">
+                    <label>Start Date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                        <div class="input-group-append">
+                            <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()">
+                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="form-row">
+                <div class="col px-1">
+                    <label>Survey Type</label>
+                    <ng-select [items]="actStatus" bindLabel="name3" appendTo="body" placeholder="" [(ngModel)]="selectedActStatus" name="name3" bindValue="name3">
+                    </ng-select> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-light3 st mr-3" (click)="modal.close('Close click')">Cancel</button>
+      <button type="button" class="btn btn-secondary st">Save</button>
+    </div>
+</ng-template>

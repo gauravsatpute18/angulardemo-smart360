@@ -1,0 +1,226 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/meterdata/validation']">Validation</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Consumer</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <!-- <a class="dropdown-item active" href="/registration">Registration</a>
+            <a class="dropdown-item" href="#">Survey</a>
+            <a class="dropdown-item" href="#">Campgain</a> -->
+        </div>
+    </div>
+</div>
+
+<section class="pr-section list-view-section">
+
+    <div class="row">
+        <div class="col-12">
+              <h4 class="h4">Consumer</h4>
+        </div>
+    </div>
+
+    <div class="row dash-wrap">
+        <div class="col-12 dash-col">
+            <div class="sm-dash ul-list">                
+                <div class="row">
+                    <div class="col align-self-center">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item">
+                                <p>POR2-GANDHI NAGAR-02</p>
+                                <span>1200</span> 
+                            </li>
+                            <li class="list-group-item">
+                                <p>MR Cycle</p>
+                                <span>30</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Portion</p>
+                                <span>09 Jan 20</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Normal</p>
+                                <span>12000</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Validation 1</p>
+                                <span>12000</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Validation 2</p>
+                                <span>1200</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Started</p>
+                                <span>0</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Completed</p>
+                                <span>0</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>Duplicate</p>
+                                <span>30</span>                                    
+                            </li>
+                            <li class="list-group-item">
+                                <p>End Date</p>
+                                <span>0</span>                                    
+                            </li>
+                        </ul>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col">
+            <form class="pr-search-form d-inline-block">
+                <span class="s-icon"></span>
+                <input class="form-control pr-table-search" type="search" placeholder="Search by MRU, Status or Data Range" aria-label="Search">
+            </form>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                data-target="#filterCollapse" aria-expanded="false"
+                aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" href="#">
+                        <fa-icon [icon]="faPrint"></fa-icon>Print
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <label>Month</label>
+                                        <ng-select class="filter-select" [items]="month" bindLabel="mnth"
+                                            placeholder="Month" [(ngModel)]="selectedMonth" name="mnth">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Cycle</label>
+                                        <ng-select class="filter-select" [items]="cycle" bindLabel="cycl"
+                                            placeholder="Cycle" [(ngModel)]="selectedCycle" name="cycl">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Portion</label>
+                                        <ng-select class="filter-select" [items]="portion" bindLabel="prtn"
+                                            placeholder="Portion" [(ngModel)]="selectedPortion" name="prtn">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Status</label>
+                                        <ng-select class="filter-select" [items]="status" bindLabel="stts"
+                                            placeholder="Status" [(ngModel)]="selectedStatus" name="stts">
+                                        </ng-select>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row filter-cta-row">
+                            <div class="col-auto pr-2">
+                              <button class="btn btn-outline-secondary st">Apply</button>
+                            </div>
+                            <div class="col-auto pl-2">
+                              <button class="btn btn-light2 st">Cancel</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="listview-table-wrap">
+
+                <table datatable class="pr-datatable table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"><span>MRU</span></th>
+                            <th scope="col"><span>Installation No</span></th>
+                            <th scope="col"><span>BP No</span></th>
+                            <th scope="col"><span>Status</span></th>
+                            <th scope="col"><span>Device No</span></th>
+                            <th scope="col"><span>Name</span></th>
+                            <th scope="col"><span>Category </span></th>
+                            <th scope="col"><span>Contact</span></th>
+                            <th scope="col" class="action-col"><span>Action</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of collection.data">
+                            <td>{{item.mru}}</td>
+                            <td>{{item.installno}}</td>
+                            <td>{{item.bpno}}</td>
+                            <td>
+                                <div [ngSwitch]="item.status">
+                                    <div *ngSwitchCase="'active'">
+                                        <div class="badge badge-label-success">Active</div>
+                                    </div>
+                                    <div *ngSwitchDefault>
+                                        <div class="badge badge-label-warning">Inactive</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{item.dvcno}}</td>
+                            <td>{{item.nm}}</td>
+                            <td>{{item.category}}</td>
+                            <td>{{item.cnt}}</td>
+                            <td class="action-col">
+                                <span class="show">
+                                    <ul class="list-group list-group-horizontal action-list">
+                                        <li class="list-group-item st" [routerLink]="['/consumerops/meterdata/validation/consumer/details']" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View"
+                                            [openDelay]="300" [closeDelay]="500"> <fa-icon [icon]="faEye"></fa-icon>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</section>

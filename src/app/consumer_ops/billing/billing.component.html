@@ -1,0 +1,388 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+      <li class="breadcrumb-item active" aria-current="page">Consumer Ops</li>
+    </ol>
+  </div>
+  <!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+  <!-- <div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+      <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" href="/registration">Registration</a>
+        <a class="dropdown-item" href="#">Survey</a>
+        <a class="dropdown-item" href="#">Campgain</a>
+      </div>
+    </div>
+  </div> -->
+  
+  <section class="pr-section list-view-section">
+  
+    <div class="row dash-wrap">
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-add-img.png');">
+                <p><span class="badge badge-pill badge-warning">New</span></p>
+                <span class="num h1">57</span>
+                <span class="p dtl">Consumers</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+                <p><span class="badge badge-pill badge-finished">Total</span></p>
+                <span class="num h1">578</span>
+                <span class="p dtl">Bills</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+                <p><span class="badge badge-pill badge-finished">Complete</span></p>
+                <span class="num h1">478</span>
+                <span class="p dtl">Bills</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-pending-img.png');">
+                <p><span class="badge badge-pill badge-unfinished">Remaining</span></p>
+                <span class="num h1">30</span>
+                <span class="p dtl">Bills</span>
+            </div>
+        </div>
+        
+    </div>
+  
+    <div class="row justify-content-end">
+        <div class="col">
+            <form class="pr-search-form d-inline-block">
+                <span class="s-icon"></span>
+                <input class="form-control pr-table-search" type="search" placeholder="Search by Utility, Cycle, MRU or Type" aria-label="Search">
+            </form>
+        </div>
+        <div class="col-auto pr-0">
+            <label class="p p-13 mr-3">Records</label>
+            <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                appendTo="body" [items]="pagination" bindLabel="name"
+                placeholder="30" [(ngModel)]="selectedPagination" name="name">
+            </ng-select>
+        </div>
+        
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                data-target="#filterCollapse" aria-expanded="false"
+                aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" >
+                        <i class="icons8 icons8-print-2"></i>Print
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-pdf"></i>PDF
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-brief"></i>Excel
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-document"></i>CSV
+                      </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto pl-0">
+            <button class="btn btn-secondary st bttn-add2" type="button" data-toggle="modal" data-target="#addSchedule"><fa-icon [icon]="faPlus"></fa-icon>ADD</button>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner"> 
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <label>Utility</label>
+                                        <ng-select class="filter-select" [items]="utility" bindLabel="name"
+                                            placeholder="Select Utility" [(ngModel)]="selectedUtility" name="name">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Month</label>
+                                        <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month"
+                                          [(ngModel)]="selectedMonth" name="name">
+                                        </ng-select>
+                                      </li>
+                                    <li class="list-group-item">
+                                        <label>Cycle</label>
+                                        <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle"
+                                          [(ngModel)]="selectedCycle" name="name">
+                                        </ng-select>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Area</label>
+                                        <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area"
+                                          [(ngModel)]="selectedArea" name="name">
+                                        </ng-select>
+                                      </li>
+        
+                                    <li class="list-group-item">
+                                        <label>MRU</label>
+                                        <ng-select class="filter-select" [items]="mru" bindLabel="name" placeholder="Select MRU" [(ngModel)]="selectedMru"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Type</label>
+                                        <ng-select class="filter-select" [items]="type" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedType"
+                                            name="name">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Category</label>
+                                        <ng-select class="filter-select" [items]="category" bindLabel="name"
+                                            placeholder="Select Category" [(ngModel)]="selectedCategory" name="name">
+                                        </ng-select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label>Status</label>
+                                        <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                            name="name">
+                                        </ng-select>
+                                    </li>                           
+                                    
+                                    <li class="list-group-item">
+                                        <label>Date Range</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bttn-transparent bttn-icon" type="button">
+                                                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                </button>
+                                            </div>
+                                            <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>   
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row filter-cta-row">
+                                    <div class="col-auto pr-2">
+                                      <button class="btn btn-outline-secondary st">Apply</button>
+                                    </div>
+                                    <div class="col-auto pl-2">
+                                    <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                    data-target="#filterCollapse" aria-expanded="false"
+                                    aria-controls="filterCollapse">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+    <div class="row">
+      <div class="col">
+        <div class="listview-table-wrap">
+            <label class="p p-12">Showing Last 6 month records</label>
+            <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"><span>Utility</span></th>
+                        <th scope="col"><span>Cycle</span></th>
+                        <th scope="col"><span>MRU</span></th>
+                        <th scope="col"><span>Consumer</span></th>
+                        <th scope="col"><span>Type</span></th>
+                        <th scope="col"><span>Category</span></th>
+                        <th scope="col"><span>Sub Category</span></th>
+                        <th scope="col"><span>Billed</span></th>
+                        <th scope="col"><span>Status</span></th>
+                        <th scope="col"><span>Due Date</span></th>
+                        <th scope="col" class="action-col"><span>Action</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of collection.data">
+                        <td>{{item.utility}}</td>
+                        <td>{{item.cycle}}</td>
+                        <td>{{item.mru}}</td>
+                        <td>{{item.consumer}}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.category}}</td>
+                        <td>{{item.sbcategory}}</td>
+                        <td>{{item.billed}}</td>
+                        <td>
+                            <div [ngSwitch]="item.status">
+                                <div *ngSwitchCase="'partial'">
+                                    <div class="badge badge-label-danger">Partial</div>
+                                </div>
+                                <div *ngSwitchCase="'dispatched'">
+                                    <div class="badge badge-label-pending">Dispatched</div>
+                                </div>
+                                <div *ngSwitchCase="'notdispatched'">
+                                    <div class="badge badge-label-unfinished">Not Dispatched</div>
+                                </div>
+                                <div *ngSwitchDefault>
+                                    <div class="badge badge-label-finished">Complete</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{item.duedt | date : 'dd MMM yy'}}</td>
+                        <td class="action-col">
+                            <span class="show">
+                                <ul class="list-group list-group-horizontal action-list">
+                                    <li class="list-group-item st" [routerLink]="['/consumerops/billing/run-bill']" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Run Bill" [openDelay]="300" [closeDelay]="500"><fa-icon [icon]="faFileInvoiceDollar"></fa-icon>
+                                    </li>
+                                    <li class="list-group-item st" [routerLink]="['/consumerops/billing/print-bill']" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print" [openDelay]="300" [closeDelay]="500"><fa-icon [icon]="faPrint"></fa-icon>
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+  
+        </div>
+      </div>
+    </div>
+  
+  </section>
+
+  <div class="pr-modal">
+    <div class="modal right fade" id="addSchedule" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addSchedule">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content"> 
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addAdvertisementModalLabel">Billing</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+
+            <div class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Utility</label>
+                                    <ng-select [items]="utility" bindLabel="catg" placeholder="Gas" [(ngModel)]="selectedUtility" name="catg">
+                                    </ng-select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Select Category</label>
+                                   <ng-select [items]="category1" bindLabel="catg" [(ngModel)]="selectedcategory" name="catg">
+                                    </ng-select>
+                                </div>
+                                 <div class="col">
+                                    <label>Select Sub Category</label>
+                                   <ng-select [items]="subcategory1" bindLabel="catg"  [(ngModel)]="selectedsubcategory" name="catg">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col">
+                                  <label>Schedule Type</label>
+                                 <ng-select [items]="stype" bindLabel="catg" placeholder="Manual" [(ngModel)]="selectedstype" name="catg">
+                                  </ng-select>
+                              </div>
+                               <div class="col">
+                                  <label>Activity Type</label>
+                                 <ng-select [items]="atype" bindLabel="catg"  placeholder="Activity 1" [(ngModel)]="selectedatype" name="catg">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                                <label>City</label>
+                               <ng-select [items]="city" bindLabel="catg" [(ngModel)]="selectedCity" name="catg">
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col">
+                              <label>Area</label>
+                             <ng-select [items]="area" bindLabel="catg" placeholder="Manual" [(ngModel)]="selectedArea" name="catg">
+                              </ng-select>
+                          </div>
+                           <div class="col">
+                              <label>Sub Area</label>
+                             <ng-select [items]="subArea" bindLabel="catg"  placeholder="Activity 1" [(ngModel)]="selectedSubArea" name="catg">
+                              </ng-select>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                            <label>Bill Cycle</label>
+                           <ng-select [items]="billcycle" bindLabel="catg"  [(ngModel)]="selectedbillcycle" name="catg">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col">
+                          <label>Start Date</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <button class="btn bttn-transparent bttn-icon" type="button" (click)="dp.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp1" [(ngModel)]="model" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" container="body">                                  
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                        <label>End Date</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <button class="btn bttn-transparent bttn-icon" type="button" (click)="dp1.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                          </div>
+                          <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp11" [(ngModel)]="model" ngbDatepicker #dp1="ngbDatepicker" (click)="dp1.toggle()" container="body">                                  
+                      </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                      <label>Due Date</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <button class="btn bttn-transparent bttn-icon" type="button" (click)="dp2.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp2" [(ngModel)]="model" ngbDatepicker #dp2="ngbDatepicker" (click)="dp2.toggle()" container="body">                                  
+                    </div>
+                  </div>
+              </div>         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        
+                        <button class="btn btn-secondary st" id="proceed_user_done" (click)="showtoast = true">Submit</button>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+      </div>
+    </div>
+</div>

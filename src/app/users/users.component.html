@@ -1,0 +1,272 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+  <ol class="breadcrumb">            
+    <li class="breadcrumb-item"><a routerLink="/sales-marketing">S&M</a></li>
+    <li class="breadcrumb-item active" aria-current="page">User</li>
+  </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+  <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+      <a class="dropdown-item active" href="/registration/add-applicant">Registration</a>
+      <a class="dropdown-item" href="/survey">Survey</a>
+      <a class="dropdown-item" href="/campaign/add-campaign">Campgain</a>
+    </div>
+  </div>
+</div>
+<section class="pr-section list-view-section">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="alerts-wrapper">
+          <div class="alert alert-light alert-dismissible fade show" role="alert">
+            <div class="media">
+              <div class="img-blk">
+                <img class="st img-fluid" src="../../../assets/images/settings-survey.png" alt="img">
+              </div>
+              <div class="media-body align-self-center">
+                <h2 class="h2 ttl">User</h2>
+                <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col">
+             <form class="pr-search-form d-inline-block">
+                   <span class="s-icon"></span>
+                   <input class="form-control pr-table-search" type="search" placeholder="Search by Name,Moblile,Email" aria-label="Search">        
+             </form>
+        </div>
+        <div class="col-auto pr-0">
+          <label class="p p-13 mr-3">Records</label>
+          <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                      appendTo="body" [items]="pagination" bindLabel="name"
+                                      placeholder="50" [(ngModel)]="selectedPagination" name="name">
+          </ng-select>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item active" href="/user"><fa-icon [icon]="faPrint"></fa-icon>Print</a>
+                  <a class="dropdown-item" href="/user"><fa-icon [icon]="faFilePdf"></fa-icon>PDF</a>
+                  <a class="dropdown-item" href="/user"><fa-icon [icon]="faFileExcel"></fa-icon>Excel</a>
+                  <a class="dropdown-item" href="/user"><fa-icon [icon]="faFileCsv"></fa-icon>CSV</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto pl-0">
+            <button class="btn btn-secondary st" [routerLink]="'/user/add-user-details'"><fa-icon [icon]="faPlus"></fa-icon>User</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                  <div class="filter-wrap-inner">
+                    <div class="row">
+                      <div class="col-12">
+                        <ul class="list-group list-group-horizontal">
+                          <li class="list-group-item">
+                            <label>Utility</label>
+                            <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                              [(ngModel)]="selectedUtility" name="name">
+                            </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>Type</label>
+                            <ng-select class="filter-select" [items]="type" bindLabel="name" placeholder="Select Type"
+                              [(ngModel)]="selectedType" name="name">
+                            </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>Sub Type</label>
+                            <ng-select class="filter-select" [items]="subtype" bindLabel="name" placeholder="Select Type"
+                              [(ngModel)]="selectedSubType" name="name">
+                            </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>Department</label>
+                            <ng-select class="filter-select" [items]="dept" bindLabel="name"
+                              placeholder="Select Dept" [(ngModel)]="selecteddept" name="name">
+                            </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>Form Factor</label>
+                            <ng-select class="filter-select" [items]="formFactor" bindLabel="name"
+                              placeholder="Select Form Factor" [(ngModel)]="selectedformFactor" name="name">
+                            </ng-select>
+                          </li>
+                          
+                          <li class="list-group-item">
+                            <label>Role</label>
+                            <ng-select class="filter-select" [items]="role" bindLabel="name" placeholder="Select Role"
+                              [(ngModel)]="selectedRole" name="name">
+                            </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>City</label>
+                            <ng-select class="filter-select" [items]="city" bindLabel="name" placeholder="Select City"
+                              [(ngModel)]="selectedCity" name="name">
+                            </ng-select>
+                          </li>
+                            <li class="list-group-item">
+                              <label>Status</label>
+                              <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status"
+                                [(ngModel)]="selectedStatus" name="name">
+                              </ng-select>
+                            </li>
+                            <li class="list-group-item pr-date-range-li">
+                              <label>Date Range</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <button class="btn bttn-transparent bttn-icon" type="button">
+                                          <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                      </button>
+                                  </div>
+                                  <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                              </div>
+                            </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="row filter-cta-row">
+                      <div class="col-auto pr-2">
+                        <button class="btn btn-outline-secondary st">Apply</button>
+                      </div>
+                      <div class="col-auto pl-2">
+                        <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                        data-target="#filterCollapse" aria-expanded="false"
+                        aria-controls="filterCollapse">Cancel</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="listview-table-wrap">
+              <label class="p p-12">Showing Last 6 month records</label>
+                <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="chbx-col">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" class="custom-control-input" id="checkAll">
+                                  <label class="custom-control-label" for="checkAll"></label>
+                                </div>
+                            </th>
+                            <th scope="col"><span>User ID</span></th>
+                            <th scope="col"><span>Name</span></th>
+                            <th scope="col"><span>Mobile No.</span></th>
+                            <th scope="col"><span>Status</span></th>
+                            <th scope="col"><span>Email</span></th>
+                            <th scope="col"><span>Utility</span></th>
+                            <th scope="col"><span>City</span></th>
+                            <th scope="col"><span>Department</span></th>
+                            <th scope="col"><span>Role</span></th>
+                            <th scope="col" class="action-col"><span>Action</span></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of collection.data">
+                            <th scope="row" class="chbx-col">
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" class="custom-control-input" [attr.id]="item.id">
+                                  <label class="custom-control-label" [attr.for]="item.id"></label>
+                                </div>
+                            </th>
+                            <td class="showOnHover" (click)="renderDetail(item.id)">{{item.userId}}
+                                <span class="show">
+                                  <span class="enqry-no-blk">{{item.userId}}</span>
+                                  <span class="enqry-name-blk">{{item.name}}</span>
+                                  <div class="enqry-sts-blk" [ngSwitch]="item.status">
+                                    <div *ngSwitchCase="'success'">
+                                      <div class="badge badge-label-success">Approved</div>
+                                    </div>
+                                    <div *ngSwitchCase="'warning'">
+                                      <div class="badge badge-label-warning">New</div>
+                                    </div>
+                                    <div *ngSwitchDefault>
+                                      <div class="badge badge-label-danger">Rejected</div>
+                                    </div>
+                                  </div>
+                                  <div class="list-blk">
+                                      <p><span>Operator</span><span>Type</span></p>
+                                      <p><span>Employee</span><span>Sub Type</span></p>
+                                      <p><span>Web</span><span>Form Factor</span></p>
+                                  </div>
+                                </span>
+                              </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.cantact}}</td>
+                            <td>
+                                <div [ngSwitch]="item.status">
+                                  <div *ngSwitchCase="'success'">
+                                    <div class="badge badge-label-success">Approved</div>
+                                  </div>
+                                  <div *ngSwitchCase="'warning'">
+                                    <div class="badge badge-label-warning">New</div>
+                                  </div>
+                                  <div *ngSwitchDefault>
+                                    <div class="badge badge-label-danger">Rejected</div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>{{item.email}}</td>
+                              <td>{{item.utility}}</td>
+                              <td>{{item.city}}</td>
+                              <td>{{item.department}}</td>
+                              <td style="width: 150px;">{{item.role}}</td>
+                              <td class="action-col" (click)="renderDetail(item.id)">
+                                <span class="show">
+                                  <ul class="list-group list-group-horizontal action-list">
+                                    <li class="list-group-item st" [routerLink]="'/user/details'" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300" [closeDelay]="500"><i class="icons8 icons8-eye"></i></li>
+                                    <li class="list-group-item st" [routerLink]="'/user/details'" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Edit" [openDelay]="300" [closeDelay]="500"><fa-icon [icon]="faPen" ></fa-icon></li>
+                                  </ul>
+                                </span>
+                              </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+</section>   
+                
+                    
+                
+                        
+                
+                
+                
+        
+    
+            
+
+        
+        
+    
+

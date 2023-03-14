@@ -1,0 +1,1331 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose --> 
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/admin']">Admin Onboarding</a></li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" >Option 1</a>
+        <a class="dropdown-item" >Option 2</a>
+        <a class="dropdown-item" >Option 3</a>
+        </div>
+    </div>
+</div>
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/admin']"></button>
+            <div class="inner-page-title d-inline-block"><h4 class="h4">System Configuration</h4></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap new-blk">
+            
+                <div class="row">
+                    <div class="col"><br>
+                        <h4 class="h4">&nbsp; Utilities</h4>
+                    </div>
+                </div>
+            
+                <div class="row justify-content-end">
+                    <div class="col">
+                        <form class="pr-search-form d-inline-block">
+                            <span class="s-icon"></span>
+                            <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                            data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse" style="border-color: #D2D2D4;"><span>2</span>Filter</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="filters-wrap">
+                            <div class="collapse" id="filterCollapse">
+                                <div class="filter-wrap-inner">
+                                    <ul class="list-group list-group-horizontal">
+                                        <li class="list-group-item">
+                                            <label>Status</label>
+                                            <ng-select class="filter-select" [items]="status" bindLabel="name"
+                                                placeholder="Select Status" [(ngModel)]="selectedStatus" name="name">
+                                            </ng-select>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Department</label>
+                                            <ng-select class="filter-select" [items]="department" bindLabel="name"
+                                                placeholder="Select Department" [(ngModel)]="selectedDepartment" name="name">
+                                            </ng-select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="admin-plans-utility-card-wrap">
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-rt inner-wrap py-0">
+                <div class="applicant-block-rt-header">
+                    <div class="row">
+                        <div class="col pr-0 align-self-center">
+                            <ul class="list-group list-group-horizontal admin-plans-list">
+                                <li class="list-group-item">
+                                    <div class="admin-plans-utility-card">
+                                        <div class="media">
+                                            <div class="logo-blk">
+                                                <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="ttl">Infra Water Ltd</h4>
+                                                <p class="p">BEECHNUT MUD</p>
+                                                <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">Name</p>
+                                    <span>BCNM</span>                                    
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">City</p>
+                                    <span>Houston</span>                                    
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">State</p>
+                                    <span>Texas</span>                                    
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">Country</p>
+                                    <span>USA</span>                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applicant-block-rt-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="h6 mt-2">Territory</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="nav-block mt-2">
+                                <nav class="inner-form-tabs">
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link st active" id="region-tab" data-toggle="tab" href="#region"
+                                            role="tab" aria-controls="region" aria-selected="true">Region</a>
+                                        <a class="nav-item nav-link st" id="country-tab" data-toggle="tab" href="#country" role="tab"
+                                            aria-controls="country" aria-selected="false">Country</a>
+                                        <a class="nav-item nav-link st" id="state-tab" data-toggle="tab" href="#state"
+                                            role="tab" aria-controls="state" aria-selected="true">State</a>
+                                        <a class="nav-item nav-link st" id="city-tab" data-toggle="tab" href="#city" role="tab"
+                                            aria-controls="city" aria-selected="false">City</a>
+                                        <a class="nav-item nav-link st" id="section-tab" data-toggle="tab" href="#section"
+                                            role="tab" aria-controls="section" aria-selected="true">Section</a>
+                                        <a class="nav-item nav-link st" id="area-tab" data-toggle="tab" href="#area"
+                                            role="tab" aria-controls="area" aria-selected="true">Area</a> 
+                                        <a class="nav-item nav-link st" id="subarea-tab" data-toggle="tab" href="#subarea"
+                                            role="tab" aria-controls="subarea" aria-selected="true">Subarea</a>                      
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="tab-content">
+                                <!-- Tab panel for region start -->
+                                <div class="tab-pane fade show active" id="region" role="tabpanel" aria-labelledby="region-tab"><br>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="department-card">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                                                    </div>                                    
+                                                    <div class="media-body department-card-body">
+                                                        <h6 class="ttl">America</h6>                                
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <!-- Tab panel for region end -->
+
+                                <!-- Tab panel for country start -->
+                                <div class="tab-pane fade" id="country" role="tabpanel" aria-labelledby="country-tab">
+                                    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pl-0">
+                                            <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#addCountryModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-auto" *ngFor="let item of countries.data">
+                                            <div class="department-card">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                                                    </div>                                    
+                                                    <div class="media-body department-card-body">
+                                                        <h6 class="ttl">{{item.country}}</h6>
+                                                    </div>
+                                                    <span class="edt st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editCountryModal"><i class="icons8 icons8-edit"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>              
+                                </div>
+                                <!-- Tab panel for country end -->
+
+                                <!-- Tab panel for state start -->
+                                <div class="tab-pane fade" id="state" role="tabpanel" aria-labelledby="state-tab">
+                                    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pl-0">
+                                            <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#addStateModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-auto" *ngFor="let item of states.data">
+                                            <div class="department-card">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                                                    </div>                                    
+                                                    <div class="media-body department-card-body">
+                                                        <h6 class="ttl">{{item.state}}</h6>  
+                                                    </div>
+                                                    <span class="edt st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editStateModal"><i class="icons8 icons8-edit"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>      
+                                </div>
+                                <!-- Tab panel for state end -->
+
+                                <!-- Tab panel for city start -->
+                                <div class="tab-pane fade" id="city" role="tabpanel" aria-labelledby="city-tab">
+                                    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pl-0">
+                                            <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#addCityModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-auto" *ngFor="let item of cities.data">
+                                            <div class="department-card">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                                                    </div>                                    
+                                                    <div class="media-body department-card-body">
+                                                        <h6 class="ttl">{{item.city}}</h6>
+                                                    </div>
+                                                    <span class="edt st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editCityModal"><i class="icons8 icons8-edit"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab panel for city end -->
+
+                                <!-- Tab panel for section start -->
+                                <div class="tab-pane fade" id="section" role="tabpanel" aria-labelledby="section-tab">    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pl-0">
+                                            <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#addSectionModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-auto" *ngFor="let item of sections.data">
+                                            <div class="department-card">
+                                                <div class="media">
+                                                    <div class="img-blk">
+                                                        <img class="img-fluid st" src="../../../../assets/images/applicant-block-gen-card.png" alt="img">
+                                                    </div>                                    
+                                                    <div class="media-body department-card-body">
+                                                        <h6 class="ttl">{{item.section}}</h6>                                
+                                                    </div>
+                                                    <span class="edt st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editSectionModal"><i class="icons8 icons8-edit"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab panel for section end -->
+
+                                <!-- Tab panel for area start -->
+                                <div class="tab-pane fade" id="area" role="tabpanel" aria-labelledby="area-tab">
+                                    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pr-0">
+                                            <label class="p p-13 mr-3">Records</label>
+                                            <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                                appendTo="body" [items]="pagination" bindLabel="name"
+                                                placeholder="10" [(ngModel)]="selectedPagination" name="name">
+                                            </ng-select>
+                                        </div>
+                                        <div class="col-auto pr-0">
+                                            <button class="btn btn-secondary st" style="margin-top: 3px;" role="button" data-toggle="modal" data-target="#addAreaModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="listview-table-wrap">  
+                                                <label class="p p-12">Showing Last 12 month records</label>                                          
+                                                <table datatable class="pr-datatable table table-hover" [dtOptions]="dtOptions2">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="sm-col"><span>Region</span></th>
+                                                            <th scope="col"><span>Country</span></th>
+                                                            <th scope="col"><span>State</span></th>
+                                                            <th scope="col"><span>City</span></th>
+                                                            <th scope="col"><span>Section</span></th>
+                                                            <th scope="col"><span>Area</span></th>
+                                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let item of collection.data">
+                                                            <th scope="row" class="sb-col">{{item.region}}</th>
+                                                            <td>
+                                                                <div [ngSwitch]="item.country">
+                                                                    <div *ngSwitchCase="'USA'">USA</div>
+                                                                    <div *ngSwitchCase="'Mexico'">Mexico</div>
+                                                                    <div *ngSwitchDefault>USA</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.state">
+                                                                    <div *ngSwitchCase="'Texas'">Texas</div>
+                                                                    <div *ngSwitchCase="'Michigan'">Michigan</div>
+                                                                    <div *ngSwitchCase="'Florida'">Florida</div>
+                                                                    <div *ngSwitchDefault>Texas</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.city">
+                                                                    <div *ngSwitchCase="'New York'">New York</div>
+                                                                    <div *ngSwitchCase="'Washington D.C.'">Washington D.C.</div>
+                                                                    <div *ngSwitchCase="'Houston'">Houston</div>
+                                                                    <div *ngSwitchCase="'Austin'">Austin</div>
+                                                                    <div *ngSwitchDefault>Austin</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.section">
+                                                                    <div *ngSwitchCase="'Queens'">Queens</div>
+                                                                    <div *ngSwitchCase="'Brookyn'">Brookyn</div>
+                                                                    <div *ngSwitchCase="'Staten Island'">Staten Island</div>
+                                                                    <div *ngSwitchCase="'Manhatten'">Manhatten</div>
+                                                                    <div *ngSwitchDefault>Brookyn</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.area">
+                                                                    <div *ngSwitchCase="'Ridgewood'">Ridgewood</div>
+                                                                    <div *ngSwitchCase="'Queens villege'">Queens villege</div>
+                                                                    <div *ngSwitchCase="'Brownsville'">Brownsville</div>
+                                                                    <div *ngSwitchCase="'Rossville'">Rossville</div>
+                                                                    <div *ngSwitchDefault>Rossville</div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="action-col">
+                                                                <span class="show">
+                                                                    <ul class="list-group list-group-horizontal action-list">
+                                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View"
+                                                                            [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editAreaModal">
+                                                                            <i class="icons8 icons8-edit"></i>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab panel for area end -->
+
+                                <!-- Tab panel for subarea start -->
+                                <div class="tab-pane fade" id="subarea" role="tabpanel" aria-labelledby="subarea-tab">
+                                    <div class="row justify-content-end">
+                                        <div class="col">
+                                            <form class="pr-search-form d-inline-block">
+                                                <span class="s-icon"></span>
+                                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </div>
+                                        <div class="col-auto pr-0">
+                                            <label class="p p-13 mr-3">Records</label>
+                                            <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                                appendTo="body" [items]="pagination" bindLabel="name"
+                                                placeholder="10" [(ngModel)]="selectedPagination" name="name">
+                                            </ng-select>
+                                        </div>
+                                        <div class="col-auto pr-0">
+                                            <button class="btn btn-secondary st" style="margin-top: 3px;" role="button" data-toggle="modal" data-target="#addSubareaModal">
+                                                <fa-icon [icon]="faPlus"></fa-icon>Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="listview-table-wrap">  
+                                                <label class="p p-12">Showing Last 12 month records</label>                                          
+                                                <table datatable class="pr-datatable table table-hover" [dtOptions]="dtOptions2">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col"><span>Country</span></th>
+                                                            <th scope="col"><span>State</span></th>
+                                                            <th scope="col"><span>City</span></th>
+                                                            <th scope="col"><span>Section</span></th>
+                                                            <th scope="col"><span>Area</span></th>
+                                                            <th scope="col"><span>Subarea</span></th>
+                                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let item of collection.data">
+                                                            <td>
+                                                                <div [ngSwitch]="item.country">
+                                                                    <div *ngSwitchCase="'USA'">USA</div>
+                                                                    <div *ngSwitchCase="'Mexico'">Mexico</div>
+                                                                    <div *ngSwitchDefault>USA</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.state">
+                                                                    <div *ngSwitchCase="'Texas'">Texas</div>
+                                                                    <div *ngSwitchCase="'Michigan'">Michigan</div>
+                                                                    <div *ngSwitchCase="'Florida'">Florida</div>
+                                                                    <div *ngSwitchDefault>Texas</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.city">
+                                                                    <div *ngSwitchCase="'New York'">New York</div>
+                                                                    <div *ngSwitchCase="'Washington D.C.'">Washington D.C.</div>
+                                                                    <div *ngSwitchCase="'Houston'">Houston</div>
+                                                                    <div *ngSwitchCase="'Austin'">Austin</div>
+                                                                    <div *ngSwitchDefault>Austin</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.section">
+                                                                    <div *ngSwitchCase="'Queens'">Queens</div>
+                                                                    <div *ngSwitchCase="'Brookyn'">Brookyn</div>
+                                                                    <div *ngSwitchCase="'Staten Island'">Staten Island</div>
+                                                                    <div *ngSwitchCase="'Manhatten'">Manhatten</div>
+                                                                    <div *ngSwitchDefault>Brookyn</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.area">
+                                                                    <div *ngSwitchCase="'Ridgewood'">Ridgewood</div>
+                                                                    <div *ngSwitchCase="'Queens villege'">Queens villege</div>
+                                                                    <div *ngSwitchCase="'Brownsville'">Brownsville</div>
+                                                                    <div *ngSwitchCase="'Rossville'">Rossville</div>
+                                                                    <div *ngSwitchDefault>Rossville</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div [ngSwitch]="item.subarea">
+                                                                    <div *ngSwitchCase="'Murdock'">Murdock</div>
+                                                                    <div *ngSwitchCase="'Hempstead Ave'">Hempstead Ave</div>
+                                                                    <div *ngSwitchCase="'93rd Ave'">93rd Ave</div>
+                                                                    <div *ngSwitchCase="'Jamaica Ave'">Jamaica Ave</div>
+                                                                    <div *ngSwitchDefault>Jamaica Ave</div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="action-col">
+                                                                <span class="show">
+                                                                    <ul class="list-group list-group-horizontal action-list">
+                                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View"
+                                                                            [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#editSubareaModal">
+                                                                            <i class="icons8 icons8-edit"></i>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab panel for subarea end -->
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+</section>
+
+<!-- Add subarea modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addSubareaModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addSubareaModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add Subarea</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Area</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Subarea</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "subarea" name = "subarea"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onSubareaAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add subarea modal end -->
+
+<!-- Toast for add subarea start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="subareaToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="subareaToast = false; autohide = true">
+            <div>Subarea successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add subarea end -->
+
+<!-- edit subarea modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editSubareaModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editSubareaModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit Subarea</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCity" name = "city"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedState" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedSection" name = "section"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Area</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedArea" name = "area"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Subarea</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedSubarea" name = "subarea"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit subarea modal end -->
+
+<!-- Add area modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addAreaModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addAreaModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add Area</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "city" name = "city"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "state" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "section" name = "section"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Area</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "area" name = "area"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onAreaAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add area modal end -->
+
+<!-- Toast for add area start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="areaToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="areaToast = false; autohide = true">
+            <div>Area successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add area end -->
+
+<!-- edit area modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editAreaModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editAreaModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit Area</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCity" name = "city"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedState" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedSection" name = "section"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Area</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedArea" name = "area"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit area modal end -->
+
+<!-- Add section modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addSectionModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addSectionModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add Section</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "region" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "state" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "section" name = "section"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onSectionAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add section modal end -->
+
+<!-- Toast for add section start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="sectionToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="sectionToast = false; autohide = true">
+            <div>Section successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add section end -->
+
+<!-- edit section modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editSectionModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editSectionModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit Section</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedRegion" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedState" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCity" name = "city"/>
+                                </div>
+                            </div>    
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Section</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedSection" name = "section"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit section modal end -->
+
+<!-- Add city modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addCityModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addCityModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add City</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "region" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "state" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "city" name = "city"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onCityAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add city modal end -->
+
+<!-- Toast for add city start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="cityToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="cityToast = false; autohide = true">
+            <div>City successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add city end -->
+
+<!-- edit city modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editCityModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editCityModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit City</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedRegion" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedState" name = "state"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCity" name = "city"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit city modal end -->
+
+<!-- Add state modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addStateModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addStateModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add State</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "region" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "country" name = "country"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "state" name = "state"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onStateAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add state modal end -->
+
+<!-- Toast for add state start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="stateToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="stateToast = false; autohide = true">
+            <div>State successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add state end -->
+
+<!-- edit state modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editStateModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editStateModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit State</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedRegion" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedState" name = "state"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit State modal end -->
+
+<!-- Add country modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addCountryModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addCountryModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Add Country</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "country" name = "country"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" (click)="onCountryAdd()" data-dismiss="modal" aria-label="Close">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Add country modal end -->
+
+<!-- Toast for add country start -->
+<div class="row">
+    <div class="col">
+        <ngb-toast class="success" *ngIf="countryToast" header="dwd" [delay]="2000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="countryToast = false; autohide = true">
+            <div>Country successfully added!!</div>
+        </ngb-toast>
+    </div>
+</div>
+<!-- Toast for add country end -->
+
+<!-- edit country modal start -->
+<div class="pr-modal">
+    <div class="modal right fade" id="editCountryModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="editCountryModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addPymntsModalLabel">Edit Country</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Region</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedRegion" name = "region"/>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" placeholder="" [(ngModel)] = "editedCountry" name = "countery"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" data-dismiss="modal" aria-label="Close">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+<!-- edit region modal end -->

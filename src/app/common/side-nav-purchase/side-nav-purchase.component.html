@@ -1,0 +1,44 @@
+<div class="pr-side-navbar z-99 pos-rel open-slide">
+    <div class="" data-toggle="buttons">
+      <button class="btn btn-primary bttn-transparent menubttn" (click)="bClickEvent()"
+        [ngClass]="status ? 'open-subm' : 'close-subm'"><span></span></button>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item" placement="right" ngbPopover="Dashboard" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link active" [routerLink]="['/spend']"><span><i class="icons8 icons8-speed"></i></span>Dashboard</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Request" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link"><span><i class="icons8 icons8-estimate"></i></span>Request</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Store" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['store']"><span><i class="icons8 icons8-todo-list"></i></span>Store</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Tenders" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link"><span><i class="icons8 icons8-news"></i></span>Tenders</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Product" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['product']"><span><i class="icons8 icons8-document"></i></span>Product</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Services" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['service']"><span><i class="icons8 icons8-document"></i></span>Services</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Order" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['order']"><span><i class="icons8 icons8-document"></i></span>Order</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Contracts" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['/contracts']"><span><i class="icons8 icons8-document"></i></span>Contracts</a>
+      </li>     
+      <li class="nav-item" placement="right" ngbPopover="Supplier" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['/supplier']"><span><i class="icons8 icons8-cv"></i></span>Supplier</a>
+      </li>      
+      <li class="nav-item" placement="right" ngbPopover="Reports" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['consumerops/reports']"><span><i class="icons8 icons8-todo-list"></i></span>Reports</a>
+      </li> 
+      <li class="nav-item" placement="right" ngbPopover="User" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['user']"><span><i class="icons8 icons8-user"></i></span>User</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Settings" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link"><span><i class="icons8 icons8-settings"></i></span>Settings</a>
+      </li>
+    </ul>
+</div>

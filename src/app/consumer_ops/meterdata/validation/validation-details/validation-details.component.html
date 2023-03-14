@@ -1,0 +1,509 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/validationlist']">Validation</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Consumer Details</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <!-- <a class="dropdown-item active">Option 1</a>
+        <a class="dropdown-item">Option 2</a>
+        <a class="dropdown-item">Option 3</a> -->
+        </div>
+    </div>
+</div>
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-auto pr-0 align-self-center">
+            <div class="bck-bttn-width">
+                <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/consumer/view']">Back</button>
+            </div>            
+        </div>
+        <div class="col align-self-center">
+            <div class="row">
+                <div class="col align-self-center">
+                    <h4 class="h4 mb-0">Meter Reading Details</h4>
+                </div>
+                <div class="col-auto align-self-center">
+                    <div class="inner-page-pagination">
+                        <nav class="">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link"><button class="btn bttn-prev"><fa-icon [icon]="faChevronLeft"></fa-icon></button></a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"><button class="btn bttn-next"><fa-icon [icon]="faChevronRight"></fa-icon></button></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="aplicant-block-filter-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <label class="p p-13">Bill Cycle</label>
+                                    <ng-select class="filter-select" [searchable]="false" [clearable]="false" appendTo="body" [items]="billCycle" bindLabel="blcyc" placeholder="Select Month" [(ngModel)]="selectedBillCycle" name="blcyc">
+                                    </ng-select>
+                                </div>
+                                <div class="col-6">
+                                    <label class="p p-13">Route</label>
+                                    <ng-select class="filter-select" [searchable]="false" [clearable]="false" appendTo="body"  [items]="billCycle" bindLabel="blcyc" placeholder="Select Month" [(ngModel)]="selectedBillCycle" name="blcyc">
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-finished">Connected</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">CRN: 0019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk" style="background-image: url('../../assets/images/john-doe.png');">
+                                            <!-- JD -->
+                                        </div>
+                                        <div class="media-body">
+                                            <h5>Rivka Frank </h5>
+                                            <p class="p eml mb-2">rivkafrank@gmail.com</p>
+                                            <p class="p mb-0 d-inline-block mr-2">+1 984-637-7849</p>
+                                            <button class="btn upd-bttn">update</button>                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="applicant-data">            
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bttn-toggle">
+                                    <div class="toggle-button-wrap mt-0">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="profl-tab" data-toggle="tab" href="#profl" role="tab"
+                                                    aria-controls="profl" aria-selected="true">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="mr-tab" data-toggle="tab" href="#mr"
+                                                    role="tab" aria-controls="mr" aria-selected="false">MR</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="validator-tab" data-toggle="tab" href="#validator" role="tab"
+                                                    aria-controls="validator" aria-selected="false">Validator</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>            
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="custom-tab-pane tab-pane fade show active" id="profl" role="tabpanel" aria-labelledby="profl-tab">            
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Category</p>
+                                                <h6 class="h6">Domestic</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Category</p>
+                                                <h6 class="h6">Sub Category</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Cycle</p>
+                                                <h6 class="h6">POR3-RAMANAYYA PETA-03</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13 d-inline-block">Route</p><button class="btn upd-bttn">update</button> 
+                                                <h6 class="h6">M1-GANDHI-NAG-1</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Location</p>
+                                                <h6 class="h6">Inside</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Address</p>
+                                                <h6 class="h6">3964  Small Street New york, 1235 New street AL - 35573, USA</h6>
+                                            </div>
+                                        </div>            
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="title-divider">Meter Details</div>
+                                            </div>
+                                        </div>            
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13 d-inline-block">Meter No.</p><button class="btn upd-bttn">update</button> 
+                                                <h6 class="h6">0050037610</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13 d-inline-block">Meter Status</p><button class="btn upd-bttn">update</button> 
+                                                <h6 class="h6">Faulty</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Make</p>
+                                                <h6 class="h6">12245</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Digit</p>
+                                                <h6 class="h6">5</h6>
+                                            </div>
+                                           
+                                            
+                                        </div>            
+                                    </div>
+                                    <div class="custom-tab-pane tab-pane fade" id="mr" role="tabpanel" aria-labelledby="mr-tab">
+                                        <div class="row">
+                                            
+                                            
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Reader</p>
+                                                <h6 class="h6">Jhon Deo</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Reader Contact</p>
+                                                <h6 class="h6">+1 984-637-7849</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Assign Date</p>
+                                                <h6 class="h6">20 May 20</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Complete Date</p>
+                                                <h6 class="h6">20 April 20</h6>
+                                            </div>
+                                           
+                                        </div> 
+                                    </div>
+                                    <div class="custom-tab-pane tab-pane fade" id="validator" role="tabpanel" aria-labelledby="validator-tab">
+                                        <div class="row">
+                                            
+                                            <div class="col-6">
+                                                <p class="p p-13">Validator Name</p>
+                                                <h6 class="h6">Jhon Deo</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Validator Contact</p>
+                                                <h6 class="h6">+1 984-637-7849</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Assign Date</p>
+                                                <h6 class="h6">20 May 20</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Complete Date</p>
+                                                <h6 class="h6">20 April 20</h6>
+                                            </div>                                            
+                                        </div> 
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-gen">
+                <div class="meter-reading-ul-list">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <p class="p p-13">Readings</p>                                          
+                            <h6 class="ttl text-dark">188</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="p p-13">Completed</p>
+                            <h6 class="ttl text-success">138</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="p p-13">Pending</p>
+                            <h6 class="ttl text-danger">50</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="meter-block">
+                    <div class="header-sec border-bottom-0">
+                        <div class="row justify-content-end">
+                            <div class="col align-self-center">
+                                <div class="form-check form-check-inline">
+                                    <span class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check1">
+                                        <label class="custom-control-label" for="check1"></label>
+                                    </span>
+                                    <label class="form-check-label p text-dark" for="check1">Meter No</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <span class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="check2">
+                                        <label class="custom-control-label" for="check2"></label>
+                                    </span>
+                                    <label class="form-check-label p text-dark" for="check2">Reading</label>
+                                </div>
+                            </div>
+                            <div class="col-auto pr-0">
+                                <button class="btn btn-outline-light3 st bttn-filter text-uppercase fw-500" style="border-color: #D2D2D4;" type="button" data-toggle="collapse" data-target="#adjustFilter" aria-expanded="false" aria-controls="adjustFilter">Adjustment</button>
+                            </div>
+                            <div class="col-auto pr-0">
+                                <button class="btn btn-outline-light3 st">Revisit</button>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-secondary st" (click)="campaignTypeModal(content)">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="adjust-form inner-form">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="filters-wrap">
+                                    <div class="collapse" id="adjustFilter">
+                                        <div class="filter-wrap-inner">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <label>Current Reading</label>
+                                                            <input type="text" class="form-control" placeholder="Current Reading" value="2356" />
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <label>Meter Status</label>
+                                                            <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Meter Status" [(ngModel)]="selectedStatus"
+                                                                name="name">
+                                                            </ng-select>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <label>Reason Code</label>
+                                                            <ng-select class="filter-select" [items]="code" bindLabel="name" placeholder="Select Reason Code" [(ngModel)]="selectedReasonCode"
+                                                                name="name">
+                                                            </ng-select>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <label>Remark</label>
+                                                            <ng-select class="filter-select" [items]="remark" bindLabel="name" placeholder="Select Remark" [(ngModel)]="selectedRemark"
+                                                                name="name">
+                                                            </ng-select>
+                                                        </li>
+                                                        <li class="list-group-item align-self-end ml-2">
+                                                            <button class="btn btn-secondary st" type="button" data-toggle="collapse"
+                                                            data-target="#adjustFilter" aria-expanded="false"
+                                                            aria-controls="adjustFilter">Save</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-sec">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="p p-13 mb-0">Reading Type: </span><h6 class="h6 d-inline-block mb-0 pl-2">Photo</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="meter-reading-blk-wrap">
+                                    <div class="meter-reading-blk">
+                                        <div class="media">
+                                            <div class="meter-image-blk">
+                                                <span class="p p-13 meter-type colr1">Current Meter</span>
+                                                <div class="meter-image-card">
+                                                    <div class="img-blk">
+                                                        <img class="img-abs st" src="../../../../../assets/images/meter-img.png" alt="meter img">
+                                                    </div>
+                                                    <p class="p fw-500">Meter No: <span class="text-primary">0050037610</span></p>
+                                                </div>                                    
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="meter-listing-blk">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Previous Reading(KWH)</p>                                          
+                                                            <h6 class="ttl">635</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Current Reading(KWH)</p>
+                                                            <h6 class="ttl">750</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Consumption</p>
+                                                            <h6 class="ttl">500</h6>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group list-group-horizontal bg">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Previous Reading Date</p>
+                                                            <h6 class="ttl">05 Feb 20</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Current Reading Date</p>
+                                                            <h6 class="ttl">06 Mar 20</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Billing Days</p>
+                                                            <h6 class="ttl">30</h6>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Previous Meter Status</p>
+                                                            <h6 class="ttl"><span class="badge badge-label-success">Active</span></h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Current Meter Status</p>
+                                                            <h6 class="ttl"><span class="badge badge-label-success">Active</span></h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Avg.Consumption</p>
+                                                            <h6 class="ttl">100</h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meter-reading-blk">
+                                        <div class="media">
+                                            <div class="meter-image-blk">
+                                                <span class="p p-13 meter-type colr2">Previous Meter</span>
+                                                <div class="meter-image-card">
+                                                    <div class="img-blk">
+                                                        <img class="img-abs st" src="../../../../../assets/images/meter-img.png" alt="meter img">
+                                                    </div>
+                                                    <p class="p fw-500">Meter No: <span class="text-primary">0050037610</span></p>
+                                                </div>                                    
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="meter-listing-blk">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Old Sequence</p>
+                                                            <h6 class="ttl">39514</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">New Sequence</p>                                            
+                                                            <h6 class="ttl">39513</h6>
+                                                        </li>
+                                                        
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Suspicious Activity</p>
+                                                            <h6 class="ttl">No</h6>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group list-group-horizontal bg">
+                                                       
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">New Meter No</p>
+                                                            <h6 class="ttl">056891236</h6>
+                                                        </li>                                                        
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Reason Code</p>
+                                                            <h6 class="ttl">30</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Suspicious Remark</p>
+                                                            <h6 class="ttl"></h6>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Latitude-Longitude</p>
+                                                            <h6 class="ttl">25,1435851,75.8888</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Lat-Long Distance</p>
+                                                            <h6 class="ttl">4,74315786361589</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Time Taken</p>
+                                                            <h6 class="ttl">0 min 30 sec</h6>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Category Remark</p>
+                                                            <h6 class="ttl">OK</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Meter Location</p>
+                                                            <h6 class="ttl">Outside</h6>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p class="p p-13">Location Guidance</p>
+                                                            <h6 class="ttl"></h6>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</section>
+
+
+<!-- small Modal -->
+<ng-template #content let-modal>
+    <div class="modal-header pr-modal-header">
+      <h4 class="modal-title">Update Contact Number</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">&times;</button>
+    </div>
+    <div class="modal-body pr-modal-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="inner-form">
+                    <div class="form-row">
+                        <div class="col">
+                            <label>Enter New Number</label>
+                            <input type="text" class="form-control" placeholder="" />
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer pr-modal-footer">
+        <div class="row w-100">
+            <div class="col-6 px-1"><button type="button" class="btn btn-block btn-outline-light3 st mr-3" (click)="modal.close('Close click')">Cancel</button></div>
+            <div class="col-6 px-1"><button type="button" class="btn btn-block btn-secondary st">Save</button></div>
+        </div> 
+    </div>
+</ng-template>

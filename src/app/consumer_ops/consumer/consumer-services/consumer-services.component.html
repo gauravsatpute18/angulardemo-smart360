@@ -1,0 +1,719 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/consumer']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumer/view']">Consumer</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Services</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration">Registration</a>
+    <a class="dropdown-item" href="#">Survey</a>
+    <a class="dropdown-item" href="#">Campgain</a>
+    </div>
+</div>
+</div> -->
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/consumer/view']">Back</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-success">Connected</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">CRN: 0019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk" style="background-image: url('../../assets/images/john-doe.png');">
+                                            <!-- JD -->
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                            <span class="edt" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [routerLink]="['/user/add-user-details']"
+                                            [openDelay]="300" [closeDelay]="500" container="body"><i class="icons8 icons8-edit"></i></span>
+                                            <h5>John Doe</h5>
+                                            <p class="p">+1 517-672-0289</p>
+                                            <p class="p adhr">Aadhaar No: **** **** **** <span class="showno"><i class="icons8 icons8-eye-2"></i></span></p>                                                                                 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="applicant-data">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bttn-toggle">
+                                    <div class="toggle-button-wrap mt-0">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="summry-tab" data-toggle="tab" href="#summry" role="tab" aria-controls="summry" aria-selected="true">Summary</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profl-tab" data-toggle="tab" href="#profl" role="tab" aria-controls="profl" aria-selected="false">Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="custom-tab-pane tab-pane fade show active" id="summry" role="tabpanel" aria-labelledby="summry-tab">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="reciept-wrap">
+                                                    <div class="reciept-data">
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Outstanding</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Payment Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Amount</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Deposite Received</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br">
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Refund</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 560.00</h6>
+                                                            </div>
+                                                            <div class="col-7">
+                                                                <p class="p p-13">Credit</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h6 text-right">$ 60.00</h6>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <hr class="dashed-br full-width">
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 fs-16">Bill Amount</h6>
+                                                            </div>
+                                                            <div class="col-6 mt-2">
+                                                                <h6 class="h6 text-primary text-right fs-16">$ 6525.00</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="p p-13">Showing last <span class="text-dark fw-500">5 months</span> Bill</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-tab-pane tab-pane fade" id="profl" role="tabpanel" aria-labelledby="profl-tab">
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Consumer Category</p>
+                                                <h6 class="h6">Domestic</h6>
+                                              </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Category</p>
+                                                <h6 class="h6">Individual</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Pipeline</p>
+                                                <h6 class="h6">Yes</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Monthly Demand</p>
+                                                <h6 class="h6">560 Units</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Plane</p>
+                                                <h6 class="h6">90 days free</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Utility</p>
+                                                <h6 class="h6">Gas</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Deposit</p>
+                                                <h6 class="h6">5000</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Collected</p>
+                                                <h6 class="h6">4500</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Route</p>
+                                                <h6 class="h6">POR3-RAMANAYYA PETA-03</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Cycle</p>
+                                                <h6 class="h6">3</h6>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row">
+                                            <div class="col-12" >
+                                                <div class="title-divider">Meter Details</div>
+                                            </div>
+                                        </div> 
+                
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter No.</p>
+                                                <h6 class="h6">17711848</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Digit</p>
+                                                <h6 class="h6">8</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Type</p>
+                                                <h6 class="h6">Mechanical</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Meter Make</p>
+                                                <h6 class="h6">123456</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Conversion Date</p>
+                                                <h6 class="h6">09Jan2020</h6>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>                     
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-gen">                
+                <div class="row justify-content-end mb-3">
+                    <div class="col">
+                        <form class="pr-search-form d-inline-block">
+                            <span class="s-icon"></span>
+                            <input class="form-control pr-table-search" type="search" placeholder="Search by  ID, Type, Sub Type " aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <label class="p p-13 mr-3">Records</label>
+                        <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                            appendTo="body" [items]="pagination" bindLabel="name"
+                            placeholder="100" [(ngModel)]="selectedPagination" name="name">
+                        </ng-select>
+                    </div>
+                    <div class="col-auto pr-0">
+                        <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#servicesModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="listview-table-wrap">   
+                            <label class="p p-12">Showing Last 6 month records</label>                                           
+                            <table datatable class="pr-datatable table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="sm-col"><span> ID.</span></th>
+                                        <th scope="col"><span>Type</span></th>
+                                        <th scope="col"><span>Sub Type</span></th>
+                                        <th scope="col"><span>Requested On</span></th>
+                                        <th scope="col"><span>Status</span></th>
+                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of collection.data">
+                                        <th scope="row" class="sb-col">{{item.srvcId}}</th>
+                                        <td>{{item.srvccat}}</td>
+                                        <td>{{item.srvcsubcat}}</td>
+                                        <td>{{item.reqOn | date : 'dd MMM yy'}}</td>
+                                        <td>
+                                            <div [ngSwitch]="item.status">
+                                                <div *ngSwitchCase="'unresolved'">
+                                                    <div class="badge badge-label-unfinished">Unresolved</div>
+                                                </div>
+                                                <div *ngSwitchCase="'resolved'">
+                                                    <div class="badge badge-label-finished">Resolved</div>
+                                                </div>
+                                                <div *ngSwitchDefault>
+                                                    <div class="badge badge-label-pending">Pending</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="action-col">
+                                            <span class="show">
+                                                <ul class="list-group list-group-horizontal action-list">
+                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View"
+                                                        [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#explumberServicesModal">
+                                                        <i class="icons8 icons8-eye"></i>
+                                                    </li>
+                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print"
+                                                        [openDelay]="300" [closeDelay]="500">
+                                                        <i class="icons8 icons8-print-2"></i>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>                                            
+                        </div>
+                    </div>
+                </div>
+                                   
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Modal -->
+<div class="pr-modal pr-web-modal">
+    <div class="modal right fade" id="servicesModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="servicesModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header pr-modal-header web-modal-header">
+                <h4 class="modal-title" id="servicesModalLabel">Services</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                <div class="service-card">
+                    <div class="service-card-body">
+                        <div class="media">
+                            <div class="media-body">
+                              <h4 class="ttl">Fast & secure Service</h4>
+                              <p class="p p-13 loc">Available at Your Location</p>
+                              <p class="p p-13 stj">Starting at Just</p>
+                              <h3 class="amt">$580</h3>
+                            </div>
+                            <div class="img-blk">
+                                <img class="st" src="../../assets/images/graphic2.png" alt="img">
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body web-modal-body-wrap no-footer">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form web-modal-body">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="sb-ttl">Available Services</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="avlbl-service-card-wrap">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr1" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-plumber-bg1.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Plumber</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr2" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-bg2.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Maintenance</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>                                            
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr3" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-bg3.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Plumber</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr4" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-bg4.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Maintenance</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>                                            
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr3" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-bg3.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Plumber</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="avlbl-service-card colr4" role="button" data-dismiss="modal" data-toggle="modal" data-target="#plumberServicesModal">
+                                                                        <div class="avlbl-service-card-img">
+                                                                            <img class="st" src="../../assets/images/service-card-bg4.png" alt="bg">
+                                                                        </div>
+                                                                        <p class="p fw-500 text-dark nm">Maintenance</p>
+                                                                        <div class="rtng-blk-wrap">
+                                                                            <div class="rtng-blk">
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                                                <fa-icon [icon]="faStar"></fa-icon>
+                                                                            </div>
+                                                                        </div>                                            
+                                                                        <p class="p fw-500 text-dark rt">4.2</p>                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar> 
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Plumber Service Modal -->
+<div class="pr-modal pr-web-modal">
+    <div class="modal right fade" id="plumberServicesModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="plumberServicesModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header web-modal-header">
+                <button class="btn bttn-back st" data-dismiss="modal" aria-label="Close" role="button" data-toggle="modal" data-target="#servicesModal"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body web-modal-body-wrap pt-0 full-length">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form web-modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+
+                                        <div class="srvc-info-graphic colr1">
+                                            <img class="st" src="../../../../assets/images/service-card-plumber-bg1.png" alt="img">
+                                        </div>
+
+                                        <div class="srvc-name-blk pb-0">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h4 class="ttl">Plumber Service</h4>
+                                                    <div class="rtng-blk-wrap">
+                                                        <div class="rtng-blk">
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon [icon]="faStar"></fa-icon>
+                                                            <span class="p text-dark pl-2 fw-500">4.2</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <h4 class="srvc-amt">$580.0</h4>
+                                                </div>
+                                            </div>                                            
+                                        </div>                                        
+                                        
+
+                                        <div class="ovrwv-blk" *ngIf="reqsrvc">
+                                            <h6 class="ttl">Overview</h6>
+                                            <p class="p p-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed videbimus. Perturbationes autem nulla naturae vi commoventur, omniaque ea sunt opiniones ac iudicia levitatis.</p>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <hr class="hr">
+                                            </div>
+                                        </div>
+
+                                        <div class="info-block" *ngIf="reqsrvc">
+                                            <div class="applicant-data py-0">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h6 class="sb-ttl mb-0">Request Service</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <ng-container *ngIf="reqsrvc"> 
+                                            <div class="form-row">
+                                                <div class="col pl-1">
+                                                    <label>Type</label>
+                                                    <ng-select [searchable]="false" [clearable]="false" [items]="type" appendTo="body" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedType" name="name">
+                                                    </ng-select>
+                                                </div>
+                                            </div> 
+                                            <div class="form-row">
+                                                <div class="col pl-1">
+                                                    <label>Sub Type</label>
+                                                    <ng-select [searchable]="false" [clearable]="false" [items]="subtype" appendTo="body" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubtype" name="name">
+                                                    </ng-select>
+                                                </div>
+                                            </div>                                
+                                            <div class="form-row">
+                                                <div class="col pl-1">
+                                                    <label>Select Date</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                                                        <div class="input-group-append">
+                                                          <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>                                                                         
+                                        </ng-container>
+                                                
+                                        <ng-container *ngIf="!reqsrvc">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="bill-reciept-wrap">
+                                                        <div class="img-blk">
+                                                            <img src="../../../assets/images/settings-survey.png" alt="img" class="img-fluid st">
+                                                        </div>
+                                                        <h3 class="ttl">ID 199243058</h3>
+                                                        <p class="p">Your Service Request has been Submited</p>
+                                                        <button class="btn btn-secondary bttn-print st">View Pdf</button>
+                                                        <button class="btn btn-outline-light3 st">Email</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer  web-modal-footer">
+                <div class="row w-100 justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close" *ngIf="reqsrvc">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" *ngIf="reqsrvc" >Approve</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st" *ngIf="reqsrvc" (click)="proceedreqsrvc()">Submit</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Existing Plumber Service Modal -->
+<div class="pr-modal pr-web-modal">
+    <div class="modal right fade" id="explumberServicesModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="explumberServicesModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header web-modal-header">
+                <button class="btn bttn-back st" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body web-modal-body-wrap pt-0 full-length">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form web-modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+
+                                        <div class="srvc-info-graphic colr1">
+                                            <img class="st" src="../../../../assets/images/service-card-plumber-bg1.png" alt="img">
+                                        </div>
+                                        <div class="srvc-name-blk pb-0">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h4 class="ttl">Plumber Service</h4>
+                                                    <div class="rtng-blk-wrap">
+                                                        <div class="rtng-blk">
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon class="filled" [icon]="faStar"></fa-icon>
+                                                            <fa-icon [icon]="faStar"></fa-icon>
+                                                            <span class="p text-dark pl-2 fw-500">4.2</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="p ide">ID: 199243059</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <h4 class="srvc-amt">$580.0</h4>
+                                                    <span class="badge badge-label-success">Completed</span>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <hr class="hr">
+                                            </div>
+                                        </div>
+                                        <div class="ovrwv-blk">
+                                            <h6 class="ttl">Overview</h6>
+                                            <p class="p p-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed videbimus. Perturbationes autem nulla naturae vi commoventur, omniaque ea sunt opiniones ac iudicia levitatis.</p>
+                                        </div>
+
+                                        <div class="info-block bg-light-grey mt-3">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Type</p>
+                                                        <h6 class="h6">Maintenance</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Sub Type</p>
+                                                        <h6 class="h6">Meter Fixing</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13"> Date</p>
+                                                        <h6 class="h6">09 Jan 2020</h6>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="p p-13">Remark</p>
+                                                        <h6 class="h6">Lorem Ipsum</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer  web-modal-footer">
+                <div class="row w-100 justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close" *ngIf="reqsrvc">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Print</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+      </div>
+    </div>
+</div>

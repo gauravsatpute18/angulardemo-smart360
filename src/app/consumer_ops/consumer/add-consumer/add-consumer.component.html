@@ -1,0 +1,743 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/consumer']">Consumer</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Consumer</li>
+    </ol>
+    </div>
+      <!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+      <!-- <div class="plus-dropdown-wrap">
+        <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+          <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <a class="dropdown-item active" href="/registration/add-applicant">Registration</a>
+            <a class="dropdown-item" href="/survey" >Survey</a>
+            <a class="dropdown-item" href="/campaign/add-campaign">Campgain</a>
+          </div>
+        </div>
+      </div> -->
+    
+    <section class="pr-section registration-sec">
+        <div class="row">
+            <div class="col-auto pr-0 h100">
+                <div class="cust-form-col-lt" style="width: 360px;">
+    
+                    <div class="row h-100">
+                        <div class="col-12">
+                            <div class="custom-hr-list-wrap">
+                                <ul class="nav list-group" id="myTab" role="tablist">
+                                    <li class="nav-item list-group-item active">
+                                        <a class="nav-link active" id="applicnt-dtls-tab" data-toggle="tab" href="#applicnt-dtls" role="tab" aria-controls="applicnt-dtls" aria-selected="true">Applicant Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="applicnt-pay-tab" data-toggle="tab" href="#applicnt-pay" role="tab" aria-controls="applicnt-pay" aria-selected="false">Meter Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="applicnt-addr-tab" data-toggle="tab" href="#applicnt-addr" role="tab" aria-controls="applicnt-addr" aria-selected="false">Address Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="kyc-doc-tab" data-toggle="tab" href="#kyc-doc" role="tab" aria-controls="kyc-doc" aria-selected="false">KYC Documents</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="rvw-sbmt-tab" data-toggle="tab" href="#rvw-sbmt" role="tab" aria-controls="rvw-sbmt" aria-selected="false">Review &amp; Submit</a>
+                                    </li>
+                                </ul>
+                            </div>            
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="col pl-0">
+                <div class="cust-form-col-rt">
+    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="registration-inner inner-wrap tab-content" id="registerTabContent">
+    
+                                <div class="tab-pane fade show active" id="applicnt-dtls" role="tabpanel" aria-labelledby="applicnt-dtls-tab">
+    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Applicant Details</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    
+                                                    <li class="list-group-item">
+                                                        <span>Source</span>
+                                                        <p>Branch</p>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span>Raised On</span>
+                                                        <p>09 Jan 2020</p>
+                                                    </li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+    
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                        <form name="form">
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>First Name</label>
+                                                                    <input type="text" #textbox class="form-control" placeholder="First Name" [(ngModel)]="firstName" value="Thomas Shelby" name="textValue" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Middle Name</label>
+                                                                    <input type="text" #textbox class="form-control" placeholder="Middle Name" [(ngModel)]="middleName" value="Thomas Shelby" name="textValue" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Last Name</label>
+                                                                    <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="lastName"/>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Utility</label>
+                                                                    <ng-select [items]="utility" bindLabel="utilityName" placeholder="Select Utility"
+                                                                        [(ngModel)]="selectedUtility" name="utilityName">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Mobile Number</label>
+                                                                    <input type="text" class="form-control" placeholder="Mobile Number" [(ngModel)]="mobileNo" name="name"/>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Email</label>
+                                                                    <input type="email" class="form-control" placeholder="Email ID" [(ngModel)]="email" name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>ID Document</label>
+                                                                    <ng-select [items]="document" bindLabel="name" placeholder="Select ID Document"
+                                                                        [(ngModel)]="selectedDocument" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>ID Number</label>
+                                                                    <input type="text" class="form-control" placeholder="ID Number" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Consumer category</label>
+                                                                    <ng-select [items]="consumerCategory" bindLabel="name" placeholder="Select Consumer category"
+                                                                        [(ngModel)]="selectedConsumerCategory" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Consumer sub category</label>
+                                                                    <ng-select [items]="consumerSubCategory" bindLabel="name" placeholder="Select Consumer sub category"
+                                                                        [(ngModel)]="selectedConsumerSubCategory" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Route</label>
+                                                                    <ng-select [items]="route" bindLabel="name" placeholder="Select Route"
+                                                                        [(ngModel)]="selectedConsumerRoute" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Bill Cycle</label>
+                                                                    <ng-select [items]="billCycle" bindLabel="name" placeholder="Select Consumer sub category"
+                                                                        [(ngModel)]="selectedCycle" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Ownership</label>
+                                                                    <input type="text" class="form-control" placeholder="Ownership" value="Self-owned" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>VIP</label>
+                                                                    <ng-select [items]="vip" type="text" bindLabel="name" placeholder="Select Yes/No" [(ngModel)]="selectedVip" bindValue="name"
+                                                                        name = "name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                
+                                                                <div class="col-6">
+                                                                    <label>Pipeline</label>
+                                                                    <ng-select [items]="pipeline" type="text" bindLabel="name"  placeholder="Select Pipeline"
+                                                                        [(ngModel)]="selectedPipeline" bindValue="name" name="pipelineName">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center form-bttn-row">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-secondary st" id="proceed_1">Proceed</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="tab-pane fade" id="applicnt-pay" role="tabpanel" aria-labelledby="applicnt-pay-tab">
+    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Meter Details</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item">
+                                                        <!-- <span>Reg. Number</span> -->
+                                                        <!-- <p>$ 3000.00</p> -->
+                                                    </li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+    
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                        <form name="form">
+    
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Meter Number</label>
+                                                                    <input type="text" class="form-control" placeholder="Enter Meter No." value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Meter Digit</label>
+                                                                    <input type="text" class="form-control" placeholder="Enter Meter Digit" value="" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Meter Make</label>
+                                                                    <input type="text" class="form-control" placeholder="Meter Make" value="" />
+                                                                </div>                                                                
+                                                            </div>
+                                                            <div class="form-row"></div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>METER TYPE</label>
+                                                                    <ng-select [items]="metertype" bindLabel="name" appendTo="body" placeholder="Select Meter Type"
+                                                                        [(ngModel)]="selectedMeterType" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>METER STATUS</label>
+                                                                    <ng-select [items]="meterstatus" bindLabel="name" appendTo="body" placeholder="Select METER STATUS"
+                                                                        [(ngModel)]="selectedMeterStatus" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>INITIAL READING</label>
+                                                                    <input type="text" class="form-control" placeholder="Enter NITIAL READING" value="128501" />
+                                                                </div>
+                                                            </div>                                                            
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center form-bttn-row">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-secondary st" id="proceed_2">Proceed</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="tab-pane fade" id="applicnt-addr" role="tabpanel" aria-labelledby="applicnt-addr-tab">
+    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Address Details</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item">
+                                                        <div class="pr-checkbox">
+                                                            <input type="checkbox" name="optionsRadios" id="checkOther" value="other" ng-model="formData.other" ng-true-value="'other'" ng-init="formData.other='other'">
+                                                            <label for="checkOther"></label>
+                                                        </div>
+                                                        <label class="checkbox-label" for="checkOther">Click here if billing Address same as Meter Address</label>
+                                                    </li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">                                                
+                                                        <nav class="inner-form-tabs">
+                                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                                <a class="nav-item nav-link st active" id="nav-service-tab" data-toggle="tab" href="#nav-service"
+                                                                    role="tab" aria-controls="nav-service" aria-selected="true">Service</a>
+                                                                <a class="nav-item nav-link st" id="nav-billing-tab" data-toggle="tab" href="#nav-billing" role="tab"
+                                                                    aria-controls="nav-billing" aria-selected="false">Billing</a>
+                                                            </div>
+                                                        </nav>
+                                                        <div class="tab-content" id="nav-tabContent">
+                                                            <div class="tab-pane fade show active" id="nav-service" role="tabpanel" aria-labelledby="nav-service-tab">
+                                                
+                                                                <form name="form">
+                                                                    <div class="form-row">
+                                                                        <div class="col-12">
+                                                                            <label>Address Line 1</label>
+                                                                            <textarea class="form-control text-uppercase" placeholder="Address Line 1" rows="2"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col-6">
+                                                                            <label>Street Address</label>
+                                                                            <textarea class="form-control" placeholder="Street Address" rows="1"></textarea>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <label>State / Province / Region</label>
+                                                                            <ng-select [items]="stateProvince" bindLabel="name" appendTo="body" placeholder="Select State"
+                                                                                [(ngModel)]="selectedStateProvince" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col">
+                                                                            <label>City</label>
+                                                                            <ng-select [items]="city" bindLabel="name" appendTo="body" placeholder="Select City"
+                                                                                [(ngModel)]="selectedCity" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <label>Postal / Zip Code </label>
+                                                                            <ng-select [items]="zipCode" bindLabel="name" appendTo="body" placeholder="Select Zip Code"
+                                                                                [(ngModel)]="selectedZipCode" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col">
+                                                                            <label>Area</label>
+                                                                            <ng-select [items]="area" bindLabel="name" appendTo="body" placeholder="Select Area"
+                                                                                    [(ngModel)]="selectedArea" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <label>Sub Area</label>
+                                                                            <ng-select [items]="subArea" bindLabel="name" appendTo="body" placeholder="Select Sub Area"
+                                                                                [(ngModel)]="selectedSubArea" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                
+                                                            </div>
+                                                            <div class="tab-pane fade" id="nav-billing" role="tabpanel" aria-labelledby="nav-billing-tab">
+                                                
+                                                                <form name="form">
+                                                                    <div class="form-row">
+                                                                        <div class="col-12">
+                                                                            <label>Home / Appartment</label>
+                                                                            <textarea class="form-control text-uppercase" placeholder="3964  Small Street" rows="2" value="3964  Small Street"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col-6">
+                                                                            <label>Street</label>
+                                                                            <textarea class="form-control" placeholder="1235 New street" rows="1" value="1235 New street"></textarea>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <label>State / Province / Region</label>
+                                                                            <ng-select [items]="billingAddress" bindLabel="name" appendTo="body" placeholder="Select State"
+                                                                                [(ngModel)]="selectedBillingAddress" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col">
+                                                                            <label>City</label>
+                                                                            <ng-select [items]="billingCity" bindLabel="name" appendTo="body" placeholder="Select City"
+                                                                                [(ngModel)]="selectedBillingCity" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <label>Postal / Zip Code </label>
+                                                                            <ng-select [items]="billingZipCode" bindLabel="name" appendTo="body" placeholder="Select Zip Code"
+                                                                                [(ngModel)]="selectedBillingZipCode" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-row">
+                                                                        <div class="col">
+                                                                            <label>Area</label>
+                                                                            <ng-select [items]="billingArea" bindLabel="name" appendTo="body" placeholder="Select Area"
+                                                                                [(ngModel)]="selectedBillingArea" name="name">
+                                                                            </ng-select>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <label>Sub Area</label>
+                                                                            <ng-select [items]="billingSubArea" bindLabel="name" appendTo="body" placeholder="Select Sub Area"
+                                                                                [(ngModel)]="selectedBillingSubArea" name="name"> 
+                                                                            </ng-select>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center form-bttn-row">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-secondary st" id="proceed_3">Proceed</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="tab-pane fade" id="kyc-doc" role="tabpanel" aria-labelledby="kyc-doc-tab">
+                                    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">KYC documents</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item"></li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+    
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                    
+                                                            <form name="form">
+                                                            <div class="form-row">
+                                                                <div class="col-4">
+                                                                    <label>Select Type</label>
+                                                                    <ng-select [items]="documentType" bindLabel="name2" appendTo="body" placeholder="" [(ngModel)]="selectedDocumentType" name="name2" bindValue="name2">
+                                                                    </ng-select>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <label>Select Documents</label>
+                                                                    <ng-select [items]="kycDocument" bindLabel="name" appendTo="body" placeholder=""
+                                                                        [(ngModel)]="selectedKycDocuments" name="name">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+    
+                                                            <div class="form-row"> 
+                                                                <div class="col-12">
+                                                                    <div class="upload-wrapper custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                                                                        <div class="upload-inner">
+                                                                            <div class="media">
+                                                                                <div class="media-body">
+                                                                                    <ngx-dropzone-label>
+                                                                                        <div class="drag-drop">
+                                                                                            <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                                            <p class="p p-13">Drag & Drop files here</p>
+                                                                                            <p class="p p-13 font-weight-normal">Or</p>
+                                                                                            <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                                                        </div>
+                                                                                    </ngx-dropzone-label>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <p class="p p-13 progress-txt inline-block">Electricity Bill</p>
+                                                                                    <span class="p p-13 progress-status inline-block">50%</span>
+                                                                                    <p><ngb-progressbar [showValue]="true" type="primary" [value]="50" height="5px"></ngb-progressbar></p>
+                                                                                    <span class="btn bttn-remove">x</span>
+                                                                                </div>
+                                                                            </div>                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uploaded-items">
+                                                                        <ul class="list-group list-group-horizontal-sm">
+                                                                            <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                                                <ngx-dropzone-label class="p p-12 file-name">{{ f.name }}</ngx-dropzone-label>
+                                                                            </ngx-dropzone-image-preview>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="applicant-data">
+                                                                <div class="upload-wrapper">
+                                                                    <div class="uploaded-items">
+                                                                        <ul class="list-group list-group-horizontal-sm">
+                                                                            <li class="list-group-item">
+                                                                                <div class="thumbnail">
+                                                                                    <img class="st img-abs" src="../../assets/images/upload1.jpg" alt="img">
+                                                                                </div>
+                                                                                <!-- <span class="btn bttn-remove">x</span> -->
+                                                                                <p class="p p-12 file-name">Personal Details</p>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="thumbnail">
+                                                                                    <img class="st img-abs" src="../../assets/images/upload2.jpg" alt="img">
+                                                                                </div>
+                                                                                <!-- <span class="btn bttn-remove">x</span> -->
+                                                                                <p class="p p-12 file-name">Personal Details</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+    
+                                                            
+                                                        </form>
+                                                    
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="row justify-content-center form-bttn-row">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-secondary st" id="proceed_4">Submit</button>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <div class="tab-pane fade" id="rvw-sbmt" role="tabpanel" aria-labelledby="rvw-sbmt-tab">
+    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Review &amp; Submit</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item"></li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="review-submit-wrap">
+    
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl"></h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="applicant-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Reg. Number</p>
+                                                                    <h6 class="h6">00199243592</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Source</p>
+                                                                    <h6 class="h6">Branch</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Raised On</p>
+                                                                    <h6 class="h6">09 Jan 2020</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Consumer Name</p>
+                                                                    <h6 class="h6">Thomas Shelby</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">ID Number</p>
+                                                                    <h6 class="h6">1234 6538 6456</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Mobile Number</p>
+                                                                    <h6 class="h6">+91 9849163057</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">VIP</p>
+                                                                    <h6 class="h6"><span class="flag-green"></span>Yes</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Pipeline</p>
+                                                                    <h6 class="h6">Yes</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                </div>
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Meter Data</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="applicant-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Meter Number</p>
+                                                                    <h6 class="h6">00199243592</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Meter Digit</p>
+                                                                    <h6 class="h6">2648885</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Meter Make</p>
+                                                                    <h6 class="h6">25584845</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Meter Type</p>
+                                                                    <h6 class="h6">Smart Meter</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Meter Status</p>
+                                                                    <h6 class="h6">Installed</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">INITIAL READING</p>
+                                                                    <h6 class="h6">128501</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                </div>
+    
+                                             
+    
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Address details</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="applicant-data">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="address-blk">
+                                                                        <ul class="list-unstyled address-list">
+                                                                            <li>3964  Small Street New york, 1235 New street </li>
+                                                                            <li>AL - 35573, USA</li>
+                                                                        </ul>
+                                                                        <button class="btn bttn-sm bttn-white rounded bttn-billing st">Billing</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">KYC Documents</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="applicant-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Document Type</p>
+                                                                    <h6 class="h6">Address Details</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Document Name</p>
+                                                                    <h6 class="h6">Electricity Bill</h6>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <p class="p p-13">Document</p>
+                                                                    <h6 class="h6"><span class="pdf-red"></span>electricity.pdf</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center form-bttn-row">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light3 st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-secondary st" id="proceed_5" (click)="showtoast = true">Submit</button>
+                                        </div>
+                                    </div>                              
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                    <div>New Consumer Successfully Created!!</div>
+                </ngb-toast>
+            </div>
+        </div>
+    
+    </section>

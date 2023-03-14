@@ -1,0 +1,23 @@
+<div class="pr-side-navbar z-99 pos-rel open-slide">
+  <div class="" data-toggle="buttons">
+      <button class="btn btn-primary bttn-transparent menubttn" (click)="bClickEvent()"
+          [ngClass]="status ? 'open-subm' : 'close-subm'"><span></span></button>
+  </div>
+  <ul class="nav flex-column">
+    <li class="nav-item" placement="right" ngbPopover="Dashboard" triggers="mouseenter:mouseleave" container="body">
+      <a class="nav-link active" [routerLink]="['/network']"><span><i class="icons8 icons8-speed"></i></span>Dashboard</a>
+    </li>
+      <li class="nav-item" placement="right" ngbPopover="Asset" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['asset']"><span><i class="icons8 icons8-brief"></i></span>Asset</a>
+      </li>
+      <li class="nav-item" placement="right" ngbPopover="Reports" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['consumerops/reports']"><span><i class="icons8 icons8-todo-list"></i></span>Reports</a>
+      </li>    
+      <li class="nav-item" placement="right" ngbPopover="User" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" [routerLink]="['user']"><span><i class="icons8 icons8-user"></i></span>User</a>
+      </li>    
+      <li class="nav-item" placement="right" ngbPopover="Settings" triggers="mouseenter:mouseleave" container="body">
+        <a class="nav-link" type="button" data-toggle="modal" data-target="#consopsSettingsModal"><span><i class="icons8 icons8-settings"></i></span>Settings</a>
+      </li>
+  </ul>
+</div>

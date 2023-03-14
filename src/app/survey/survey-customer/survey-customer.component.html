@@ -1,0 +1,274 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+  <ol class="breadcrumb">            
+    <li class="breadcrumb-item"><a routerLink="/sales-marketing">S&M</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Consumer</li>
+  </ol>
+</div>
+<section class="pr-section list-view-section">
+
+  <div class="row dash-wrap">
+    <div class="col-xl-3 col-4 dash-col">
+      <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img1.png');">
+        <p><span class="badge badge-pill badge-label-new">New</span></p>
+        <span class="num h1">57</span>
+        <span class="p dtl">Surveys</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-4 dash-col">
+      <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+        <p><span class="badge badge-pill badge-label-finished">Finished</span></p>
+        <span class="num h1">578</span>
+        <span class="p dtl">Surveys</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-4 dash-col">
+      <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img3.png');">
+        <p><span class="badge badge-pill badge-label-pending">Pending</span></p>
+        <span class="num h1">30</span>
+        <span class="p dtl">Surveys</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-4 dash-col">
+      <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+        <p><span class="badge badge-pill badge-label-finished">Rejected</span></p>
+        <span class="num h1">578</span>
+        <span class="p dtl">Surveys</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-end">
+    <div class="col">
+      <form class="pr-search-form d-inline-block">
+        <span class="s-icon"></span>
+        <input class="form-control pr-table-search" type="search" placeholder="Search by  Id, Name, Mobile No" aria-label="Search">
+      </form>
+    </div>
+    <div class="col-auto pr-0">
+      <label class="p p-13 mr-3">Records</label>
+      <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                  appendTo="body" [items]="pagination" bindLabel="name"
+                                  placeholder="100" [(ngModel)]="selectedPagination" name="name">
+      </ng-select>
+    </div>
+    <div class="col-auto pr-0">
+      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+    </div>
+    <div class="col-auto pl-0">
+      <div class="dropdown tool-dropdown">
+        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tools
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item active" href="#">
+            <fa-icon [icon]="faPrint"></fa-icon>Print
+          </a>
+          <a class="dropdown-item" href="#">
+            <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+          </a>
+          <a class="dropdown-item" href="#">
+            <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+          </a>
+          <a class="dropdown-item" href="#">
+            <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto pl-0">
+      <button class="btn btn-secondary st" [routerLink]="'/survey/customer/add'">
+        <fa-icon [icon]="faPlus"></fa-icon>Consumer Survey
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="filters-wrap">
+        <div class="collapse" id="filterCollapse">
+          <div class="filter-wrap-inner">
+            <div class="row">
+              <div class="col-12">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item">
+                    <label>Utility</label>
+                    <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                      [(ngModel)]="selectedUtility" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Category</label>
+                    <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category"
+                      [(ngModel)]="selectedCategory" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Sub Category</label>
+                    <ng-select class="filter-select" [items]="subCategory" bindLabel="name"
+                      placeholder="Select Sub Category" [(ngModel)]="selectedSubCategory" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>City</label>
+                    <ng-select class="filter-select" [items]="city" bindLabel="name" placeholder="Select City"
+                      [(ngModel)]="selectedCity" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Area</label>
+                    <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area"
+                      [(ngModel)]="selectedArea" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Sub Area</label>
+                    <ng-select class="filter-select" [items]="subArea" bindLabel="name" placeholder="Select Sub Area"
+                      [(ngModel)]="selectedSubArea" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Type</label>
+                    <ng-select class="filter-select" [items]="type" bindLabel="name" placeholder="Select Type"
+                      [(ngModel)]="selectedType" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Status</label>
+                    <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status"
+                      [(ngModel)]="selectedStatus" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label>Vendor</label>
+                    <ng-select class="filter-select" [items]="vendor" bindLabel="name" placeholder="Select Vendor"
+                      [(ngModel)]="selectedVendor" name="name">
+                    </ng-select>
+                  </li>
+                  <li class="list-group-item">
+                    <label> Date Range</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()">
+                          <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                        </button>
+                      </div>
+                      <input type="text" class="form-control" placeholder=" Date Range" name="dp" [(ngModel)]="model"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row filter-cta-row">
+              <div class="col-auto pr-2">
+                <button class="btn btn-outline-secondary st">Apply</button>
+              </div>
+              <div class="col-auto pl-2">
+                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                data-target="#filterCollapse" aria-expanded="false"
+                aria-controls="filterCollapse">Cancel</button>
+            </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="listview-table-wrap">
+
+        <label class="p p-12">Showing Last 6 month records</label>
+        <table datatable class="pr-datatable table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" class="chbx-col">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="checkAll">
+                  <label class="custom-control-label" for="checkAll"></label>
+                </div>
+              </th>
+              <th scope="col"><span>Consumer Name</span></th>
+              <th scope="col"><span>Survey ID</span></th>
+              <th scope="col"><span>Status</span></th>
+              <th scope="col"><span>Type</span></th>
+              <th scope="col"><span>Mobile Number</span></th>
+              <th scope="col"><span>Category</span></th>
+              <th scope="col"><span>Demand</span></th>
+              <th scope="col"><span>Start Date</span></th>
+              <th scope="col"><span>End Date</span></th>
+
+              <th scope="col" class="action-col"><span>Action</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of collection.data">
+              <th scope="row" class="chbx-col">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" [attr.id]="item.id">
+                  <label class="custom-control-label" [attr.for]="item.id"></label>
+                </div>
+              </th>
+              <td class="showOnHover" (click)="renderDetail(item.id)">{{item.name}}
+                <span class="show">
+                  <span class="enqry-no-blk">{{item.surveyID}}</span>
+                  <span class="enqry-name-blk">{{item.name}}</span>
+                  <!--Modify enqry-sts-blk or create a new class-->
+                  <span class="enqry-sts-blk">
+                    114, Nagaras Road<br>
+                    Aundh Pune
+                  </span>
+                  <div class="list-blk">
+                    <p><span>thomas@gmail.com</span><span>Email</span></p>
+                    <p><span>012345</span><span>Meter No</span></p>
+                  </div>
+                  <!--Align the separating lines on both the lists-->
+                  <div class="list-blk">
+                    <p><span>{{item.category}}</span><span>Sub Category</span></p>
+                    <p><span>90 days free</span><span>Scheme</span></p>
+                  </div>
+                </span>
+              </td>
+              <td>{{item.surveyID}}</td>
+              <td>
+                <div [ngSwitch]="item.status">
+                  <div *ngSwitchCase="'finished'">
+                    <div class="badge badge-label-finished">Finished</div>
+                  </div>
+                  <div *ngSwitchCase="'new'">
+                    <div class="badge badge-label-new">New</div>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <div class="badge badge-label-pending">Pending</div>
+                  </div>
+                </div>
+              </td>
+              <td>{{item.__type}}</td>
+              <td>{{item.mobileNo}}</td>
+              <td>{{item.category}}</td>
+              <td>{{item.demand}}</td>
+              <td>{{item.startDate | date : 'dd MMM yyyy'}}</td>
+              <td>{{item.endDate | date : 'dd MMM yyyy'}}</td>
+              <td class="action-col" (click)="renderDetail(item.id)">
+                <span class="show">
+                  <ul class="list-group list-group-horizontal action-list">
+                    <li class="list-group-item st" [routerLink]="'/survey/customer/details'"
+                      tooltipClass="pr-tooltip" placement="top" ngbTooltip="Quick View" [openDelay]="300" [closeDelay]="500">
+                      <fa-icon [icon]="faEye"></fa-icon>
+                    </li>
+                  </ul>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+</section>

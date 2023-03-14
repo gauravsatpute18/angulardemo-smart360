@@ -1,0 +1,606 @@
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/sourcing">Sourcing</a></li>
+        <li class="breadcrumb-item"><a routerLink="/contracts">Contract</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Contract</li>
+    </ol>
+    </div>
+
+
+    <section class="pr-section registration-sec">
+        <div class="row">
+            <div class="col-auto pr-0 h100">
+                <div class="cust-form-col-lt" style="width: 360px;">
+
+                    <div class="row h-100">
+                        <div class="col-12">
+                            <div class="custom-hr-list-wrap">
+                                <ul class="nav list-group" id="myTab" role="tablist">
+                                    <li class="nav-item list-group-item active">
+                                        <a class="nav-link active" id="survey-dtls-tab" data-toggle="tab"
+                                            href="#survey-dtls" role="tab" aria-controls="survey-dtls"
+                                            aria-selected="true">Contract Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="survey-assgnvendor-tab" data-toggle="tab"
+                                            href="#survey-assgnvendor" role="tab" aria-controls="survey-assgnvendor"
+                                            aria-selected="false">Supplier Details</a>
+                                    </li>
+                                    <li class="nav-item list-group-item">
+                                        <a class="nav-link" id="contract-rvw-sbmt-tab" data-toggle="tab" href="#contract-rvw-sbmt" role="tab" aria-controls="contract-rvw-sbmt" aria-selected="false">Review &amp; Submit</a>
+                                    </li>
+                                </ul>
+                            </div>            
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+            <div class="col pl-0">
+                <div class="cust-form-col-rt">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="registration-inner inner-wrap tab-content" id="surveyTabContent">
+                                <div class="tab-pane fade show active" id="survey-dtls" role="tabpanel"
+                                    aria-labelledby="survey-dtls-tab">
+    
+                                    <div class="row br-btm">
+
+                                        <div class="col-9 align-self-center">
+                                            <h4 class="h4 ttl">Contract Details</h4>
+                                        </div>
+
+                                        <!--Fix CSS-->
+                                        <div class="col-3 align-right">
+                                            <div class="row">
+                                                <div class="radio">
+                                                    <label class="radio-inline nav-link"><input type="radio" name="optradio" value="asset" checked>Asset</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label class="radio-inline nav-link"><input type="radio" name="optradio" value="service">Service</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+                                                <div class="row inner-form-wrap">
+                                                    <div class="col-12">
+                                                        <form name="contract-form" id="contract-form">
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Contract Name</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Survey Name"
+                                                                        [(ngModel)]="surveyName" name="surveyName" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Contract Date</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="dd-mm-yyyy" name="dp"
+                                                                            [(ngModel)]="model" ngbDatepicker
+                                                                            #d="ngbDatepicker" (click)="d.toggle()"
+                                                                            container="body">
+                                                                        <div class="input-group-append" id="button-addon4">
+                                                                            <button class="btn bttn-transparent bttn-icon"
+                                                                                type="button" (click)="d.toggle()">
+                                                                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Start Date</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="dd-mm-yyyy" name="dp"
+                                                                            [(ngModel)]="model" ngbDatepicker
+                                                                            #D="ngbDatepicker" (click)="D.toggle()"
+                                                                            container="body">
+                                                                        <div class="input-group-append" id="button-addon5">
+                                                                            <button class="btn bttn-transparent bttn-icon"
+                                                                                type="button" (click)="D.toggle()">
+                                                                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>End Date</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="dd-mm-yyyy" name="dp"
+                                                                            [(ngModel)]="model" ngbDatepicker
+                                                                            #d="ngbDatepicker" (click)="d.toggle()"
+                                                                            container="body">
+                                                                        <div class="input-group-append" id="button-addon6">
+                                                                            <button class="btn bttn-transparent bttn-icon"
+                                                                                type="button" (click)="d.toggle()">
+                                                                                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+    
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <label>Contract Period</label>
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Contract Period" 
+                                                                        [(ngModel)]="contractPeriod" name="contractPeriod" />
+                                                                </div>
+                                                                <div class="col">
+                                                                    <label>Source Type</label>
+                                                                    <ng-select [items]="surveyType" bindLabel="srvy"
+                                                                        appendTo="body" placeholder=""
+                                                                        [(ngModel)]="selectedSurveyType" name="name2">
+                                                                    </ng-select>
+                                                                </div>
+                                                            </div>
+    
+                                                            <!--Contract Start-->
+
+                                                            <div name="contract-sub-type">
+
+                                                                <div class="form-row" id="contract-sub-type">
+                                                                    <div class="col-6">
+                                                                        <label>Sub Type</label>
+                                                                        <ng-select [items]="surveyObj" bindLabel="name1"
+                                                                            appendTo="body" placeholder=""
+                                                                            [(ngModel)]="selectedSurveyObj" name="name1">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Potential Demand</label>
+                                                                        <input type="text" class="form-control"
+                                                                            [(ngModel)]="potentialDemand" name="potentialDemand" />
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Rate</label>
+                                                                        <input type="text" class="form-control"
+                                                                            [(ngModel)]="rate" name="rate" />
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Cost Center City</label>
+                                                                        <ng-select [items]="city" bindLabel="name"
+                                                                            [(ngModel)]="selectedCity" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Currency</label>
+                                                                        <ng-select [items]="currency" bindLabel="name"
+                                                                            [(ngModel)]="selectedCurrency" name="name">
+                                                                        </ng-select>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Contract Amount</label>
+                                                                        <input type="text" class="form-control"
+                                                                            [(ngModel)]="contractAmount" name="contractAmount" />
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <!--Contract End-->
+
+                                                            <div class="form-row">
+                                                                <div class="col">
+                                                                    <!--Change the Colour to blue-->
+                                                                    <a (click)="addContractSubType()"><span style="color: blue;" class="enqry-no-blk"><fa-icon style="color: blue;"  [icon]="faPlus"></fa-icon> ADD</span></a>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-end form-bttn-row br-top">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light3 st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto pl-1 pr-4">
+                                                        <button class="btn btn-secondary st"
+                                                            id="proceed_assgnvendor">Proceed</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <div class="tab-pane fade" id="survey-assgnvendor" role="tabpanel"
+                                    aria-labelledby="survey-assgnvendor-tab">
+    
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Supplier Details</h4>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="registration-form inner-form">
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                        <form class="pr-search-form d-inline-block">
+                                                            <span class="s-icon"></span>
+                                                            <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row vendor-cards-row">
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll1" />
+                                                                    <label class="custom-control-label" for="checkAll1"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll2" />
+                                                                    <label class="custom-control-label" for="checkAll2"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll3" />
+                                                                    <label class="custom-control-label" for="checkAll3"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll4" />
+                                                                    <label class="custom-control-label" for="checkAll4"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll5" />
+                                                                    <label class="custom-control-label" for="checkAll5"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll6" />
+                                                                    <label class="custom-control-label" for="checkAll6"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll7" />
+                                                                    <label class="custom-control-label" for="checkAll7"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll8" />
+                                                                    <label class="custom-control-label" for="checkAll8"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll9" />
+                                                                    <label class="custom-control-label" for="checkAll10"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 cust-col-4">
+                                                        <div class="vendor-card st">
+                                                            <div class="media">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="checkAll11" />
+                                                                    <label class="custom-control-label" for="checkAll12"></label>
+                                                                </div>
+                                                                <div class="img-blk">
+                                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5>John Doe</h5>
+                                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                    <p class="p p-13 dtl">Marketing Agency</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-end form-bttn-row br-top">
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-outline-light st">Cancel</button>
+                                                    </div>
+                                                    <div class="col-auto pl-1 pr-4">
+                                                        <button class="btn btn-secondary st"
+                                                            id="survey_vendor_assign">Proceed</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="contract-rvw-sbmt" role="tabpanel" aria-labelledby="contract-rvw-sbmt-tab">
+
+                                    <div class="row br-btm">
+                                        <div class="col-auto align-self-center">
+                                            <h4 class="h4 ttl">Review &amp; Submit</h4>                                    
+                                        </div>
+                                        <div class="col align-self-center">
+                                            <div class="details-list">
+                                                <ul class="list-group list-group-horizontal justify-content-end">
+                                                    <li class="list-group-item"></li>
+                                                </ul>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="review-submit-wrap">
+        
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Contract Details</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="campaign-data">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Contract Name</p>
+                                                                    <h6 class="h6">Contract X</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Contract Date</p>
+                                                                    <h6 class="h6">17 April 20</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Start Date</p>
+                                                                    <h6 class="h6">17 April 20</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">End Date</p>
+                                                                    <h6 class="h6">27 April 20</h6>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Contract Period</p>
+                                                                    <h6 class="h6">90 Day's</h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Source Type</p>
+                                                                    <h6 class="h6">Source </h6>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Sub Type</p>
+                                                                    <h6 class="h6">Sub Type</h6>
+                                                                </div>
+                                                                                                                       
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Potential Demand</p>
+                                                                    <h6 class="h6">XYZ</h6>
+                                                                </div>
+                                                                                                                           
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Rate</p>
+                                                                    <h6 class="h6">500</h6>
+                                                                </div> 
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Cost Center City</p>
+                                                                    <h6 class="h6">Pune</h6>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <p class="p p-13">Currency</p>
+                                                                    <h6 class="h6">XYZ</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <p class="p p-13">Contract Amount</p>
+                                                                    <h6 class="h6">500</h6>
+                                                                </div> 
+                                                                
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                </div>
+        
+                                                <div class="review-submit-card">
+                                                    <div class="review-submit-card-header">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h6 class="ttl">Supplier Details</h6>
+                                                            </div>
+                                                        </div>                                                    
+                                                    </div>
+                                                    <div class="review-submit-card-body">
+                                                        <div class="ads-documents-data">
+                                                            <div class="row">
+                                                                <div class="col-4 cust-col-4">
+                                                                    <div class="vendor-card st">
+                                                                        <div class="media">
+                                                                            <!-- <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="checkAll9" />
+                                                                                <label class="custom-control-label" for="checkAll10"></label>
+                                                                            </div> -->
+                                                                            <div class="img-blk">
+                                                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h5>John Doe</h5>
+                                                                                <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                                <p class="p p-13 dtl">Marketing Agency</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4 cust-col-4">
+                                                                    <div class="vendor-card st">
+                                                                        <div class="media">
+                                                                            <!-- <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="checkAll9" />
+                                                                                <label class="custom-control-label" for="checkAll10"></label>
+                                                                            </div> -->
+                                                                            <div class="img-blk">
+                                                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                                            </div>
+                                                                            <div class="media-body">
+                                                                                <h5>John Doe</h5>
+                                                                                <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                                                <p class="p p-13 dtl">Marketing Agency</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                        
+                                                            </div>                                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="row justify-content-center form-bttn-row">
+                                        <div class="col-auto">
+                                            <button class="btn btn-outline-light3 st">Cancel</button>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-secondary st" id="contract_preview" (click)="showtoast = true">Submit</button>
+                                        </div>
+                                    </div>                              
+                                </div>
+    
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                    <div>New Contract Successfully Created!!</div>
+                </ngb-toast>
+            </div>
+        </div>
+    </section>
+    
+    

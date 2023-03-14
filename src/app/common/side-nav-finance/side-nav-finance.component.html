@@ -1,0 +1,11 @@
+<div class="pr-side-navbar z-99 pos-rel open-slide">
+    <div class="" data-toggle="buttons">
+        <button class="btn btn-primary bttn-transparent menubttn" (click)="bClickEvent()"
+            [ngClass]="status ? 'open-subm' : 'close-subm'"><span></span></button>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item" placement="right" ngbPopover="Dashboard" triggers="mouseenter:mouseleave" container="body">
+            <a class="nav-link active" [routerLink]="['/finance']"><span><i class="icons8 icons8-speed"></i></span>Dashboard</a>
+        </li>
+    </ul>
+</div>

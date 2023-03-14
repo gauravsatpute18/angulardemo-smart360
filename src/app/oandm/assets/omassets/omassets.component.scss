@@ -1,0 +1,30 @@
+.partial
+{
+color: #ED6868;
+background: #FFEEEE;
+border: 1px solid #FFA6A6;
+}
+.complete
+{
+background: #EBECFF;
+border: 1px solid #9FA5FE;
+color: #5962E9;
+}
+.dispatched
+{
+    color: #FF8847;
+    background: #FFEFE7;
+    border: 1px solid #FFBB96;
+}
+.started
+{
+    color: #ED9B22;
+    background: #FFF6E8;
+    border: 1px solid #FFCC81;
+}
+.not-dispatched
+{
+    color: #ABADBC;
+    background: #E7E8F0;
+    border: 1px solid #CACBD3;
+}

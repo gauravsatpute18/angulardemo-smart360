@@ -1,0 +1,356 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops']">Consumer Ops</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/consumerops/billing']">Billing</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Print Bill</li>
+    </ol>
+</div>
+    <!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+
+
+<div class="print-wrap">
+    <div class="print-header">
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="img-blk">
+                    <img class="img-fluid st" src="../../../../assets/images/billin-company.png" alt="img">
+                </div>
+            </div>
+            <div class="col">
+                <div class="ttl-blk">
+                    <h4 class="h4">BHAGYANAGAR GAS LIMITED </h4>
+                    <p class="p p-12 fw-500">A Joint Venture of GAIL & HPCL</p>
+                    <p class="p p-12 fw-500">REGD.OFF: 2nd FLOOR, PARISRAM BHAVAN, BASHEERBAGH, HYDERABAD-500004 </p>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="eml-blk">
+                    <p class="p p-12">Website: <span class="text-dark">www.bglgas.com</span></p>
+                    <p class="p p-12">Email: <span class="text-dark">wecare@bglgas.com </span></p>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="print-body">
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">Consumer Details<span class="p p-13 fw-500 text-right float-right">Status: <span class="text-primary">Connected</span></span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="print-info-wrap">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="ttl text-primary">CRN: 19924359</h4>
+                            <h6>John Doe</h6>
+                            <p class="p p-13 fw-500 text-dark">3964  Small Street New york, 1235 New street AL - 35573 USA</p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="eml-blk">
+                                <p class="p p-12">Contact: <span class="text-dark">+91 564 564 2583</span></p>
+                                <p class="p p-12">Email: <span class="text-dark">jhon12@gmail.com</span></p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="qr-code">
+                                <img class="img-abs st" src="../../../../assets/images/qr-code.png" alt="qr img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row dtls-row">
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">Individual</p>
+                            <p class="p p-12">Consumer Type</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">None</p>
+                            <p class="p p-12">Type</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">Hydrabad</p>
+                            <p class="p p-12">City</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">11-Sep-2019</p>
+                            <p class="p p-12">Conversion Date</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">84382</p>
+                            <p class="p p-12">Meter No</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="p p-13 text-dark">Normal</p>
+                            <p class="p p-12">Meter Status </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">Invoice Details<span class="p p-13 fw-500 text-right float-right">Status: <span class="text-primary">Normal Bill</span></span></div>
+            </div>
+        </div>
+        <div class="row dtls-row">
+            <div class="col-auto">
+                <p class="p p-13 text-dark">10600173182</p>
+                <p class="p p-12">Invoice No</p>
+            </div>
+            <div class="col-auto">
+                <p class="p p-13 text-dark">15 Jan 2020</p>
+                <p class="p p-12">Invoice Date</p>
+            </div>
+            <div class="col-auto">
+                <p class="p p-13 text-dark">15 Jan 2020</p>
+                <p class="p p-12">Due Date</p>
+            </div>
+            <div class="col-auto">
+                <p class="p p-13 text-dark">2</p>
+                <p class="p p-12">Bill count</p>
+            </div>
+            <div class="col-auto">
+                <p class="p p-13 text-dark">19 Mar 2019 To 30 Mar 2020</p>
+                <p class="p p-12">Bill Period </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">Payment Details</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="ul-block-list">
+                    <div class="row">
+                        <div class="col pr-0 align-self-center">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item subtract">
+                                    <span>676.0</span>
+                                    <p>Previous Due</p>
+                                </li>
+                                <li class="list-group-item add">
+                                    <span>2000</span>
+                                    <p>Payment</p>
+                                </li>
+                                <li class="list-group-item add">
+                                    <span>70.00</span>
+                                    <p>Current Charges</p>
+                                </li>
+                                <li class="list-group-item subtract">
+                                    <span>260.00</span>
+                                    <p>EMI/SD</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>26.00</span>
+                                    <p>Adjustment</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-auto pl-0 align-self-center">
+                            <div class="blk-rt">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">
+                                        <span class="sb-ttl">676.0</span>
+                                        <p>Amount Due before</p>
+                                        <span>08 Mar 2020</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">Consumption Details</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="meter-listing-blk">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Previous Reading | Date</p></div>                                            
+                            <h6 class="ttl">150 | 30 Mar 2020</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Current Reading | Date</p></div>
+                            <h6 class="ttl">200 | 30 June 2020</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Consumption | Days</p></div>
+                            <h6 class="ttl">26.0 | 132</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Avg consumed</p></div>
+                            <h6 class="ttl">132</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">PNG Rate & Tax</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="meter-listing-blk">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Basic Price Per SCM</p></div>                                            
+                            <h6 class="ttl">28.43</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">VAT @ 5.00%</p></div>
+                            <h6 class="ttl">1.42</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Total Price Incl. VAT</p></div>
+                            <h6 class="ttl">29</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Current Charges</p></div>
+                            <h6 class="ttl">70.00</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">Deposite/Rental/Adjustment</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="meter-listing-blk">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Scheme</p></div>                                            
+                            <h6 class="ttl">Feb delight</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Deposite/Rent</p></div>
+                            <h6 class="ttl">5000</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Collected</p></div>
+                            <h6 class="ttl">500</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Remaining</p></div>
+                            <h6 class="ttl">4500</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="print-instructions-wrap">
+                    <div class="p">Bill Payment Instructions</div>
+                    <p class="inf">Write Cheque/DD in Favour of "Bhagyanagar Gas Limited" with your Name, Customer ID, Tel No & Invoice No. on the back side of the Cheque/DD</p>
+                    <ul class="list">
+                        <li>Payment in Cash can be deposited to BGL Account i.e. HDFC Bank, Client Code is BHGYNRGAS, PETBASHEERABAD BRANCH, OPP:DIWAN DHABA, Somu Residency, NH7, Hyderabad R R Dist. (only).For bank deposits, please tear the "Payment slip" attached at the bottom of the invoice and attach with the payment.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto pr-0">
+                <div class="print-banner-lg">
+                    <img class="st" src="../../../../assets/images/print-banner-lg.png" alt="banner">
+                </div>
+            </div>
+            <div class="col">
+                <div class="print-banner-sm">
+                    <p class="p p-13">Pay your bill online at</p>
+                    <a href="#" class="link">www.bglgas.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12" >
+                <div class="title-divider">GST/VAT/TIN/CIN</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="meter-listing-blk">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">BGL TIN NO. & DATE</p></div>                                            
+                            <h6 class="ttl">NA</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">BGL GST NO. & DATE</p></div>
+                            <h6 class="ttl">36AACCB2130P1ZQ & DT:28.06.2017</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">CIN NO</p></div>
+                            <h6 class="ttl">U40200TG2003PLC04156</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="print-footer">
+
+        <div class="row">
+            <div class="col-12" >
+                <h6 class="text-primary">CRN: 19924359</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="meter-listing-blk">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Invoice No</p></div>                                            
+                            <h6 class="ttl">10600173182</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Invoice Date</p></div>
+                            <h6 class="ttl">31 Mar 2020</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Amount</p></div>
+                            <h6 class="ttl">560.00</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Cheque No</p></div>
+                            <h6 class="ttl">0215648973</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="bg"><p class="p p-13">Bank Name</p></div>
+                            <h6 class="ttl">Bank of India</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <p class="signature p p-13">Customer's Signature</p>
+            </div>
+        </div>
+
+    </div>
+</div>

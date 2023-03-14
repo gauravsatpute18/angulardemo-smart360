@@ -1,0 +1,686 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/oandm']">O&amp;M</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Work Order</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <a class="dropdown-item active" href="/registration">Registration</a>
+            <a class="dropdown-item" href="#">Survey</a>
+            <a class="dropdown-item" href="#">Campgain</a>
+        </div>
+    </div>
+</div>
+
+<section class="pr-section applicant-details-sec work-order-sec">
+    <div class="row">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+                <div class="block-lt-header">
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <label class="p p-13">Type</label>
+                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                            [(ngModel)]="selectedUtility" name="name">
+                            </ng-select>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn ikon-bttn st mr-2" (click)="showLocations()" ngClass='{{locations ? "" : "active"}}'><i class="icons8 icons8-place-marker"></i></button>
+                            <button class="btn ikon-bttn st"><i class="icons8 icons8-slider"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="block-lt-body" *ngIf="locations">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn bttn-text st" [routerLink]="['/oandm/add-work-order']"><fa-icon [icon]="faPlus"></fa-icon>Add Work order</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="hide-show-collapse"> 
+                        <div class="row">
+                            <div class="col pr-0">                                                        
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <ng-select [clearable]="false" [searchable]="false" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                                            [(ngModel)]="selectedUtility" name="name">
+                                            </ng-select>
+                                        </div>
+                                        <div class="col">
+                                            <ng-select [clearable]="false" [searchable]="false" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                                            [(ngModel)]="selectedUtility" name="name">
+                                            </ng-select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <ng-select [clearable]="false" [searchable]="false" [items]="utility" bindLabel="name" placeholder="Select Utility"
+                                            [(ngModel)]="selectedUtility" name="name">
+                                            </ng-select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">                                        
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <ng-select class="time-select d-inline-block" [items]="timeStatus" [searchable]="false" [clearable]="false" bindLabel="time" placeholder="" [(ngModel)]="selectedTimeStatus" name="time" bindValue="time">
+                                            </ng-select>
+                                        </div>
+                                    </div>                                
+                                </div>
+                            <div class="col-auto px-0">
+                                <button class="btn bttn-edt ikon-bttn st"><i class="icons8 icons8-edit"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn bttn-white rounded bttn-clps" data-toggle="collapse" data-target="#hide-show-collapse" aria-expanded="false" aria-controls="hide-show-collapse" (click)="toggleBtn()"><i class="icons8" ngClass='{{iconChange ? "icons8-collapse-arrow" : "icons8-expand-arrow"}}' ></i>{{buttonName}}</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="listview-table-wrap">
+                                <table datatable class="pr-datatable pr-datatable-sm table table-hover no-boxshadow table-border without-border">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="chbx-col">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkAll">
+                                                    <label class="custom-control-label" for="checkAll"></label>
+                                                </div>
+                                            </th>
+                                            <th scope="col"><span>Request ID</span></th>
+                                            <th scope="col"><span>Type</span></th>
+                                            <th scope="col"><span>Status</span></th>
+                                            <th scope="col" class="action-col"><span>&nbsp;</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of collection.data">
+                                            <th scope="row" class="chbx-col">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" [attr.id]="item.reqId">
+                                                    <label class="custom-control-label" [attr.for]="item.reqId"></label>
+                                                </div>
+                                            </th>
+                                            <td class="showOnHover" >{{item.reqId}}
+                                                <span class="show">
+                                                    <span class="enqry-no-blk">{{item.reqId}}</span>
+                                                    <span class="enqry-name-blk">
+                                                        <ng-select [items]="flag" [searchable]="false" [clearable]="false" bindLabel="flg" placeholder="" [(ngModel)]="selectedFlag" name="time" bindValue="flg">
+                                                        </ng-select>
+                                                    </span>
+                                                    <div class="enqry-sts-blk">
+                                                        <h6 class="h6 text-grey"><span class="flag-green"></span>VIP</h6>
+                                                    </div>
+                                                    <div class="list-blk">
+                                                        <p><span>45 mins</span><span>Work Time</span></p>
+                                                        <p><span>Field</span><span>Service Type</span></p>
+                                                        <p><span>08 March 2020</span><span>Requested Date</span></p>
+                                                    </div>
+                                                    <div class="list-blk">
+                                                        <p><span>Pune</span><span>Area</span></p>
+                                                        <p><span>Pune</span><span>Sub Area</span></p>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                            <td>{{item.type}}</td>
+                                            <td>
+                                                <div [ngSwitch]="item.status">
+                                                    <div *ngSwitchCase="'pending'">
+                                                        <div class="badge badge-label-unpaid">Pending</div>
+                                                    </div>
+                                                    <div *ngSwitchDefault>
+                                                        <div class="badge badge-label-paid">Complete</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="action-col">
+                                                <div class="dropdown dot-option-dropdown">
+                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false"></a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item active st"><span>Reject</span></a>
+                                                        <a class="dropdown-item st"><span>Refund</span></a>
+                                                        <a class="dropdown-item st"><span>Adjust</span></a>
+                                                        <a class="dropdown-item st"><span>Credit</span></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-simplebar>
+                <div class="block-lt-footer" *ngIf="locations">
+                    <div class="row justify-content-end">
+                        <div class="col align-self-center">
+                            <p class="p p-12">1-75 of 262, 0 Selected</p>
+                        </div>
+                        <div class="col-auto align-self-center">                            
+                            <button class="btn btn-secondary st mr-2">Schedule</button>
+                            <button class="btn btn-outline-light3 st">Dispatch</button>
+                        </div>
+                    </div>
+                </div>
+                <ngx-simplebar [options]="scrollOptions" class="block-lt-body" *ngIf="!locations">
+                    <div class="row justify-content-center">
+                        <div class="col-12">                
+                            <div class="alert alert-light alert-dismissible fade show" role="alert">
+                                <div class="media">
+                                    <p class="p p-13">Select a territory to display it’s service appointments in the appointment list and Gantt. Territories without members don’t appear on the gantt</p>
+                                </div>                 
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="nav-block">
+                                <nav class="inner-form-tabs">
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link st active" id="nav-territories-tab" data-toggle="tab" href="#nav-territories"
+                                            role="tab" aria-controls="nav-territories" aria-selected="true">Territories</a>
+                                        <a class="nav-item nav-link st" id="nav-favorites-tab" data-toggle="tab" href="#nav-favorites" role="tab"
+                                            aria-controls="nav-favorites" aria-selected="false">Favorites</a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="nav-territories" role="tabpanel" aria-labelledby="nav-territories-tab">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="custom-control custom-checkbox d-inline">
+                                                <input type="checkbox" class="custom-control-input" id="checksrvc">
+                                                <label class="custom-control-label p p-13 text-dark pt-1" for="checksrvc">Show service appointments not associated with the territory</label>                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <hr class="hr" style="border-color:#E7E8F0;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form class="pr-search-form d-inline-block">
+                                              <span class="s-icon"></span>
+                                              <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+                                            </form>
+                                        </div>
+                                    </div>                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="list-unstyled address-list spaced-address-list">
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check1">
+                                                        <label class="custom-control-label" for="check1"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check2">
+                                                        <label class="custom-control-label" for="check2"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check3">
+                                                        <label class="custom-control-label" for="check3"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check4">
+                                                        <label class="custom-control-label" for="check4"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check5">
+                                                        <label class="custom-control-label" for="check5"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check6">
+                                                        <label class="custom-control-label" for="check6"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check7">
+                                                        <label class="custom-control-label" for="check7"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check8">
+                                                        <label class="custom-control-label" for="check8"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check9">
+                                                        <label class="custom-control-label" for="check9"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check10">
+                                                        <label class="custom-control-label" for="check10"></label>
+                                                    </div>
+                                                    Location 1
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show active" id="nav-favorites" role="tabpanel" aria-labelledby="nav-favorites-tab">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="custom-control custom-checkbox d-inline">
+                                                <input type="checkbox" class="custom-control-input" id="checksrvc2">
+                                                <label class="custom-control-label p p-13 text-dark pt-1" for="checksrvc2">Show service appointments not associated with the favorites</label>                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <hr class="hr" style="border-color:#E7E8F0;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form class="pr-search-form d-inline-block">
+                                              <span class="s-icon"></span>
+                                              <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+                                            </form>
+                                        </div>
+                                    </div>                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="list-unstyled address-list spaced-address-list">
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check11">
+                                                        <label class="custom-control-label" for="check11"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check12">
+                                                        <label class="custom-control-label" for="check12"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check13">
+                                                        <label class="custom-control-label" for="check13"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check14">
+                                                        <label class="custom-control-label" for="check14"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check15">
+                                                        <label class="custom-control-label" for="check15"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check16">
+                                                        <label class="custom-control-label" for="check16"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check17">
+                                                        <label class="custom-control-label" for="check17"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check18">
+                                                        <label class="custom-control-label" for="check18"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check19">
+                                                        <label class="custom-control-label" for="check19"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox d-inline">
+                                                        <input type="checkbox" class="custom-control-input" id="check20">
+                                                        <label class="custom-control-label" for="check20"></label>
+                                                    </div>
+                                                    Favorites 1
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </ngx-simplebar>
+                <div class="block-lt-footer" *ngIf="!locations">
+                    <div class="row justify-content-end">
+                        <div class="col-auto align-self-center">                            
+                            <button class="btn btn-secondary st mr-2">Schedule</button>
+                            <button class="btn btn-outline-light3 st">Dispatch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-rt inner-wrap">
+                <div class="row">
+                    <div class="col-auto pr-0">
+                        <div class="resourses-blk">
+                            <div class="block-rt-header">
+                                <div class="row">
+                                    <div class="col pr-0">
+                                        <form class="pr-search-form d-inline-block">
+                                            <span class="s-icon"></span>
+                                            <input class="form-control pr-table-search" type="search" placeholder="" aria-label="Search">        
+                                        </form>
+                                    </div>
+                                    <div class="col-auto">
+                                        <!-- <button class="btn ikon-bttn st"><i class="icons8 icons8-slider"></i></button> -->
+                                        <div ngbDropdown class="filter-dropdown-body" container="body">
+                                            <button class="btn ikon-bttn st" ngbDropdownToggle><i class="icons8 icons8-slider"></i></button>
+                                            <div ngbDropdownMenu class="filter-dropdown">
+                                                <div class="filter-dropdown-container container">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Area</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="area" bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Sub Area</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="subArea" bindLabel="sbare" placeholder="" [(ngModel)]="selectedSubArea" name="sbare">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Status</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="status" bindLabel="sts" placeholder="" [(ngModel)]="selectedStatus" name="sts">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Skills</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="skills" bindLabel="skls" placeholder="" [(ngModel)]="selectedSkills" name="skls">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Utilisation</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="utilisation" bindLabel="utlstn" placeholder="" [(ngModel)]="selectedUtilisation" name="utlstn">
+                                                            </ng-select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Vendor</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="vendor" bindLabel="vndr" placeholder="" [(ngModel)]="selectedVendor" name="vndr">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label class="p p-13">Type</label>
+                                                            <ng-select class="filter-dropdown-select" [clearable]="false" [searchable]="false" appendTo="body" [items]="type" bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ">
+                                                            </ng-select>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                            <ngx-simplebar [options]="scrollOptions" class="block-rt-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="p p-13 mt-2 mb-0">Resources</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="resources-wrap">
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk active" style="background-image: url('../../../assets/images/prof1.png');"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12375</p>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk active" style="background-image: url('../../../assets/images/prof2.png');"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12376</p>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk active" style="background-color: #444DE4;">HD</div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12376</p>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk active" style="background-image: url('../../../assets/images/prof1.png');"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Aditya Joshi</p>
+                                                    <span class="p p-13">Technician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12375</p>                                                    
+                                                </li>                                        
+                                            </ul>                                            
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk active" style="background-color: #FF7C34;">hd</div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12377</p>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk" style="background-image: url('../../../assets/images/prof1.png');"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12377</p>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal resources-list">
+                                                <li class="list-group-item">
+                                                    <div class="img-blk" style="background-image: url('../../../assets/images/profdefault.png');"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-dark">Harvey dent</p>
+                                                    <span class="p p-13">Electrician</span>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <p class="p p-13 text-primary">#12377</p>                                                    
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ngx-simplebar>
+                        </div>
+                    </div>
+                    <div class="col pl-0">
+                        <div class="map-overview-blk">
+                            <div class="block-rt-header">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto align-self-center">
+                                        <button class="btn ikon-bttn st" (click)="toggleMapView()" ngClass='{{mapView ? "active" : ""}}'><i class="icons8 icons8-marker"></i></button>
+                                    </div>
+                                    <div class="col-auto align-self-center">
+                                        <div class="map-calendar-wrap">
+                                            <label class="map-calendar-label" for="dp22">Monday 12, <span>April 2020</span></label>                                        
+                                            <input type="text" id="dp22" class="form-control" placeholder="" name="dp22" [(ngModel)]="mapDate" ngbDatepicker #d22="ngbDatepicker" (click)="d22.toggle()" container="body" >
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-auto align-self-center">
+                                        <div class="map-calendar-buttons">
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn prev st"><i class="icons8 icons8-back"></i></button>
+                                                <button type="button" class="btn st">Today</button>
+                                                <button type="button" class="btn next st"><i class="icons8 icons8-forward"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-rt-body">
+                                <div class="g-map-wrapper" id="g-map-wrapper"  *ngIf="mapView">
+                                    <div class="g-map" id="g-map"></div>
+                                    <div class="map-footer">
+                                        <ul class="list-group list-group-horizontal map-footer-ul">
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                                <span class="p">Flag</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                                <span class="p">Emergency</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                                <span class="p">Repair/Service Request</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon4.png" alt="b"></span>
+                                                <span class="p">Schedule</span>
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                                <div class="gant-view-wrapper" id="gant-view-wrapper"  *ngIf="!mapView">
+                                    gant view
+                                </div>
+                                <!-- <div class="g-map-wrapper" *ngIf="!mapView">
+                                    <div class="g-map" id="g-map"></div>
+                                    <div class="map-footer">
+                                        <ul class="list-group list-group-horizontal map-footer-ul">
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                                <span class="p">Flag</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                                <span class="p">Emergency</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                                <span class="p">Repair/Service Request</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon4.png" alt="b"></span>
+                                                <span class="p">Schedule</span>
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                                <div class="gant-view-wrapper" *ngIf="mapView">
+                                    gant view
+                                </div> -->
+                            </div>                                                     
+                        </div>
+                    </div>
+                </div>                                
+            </div>            
+        </div>
+    </div>
+</section>
+
+<div class="dataTables_wrapper">
+    <div class="dataTables_paginate">
+        <a class="paginate_button previous disabled" tabindex="-1" >Previous</a>
+        <span>
+            <a class="paginate_button current" tabindex="0">1</a>
+            <a class="paginate_button" tabindex="0">2</a>
+            <a class="paginate_button" tabindex="0">3</a>
+            <a class="paginate_button" tabindex="0">4</a>
+            <a class="paginate_button" tabindex="0">5</a>
+            <a class="paginate_button" tabindex="0">6</a>
+        </span>
+        <a class="paginate_button next" tabindex="0" >Next</a>
+    </div>
+</div>

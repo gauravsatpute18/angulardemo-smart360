@@ -1,0 +1,119 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/sales-marketing']">S&M</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Consumer</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" href="/registration/add-applicant">Registration</a>
+        <a class="dropdown-item" href="/survey">Survey</a>
+        <a class="dropdown-item" href="campaign/add-campaign">Campgain</a>
+        </div>
+    </div>
+</div>
+
+<!-- <section class="pr-section search-section">
+    <div class="row justify-content-center search-section-row">
+        <div class="col-12 align-self-center">
+            <div class="search-section-wrap">
+                <div class="img-blk">
+                    <img class="img-fluid st" src="../../../assets/images/settings-survey.png" alt="img">
+                </div>
+                <h2 class="ttl">Welcome To Consumer</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons1" name="conselct" class="custom-control-input" checked (change)="cons1" #cons1>
+                            <label class="custom-control-label" for="cons1">Consumer</label>
+                        </div>
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons3" name="conselct" class="custom-control-input" checked (change)="cons3" #cons3>
+                            <label class="custom-control-label" for="cons3">Email ID</label>
+                        </div>
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons4" name="conselct" class="custom-control-input" (change)="cons4" #cons4>
+                            <label class="custom-control-label" for="cons4">Phone</label>
+                        </div>
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons2" name="conselct" class="custom-control-input" (change)="cons2" #cons2>
+                            <label class="custom-control-label" for="cons2">Meter No.</label>
+                        </div>                        
+                    </div>
+                </div>
+                <form class="pr-page-search">
+                    <span class="s-icon"><i class="icons8 icons8-search"></i></span>
+                    <input class="form-control st" type="search" placeholder="Search consumers" aria-label="Search">        
+                </form>
+                <button class="btn btn-primary rounded" [routerLink]="['/consumers/view']">Search</button>
+            </div>            
+        </div>
+    </div>
+</section> -->
+
+
+<section class="pr-section search-section">
+    <div class="row justify-content-center search-section-row">
+        <div class="col-12 p-0">
+            <div class="search-section-wrap">
+                <div class="img-blk">
+                    <img class="img-fluid st" src="../../../assets/images/settings-survey.png" alt="img">
+                </div>
+                <h2 class="ttl">Welcome To Consumer</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons1" name="conselct" class="custom-control-input" checked (change)="cons1" #cons1>
+                            <label class="custom-control-label" for="cons1">Consumer</label>
+                        </div> 
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons2" name="conselct" class="custom-control-input" (change)="cons2" #cons2>
+                            <label class="custom-control-label" for="cons2">Meter No.</label>
+                        </div>                       
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons3" name="conselct" class="custom-control-input" (change)="cons3" #cons3>
+                            <label class="custom-control-label" for="cons3">Email ID</label>
+                        </div>
+                        <div class="custom-control custom-radio pr-custom-radio custom-control-inline">
+                            <input type="radio" id="cons4" name="conselct" class="custom-control-input" (change)="cons4" #cons4>
+                            <label class="custom-control-label" for="cons4">Phone</label>
+                        </div>
+                        
+                    </div>
+                </div>
+                <ng-container *ngIf="cons1.checked">
+                    <form class="pr-page-search">
+                        <span class="s-icon"><i class="icons8 icons8-search"></i></span>                    
+                            <input class="form-control st" type="search" placeholder="Search by Consumer" aria-label="Search">                      
+                    </form>
+                </ng-container> 
+                <ng-container *ngIf="cons2.checked">
+                    <form class="pr-page-search">
+                        <span class="s-icon"><i class="icons8 icons8-search"></i></span>                    
+                            <input class="form-control st" type="search" placeholder="Search by Meter No." aria-label="Search">                      
+                    </form>
+                </ng-container> 
+                <ng-container *ngIf="cons3.checked">
+                    <form class="pr-page-search">
+                        <span class="s-icon"><i class="icons8 icons8-search"></i></span>                    
+                            <input class="form-control st" type="search" placeholder="Search by Email ID" aria-label="Search">                      
+                    </form>
+                </ng-container> 
+                <ng-container *ngIf="cons4.checked">
+                    <form class="pr-page-search">
+                        <span class="s-icon"><i class="icons8 icons8-search"></i></span>                    
+                            <input class="form-control st" type="search" placeholder="Search by Phone No." aria-label="Search">                      
+                    </form>
+                </ng-container> 
+                <button class="btn btn-primary rounded st" [routerLink]="['/consumers/view']">Search</button>
+            </div>
+            
+        </div>
+    </div>
+</section>

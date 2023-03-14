@@ -1,0 +1,1853 @@
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/sourcing">Sourcing</a></li>
+        <li class="breadcrumb-item"><a routerLink="/contracts">Contracts</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contracts Details</li>
+    </ol>
+    </div>
+    <div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <!-- <a class="dropdown-item active" href="/registration">Registration</a>
+        <a class="dropdown-item" href="#">Survey</a>
+        <a class="dropdown-item" href="#">Campgain</a> -->
+        </div>
+    </div>
+    </div>
+    <section class="pr-section applicant-details-sec">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/campaign']"></button>
+                <div class="inner-page-title d-inline-block"><h4 class="h4">Contract Details </h4></div>
+            </div>
+            <div class="col-6">
+                <div class="inner-page-pagination">
+                    <nav class="">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">Previous<button class="btn bttn-prev"><fa-icon [icon]="faChevronLeft"></fa-icon></button></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#"><button class="btn bttn-next"><fa-icon [icon]="faChevronRight"></fa-icon></button>Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto pr-0">
+                <div class="applicant-block-lt inner-wrap">
+    
+                    <div class="dtls-block">
+                        <div class="block-header">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="p">90 Days</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h4 class="h4 text-primary">CN: 0019214</h4>
+                                    <!-- <h5>Lorem Ipsum Dolor</h5> -->
+                                    <h6>Purchase</h6>
+                                    <p><span class="badge badge-pill badge-label-finished mr-3">Finished </span></p>
+                                </div>
+                                <div class="col">
+                                    <div class="applicant-img">
+                                        <img class="st img-abs" src="../../assets/images/applicant-img.png" alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <ngx-simplebar [options]="scrollOptions" class="info-block">
+                        <div class="applicant-data">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="p p-13 text-truncate">Contract Date</p>
+                                    <h6 class="h6">09 Jan 20</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Source Type</p>
+                                    <h6 class="h6">Source A</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Start Date</p>
+                                    <h6 class="h6">09 Jan 20</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">End Date</p>
+                                    <h6 class="h6">09 Jan 20</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Sub Type</p>
+                                    <h6 class="h6">XYZ</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Potential Demand</p>
+                                    <h6 class="h6">Lorem Ipsum</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Rate</p>
+                                    <h6 class="h6">305/day</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Cost Center</p>
+                                    <h6 class="h6">New York</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Currency</p>
+                                    <h6 class="h6">Dollar</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Contract Amount</p>
+                                    <h6 class="h6">305/day</h6>
+                                </div>
+                                <div class="col-6">
+                                    <p class="p p-13">Description</p>
+                                    <h6 class="h6"> Contract Details
+                                    </h6>
+                                </div>
+                                <div class="row">
+                                    <!--Fix CSS-->
+                                    <div class="col-12">
+                                        <div class="title-divider">Supplier Details</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="vendor-card st">
+                                            <div class="media">
+                                                <div class="img-blk">
+                                                    <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>Thomas Shelby</h5>
+                                                    <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                                    <p class="p p-13 dtl">+91 555 555 555</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="title-divider">Financial Details</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13 text-truncate">Bank A/C No</p>
+                                        <h6 class="h6">112345345</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Bank Name</p>
+                                        <h6 class="h6">HDFC Bank</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">A/C Holder's Name</p>
+                                        <h6 class="h6">J.J Thomasa</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">Branch</p>
+                                        <h6 class="h6">New Jersey</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="p p-13">IFSC Code</p>
+                                        <h6 class="h6">1234567</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ngx-simplebar>
+    
+                </div>
+            </div>
+            <div class="col"> 
+                <div class="applicant-block-rt inner-wrap">
+                    <div class="nav-block">
+                        <nav class="inner-form-tabs">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link st active" id="nav-demand-tab" data-toggle="tab" href="#nav-demand" role="tab" 
+                                    aria-controls="nav-demand" aria-selected="true">Demand</a>
+                                <a class="nav-item nav-link st" id="nav-invoice-tab" data-toggle="tab" href="#nav-invoice" role="tab"
+                                    aria-controls="nav-invoice" aria-selected="false">Invoice</a>
+                                <a class="nav-item nav-link st" id="nav-paymnt-tab" data-toggle="tab" href="#nav-paymnt" role="tab"
+                                    aria-controls="nav-paymnt" aria-selected="false">Payment</a>
+                                <a class="nav-item nav-link st" id="nav-doc-tab" data-toggle="tab" href="#nav-doc" role="tab"
+                                    aria-controls="nav-doc" aria-selected="false">Documents</a>
+                                <a class="nav-item nav-link st" id="nav-tnc-tab" data-toggle="tab" href="#nav-tnc" role="tab"
+                                    aria-controls="nav-tnc" aria-selected="false">Terms & Conditions</a>
+                                <a class="nav-item nav-link st" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab"
+                                    aria-controls="nav-notes" aria-selected="false">Notes</a>
+                            </div>
+                        </nav>
+                    </div>
+    
+                    <ngx-simplebar [options]="scrollOptions" class="applicant-block-rt-body">
+                        <div class="tab-content" >
+    
+                            <!--Demand Tab-->
+                            <div class="tab-pane fade show active" id="nav-demand" role="tabpanel" aria-labelledby="nav-demand-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                      <form class="pr-search-form d-inline-block">
+                                                        <span class="s-icon"></span>
+                                                        <input class="form-control pr-table-search" type="search" placeholder="Search by Name, Contract No." aria-label="Search">
+                                                      </form>
+                                                    </div>
+                                                    <div class="col-auto pr-0">
+                                                      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <div class="dropdown tool-dropdown">
+                                                        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Tools
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item active" >
+                                                                <i class="icons8 icons8-print-2"></i>Print
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-pdf"></i>PDF
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-brief"></i>Excel
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-document"></i>CSV
+                                                              </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addDemandModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="filters-wrap">
+                                                            <div class="collapse" id="filterCollapse">
+                                                                <div class="filter-wrap-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="list-group list-group-horizontal">                                            
+                                                                                <li class="list-group-item">
+                                                                                    <label>Date Range</label>
+                                                                                    <div class="input-group">
+                                                                                      <div class="input-group-prepend">
+                                                                                          <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                                              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                          </button>
+                                                                                      </div>
+                                                                                      <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                                                                                  </div>
+                                                                                  </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Source Type</label>
+                                                                                    <ng-select class="filter-select" [items]="sourceType" bindLabel="name" placeholder="Select Source Type" [(ngModel)]="selectedSourceType" name="sourceType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Sub Type</label>
+                                                                                    <ng-select class="filter-select" [items]="subType" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubType" name="subType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row filter-cta-row">
+                                                                        <div class="col-auto pr-2">
+                                                                          <button class="btn btn-outline-secondary st">Apply</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-2">
+                                                                            <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                            data-target="#filterCollapse" aria-expanded="false"
+                                                                            aria-controls="filterCollapse">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <!--Modify CSS-->
+                                                        <label class="p p-12">Showing Last 6 month records</label>
+                                                        <div class="listview-table-wrap">                                            
+                                                            <table datatable class="pr-datatable table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"><span>Name</span></th>
+                                                                        <th scope="col">Contract No.</th>
+                                                                        <th scope="col">Source Type</th>
+                                                                        <th scope="col">Demand</th>
+                                                                        <th scope="col">Rate</th>
+                                                                        <th scope="col">Date</th>
+                                                                        <th scope="col"><span>Status</span></th>
+                                                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of collection.data">
+
+                                                                        <td class="showOnHover">Lorem Ipsum
+                                                                        
+                                                                            <!--Short View Demand Tab-->
+                                                                            <span class="show">
+                                                                                <span class="enqry-no-blk">015890</span>
+                                                                                <span class="enqry-name-blk">Lorem Ipsum </span>
+                                                                                
+                                                                                <div [ngSwitch]="item.status">
+                                                                                    <div *ngSwitchCase="'finished'">
+                                                                                        <div class="badge badge-label-finished">Finished</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'new'">
+                                                                                        <div class="badge badge-label-new">New</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'pending'">
+                                                                                        <div class="badge badge-label-pending">Pending</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchDefault>
+                                                                                        <div class="badge badge-label-danger">Rejected</div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <br>
+                                                            
+                                                                                <div class="list-blk">
+                                                                                <p><span>Lorem Ipsum</span><span>Demand Details</span></p>
+                                                                                <p><span>09 Jan 20</span><span>Created On</span></p>
+                                                                                <p><span>Russell Westbrook</span><span>Created By</span></p>
+                                                                                </div>
+                                                                          </span>
+
+                                                                        </td>
+                                                                        
+                                                                        <td>015890</td>
+                                                                        <td>Source A</td>
+                                                                        <td>Asset XYZ</td>
+                                                                        <td>$ 30 per day</td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>
+                                                                            <div [ngSwitch]="item.status">
+                                                                                <div *ngSwitchCase="'finished'">
+                                                                                    <div class="badge badge-label-finished">Finished</div>
+                                                                                </div>
+                                                                                <div *ngSwitchDefault>
+                                                                                    <div class="badge badge-label-pending">Pending</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="action-col">
+                                                                            <span class="show">
+                                                                                <ul class="list-group list-group-horizontal action-list">
+                                                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print"
+                                                                                        [openDelay]="300" [closeDelay]="500">
+                                                                                        <fa-icon [icon]="faPrint"></fa-icon>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>                                            
+                                                        </div>
+                                                    </div>
+                                                </div>                                           
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="tab-pane fade" id="nav-paymnt" role="tabpanel" aria-labelledby="nav-paymnt-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                      <form class="pr-search-form d-inline-block">
+                                                        <span class="s-icon"></span>
+                                                        <input class="form-control pr-table-search" type="search" placeholder="Search by Payment No, Invoice No" aria-label="Search">
+                                                      </form>
+                                                    </div>
+                                                    <div class="col-auto pr-0">
+                                                      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <div class="dropdown tool-dropdown">
+                                                        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Tools
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item active" >
+                                                                <i class="icons8 icons8-print-2"></i>Print
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-pdf"></i>PDF
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-brief"></i>Excel
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-document"></i>CSV
+                                                              </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addPaymentModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="filters-wrap">
+                                                            <div class="collapse" id="filterCollapse">
+                                                                <div class="filter-wrap-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="list-group list-group-horizontal">                                            
+                                                                                <li class="list-group-item">
+                                                                                    <label>Date Range</label>
+                                                                                    <div class="input-group">
+                                                                                      <div class="input-group-prepend">
+                                                                                          <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                                              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                          </button>
+                                                                                      </div>
+                                                                                      <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected3" />
+                                                                                  </div>
+                                                                                  </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Sub Type</label>
+                                                                                    <ng-select class="filter-select" [items]="subType" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubType" name="subType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row filter-cta-row">
+                                                                        <div class="col-auto pr-2">
+                                                                          <button class="btn btn-outline-secondary st">Apply</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-2">
+                                                                            <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                            data-target="#filterCollapse" aria-expanded="false"
+                                                                            aria-controls="filterCollapse">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <!--Modify CSS-->
+                                                        <label class="p p-12">Showing Last 6 month records</label>
+                                                        <div class="listview-table-wrap">                                            
+                                                            <table datatable class="pr-datatable table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"><span>Payment No</span></th>
+                                                                        <th scope="col"><span>Invoice No </span></th>
+                                                                        <th scope="col"><span>Mode</span></th>
+                                                                        <th scope="col"><span>Amount</span></th>
+                                                                        <th scope="col"><span>Paid Amount</span></th>
+                                                                        <th scope="col"><span>Date</span></th>
+                                                                        <th scope="col"><span>Due Date</span></th>
+                                                                        <th scope="col"><span>Status</span></th>
+                                                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of collection.data">
+                                                                        
+                                                                        <td class="showOnHover">015890
+                                                                        
+                                                                            <!--Short View Demand Tab-->
+                                                                            <span class="show">
+                                                                                <span class="enqry-no-blk">015890</span>
+                                                                                <span class="enqry-name-blk">Lorem Ipsum Dolor</span>
+                                                                                
+                                                                                <div [ngSwitch]="item.status">
+                                                                                    <div *ngSwitchCase="'finished'">
+                                                                                        <div class="badge badge-label-finished">Finished</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'new'">
+                                                                                        <div class="badge badge-label-new">New</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'pending'">
+                                                                                        <div class="badge badge-label-pending">Pending</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchDefault>
+                                                                                        <div class="badge badge-label-danger">Rejected</div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <br>
+                                                            
+                                                                                <div class="list-blk">
+                                                                                <p><span>Lorem Ipsum</span><span>Demand Details</span></p>
+                                                                                <p><span>09 Jan 20</span><span>Created On</span></p>
+                                                                                <p><span>Russell Westbrook</span><span>Created By</span></p>
+                                                                                </div>
+                                                                          </span>
+
+                                                                        </td>
+
+                                                                        <td>015890</td>
+                                                                        <td>Digital</td>
+                                                                        <td>$ 500</td>
+                                                                        <td>$ 500</td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>
+                                                                            <div [ngSwitch]="item.status">
+                                                                                <div *ngSwitchCase="'finished'">
+                                                                                    <div class="badge badge-label-finished">Finished</div>
+                                                                                </div>
+                                                                                <div *ngSwitchDefault>
+                                                                                    <div class="badge badge-label-pending">Pending</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="action-col">
+                                                                            <span class="show">
+                                                                                <ul class="list-group list-group-horizontal action-list">
+                                                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print"
+                                                                                        [openDelay]="300" [closeDelay]="500">
+                                                                                        <fa-icon [icon]="faPrint"></fa-icon>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="tab-pane fade" id="nav-invoice" role="tabpanel" aria-labelledby="nav-invoice-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                      <form class="pr-search-form d-inline-block">
+                                                        <span class="s-icon"></span>
+                                                        <input class="form-control pr-table-search" type="search" placeholder="Search by Invoice No, Supplier Name" aria-label="Search">
+                                                      </form>
+                                                    </div>
+                                                    <div class="col-auto pr-0">
+                                                      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <div class="dropdown tool-dropdown">
+                                                        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Tools
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item active" >
+                                                                <i class="icons8 icons8-print-2"></i>Print
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-pdf"></i>PDF
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-brief"></i>Excel
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-document"></i>CSV
+                                                              </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addInvoiceModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="filters-wrap">
+                                                            <div class="collapse" id="filterCollapse">
+                                                                <div class="filter-wrap-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="list-group list-group-horizontal">                                            
+                                                                                <li class="list-group-item">
+                                                                                    <label>Date Range</label>
+                                                                                    <div class="input-group">
+                                                                                      <div class="input-group-prepend">
+                                                                                          <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                                              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                          </button>
+                                                                                      </div>
+                                                                                      <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected2" />
+                                                                                  </div>
+                                                                                  </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Sub Type</label>
+                                                                                    <ng-select class="filter-select" [items]="subType" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubType" name="subType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row filter-cta-row">
+                                                                        <div class="col-auto pr-2">
+                                                                          <button class="btn btn-outline-secondary st">Apply</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-2">
+                                                                            <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                            data-target="#filterCollapse" aria-expanded="false"
+                                                                            aria-controls="filterCollapse">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <!--Modify CSS-->
+                                                        <label class="p p-12">Showing Last 6 month records</label>
+                                                        <div class="listview-table-wrap">                                            
+                                                            <table datatable class="pr-datatable table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"><span>Name</span></th>
+                                                                        <th scope="col"><span>Invoice No </span></th>
+                                                                        <th scope="col"><span>Amount</span></th>
+                                                                        <th scope="col"><span>Date</span></th>
+                                                                        <th scope="col"><span>Due Date</span></th>
+                                                                        <th scope="col"><span>Supplier Name</span></th>
+                                                                        <th scope="col"><span>Status</span></th>
+                                                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of collection.data">
+                                                                        
+                                                                        <td class="showOnHover">Lorem Ipsum
+                                                                        
+                                                                            <!--Short View Demand Tab-->
+                                                                            <span class="show">
+                                                                                <span class="enqry-no-blk">015890</span>
+                                                                                <span class="enqry-name-blk">90 Days</span>
+                                                                                
+                                                                                <div [ngSwitch]="item.status">
+                                                                                    <div *ngSwitchCase="'finished'">
+                                                                                        <div class="badge badge-label-finished">Finished</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'new'">
+                                                                                        <div class="badge badge-label-new">New</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchCase="'pending'">
+                                                                                        <div class="badge badge-label-pending">Pending</div>
+                                                                                    </div>
+                                                                                    <div *ngSwitchDefault>
+                                                                                        <div class="badge badge-label-danger">Rejected</div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <br>
+                                                            
+                                                                                <div class="list-blk">
+                                                                                    <p><span>Lorem Ipsum</span><span>Utilized Amount</span></p>
+                                                                                    <p><span>09 Jan 20</span><span>Expiry Date</span></p>
+                                                                                </div>
+                                                            
+                                                                                <div class="list-blk">
+                                                                                    <p><span>09 Jan 20</span><span>Created On</span></p>
+                                                                                    <p><span>Russell Westbrook</span><span>Created By</span></p>
+                                                                                </div>
+                                                                          </span>
+
+                                                                        </td>
+
+                                                                        <td>015890</td>
+                                                                        <td>$ 500</td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>Thomas Shelby</td>
+                                                                        <td>
+                                                                            <div [ngSwitch]="item.status">
+                                                                                <div *ngSwitchCase="'finished'">
+                                                                                    <div class="badge badge-label-finished">Finished</div>
+                                                                                </div>
+                                                                                <div *ngSwitchDefault>
+                                                                                    <div class="badge badge-label-pending">Pending</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="action-col">
+                                                                            <span class="show">
+                                                                                <ul class="list-group list-group-horizontal action-list">
+                                                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print"
+                                                                                        [openDelay]="300" [closeDelay]="500">
+                                                                                        <fa-icon [icon]="faPrint"></fa-icon>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-tnc" role="tabpanel" aria-labelledby="nav-tnc-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                      <form class="pr-search-form d-inline-block">
+                                                        <span class="s-icon"></span>
+                                                        <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                                      </form>
+                                                    </div>
+                                                    <div class="col-auto pr-0">
+                                                      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <div class="dropdown tool-dropdown">
+                                                        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Tools
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item active" >
+                                                                <i class="icons8 icons8-print-2"></i>Print
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-pdf"></i>PDF
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-brief"></i>Excel
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-document"></i>CSV
+                                                              </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addTnCModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="filters-wrap">
+                                                            <div class="collapse" id="filterCollapse">
+                                                                <div class="filter-wrap-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="list-group list-group-horizontal">                                            
+                                                                                <li class="list-group-item">
+                                                                                    <label>Date Range</label>
+                                                                                    <div class="input-group">
+                                                                                      <div class="input-group-prepend">
+                                                                                          <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                                              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                          </button>
+                                                                                      </div>
+                                                                                      <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected5" />
+                                                                                  </div>
+                                                                                  </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Sub Type</label>
+                                                                                    <ng-select class="filter-select" [items]="subType" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubType" name="subType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row filter-cta-row">
+                                                                        <div class="col-auto pr-2">
+                                                                          <button class="btn btn-outline-secondary st">Apply</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-2">
+                                                                            <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                            data-target="#filterCollapse" aria-expanded="false"
+                                                                            aria-controls="filterCollapse">Cancel</button>
+                                                                        </div>
+                                                                      </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <!--Modify CSS-->
+                                                        <h6>Showing Last 3 months' Data</h6>
+                                                        <div class="listview-table-wrap">                                            
+                                                            <table datatable class="pr-datatable table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"><span>Term No </span></th>
+                                                                        <th scope="col"><span>Amount</span></th>
+                                                                        <th scope="col"><span>Date</span></th>
+                                                                        <th scope="col"><span>Status</span></th>
+                                                                        <th scope="col" class="action-col"><span>Action</span></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of collection.data">
+                                                                        <td>015890</td>
+                                                                        <td>
+                                                                            <!--Fix CSS-->
+                                                                            <p>
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                                                                                laboris nisi ut aliquip ex ea commodo consequat. 
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>09 Jan 20</td>
+                                                                        <td>
+                                                                            <div class="badge badge-label-success">Verified</div>
+                                                                        </td>
+                                                                        <td class="action-col">
+                                                                            <span class="show">
+                                                                                <ul class="list-group list-group-horizontal action-list">
+                                                                                    <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print"
+                                                                                        [openDelay]="300" [closeDelay]="500">
+                                                                                        <fa-icon [icon]="faPrint"></fa-icon>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-doc" role="tabpanel" aria-labelledby="nav-doc-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col">
+                                                      <form class="pr-search-form d-inline-block">
+                                                        <span class="s-icon"></span>
+                                                        <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                                                      </form>
+                                                    </div>
+                                                    <div class="col-auto pr-0">
+                                                      <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                        data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <div class="dropdown tool-dropdown">
+                                                        <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          Tools
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item active" >
+                                                                <i class="icons8 icons8-print-2"></i>Print
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-pdf"></i>PDF
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-brief"></i>Excel
+                                                              </a>
+                                                              <a class="dropdown-item" >
+                                                                <i class="icons8 icons8-document"></i>CSV
+                                                              </a>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-auto pl-0">
+                                                      <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addDocumentModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="filters-wrap">
+                                                            <div class="collapse" id="filterCollapse">
+                                                                <div class="filter-wrap-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <ul class="list-group list-group-horizontal">                                            
+                                                                                <li class="list-group-item">
+                                                                                    <label>Date Range</label>
+                                                                                    <div class="input-group">
+                                                                                      <div class="input-group-prepend">
+                                                                                          <button class="btn bttn-transparent bttn-icon" type="button">
+                                                                                              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                          </button>
+                                                                                      </div>
+                                                                                      <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected4" />
+                                                                                  </div>
+                                                                                  </li>
+                                                                                <li class="list-group-item">
+                                                                                    <label>Sub Type</label>
+                                                                                    <ng-select class="filter-select" [items]="subType" bindLabel="name" placeholder="Select Sub Type" [(ngModel)]="selectedSubType" name="subType">
+                                                                                    </ng-select>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row filter-cta-row">
+                                                                        <div class="col-auto pr-2">
+                                                                          <button class="btn btn-outline-secondary st">Apply</button>
+                                                                        </div>
+                                                                        <div class="col-auto pl-2">
+                                                                            <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                            data-target="#filterCollapse" aria-expanded="false"
+                                                                            aria-controls="filterCollapse">Cancel</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="form-row">
+                                                    <div class="col-12">
+                                                        <div class="uploaded-items">
+                                                            <ul class="list-group list-group-horizontal-sm">
+                                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                                    <ngx-dropzone-label class="p p-12 file-name">{{ f.name }}</ngx-dropzone-label>
+                                                                </ngx-dropzone-image-preview>
+                                                                <li class="list-group-item">
+                                                                    <div class="thumbnail">
+                                                                        <img class="st img-abs" src="../../assets/images/upload1.jpg" alt="img">
+                                                                    </div>
+                                                                    <span class="btn bttn-remove">x</span>
+                                                                    <p class="p p-12 file-name">Personal Details</p>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <div class="thumbnail">
+                                                                        <img class="st img-abs" src="../../assets/images/upload2.jpg" alt="img">
+                                                                    </div>
+                                                                    <span class="btn bttn-remove">x</span>
+                                                                    <p class="p p-12 file-name">Personal Details</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="applicant-data">
+    
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto pl-0">
+                                                        <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addNotesModal"><fa-icon [icon]="faPlus"></fa-icon>Add Note</button>
+                                                    </div>
+                                                </div>                                            
+                                                
+                                                <div class="row">
+                                                    <div class="col-12">
+    
+                                                        <ng-container *ngIf="show">
+                                                            <div class="add-notes-wrap">
+                                                                <p class="p p-13">Notes</p>
+                                                                <div class="add-notes-card">
+                                                                    <div class="txt-area">
+                                                                        <textarea class="form-control add-notes-textarea" name="" rows="10" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ait enim se, si uratur, Quam hoc suave! dicturum. Vitiosum est enim in dividendo partem in genere numerare. Summus">
+                                                                        </textarea>
+                                                                    </div>
+                                                                    <div class="body">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <div class="color-radio-wrap">
+                                                                                    <div class="btn-group" data-toggle="buttons">
+                                                                                        <label class="btn colr1 color-radio-btn radio-btn-round active">
+                                                                                            <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                            <span class="tick st"></span>
+                                                                                        </label>                                                                        
+                                                                                        <label class="btn colr2 color-radio-btn radio-btn-round">
+                                                                                            <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                             <span class="tick st"></span>
+                                                                                        </label>                                                                        
+                                                                                        <label class="btn colr3 color-radio-btn radio-btn-round">
+                                                                                            <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                            <span class="tick st"></span>
+                                                                                        </label>                                                                        
+                                                                                        <label class="btn colr4 color-radio-btn radio-btn-round">
+                                                                                            <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                            <span class="tick st"></span>
+                                                                                        </label>                                                                                
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto pl-1">
+                                                                                <button class="btn btn-outline-light3 st" (click)="toggle()">Cancel</button>
+                                                                            </div>
+                                                                            <div class="col-auto pl-1">
+                                                                                <button class="btn btn-secondary st" (click)="toggle()">Add Note</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+            
+                                                        <ng-container *ngIf="!show">
+                                                            <div class="notes-card-wrap">
+                                                                <ul class="list-group list-group-horizontal notes-card-list">
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr1">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item st">
+                                                                                            <div class="color-radio-wrap">
+                                                                                                <div class="btn-group" data-toggle="buttons">
+                                                                                                    <label class="btn colr1 color-radio-btn radio-btn-square active">
+                                                                                                        <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr2 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr3 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr4 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                      
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                        <a class="dropdown-item st"><span class="cta" (click)="toggle()">Edit Note</span></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr2">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#">
+                                                                                            <div class="color-radio-wrap">
+                                                                                                <div class="btn-group" data-toggle="buttons">
+                                                                                                    <label class="btn colr1 color-radio-btn radio-btn-square active">
+                                                                                                        <input type="radio" name="note-options" id="option1" autocomplete="off" checked>
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr2 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option2" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr3 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option3" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                        
+                                                                                                    <label class="btn colr4 color-radio-btn radio-btn-square">
+                                                                                                        <input type="radio" name="note-options" id="option4" autocomplete="off">
+                                                                                                        <span class="tick st"></span>
+                                                                                                    </label>                                                                      
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr3">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr4">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr3">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr4">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+        
+                                                                    <li class="list-group-item">
+                                                                        <div class="notes-card colr3">
+                                                                            <div class="header">
+                                                                                <a class="print-doc"><fa-icon [icon]="faPrint"></fa-icon></a>
+                                                                                <div class="dropdown dot-option-dropdown">
+                                                                                    <a class="dot-btn-v st" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <a class="dropdown-item" href="#"></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button class="close">&times;</button>
+                                                                            </div>
+                                                                            <div class="body">
+                                                                                <h5 class="ttl">Payment Cash</h5>
+                                                                                <p class="p p-12 txt">Payment in cash will be accepted at Water Plant, Road No.2, R.T.C Colony (Land mark: Opp to IOCL Petrol Bunk)</p>
+                                                                                <ul class="list-group list-group-horizontal notes-card-body-list">
+                                                                                    <li class="list-group-item"><p class="p p-12">16-09-2019 to 18-09-2019</p></li>
+                                                                                    <li class="list-group-item"><p class="p p-12">10:00AM &amp; 2:30PM only</p></li>
+                                                                                </ul>
+                                                                                <div class="user-blk media">
+                                                                                    <div class="img-blk">
+                                                                                        <img class="img-abs st" src="../../assets/images/john-doe.png" alt="John Doe">
+                                                                                    </div>
+                                                                                    <div class="media-body">
+                                                                                        <span class="p nm">Jhon Deo</span>
+                                                                                        <span class="p dt">09 Jan 20</span>
+                                                                                    </div>                                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                  
+                                                                </ul>
+                                                            </div>  
+                                                        </ng-container>                                                                                                      
+    
+                                                    </div> 
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                            <div class="tab-pane fade" id="nav-timeline" role="tabpanel" aria-labelledby="nav-timeline-tab">
+    
+                                <div class="block-body inner-form">
+                                    <div class="row">
+                                        <div class="col">
+    
+                                            <div class="applicant-data">
+                                                <div class="timeline-wrap">
+    
+                                                    <div class="media timeline-blk">
+                                                        <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 18</button>
+                                                        <div class="media-body">
+                                                            <h4 class="ttl">Request Recieved</h4>
+                                                            <p class="p p-12 time">3:34pm</p>
+                                                            <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="media timeline-blk">
+                                                        <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 20</button>
+                                                        <div class="media-body">
+                                                            <h4 class="ttl">Site Verification</h4>
+                                                            <p class="p p-12 time">3:34pm</p>
+                                                            <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="media timeline-blk">
+                                                        <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 21</button>
+                                                        <div class="media-body">
+                                                            <h4 class="ttl">Site Verification</h4>
+                                                            <p class="p p-12 time">3:34pm</p>
+                                                            <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="media timeline-blk">
+                                                        <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 22</button>
+                                                        <div class="media-body">
+                                                            <h4 class="ttl">Meter Installation</h4>
+                                                            <p class="p p-12 time">3:34pm</p>
+                                                            <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="media timeline-blk">
+                                                        <button class="btn bttn-sm bttn-grey rounded bttn-billing st">MAR 22</button>
+                                                        <div class="media-body">
+                                                            <h4 class="ttl">Meter Installation</h4>
+                                                            <p class="p p-12 time">3:34pm</p>
+                                                            <p class="p p-13 content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliter enim explicari, quod quaeritur,</p>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </ngx-simplebar>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Add Invoice-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addInvoiceModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addInvoiceModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addInvoiceModalLabel">Add Invoice</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Supplier Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Account Number</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Bank Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Branch Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>IFSC Name</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Invoice Number</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Invoice Date</label>
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" 
+                                            name="invoiceDateAddInvoice" [(ngModel)]="invoiceDateAddInvoice" 
+                                            ngbDatepicker 
+                                            #idai="ngbDatepicker" (click)="idai.toggle()" container="col">
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Invoice Amount</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Due Date</label>
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" 
+                                            name="dueDateAddInvoice" [(ngModel)]="dueDateAddInvoice" 
+                                            ngbDatepicker 
+                                            #ddai="ngbDatepicker" (click)="ddai.toggle()" container="col">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!--Add Demand-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addDemandModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addDemandModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addDemandModalLabel">Add Demand</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Source Type</label>
+                                        <ng-select [items]="sourceType" bindLabel="name" [(ngModel)]="selectedSourceType" name="sourceType">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Sub Type</label>
+                                        <ng-select [items]="subType" bindLabel="name" [(ngModel)]="selectedSubType" name="subType">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Demand</label>
+                                        <input type="text" class="form-control"  />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Demand Rate</label>
+                                        <input type="text" class="form-control"  />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Remark</label>
+                                        <input type="text" class="form-control"  />
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st" id="contract_preview" (click)="showtoast = true">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Add Terms and Conditions-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addTnCModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addTnCModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addTnCModalLabel">Add Terms and Conditions</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Terms and Conditions</label>
+                                        <textarea class="form-control" placeholder="Terms and Condition" ></textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!--Add Document-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addDocumentModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addDocumentModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addDocumentModalLabel">Add Document</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Document Name</label>
+                                        <input type="text" class="form-control" placeholder="Document Name" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Document Type</label>
+                                        <ng-select [items]="documentType" bindLabel="name2" placeholder="Document Type" [(ngModel)]="selectedDocumentType" name="documentTypeInput">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label>Documents</label>
+                                        <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                            [accept]="'image/*'" (change)="onSelect($event)">
+                                            <div class="upload-inner">
+                                                <div class="media">
+                                                    <div class="media-body single">
+                                                        <ngx-dropzone-label>
+                                                            <div class="drag-drop">
+                                                                <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                                <p class="p p-13">Drag & Drop files here</p>
+                                                                <p class="p p-13 font-weight-normal">Or</p>
+                                                                <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                            </div>
+                                                        </ngx-dropzone-label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uploaded-items">
+                                            <ul class="list-group list-group-horizontal-sm">
+                                                <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                    <ngx-dropzone-label
+                                                        class="p p-12 file-name">{{ f.name }}
+                                                    </ngx-dropzone-label>
+                                                </ngx-dropzone-image-preview>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!--Add Payment-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addPaymentModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addPaymentModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addPaymentModalLabel">Add Payment</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Invoice Number</label>
+                                        <ng-select [items]="invoiceNumber" bindLabel="inv" placeholder="Invoice Number" [(ngModel)]="selectedInvoiceNumber" name="inv">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Month</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Due Date</label>
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" 
+                                            name="dueDateAddPayment" [(ngModel)]="dueDateAddPayment" 
+                                            ngbDatepicker 
+                                            #ddap="ngbDatepicker" (click)="ddap.toggle()" container="col">
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Method</label>
+                                        <ng-select [items]="paymentMethod" bindLabel="pay" placeholder="Payment Method" [(ngModel)]="selectedPaymentMethod" name="paymentMethod">
+                                        </ng-select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Paid Amount</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Payment Date</label>
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" 
+                                            name="paymentDateAddPayment" [(ngModel)]="paymentDateAddPayment" 
+                                            ngbDatepicker 
+                                            #pdap="ngbDatepicker" (click)="pdap.toggle()" container="col">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!--Add Notes-->
+    <div class="pr-modal">
+        <div class="modal right fade" id="addNotesModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addNotesModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        
+                <div class="modal-header pr-modal-header">
+                    <h4 class="modal-title" id="addTnCModalLabel">Add Notes</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+    
+                <div class="modal-body pr-modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="inner-form">
+    
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>Note Description</label>
+                                        <textarea class="form-control" placeholder="May 19th 7:25 PM | 0 Characters" ></textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer pr-modal-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                        <div class="col-auto pl-1 pr-0">
+                            <button class="btn btn-secondary st">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ngb-toast class="success" *ngIf="showtoast" header="dwd" [delay]="4000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div>Demand Successfully Added!!</div>
+            </ngb-toast>
+        </div>
+    </div>

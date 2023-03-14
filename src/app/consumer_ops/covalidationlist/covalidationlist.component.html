@@ -1,0 +1,400 @@
+<section class="pr-section list-view-section">
+   
+
+    
+    <div class="row dash-wrap">
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash sm-chart media">
+                <div class="chart-wrap align-self-center">
+                    <canvas class="d1" baseChart [options]="doughnutChartOptions"
+                        [datasets]="doughnutChartData" [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"></canvas>
+                    <canvas class="d2" baseChart [options]="doughnutChartOptions2"
+                        [datasets]="doughnutChartData2" [labels]="doughnutChartLabels2"
+                        [chartType]="doughnutChartType2"></canvas>
+                </div>
+                <div class="media-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item colr1">
+                            <p class="p">Consumers</p>
+                            <h4 class="ttl">500000</h4>
+                        </li>
+                        <li class="list-group-item colr2">
+                            <p class="p">Reading</p>
+                            <h4 class="ttl">150000</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash sm-chart media">
+                <div class="chart-wrap align-self-center">
+                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                        [chartType]="doughnutChartType3"></canvas>
+                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                        [chartType]="doughnutChartType4"></canvas>
+                </div>
+                <div class="media-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item colr3">
+                            <p class="p">Validation 1</p>
+                            <h4 class="ttl">100000</h4>
+                        </li>
+                        <li class="list-group-item colr4">
+                            <p class="p">Validation 2</p>
+                            <h4 class="ttl">50000</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash sm-chart media">
+                <div class="chart-wrap align-self-center">
+                    <canvas class="d1" baseChart [options]="doughnutChartOptions5"
+                        [datasets]="doughnutChartData5" [labels]="doughnutChartLabels5"
+                        [chartType]="doughnutChartType5"></canvas>
+                    <canvas class="d2" baseChart [options]="doughnutChartOptions6"
+                        [datasets]="doughnutChartData6" [labels]="doughnutChartLabels6"
+                        [chartType]="doughnutChartType6"></canvas>
+                </div>
+                <div class="media-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item colr5">
+                            <p class="p">New</p>
+                            <h4 class="ttl">57</h4>
+                        </li>
+                        <li class="list-group-item colr6">
+                            <p class="p"> Pending</p>
+                            <h4 class="ttl">10</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-4 dash-col">
+            <div class="sm-dash sm-chart media">
+                <div class="chart-wrap align-self-center">
+                    <canvas class="d1" baseChart [options]="doughnutChartOptions3"
+                        [datasets]="doughnutChartData3" [labels]="doughnutChartLabels3"
+                        [chartType]="doughnutChartType3"></canvas>
+                    <canvas class="d2" baseChart [options]="doughnutChartOptions4"
+                        [datasets]="doughnutChartData4" [labels]="doughnutChartLabels4"
+                        [chartType]="doughnutChartType4"></canvas>
+                </div>
+                <div class="media-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item colr3">
+                            <p class="p">Duplicate</p>
+                            <h4 class="ttl">57</h4>
+                        </li>
+                        <li class="list-group-item colr4">
+                            <p class="p">Revisit</p>
+                            <h4 class="ttl">10</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col">
+          <form class="pr-search-form d-inline-block">
+            <span class="s-icon"></span>
+            <input class="form-control pr-table-search" type="search" placeholder="Search by Cycle, Area, Month" aria-label="Search">        
+          </form>
+        </div>
+        <div class="col-auto pr-0">
+            <label class="p p-13 mr-3">Records</label>
+            <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                appendTo="body" [items]="pagination" bindLabel="name"
+                placeholder="30" [(ngModel)]="selectedPagination" name="name">
+            </ng-select>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" >
+                        <i class="icons8 icons8-print-2"></i>Print
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-pdf"></i>PDF
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-brief"></i>Excel
+                      </a>
+                      <a class="dropdown-item" >
+                        <i class="icons8 icons8-document"></i>CSV
+                      </a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-auto pl-0">
+            <!-- <button class="btn btn-secondary st" type="button" data-toggle="modal" data-target="#addAdvertisementModal"><fa-icon [icon]="faPlus"></fa-icon>ADD</button> -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner">
+                      <div class="row">
+                        <div class="col-12">
+                          <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item">
+                                <label>Utility</label>
+                                <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility" [(ngModel)]="selectedUtility"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                              <label>Month</label>
+                              <ng-select class="filter-select" [items]="month" bindLabel="name" placeholder="Select Month" [(ngModel)]="selectedMonth"
+                                  name="name">
+                              </ng-select>
+                          </li>
+                          <li class="list-group-item">
+                            <label>Cycle</label>
+                            <ng-select class="filter-select" [items]="cycle" bindLabel="name" placeholder="Select Cycle" [(ngModel)]="selectedCycle"
+                                name="name">
+                            </ng-select>
+                        </li>
+                        <li class="list-group-item">
+                          <label>Area</label>
+                          <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                              name="name">
+                          </ng-select>
+                      </li>
+                      <li class="list-group-item">
+                        <label>Sub Area</label>
+                        <ng-select class="filter-select" [items]="subarea" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedAreasub"
+                            name="name">
+                        </ng-select>
+                    </li>
+                            <li class="list-group-item">
+                                <label>Status</label>
+                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                              <label>Schedule Type</label>
+                              <ng-select class="filter-select" [items]="stype" bindLabel="name" placeholder="Select Type" [(ngModel)]="selectedstype"
+                                  name="name">
+                              </ng-select>
+                          </li>
+                          
+                        <li class="list-group-item">
+                          <label>Category</label>
+                          <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedcategory"
+                              name="name">
+                          </ng-select>
+                      </li>
+                      <li class="list-group-item">
+                        <label>Sub Category</label>
+                        <ng-select class="filter-select" [items]="subcategory1" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedsubcategory"
+                            name="name">
+                        </ng-select>
+                    </li>
+                      <li class="list-group-item">
+                        <label>Date Range</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="btn bttn-transparent bttn-icon" type="button">
+                                    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                </button>
+                            </div>
+                            <input class="form-control pr-date-range" placeholder="Date Range" type="text" name="daterange" [locale]="{format: 'DD-MM-YYYY'}" ngxDaterangepickerMd [(ngModel)]="selected" />
+                        </div>
+                    </li>
+                        
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                            <div class="row filter-cta-row">
+                                <div class="col-auto pr-2">
+                                  <button class="btn btn-outline-secondary st">Apply</button>
+                                </div>
+                                <div class="col-auto pl-2">
+                                <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                data-target="#filterCollapse" aria-expanded="false"
+                                aria-controls="filterCollapse">Cancel</button>
+                            </div>
+                              </div>
+                        </div>
+                    </div>
+                        
+  
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="listview-table-wrap">
+                <label class="p p-12">Showing Last 6 month records</label>
+
+                <table datatable [dtOptions]="dtOptions" class="pr-datatable table table-hover">
+                    <thead>
+                      <tr>
+                       
+                        <!-- <th scope="col"><span>Cycle</span></th> -->
+                        
+                        <th scope="col"><span>Month</span></th>
+                        <th scope="col"><span>Cycle Name</span></th>
+                        <th scope="col"><span>Consumers</span></th>
+                        <th scope="col"><span>Reading</span></th>
+                        <th scope="col"><span>New</span></th>
+                        
+                        <th scope="col"><span>V1</span></th>
+                        <th scope="col"><span>V2</span></th>
+
+                        <th scope="col"><span>Duplicate</span></th>
+                        <th scope="col"><span>RCNT</span></th>
+                        <th scope="col"><span>Completed</span></th>
+                        <th scope="col"><span>End Date</span></th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of collection.data">
+                        <!-- <td>{{item.cycle}}</td> -->
+                        <td>{{item.month}}</td>
+                        <td>{{item.portion}}</td>                        
+                        <td>{{item.consumer}}</td>
+                        <td>{{item.normal}}</td>
+                        <td>{{item.new}}</td>
+                        
+                        <td><a [routerLink]="['/consumerops/meterdata/validation/consumer/details']">{{item.v1}}</a></td>
+                        <td><a [routerLink]="['/consumerops/meterdata/validation/consumer/details']">{{item.v2}}</a></td>
+                        <td>{{item.duplicate}}</td>
+                        <td>{{item.duplicate}}</td>
+                        <td>{{item.completed}}</td>
+                        <td>{{item.enddate | date : 'dd MMM yy'}}</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
+                
+                  
+                  
+            
+            </div>
+            </div>
+    </div>
+
+</section>
+
+<div class="pr-modal">
+    <div class="modal right fade" id="addAdvertisementModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addAdvertisementModalLabel">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addAdvertisementModalLabel">Add </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+  
+            <div class="modal-body pr-modal-body">
+              
+              <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+  
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Select MRU</label>
+                                    <ng-select [items]="mru" bindLabel="mru" placeholder="POR2-GANDHI NAGAR-02"  [(ngModel)]="selectedmru" name="mru">
+                                    </ng-select>
+                                </div>
+                            </div>
+  
+                            <div class="form-row">
+                                <div class="col-5">
+                                    <input type="radio" name="Upload MRU" value="option1" checked style="margin-right: 10px;">
+                                    <label>
+                                        Upload MRU
+                                    </label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="radio" name="Search Consumer" value="option2" style="margin-right: 10px;">
+                                    <label>
+                                        Search Consumer
+                                    </label>
+                                </div>
+                            </div>
+  
+                        
+                           
+  
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <label>Documents</label>
+                                    <div class="upload-wrapper custom-dropzone" ngx-dropzone
+                                        [accept]="'image/*'" (change)="onSelect($event)">
+                                        <div class="upload-inner">
+                                            <div class="media">
+                                                <div class="media-body single">
+                                                    <ngx-dropzone-label>
+                                                        <div class="drag-drop">
+                                                            <img class="st img-fluid" src="../../assets/images/icons/upload-icon.png" alt="upload">
+                                                            <p class="p p-13">Drag & Drop files here</p>
+                                                            <p class="p p-13 font-weight-normal">Or</p>
+                                                            <button class="btn bttn-uplaod bttn-txt st">Browse Files</button>
+                                                        </div>
+                                                    </ngx-dropzone-label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uploaded-items">
+                                        <ul class="list-group list-group-horizontal-sm">
+                                            <ngx-dropzone-image-preview class="list-group-item" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                                <ngx-dropzone-label
+                                                    class="p p-12 file-name">{{ f.name }}
+                                                </ngx-dropzone-label>
+                                            </ngx-dropzone-image-preview>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+  
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Submit</button>
+                    </div>
+                </div>
+            </div>
+    
+        </div> 
+      </div>
+    </div>
+  </div>
+    
+    

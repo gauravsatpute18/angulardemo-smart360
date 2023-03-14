@@ -1,0 +1,435 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a [routerLink]="['/admin']">Admin Onboarding</a></li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" >Option 1</a>
+        <a class="dropdown-item" >Option 2</a>
+        <a class="dropdown-item" >Option 3</a>
+        </div>
+    </div>
+</div>
+
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-start">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/admin']"></button>
+            <div class="inner-page-title d-inline-block"><h4 class="h4">System Configuration</h4></div>
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap new-blk">
+            
+                <div class="row">
+                    <div class="col"><br>
+                        <h4 class="h4">&nbsp; Utilities</h4>
+                    </div>
+                </div>
+            
+                <div class="row justify-content-end">
+                    <div class="col">
+                        <form class="pr-search-form d-inline-block">
+                            <span class="s-icon"></span>
+                            <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                            data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse" style="border-color: #D2D2D4;"><span>2</span>Filter</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="filters-wrap">
+                            <div class="collapse" id="filterCollapse">
+                                <div class="filter-wrap-inner">
+                                    <ul class="list-group list-group-horizontal">
+                                        <li class="list-group-item">
+                                            <label>Status</label>
+                                            <ng-select class="filter-select" [items]="status" bindLabel="name"
+                                                placeholder="Select Status" [(ngModel)]="selectedStatus" name="name">
+                                            </ng-select>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Department</label>
+                                            <ng-select class="filter-select" [items]="department" bindLabel="name"
+                                                placeholder="Select Department" [(ngModel)]="selectedDepartment" name="name">
+                                            </ng-select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="admin-plans-utility-card-wrap">
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="admin-plans-utility-card">
+                                <div class="media">
+                                    <div class="logo-blk">
+                                        <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="ttl">Infra Water Ltd</h4>
+                                        <p class="p">BEECHNUT MUD</p>
+                                        <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="col">
+            <div class="applicant-block-rt inner-wrap py-0">
+                <div class="applicant-block-rt-header">
+                    <div class="row">
+                        <div class="col pr-0 align-self-center">
+                            <ul class="list-group list-group-horizontal admin-plans-list">
+                                <li class="list-group-item">
+                                    <div class="admin-plans-utility-card">
+                                        <div class="media">
+                                            <div class="logo-blk">
+                                                <img class="st" src="../../assets/images/utility-logo.png" alt="img">
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="ttl">Infra Water Ltd</h4>
+                                                <p class="p">BEECHNUT MUD</p>
+                                                <p class="p fw-500 text-dark">Water, Gas, Power</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">Name</p>
+                                    <span>BCNM</span>                                    
+                                </li>
+                                <li class="list-group-item" style="margin-right: 30px;">
+                                    <p class="mb-2">City</p>
+                                    <span>Houston</span>                                    
+                                </li>
+                                <li class="list-group-item">
+                                    <p class="mb-2">State</p>
+                                    <span>Texas</span>                                    
+                                </li>
+                                <li class="list-group-item">
+                                    <p class="mb-2">Country</p>
+                                    <span>USA</span>                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="applicant-block-rt-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="h6 mt-2">Notifications</h6>
+                        </div>
+                    </div>    
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <form class="pr-search-form d-inline-block">
+                                <span class="s-icon"></span>
+                                <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                data-target="#filterCollapse2" aria-expanded="false" aria-controls="filterCollapse2"><span>2</span>Filter</button>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <div class="dropdown tool-dropdown">
+                                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tools
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item active" href="#">
+                                        <fa-icon [icon]="faPrint"></fa-icon>Print
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <fa-icon [icon]="faFileCsv"></fa-icon>Csv
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-0">
+                            <button class="btn btn-secondary st" role="button" data-toggle="modal" data-target="#addDepartmentsModal"><fa-icon [icon]="faPlus"></fa-icon>Add</button>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="filters-wrap">
+                                <div class="collapse" id="filterCollapse2">
+                                    <div class="filter-wrap-inner">
+                                        <ul class="list-group list-group-horizontal">
+                                            <li class="list-group-item">
+                                                <label>Transition object</label>
+                                                <ng-select class="filter-select" [items]="transition_objects" bindLabel="name"
+                                                    placeholder="Select object" [(ngModel)]="selectedStatus" name="name">
+                                                </ng-select>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <label>Channel</label>
+                                                <ng-select class="filter-select" [items]="channels" bindLabel="name"
+                                                    placeholder="Select Channel" [(ngModel)]="selectedDepartment" name="name">
+                                                </ng-select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <div class="row">
+					    <div class="col-12">
+					        <div class="listview-table-wrap">
+						        <table datatable class="pr-datatable table table-hover">
+						            <thead>
+							            <tr>					           
+							                <th scope="col"><span>Transition object</span></th>
+							                <th scope="col"><span>State</span></th>
+							                <th scope="col"><span>Channel</span></th>
+							                <th scope="col"><span>Template</span></th>
+							                <th scope="col"><span>Status</span></th>
+							                <th scope="col"><span>Action</span></th>
+							            </tr>
+						            </thead>
+						            <tbody>
+							            <tr *ngFor="let item of collection.data">
+							              	<td>{{ item.transition_obj }}</td>
+							              	<td>{{ item.state }}</td>
+							              	<td>{{ item.channel }}</td>
+							              	<td>{{ item.template }}</td>
+							              	<td>{{ item.status }}</td>
+							              	<td><fa-icon [icon]="faPen" role="button" data-toggle="modal" data-target="#addNotificationsModal"></fa-icon></td>
+							            </tr>
+						            </tbody>
+						        </table>
+					        </div>
+					   </div>
+					</div>
+
+                </div>
+            </div>           
+        </div>
+    </div>
+</section>
+
+<!-- Add Depatments modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addDepartmentsModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addDepartmentsModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addDepartmentsModalLabel">Add notification</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Transition object</label>
+                                    <ng-select class="filter-select" [items]="transition_objects" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="selectedTransitionObject" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <ng-select class="filter-select" [items]="states" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="selectedState" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Channel</label>
+                                    <ng-select class="filter-select" [items]="channels" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="selectedChannel" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Template</label>
+                                    <ng-select class="filter-select" [items]="templates" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="selectedTemplate" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Created Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                                        <div class="input-group-append">
+                                            <button class="bttn-icon" type="button"><fa-icon [icon]="faCalendarAlt" (click)="d.toggle()"></fa-icon></button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Add</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- Add Depatments modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="addNotificationsModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="addNotificationsModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="addNotificationsModalLabel">Edit notification</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <ngx-simplebar [options]="scrollOptions" class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Transition object</label>
+                                    <ng-select class="filter-select" [items]="transition_objects" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="editedTransitionObject" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>State</label>
+                                    <ng-select class="filter-select" [items]="states" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="editedState" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Channel</label>
+                                    <ng-select class="filter-select" [items]="channels" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="editedChannel" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Template</label>
+                                    <ng-select class="filter-select" [items]="templates" bindLabel="name"
+                                        placeholder="Select object" [(ngModel)]="editedTemplate" name="name">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label>Created Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" ngbDatepicker #dt="ngbDatepicker" (click)="dt.toggle()" container="body">
+                                        <div class="input-group-append">
+                                            <button class="bttn-icon" type="button"><fa-icon [icon]="faCalendarAlt" (click)="dt.toggle()"></fa-icon></button>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-simplebar>
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Save</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+</div>

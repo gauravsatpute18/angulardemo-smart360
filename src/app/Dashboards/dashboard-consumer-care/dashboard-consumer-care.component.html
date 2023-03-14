@@ -1,0 +1,2676 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">Consumer Care</li>
+       <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+    </ol>
+  </div>
+  <!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+  <div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+      <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+        <a class="dropdown-item active" [routerLink]="['/registration/add-applicant']">Registration</a>
+        <a class="dropdown-item">Consumers</a>
+      </div>
+    </div>
+  </div>
+  
+  <section class="pr-section dashboard-section">
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="sec-ttl-wrap st">
+          <h2 class="h2">Welcome, Dejan</h2>
+          <p class="p sub-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+          <div class="nav-block">
+              <nav class="inner-form-tabs main-page">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link st active" id="registration-tab" data-toggle="tab" href="#registration"
+                          role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+                      <a class="nav-item nav-link st" id="consumers-tab" data-toggle="tab" href="#consumers" role="tab"
+                          aria-controls="consumers" aria-selected="false">Consumers</a>
+                                       
+                  </div>
+              </nav>
+          </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+          <div class="tab-content">
+              <div class="dash-tab-pane tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Registrations</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Registrations</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Registrations</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Registrations</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Registrations</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map1"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="consumers" role="tabpanel" aria-labelledby="consumers-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Consumers</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Consumers</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Consumers</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Consumers</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Consumers</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map2"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="payments" role="tabpanel" aria-labelledby="payments-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Payments</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Payments</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Payments</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Payments</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Payments</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map3"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="billings" role="tabpanel" aria-labelledby="billings-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Billings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Billings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Billings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Billings</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Billings</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map4"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="meterdata" role="tabpanel" aria-labelledby="meterdata-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Meter Data</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Meter Data</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Meter Data</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Meter Data</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Meter Data</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map5"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="srvcs" role="tabpanel" aria-labelledby="srvcs-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Services</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Services</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Services</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Services</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Services</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map6"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="cmplnts" role="tabpanel" aria-labelledby="cmplnts-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Complaints</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Complaints</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Complaints</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Complaints</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Complaints</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map7"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="reprts" role="tabpanel" aria-labelledby="reprts-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Reports</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Reports</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Reports</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Reports</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Reports</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map8"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="users" role="tabpanel" aria-labelledby="users-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Users</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Users</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Users</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Users</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Users</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map9"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-tab-pane tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="row dash-wrap">
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select new d-inline-block"  [searchable]="false" [clearable]="false" appendTo="body" [items]="newStatus" bindLabel="status" placeholder="" [(ngModel)]="selectedNewStatus" name="status"
+                          bindValue="status">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Settings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus" bindLabel="status2" placeholder="Running" [(ngModel)]="selectedRunningStatus"
+                          name="status2" bindValue="status2">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Settings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">1000</span>
+                      <span class="p dtl">Settings</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-4 dash-col">
+                    <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+              
+                      <div class="clearfix">
+                        <ng-select class="status-select running d-inline-block" [searchable]="false" [clearable]="false" appendTo="body"  [items]="runningStatus2" bindLabel="status3" placeholder="Running" [(ngModel)]="selectedRunningStatus2"
+                          name="status3" bindValue="status3">
+                        </ng-select>
+                      </div>
+              
+                      <span class="num h1">2500</span>
+                      <span class="p dtl">Settings</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+              
+                  <div class="col-4">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Settings</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="type" 
+                              bindLabel="typ" placeholder="" [(ngModel)]="selectedType" name="typ" bindValue="typ">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="month" 
+                              bindLabel="mnth" placeholder="" [(ngModel)]="selectedMonth" name="mnth" bindValue="mnth">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-button-wrap">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="this-month" role="tabpanel"
+                              aria-labelledby="this-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="last-month" role="tabpanel"
+                              aria-labelledby="last-month-tab">
+                              <canvas class="week-barchart-size" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                [chartType]="barChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-1 pr-0">
+                    <div class="chart-wrap chart-wrap-left inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Scheme</h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="time-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="timeStatus" bindLabel="tim" placeholder="" [(ngModel)]="selectedTimeStatus" name="tim" bindValue="tim"> 
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <canvas class="dots-chart-size" baseChart [options]="scatterChartOptions" [datasets]="scatterChartData" [labels]="scatterChartLabels" [chartType]="scatterChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-4 pl-0">
+                    <div class="chart-wrap chart-wrap-right inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl"></h4>
+                        </div>
+                        <div class="col">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                            bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                          </div>            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="g-map-wrapper">
+                            <div class="g-map" id="g-map10"></div>
+                            <div class="map-footer">
+                                <ul class="list-group list-group-horizontal map-footer-ul">
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon1.png" alt="b"></span>
+                                        <span class="p">Flag</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon2.png" alt="b"></span>
+                                        <span class="p">Emergency</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="icon-blk"><img class="img-fluid st" src="../../../assets/images/icons/marker-bttn-ikon3.png" alt="b"></span>
+                                        <span class="p">Repair/Service Request</span>
+                                    </li>
+                                </ul>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="row mt-4">
+                  <div class="col-8">
+                    <div class="chart-wrap inner-wrap">
+                      <div class="row">
+                        <div class="col-6">
+                          <h4 class="ttl">Lorem ipsum</h4>
+                        </div>
+                        <div class="col-6">
+                          <div class="clearfix text-right">
+                            <ng-select class="sm-select d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="area"
+                              bindLabel="are" placeholder="" [(ngModel)]="selectedArea" name="are" bindValue="are">
+                            </ng-select>
+                            <ng-select class="sm-select dark d-inline-block" [searchable]="false" [clearable]="false" appendTo="body" [items]="frequency"
+                              bindLabel="frq" placeholder="" [(ngModel)]="selectedFrequency" name="frq" bindValue="frq">
+                            </ng-select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="bttn-toggle">
+                            <div class="toggle-tabs-wrap">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="tgl-survey-tab" data-toggle="tab" href="#tgl-survey" role="tab"
+                                    aria-controls="tgl-survey" aria-selected="true">Survey</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-cmpng-tab" data-toggle="tab" href="#tgl-cmpng" role="tab"
+                                    aria-controls="tgl-cmpng" aria-selected="false">Campaign</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-reg-tab" data-toggle="tab" href="#tgl-reg" role="tab"
+                                    aria-controls="tgl-reg" aria-selected="false">Registration</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="tgl-consmr-tab" data-toggle="tab" href="#tgl-consmr" role="tab"
+                                    aria-controls="tgl-consmr" aria-selected="false">Consumers</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="tab-content" id="myTabContent">
+                            <div class="custom-tab-pane tab-pane fade show active" id="tgl-survey" role="tabpanel"
+                              aria-labelledby="tgl-survey-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-cmpng" role="tabpanel" aria-labelledby="tgl-cmpng-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-reg" role="tabpanel" aria-labelledby="tgl-reg-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                            <div class="custom-tab-pane tab-pane fade" id="tgl-consmr" role="tabpanel"
+                              aria-labelledby="tgl-consmr-tab">
+                              <canvas class="month-barchart-size" baseChart [datasets]="surveyBarChartData"
+                                [labels]="surveyBarChartLabels" [options]="surveyBarChartOptions" [plugins]="surveyBarChartPlugins"
+                                [legend]="surveyBarChartLegend" [chartType]="surveyBarChartType">
+                              </canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 pl-1">
+                    <div class="chart-wrap inner-wrap h-100">
+                      <div class="row">
+                        <div class="col-auto">
+                          <h4 class="ttl">Lorem ipusm</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 mt-5">
+                          <div class="reg-blk">
+                            <p>1000</p>
+                            <span>Total Registration</span>
+                          </div>
+                          <canvas class="doughnut-chart-size" baseChart [options]="doughnutChartOptions"
+                            [datasets]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  
+  </section>

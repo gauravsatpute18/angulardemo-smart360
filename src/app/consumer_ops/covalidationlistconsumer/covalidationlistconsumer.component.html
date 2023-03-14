@@ -1,0 +1,169 @@
+<section class="pr-section list-view-section">
+    <div class="row">
+        <div class="col-12">
+            <div class="sec-ttl-wrap st">
+                <h2 class="h2">Welcome, Dejan</h2>
+                <p class="p sub-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>                
+            </div>
+            
+        </div> 
+    </div>
+
+    <div class="row dash-wrap">
+      <div class="col-xl-12 col-4 dash-col">
+        <div class="sm-dash" >
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col">
+          <form class="pr-search-form d-inline-block">
+            <span class="s-icon"></span>
+            <input class="form-control pr-table-search" type="search" placeholder="Search" aria-label="Search">        
+          </form>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item active" href="#"><fa-icon [icon]="faPrint"></fa-icon>Print</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFilePdf"></fa-icon>PDF</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileExcel"></fa-icon>Excel</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileCsv"></fa-icon>CSV</a>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner">
+                      <div class="row">
+                        <div class="col-12">
+                          <ul class="list-group list-group-horizontal">                        
+                            
+                            <li class="list-group-item">
+                                <label>Month</label>
+                                <ng-select class="filter-select" [items]="Month" bindLabel="name" placeholder="Month" [(ngModel)]="selectedMonth"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Cycle</label>
+                                <ng-select class="filter-select" [items]="Cycle" bindLabel="name" placeholder="Cycle" [(ngModel)]="selectedCycle"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Portion</label>
+                                <ng-select class="filter-select" [items]="Portion" bindLabel="name" placeholder="Portion" [(ngModel)]="selectedPortion"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Status</label>
+                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder=" Status" [(ngModel)]="selectedStatus"
+                                    name="name">
+                                </ng-select>
+                            </li>                          
+                        
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row filter-cta-row">
+                        <div class="col-auto pr-2">
+                          <button class="btn btn-outline-secondary st">Apply</button>
+                        </div>
+                        <div class="col-auto pl-2">
+                          <button class="btn btn-light2 st">Cancel</button>
+                        </div>
+                      </div>
+                        
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="listview-table-wrap">
+
+              <label class="p p-12">Showing Last 6 month records</label>
+                <table datatable class="pr-datatable table table-hover">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col"><span>MRU</span></th>
+                        <th scope="col"><span>Installation No</span></th>
+                        <th scope="col"><span>BP No</span></th>
+                        <th scope="col"><span>Status</span></th>
+                        <th scope="col"><span>Device No</span></th>
+                        <th scope="col"><span>Name</span></th>
+                        <th scope="col"><span>Category</span></th>
+                        <th scope="col"><span>Contact</span></th>
+                        <th scope="col" class="action-col">Action</th>
+                      </tr>  
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of collection.data">
+                        <td>{{item.MRU}}</td>
+                        <td>{{item.installationno}}</td>
+                        <td>{{item.BPNo}}</td>
+                        <td>
+                          <div [ngSwitch]="item.status">
+                            <div *ngSwitchCase="'partial'">
+                              <div class="badge partial">Partial</div>
+                            </div>
+                            <div *ngSwitchCase="'complete'">
+                              <div class="badge complete">Complete</div>
+                            </div>
+                            <div *ngSwitchCase="'dispatched'">
+                              <div class="badge dispatched">Dispatched</div>
+                            </div>
+                            <div *ngSwitchCase="'started'">
+                              <div class="badge started">Started</div>
+                            </div>
+                            <div *ngSwitchDefault>
+                              <div class="badge not-dispatched">Not Dispatched</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{item.DeviceNo}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                        <td>{{item.contact}}</td>
+                        <td class="action-col" (click)="renderDetail(item.id)">
+                          <span class="show">
+                            <ul class="list-group list-group-horizontal action-list">
+                             
+                            </ul>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
+                
+                  
+                  
+            
+            </div>
+            </div>
+    </div>
+
+</section>
+
+

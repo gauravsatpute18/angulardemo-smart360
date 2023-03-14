@@ -1,0 +1,260 @@
+
+
+.menubttn {
+  position: relative;
+  left: 20px;
+  padding: 10px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  min-width: unset;
+  border-color: 2px solid transparent;
+  span {
+    display: block;
+    position: absolute;
+    background: #22264C;
+    height: 2px;
+    width: 18px;
+    top: 20px;
+    left: 12px;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background: #22264C;
+      height: 2px;
+      width: 18px;
+      left: 0;
+      top: -6px;
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: #22264C;
+      height: 2px;
+      width: 11px;
+      left: 0;
+      bottom: -6px;
+    }
+  }
+  &.active, &:hover, &:focus, &.focus {
+    background: #FFFFFF !important;
+    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12) !important;
+    span {
+      background: #353FDF;
+      &::before, &::after {
+        background: #353FDF;
+      }
+    }
+  }
+}
+
+.pr-side-navbar {
+  padding: 10px 0px;
+  background: #F3F3F9;
+  height: 100vh;
+  overflow: hidden;
+  max-width: unset;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 82px;   
+  ul {
+    li {
+      padding: 6px 20px;
+      padding-left: 20px;
+      .nav-link {
+        position: relative;
+        display: block;
+        height: 40px;
+        margin: 0;
+        line-height: 40px;
+        width: 40px;
+        padding: 0;
+        font-size: 0;      
+        &.active, &:hover {
+          background: #FFFFFF;
+          -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12);
+          border-radius: 20px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          -ms-border-radius: 20px;
+          -o-border-radius: 20px;
+          span {
+            img {              
+              filter:  grayscale(0%);
+              -webkit-filter:  grayscale(0%);
+              opacity: 1;
+            }
+          }
+        }
+        span {
+          position: absolute;
+          display: block;
+          top: 50%;
+          left: 50%;
+          height: 18px;
+          width: 25px;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          z-index: 1;
+          overflow: hidden;
+          img {
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: auto;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);            
+            filter:  grayscale(100%);
+            -webkit-filter:  grayscale(100%);
+            opacity: 0.5;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  &.open-slide {
+    width: 240px;
+    ul {
+      li {
+        padding-left: 0px;
+        .nav-link {
+          width: 220px;
+          padding: 0 50px 0 70px;
+          font-size: 14px;
+          color: #83848E;         
+          &.active,&:hover {
+            font-weight: 500;
+            color: #24264C;
+            border-radius: 0px 20px 20px 0px;
+            -webkit-border-radius: 0px 20px 20px 0px;
+            -moz-border-radius: 0px 20px 20px 0px;
+            -ms-border-radius: 0px 20px 20px 0px;
+            -o-border-radius: 0px 20px 20px 0px;
+          }
+          span {
+            left: 27px;
+            transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -o-transform: translate(0, -50%);
+            img {
+              position: absolute;
+              display: block;
+              top: 50%;
+              left: 50%;
+              height: 100%;
+              width: auto;
+              transform: translate(-50%, -50%);
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+            }
+          }
+        }        
+      }
+    }
+  }
+}
+
+
+.pr-side-inner-navbar {
+  ul {
+    li {
+      .nav-link {
+        padding: 8px 0px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 23px;
+        color: #24264C;
+        &.active, &:focus, &:hover {
+          color: #353FDF;
+        }
+      }      
+    }
+  }
+}
+
+
+
+@media (max-width:1599px) {
+
+  .menubttn {
+      left: 15px;
+      padding: 6px;
+      height: 35px;
+      width: 35px;
+  }
+  .menubttn::before {
+      display: none;
+  }
+  .menubttn span {
+      width: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  .menubttn span::before {
+      width: 14px;
+  }
+  .menubttn span::after {
+      width: 8px;
+  }
+  .pr-side-navbar {
+      top: 60px;
+      width: 70px;
+  }
+  .pr-side-navbar.open-slide {
+    width: 200px;
+}
+  .pr-side-navbar ul li {
+      padding: 6px 10px;
+          padding-left: 10px;
+      padding-left: 15px;
+  }
+  .pr-side-navbar ul li .nav-link {
+      position: relative;
+      display: block;
+      height: 35px;
+      margin: 0;
+      line-height: 35px;
+      width: 35px;
+      padding: 0;
+      font-size: 0;
+  }
+  .pr-side-navbar ul li .nav-link span {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      height: 15px;
+      width: 21px;
+  }
+  .pr-side-navbar.open-slide ul li .nav-link {
+    width: 190px;
+    padding: 0 20px 0 60px;
+    font-size: 12px;
+    line-height: 38px;
+  }
+
+}

@@ -1,0 +1,233 @@
+<section class="pr-section list-view-section">
+    <div class="row">
+        <div class="col-12">
+            <div class="sec-ttl-wrap st">
+                <h2 class="h2">Welcome, Dejan</h2>
+                <p class="p sub-ttl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>                
+            </div>
+            
+        </div> 
+    </div>
+
+    <div class="row dash-wrap">
+      <div class="col-xl-4 col-4 dash-col">
+        <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img1.png');">
+         
+        </div>
+      </div>
+      <div class="col-xl-4 col-4 dash-col">
+        <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img2.png');">
+         
+        </div>
+      </div>
+      <div class="col-xl-4 col-4 dash-col">
+        <div class="sm-dash" style="background-image: url('../../assets/images/dashboard-card-img3.png');">
+         
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col">
+          <form class="pr-search-form d-inline-block">
+            <span class="s-icon"></span>
+            <input class="form-control pr-table-search" type="search" placeholder="Search by Month, Cycle, Area or Type" aria-label="Search">        
+          </form>
+        </div>
+        <div class="col-auto pr-0">
+            <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+        </div>
+        <div class="col-auto pl-0">
+            <div class="dropdown tool-dropdown">
+                <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item active" href="#"><fa-icon [icon]="faPrint"></fa-icon>Print</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFilePdf"></fa-icon>PDF</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileExcel"></fa-icon>Excel</a>
+                  <a class="dropdown-item" href="#"><fa-icon [icon]="faFileCsv"></fa-icon>CSV</a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-auto pl-0">
+            <button class="btn btn-secondary st" [routerLink]="'/registration'"><fa-icon [icon]="faPlus"></fa-icon>ADD</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="filters-wrap">
+                <div class="collapse" id="filterCollapse">
+                    <div class="filter-wrap-inner">
+                      <div class="row">
+                        <div class="col-12">
+                          <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item">
+                                <label>Utility</label>
+                                <ng-select class="filter-select" [items]="utility" bindLabel="name" placeholder="Select Utility" [(ngModel)]="selectedUtility"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Category</label>
+                                <ng-select class="filter-select" [items]="category" bindLabel="name" placeholder="Select Category" [(ngModel)]="selectedCategory"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Sub Category</label>
+                                <ng-select class="filter-select" [items]="subCategory" bindLabel="name" placeholder="Select Sub Category" [(ngModel)]="selectedSubCategory"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>City</label>
+                                <ng-select class="filter-select" [items]="city" bindLabel="name" placeholder="Select City" [(ngModel)]="selectedCity"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Area</label>
+                                <ng-select class="filter-select" [items]="area" bindLabel="name" placeholder="Select Area" [(ngModel)]="selectedArea"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Sub Area</label>
+                                <ng-select class="filter-select" [items]="subArea" bindLabel="name" placeholder="Select Sub Area" [(ngModel)]="selectedSubArea"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                                <label>Status</label>
+                                <ng-select class="filter-select" [items]="status" bindLabel="name" placeholder="Select Status" [(ngModel)]="selectedStatus"
+                                    name="name">
+                                </ng-select>
+                            </li>
+                            <li class="list-group-item">
+                              <label>Transaction Date</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()"><fa-icon [icon]="faCalendarAlt"></fa-icon></button>
+                                  </div>
+                                  <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">                                  
+                              </div>
+                            </li>
+                        
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row filter-cta-row">
+                        <div class="col-auto pr-2">
+                          <button class="btn btn-outline-secondary st">Apply</button>
+                        </div>
+                        <div class="col-auto pl-2">
+                          <button class="btn btn-light2 st">Cancel</button>
+                        </div>
+                      </div>
+                        
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="listview-table-wrap">
+
+              <label class="p p-12">Showing Last 6 month records</label>
+                <table datatable class="pr-datatable table table-hover">
+                    <thead>
+                      <tr>
+                       
+                        <th scope="col"><span>MR Cycle</span></th>
+                        <th scope="col"><span>MR-Portion</span></th>
+                        <th scope="col"><span>Status</span></th>
+                        <th scope="col"><span>MRU</span></th>
+                        <th scope="col"><span>Consumer</span></th>
+                        <th scope="col"><span>Start Date</span></th>
+                        <th scope="col"><span>End Date</span></th>
+                        <th scope="col" class="action-col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of collection.data">
+                        <td>{{item.MRcycle}}</td>
+                        <td class="showOnHover" (click)="renderDetail(item.id)">{{item.MRportion}}
+                          <span class="show">
+                            <span class="enqry-no-blk">MRU {{item.MRU}}</span>
+                            <div class="enqry-sts-blk" [ngSwitch]="item.status">
+                              <div *ngSwitchCase="'partial'">
+                                <div class="badge partial">Partial</div>
+                              </div>
+                              <div *ngSwitchCase="'complete'">
+                                <div class="badge complete">Complete</div>
+                              </div>
+                              <div *ngSwitchCase="'dispatched'">
+                                <div class="badge dispatched">Dispatched</div>
+                              </div>
+                              <div *ngSwitchCase="'started'">
+                                <div class="badge started">Started</div>
+                              </div>
+                              <div *ngSwitchDefault>
+                                <div class="badge not-dispatched">Not Dispatched</div>
+                              </div>
+                            </div>
+                            <div class="list-blk">
+                                <p><span>0</span><span>Started</span></p>
+                                <p><span>0</span><span>Dispatched</span></p>
+                                <p><span>200</span><span>Completed</span></p>
+                            </div>
+                          </span>
+                        </td>
+                        
+                        <td>
+                          <div [ngSwitch]="item.status">
+                            <div *ngSwitchCase="'partial'">
+                              <div class="badge partial">Partial</div>
+                            </div>
+                            <div *ngSwitchCase="'complete'">
+                              <div class="badge complete">Complete</div>
+                            </div>
+                            <div *ngSwitchCase="'dispatched'">
+                              <div class="badge dispatched">Dispatched</div>
+                            </div>
+                            <div *ngSwitchCase="'started'">
+                              <div class="badge started">Started</div>
+                            </div>
+                            <div *ngSwitchDefault>
+                              <div class="badge not-dispatched">Not Dispatched</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{item.MRU}}</td>
+                        <td>{{item.consumer}}</td>
+                        <td>{{item.startDate| date : 'dd MMM yy'}}</td>
+                        <td>{{item.raisedOn | date : 'dd MMM yy'}}</td>
+                        <td class="action-col" (click)="renderDetail(item.id)">
+                          <span class="show">
+                            <ul class="list-group list-group-horizontal action-list">
+                             
+                            </ul>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
+                
+                  
+                  
+            
+            </div>
+            </div>
+    </div>
+
+</section>
+
+

@@ -1,0 +1,534 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+<ol class="breadcrumb">            
+    <li class="breadcrumb-item"><a routerLink="/sales-marketing">S&M</a></li>
+    <li class="breadcrumb-item"><a routerLink="/survey">Consumer</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Survey Details</li>
+</ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<!-- <div class="plus-dropdown-wrap">
+<div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+    <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+    <a class="dropdown-item active" href="/registration/add-applicant">Registration</a>
+    <a class="dropdown-item" href="/survey">Survey</a>
+    <a class="dropdown-item" href="/campaign/add-campaign">Campgain</a>
+    </div>
+</div>
+</div> -->
+<section class="pr-section applicant-details-sec">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <button class="btn bttn-transparent bttn-back d-inline-block" [routerLink]="['/survey']"></button>
+            <div class="inner-page-title d-inline-block"><h4 class="h4">Survey Details </h4></div>
+        </div>
+        <div class="col-6">
+            <div class="inner-page-pagination">
+                <nav class="">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="/survey/customer/details">Previous<button class="btn bttn-prev"><fa-icon [icon]="faChevronLeft"></fa-icon></button></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="/survey/customer/details"><button class="btn bttn-next"><fa-icon [icon]="faChevronRight"></fa-icon></button>Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto pr-0">
+            <div class="applicant-block-lt inner-wrap">
+
+                <div class="applicant-block-lt-header">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div class="badge badge-label-success">Finished</div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <h4 class="sh-ttl">ID: 019924356</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="dtls-block">
+                    <div class="block-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="profile-card st">
+                                    <div class="media">
+                                        <div class="img-blk">
+                                            SX
+                                        </div>                                                                        
+                                        <div class="media-body">
+                                            <span class="edt" tooltipClass="pr-tooltip" placement="top" ngbTooltip="edit" [routerLink]="['/survey/customer/add']"
+                                            [openDelay]="300" [closeDelay]="500" container="body"><i class="icons8 icons8-edit"></i></span>
+                                            <h5>Survey X</h5>
+                                            <p class="p">Category 1</p>
+                                            <p class="p">Sub Category 1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <div class="applicant-data">
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="p p-13">Category</p>
+                                <h6 class="h6">Domestic</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Sub Category</p>
+                                <h6 class="h6">Sub Category 1</h6>
+                            </div>                           
+                            <div class="col-6">
+                                <p class="p p-13">Area</p>
+                                <h6 class="h6">Area 1</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">Sub Area</p>
+                                <h6 class="h6">Sub Area 1</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">City</p>
+                                <h6 class="h6">Boston</h6>
+                            </div>
+                            <div class="col-6">
+                                <p class="p p-13">No of Consumers</p>
+                                <h6 class="h6">500</h6>
+                            </div>
+                            <div class="col-12">
+                                <p class="p p-13">Description</p>
+                                <h6 class="h6 no-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo adhuc, quantum equidem intellego</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="title-divider">Vendor Details</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="vendor-card st">
+                                    <div class="media">
+                                        <fa-icon class="edt" [icon]="faPen" tooltipClass="pr-tooltip" placement="left" ngbTooltip="Edit" [openDelay]="300" [closeDelay]="500"  role="button" data-toggle="modal" data-target="#assignVendorModal"></fa-icon>
+                                        <div class="img-blk">
+                                            <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                        </div>
+                                        <div class="media-body">
+                                            <h5>John Doe</h5>
+                                            <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                            <p class="p p-13 dtl">Marketing Agency</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col"> 
+            <div class="applicant-block-rt inner-wrap">
+                <div class="applicant-block-rt-body">
+                    <div class="block-body inner-form">
+                        <div class="row">
+                            <div class="col">
+                                <div class="applicant-data">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="p fw-500">Consumer Details</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row justify-content-end">
+                                                <div class="col">
+                                                  <form class="pr-search-form d-inline-block">
+                                                    <span class="s-icon"></span>
+                                                    <input class="form-control pr-table-search" type="search" placeholder="Search by Month, Status" aria-label="Search">
+                                                  </form>
+                                                </div>
+                                                <div class="col-auto pr-0">
+                                                    <label class="p p-13 mr-3">Records</label>
+                                                    <ng-select  class="filter-select record-select" [searchable]="false" [clearable]="false"
+                                                                                appendTo="body" [items]="pagination" bindLabel="name"
+                                                                                placeholder="10" [(ngModel)]="selectedPagination" name="name">
+                                                    </ng-select>
+                                                  </div>
+                                                <div class="col-auto pr-0">
+                                                  <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse"
+                                                    data-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse"><span>2</span>Filter</button>
+                                                </div>
+                                                <div class="col-auto pl-0">
+                                                  <div class="dropdown tool-dropdown">
+                                                    <button class="btn btn-outline-light3 st dropdown-toggle" type="button" id="dropdownMenuButton"
+                                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      Tools
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                      <a class="dropdown-item active" href="#">
+                                                        <fa-icon [icon]="faPrint"></fa-icon>Print
+                                                      </a>
+                                                      <a class="dropdown-item" href="#">
+                                                        <fa-icon [icon]="faFilePdf"></fa-icon>PDF
+                                                      </a>
+                                                      <a class="dropdown-item" href="#">
+                                                        <fa-icon [icon]="faFileExcel"></fa-icon>Excel
+                                                      </a>
+                                                      <a class="dropdown-item" href="#">
+                                                        <fa-icon [icon]="faFileCsv"></fa-icon>CSV
+                                                      </a>
+                                                    </div>
+                                                  </div>
+                                                </div>                                                
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="filters-wrap">
+                                                        <div class="collapse" id="filterCollapse">
+                                                            <div class="filter-wrap-inner">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <ul class="list-group list-group-horizontal">                                            
+                                                                            <li class="list-group-item">
+                                                                                <label>Bill Month</label>
+                                                                                <div class="input-group">
+                                                                                    <div class="input-group-prepend">
+                                                                                        <button class="btn bttn-transparent bttn-icon" type="button" (click)="d.toggle()">
+                                                                                            <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" name="dp"
+                                                                                        [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" container="body">
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <label>Amount</label>
+                                                                                <ng-select class="filter-select" [items]="amount" bindLabel="amount" placeholder="Select Amount" [(ngModel)]="selectedAmount" name="amount">
+                                                                                </ng-select>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row filter-cta-row">
+                                                                    <div class="col-auto pr-2">
+                                                                      <button class="btn btn-outline-secondary st">Apply</button>
+                                                                    </div>
+                                                                    <div class="col-auto pl-2">
+                                                                      <button class="btn btn-light2 st" type="button" data-toggle="collapse"
+                                                                      data-target="#filterCollapse" aria-expanded="false"
+                                                                      aria-controls="filterCollapse">Cancel</button>
+                                                                  </div>
+                                                                  </div>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="listview-table-wrap">    
+                                                <label class="p p-12">Showing Last 6 month records</label>                                        
+                                                <table datatable class="pr-datatable table table-hover no-boxshadow table-border">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="sm-col"><span>Consumer No.</span></th>
+                                                            <th scope="col"><span>Consumer Name</span></th>
+                                                            <!-- <th scope="col"><span>Bill Amount</span></th> -->
+                                                            <th scope="col"><span>Due Date</span></th>
+                                                            <th scope="col"><span>Status</span></th>
+                                                            <th scope="col" class="action-col"><span>Action</span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let item of collection.data">
+                                                            <th scope="row" class="sb-col">{{item.billId}}</th>
+                                                            <td>{{item.billMonth}}</td>
+                                                            <!-- <td>$ {{item.billAmount}}</td> -->
+                                                            <td>{{item.billDue | date : 'dd MMM yy'}}</td>                                                        
+                                                            <td>
+                                                                <div [ngSwitch]="item.status">
+                                                                    <div *ngSwitchCase="'Finished'">
+                                                                        <div class="badge badge-label-unpaid">Unfinished</div>
+                                                                    </div>
+                                                                    <div *ngSwitchDefault>
+                                                                        <div class="badge badge-label-paid">Finished</div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="action-col">
+                                                                <span class="show">
+                                                                    <ul class="list-group list-group-horizontal action-list">
+                                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="View" [openDelay]="300" [closeDelay]="500" role="button" data-toggle="modal" data-target="#consumerDetailsModal">
+                                                                            <fa-icon [icon]="faEye"></fa-icon>
+                                                                        </li>
+                                                                        <li class="list-group-item st" tooltipClass="pr-tooltip" placement="top" ngbTooltip="Print" [openDelay]="300" [closeDelay]="500">
+                                                                            <fa-icon [icon]="faPrint"></fa-icon>
+                                                                        </li>
+                                                                    </ul>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>                                            
+                                            </div>
+                                        </div>
+                                    </div> 
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Consumer Details Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="consumerDetailsModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="consumerDetailsModalLabel">
+      <div class="modal-dialog" role="document" style="min-width:570px;">
+        <div class="modal-content">
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title mb-2" id="consumerDetailsModalLabel">Consumer Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+
+            <div class="modal-body pr-modal-body" style="background-image: url('../../../assets/images/consumer-modal-bg.png');">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dtls-block">
+                                        <div class="block-body">
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <h4 class="h4 text-primary">Consumer No: 924356</h4>
+                                                    <h6>Rivka Frank </h6>
+                                                    <p class="p p-13 text-dark">Flat No 3964, orchid House,<br> Small Street 1235 New street,<br>New york<br> AL - 35573 USA</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="p p-13 mb-1"><span class="mr-3">Start Date</span><span class="text-right text-dark">03 Jan 20</span></p>
+                                                    <p class="p p-13 mb-1"><span class="mr-3">Due Date</span><span class="text-right text-dark">09 Feb 20</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info-block">
+                                            <div class="applicant-data">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Conversion Date</p>
+                                                        <h6 class="h6">10 Feb 20</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Status</p>
+                                                        <h6 class="h6">Finished</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Mobile Number</p>
+                                                        <h6 class="h6">201-285-6456</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Consumer Type</p>
+                                                        <h6 class="h6">Individual</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Consumption No.</p>
+                                                        <h6 class="h6">58791</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Current Meter Status</p>
+                                                        <h6 class="h6">Normal</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Bill count</p>
+                                                        <h6 class="h6">5</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">Type</p>
+                                                        <h6 class="h6">Normal</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p class="p p-13">City</p>
+                                                        <h6 class="h6">New York</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Assign Vendor Modal -->
+<div class="pr-modal">
+    <div class="modal right fade" id="assignVendorModal" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="assignVendorModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+    
+            <div class="modal-header pr-modal-header">
+                <h4 class="modal-title" id="assignVendorModalLabel">Assign Vendor</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+
+            <div class="modal-body pr-modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="inner-form">
+                            
+                            <div class="row justify-content-end">
+                                <div class="col-auto pr-0">
+                                    <button class="btn btn-outline-light3 st bttn-filter" type="button" data-toggle="collapse" data-target="#assignVendorFilterCollapse" aria-expanded="false" aria-controls="assignVendorFilterCollapse"><span>2</span>Filter</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="filters-wrap">
+                                        <div class="collapse" id="assignVendorFilterCollapse">
+                                            <div class="filter-wrap-inner">                        
+                                                <ul class="list-group list-group-horizontal">
+                                                    <li class="list-group-item">
+                                                        <label>Utility</label>
+                                                        <ng-select [items]="utility" appendTo="body" bindLabel="name" placeholder="select Utility" [(ngModel)]="selectedutility" name="name">
+                                                        </ng-select>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <label>Category</label>
+                                                        <ng-select [items]="category" appendTo="body" bindLabel="catg" placeholder="select Category" [(ngModel)]="selectedCategory" name="catg">
+                                                        </ng-select>
+                                                    </li>                                                
+                                                </ul>                        
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="vendor-card st">
+                                        <div class="media">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll1"/>
+                                                <label class="custom-control-label" for="checkAll1"></label>
+                                            </div>
+                                            <div class="img-blk">
+                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                            </div>                                                                        
+                                            <div class="media-body">
+                                              <h5>John Doe</h5>
+                                              <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                              <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vendor-card st">
+                                        <div class="media">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll2"/>
+                                                <label class="custom-control-label" for="checkAll2"></label>
+                                            </div>
+                                            <div class="img-blk">
+                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                            </div>                                                                        
+                                            <div class="media-body">
+                                              <h5>John Doe</h5>
+                                              <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                              <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vendor-card st">
+                                        <div class="media">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll3"/>
+                                                <label class="custom-control-label" for="checkAll3"></label>
+                                            </div>
+                                            <div class="img-blk">
+                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                            </div>                                                                        
+                                            <div class="media-body">
+                                              <h5>John Doe</h5>
+                                              <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                              <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vendor-card st">
+                                        <div class="media">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll4"/>
+                                                <label class="custom-control-label" for="checkAll4"></label>
+                                            </div>
+                                            <div class="img-blk">
+                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                            </div>                                                                        
+                                            <div class="media-body">
+                                              <h5>John Doe</h5>
+                                              <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                              <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vendor-card st">
+                                        <div class="media">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll5"/>
+                                                <label class="custom-control-label" for="checkAll5"></label>
+                                            </div>
+                                            <div class="img-blk">
+                                                <img class="img-abs st" src="../../assets/images/john-doe.png" alt="img">
+                                            </div>                                                                        
+                                            <div class="media-body">
+                                              <h5>John Doe</h5>
+                                              <p class="p p-13"><span><fa-icon [icon]="faMapMarkerAlt"></fa-icon></span>New Jersey</p>
+                                              <p class="p p-13 dtl">Marketing Agency</p>                                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer pr-modal-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light3 st" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                    <div class="col-auto pl-1 pr-0">
+                        <button class="btn btn-secondary st">Assign</button>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+      </div>
+    </div>
+</div>

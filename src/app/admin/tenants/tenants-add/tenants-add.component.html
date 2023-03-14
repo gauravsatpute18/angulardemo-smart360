@@ -1,0 +1,556 @@
+<!-- As per discussion with nilesh sir on 25th of June we are making breadcrumbs static in individual pages for time being for demo pupose -->
+<div aria-label="breadcrumb">
+    <ol class="breadcrumb">            
+        <li class="breadcrumb-item"><a routerLink="/admin">Onboarding</a></li>
+        <li class="breadcrumb-item"><a routerLink="/admin/tenants">Tenant</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add Tenant</li>
+    </ol>
+</div>
+<!-- As per skype discussion with nilesh sir on 25th of June we are making this dropdown static in individual pages for time being for demo purpose -->
+<div class="plus-dropdown-wrap">
+    <div class="dropdown plus-dropdown" dropdown dropdown-append-to-body>
+        <a class="btn dropdown-toggle btn-primary bttn-icon rounded" role="button" id="headerDropdown1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faPlus"></fa-icon>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="headerDropdown1">
+            <a class="dropdown-item active" >Option 1</a>
+            <a class="dropdown-item" >Option 2</a>
+            <a class="dropdown-item" >Option 3</a>
+        </div>
+    </div>
+</div>
+<section class="pr-section add-user-sec">
+    <div class="row">
+        <div class="col-8 align-self-start">
+            <div class="col-lt">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="custom-hr-list-wrap">
+                            <ul class="nav list-group list-group-horizontal" id="myTab" role="tablist">
+                                <li class="nav-item list-group-item active">
+                                    <a class="nav-link active" id="general-dtls-tab" data-toggle="tab" href="#general-dtls"
+                                        role="tab" aria-controls="general-dtls" aria-selected="true">General Details</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="subs-and-utility-tab" data-toggle="tab" href="#subs-and-utility"
+                                        role="tab" aria-controls="subs-and-utility" aria-selected="false">Subscription & Utility</a>
+                                </li>
+                                <li class="nav-item list-group-item">
+                                    <a class="nav-link" id="super-admin-tab" data-toggle="tab" href="#super-admin"
+                                        role="tab" aria-controls="super-admin" aria-selected="false">Super Admin</a>
+                                </li>                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="registration-inner inner-wrap tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="general-dtls" role="tabpanel"
+                                aria-labelledby="general-dtls-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">General Details</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Tenant Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]="ufirstName" value="Thomas Shelby"
+                                                                    name="ufirstName" placeholder="User First Name" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Contract Date</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" placeholder="dd-mm-yyyy"
+                                                                        name="dp" [(ngModel)]="model" ngbDatepicker #D="ngbDatepicker"
+                                                                        (click)="D.toggle()" container="body">
+                                                                    <div class="input-group-append" id="button-addon4">
+                                                                        <button class="btn bttn-transparent bttn-icon" type="button"
+                                                                            (click)="D.toggle()">
+                                                                            <fa-icon [icon]="faCalendarAlt"></fa-icon>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Type</label>
+                                                                <ng-select [items]="type" bindLabel="name"
+                                                                    placeholder="Select Type" bindValue="name"
+                                                                    [(ngModel)]="selectedType" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Sub Type</label>
+                                                                <ng-select [items]="subType" bindLabel="name"
+                                                                    placeholder="Select Sub Type" bindValue="name"
+                                                                    [(ngModel)]="selectedSubType" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Mobile No</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Mobile No" value=""
+                                                                    name="textValue" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Email ID</label>
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]="uemail" placeholder="Email ID"
+                                                                    value="Thomas@gmail.com" name="uemail" />
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Street</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Street" value=""
+                                                                    name="textValue" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>State/Proviance/Region</label>
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]="state" placeholder="State"
+                                                                    value="" name="state" />
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>City</label>
+                                                                <ng-select [items]="city" bindLabel="name"
+                                                                    placeholder="Select City" bindValue="name"
+                                                                    [(ngModel)]="selectedCity" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Postal/Zip Code</label>
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]="postal" placeholder="Zip Code"
+                                                                    value="" name="postal" />
+                                                            </div>  
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6">
+                                                                <label>Area</label>
+                                                                <ng-select [items]="area" bindLabel="name"
+                                                                    placeholder="Select Area" bindValue="name"
+                                                                    [(ngModel)]="selectedArea" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label>Sub Area</label>
+                                                                <ng-select [items]="subarea" bindLabel="name"
+                                                                    placeholder="Select Sub Area" bindValue="name"
+                                                                    [(ngModel)]="selectedSubArea" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Contact Person Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Name" value="" name="textValue" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <label>Contact #1</label>
+                                                                <input type="text" class="form-control" name="textValue" />
+                                                            </div>                                                          
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <div class="title-divider">Financial Details</div>
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Account No</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Account No" value="XYZWS" name="account no" />
+                                                            </div>    
+                                                            <div class="col-6">
+                                                                <label>Bank Name</label>
+                                                                <ng-select [items]="bank" bindLabel="name"
+                                                                    placeholder="Select Bank Name" bindValue="name" [(ngModel)]="selectedBank" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>A/C Holder Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Account Hoder Name" value="XYZ" name="account no" />
+                                                            </div>    
+                                                            <div class="col">
+                                                                <label>Branch</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Branch" value="" name="account no" />
+                                                            </div> 
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col-6">
+                                                                <label>IFSC Code</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="IFSC Code" value="XYZ" name="account no" />
+                                                            </div>                                                                 
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_subs_utility">Proceed</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="subs-and-utility" role="tabpanel" aria-labelledby="subs-and-utility-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Subscription & Utility</h4>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="row">
+                                                            <div class="col-12">
+
+                                                                <div class="change-subscription-cards-wrap">
+                                                                    <h2 class="subscription-ttl">Choose your subscription plan</h2>
+                
+                                                                    <div class="change-subscription-card card-left st" (mouseover)="leftHovered()" (mouseout)="leftNotHovered()" ngClass='{{leftCardHovered ? "" : "cardhover"}}'>
+                                                                        <div class="change-subscription-card-body">
+                                                                            <h3 class="ttl">$640</h3>
+                                                                            <h4 class="sb-ttl">Subscription Pro</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="change-subscription-card-footer">
+                                                                            <div class="row justify-content-center">
+                                                                                <div class="col-auto">
+                                                                                    <button class="btn btn-secondary st" (click)="toggleSubscribed()">Subscribe Now</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="change-subscription-card st" ngClass='{{centerCardHovered ? "" : "centercardhover"}}'>
+                                                                        <div class="change-subscription-card-body">
+                                                                            <h3 class="ttl">$640</h3>
+                                                                            <h4 class="sb-ttl">Subscription Pro</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="change-subscription-card-footer">
+                                                                            <div class="row justify-content-center">
+                                                                                <div class="col-auto">
+                                                                                    <button class="btn btn-primary st" (click)="toggleSubscribed()">Subscribe Now</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                
+                                                                    <div class="change-subscription-card card-right st" (mouseover)="rightHovered()" (mouseout)="rightNotHovered()" ngClass='{{rightCardHovered ? "" : "cardhover"}}'>
+                                                                        <div class="change-subscription-card-body">
+                                                                            <h3 class="ttl">$640</h3>
+                                                                            <h4 class="sb-ttl">Subscription Pro</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet,
+                                                                                </li>
+                                                                                <li class="list-group-item">
+                                                                                    <span class="ico"><img class="st" src="../../../../assets/images/icons/list-tick.png" alt="img"></span>
+                                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="change-subscription-card-footer">
+                                                                            <div class="row justify-content-center">
+                                                                                <div class="col-auto">
+                                                                                    <button class="btn btn-secondary st" (click)="toggleSubscribed()">Subscribe Now</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <label>Utility Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Utility Name"
+                                                                    value="Utility A" name="textValue" />
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label>Category</label>
+                                                                <ng-select [items]="category" bindLabel="name"
+                                                                    placeholder="Select Category" bindValue="name"
+                                                                    [(ngModel)]="selectedCategory" name="name">
+                                                                </ng-select>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="form-row">
+                                                            <div class="col">
+                                                                <button class="btn bttn-transparent bttn-add" type="button">Add</button>
+                                                            </div>
+                                                        </div>                                                       
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_super_admin">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="super-admin" role="tabpanel" aria-labelledby="super-admin-tab">
+                                <div class="row br-btm">
+                                    <div class="col-auto align-self-center">
+                                        <h4 class="h4 ttl">Super Admin</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="registration-form inner-form">
+
+                                            <div class="row inner-form-wrap">
+                                                <div class="col-12">
+                                                    <form name="form">
+                                                        <div class="form-row">                                                        
+                                                            <div class="col-6">
+                                                                <label>Primary Email Address</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Email"
+                                                                    value="james@gmail.com"
+                                                                    name="textValue" />
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label>Alternative Email Address</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Email"
+                                                                    value="ThomasShelby@gmail.com"
+                                                                    name="textValue" />
+                                                            </div>
+                                                        </div>                                                    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="row justify-content-end form-bttn-row br-top">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-outline-light st">Cancel</button>
+                                                </div>
+                                                <div class="col-auto pl-1 pr-4">
+                                                    <button class="btn btn-secondary st"
+                                                        id="proceed_user_privillages">Proceed</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 align-self-start pl-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-rt">
+                        <h4 class="m-ttl">Summary</h4>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="right-side-wrap">
+
+                        <div class="right-side-collapse-wrap">
+
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="userDetailCollapse = !userDetailCollapse" [attr.aria-expanded]="!userDetailCollapse"
+                                    aria-controls="bttn-collapse1">
+                                    General Details
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse1"
+                                    [ngbCollapse]="userDetailCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Tenant Name</p>
+                                                <h6 class="h6">Tenant A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Contract Date</p>
+                                                <h6 class="h6">20 April 2020</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Type</p>
+                                                <h6 class="h6">Type A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Type</p>
+                                                <h6 class="h6">Old Alwal</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Mobile No</p>
+                                                <h6 class="h6">{{uContact}}</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Email Address</p>
+                                                <h6 class="h6">{{uemail}}</h6>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>
+                            </div>
+
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="userBankDetailCollapse = !userBankDetailCollapse" [attr.aria-expanded]="!userBankDetailCollapse"
+                                    aria-controls="bttn-collapse2">Subscription & Utility
+                                </button>
+                                <div class="collapse" id="bttn-collapse2" [ngbCollapse]="userBankDetailCollapse">
+                                    <ngx-simplebar [options]="scrollOptions" class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Suscription Plan</p>
+                                                <h6 class="h6">Plan A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Utility Name</p>
+                                                <h6 class="h6">Utility A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Category</p>
+                                                <h6 class="h6">Category A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Type</p>
+                                                <h6 class="h6">Type A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Sub Type</p>
+                                                <h6 class="h6">Sub Type A</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Document</p>
+                                                <h6 class="h6"><span class="pdf-red"></span>Lorem Ispum</h6>
+                                            </div>
+                                        </div>
+                                    </ngx-simplebar>
+                                </div>
+                            </div>
+    
+                            <div class="right-side-collapse">
+                                <button class="btn bttn-collapse btn-block text-left" type="button"
+                                    (click)="userDocsCollapse = !userDocsCollapse" [attr.aria-expanded]="!userDocsCollapse"
+                                    aria-controls="bttn-collapse3">Super Admin
+                                </button>
+                                <ngx-simplebar [options]="scrollOptions" class="collapse" id="bttn-collapse3" [ngbCollapse]="userDocsCollapse">
+                                    <div class="applicant-data">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p class="p p-13">Primary Email</p>
+                                                <h6 class="h6">james@gmail.com</h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="p p-13">Alternative Email</p>
+                                                <h6 class="h6">thomus@gmail.com</h6>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </ngx-simplebar>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-toast *ngIf="showtoast" header="dwd" [delay]="5000" [autohide]="autohide" (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="showtoast = false; autohide = true">
+                <div *ngIf="autohide">New User <span class="text-primary">Successfully</span> Created!!</div>
+            </ngb-toast>
+        </div>
+    </div>
+</section>
